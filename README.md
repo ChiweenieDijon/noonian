@@ -19,8 +19,9 @@ Before proceeding, ensure the following software packages are installed on the m
 
 ### 2. Clone the project repository
 
+```bash
  git clone https://github.com/ChiweenieDijon/noonian.git
-
+```
 
 ### 3. Download project dependencies
 
@@ -51,7 +52,7 @@ Finally, download the client-side dependencies using bower:
 You can utilize noonian.sh to generate an instance configuration file from template:
 
 ```bash
- ./noonian.sh my-instance
+ ./noonian.sh new my_instance
 ```
 
 *Note: the script launches vi to show you the newly-generated config; to exit type ":q" and hit enter.
@@ -64,8 +65,9 @@ Alternatively, you can manually copy and modify server/conf/instance/template.js
 Ensure MongoDB is running, and with 'noonian' as the current working directory, launch 'server/app.js' in node:
 
 ```bash
- node server/app.js -–instance localhost
+ node server/app.js -–instance my_instance
 ```
+
 
 You will see console output messages as the database is bootstrapped, and an admin password is generated and is displayed on the console.  Open a web browser to the following URL and provide the admin credentials.
 
