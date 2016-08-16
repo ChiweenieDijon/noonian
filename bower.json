@@ -1,0 +1,19 @@
+{
+  "name": "noonian",
+  "version": "0.0.24",
+  "dependencies": {
+    "ace-builds": "~1.2.0",
+    "angular": "~1.5.7",
+    "angular-bootstrap": "~0.14.2",
+    "angular-cookies": "~1.4.7",
+    "angular-ui-ace": "~0.2.3",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "jquery": "~2.1.4",
+    "lodash": "~3.9.3"
+  },
+  "resolutions": {
+    "angular": ">=1.5.7"
+  }
+}

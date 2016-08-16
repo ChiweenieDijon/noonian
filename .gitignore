@@ -2,5 +2,7 @@ node_modules
 .tmp
 pid
 pid.*
-server/server_conf/instance
-!server/server_conf/instance/template.js
+*.out
+client/bower_components
+server/conf/instance
+!server/conf/instance/template.js
