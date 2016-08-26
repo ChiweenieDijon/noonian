@@ -20,6 +20,8 @@ var db = require('./datasource');
 var Q = require('q');
 var _ = require('lodash');
 
+var auth = require('./auth');
+
 exports.serverConf = require('../conf');
 
 exports.getParameter = function(key, defaultValue) {
@@ -65,20 +67,36 @@ exports.saveParameter = function(key, value) {
 
 };
 
-exports.getCustomizedParameter = function(key, userId) {
+exports.getCustomizedParameter = function(key, userId, defaultValue) {
   var deferred = Q.defer();
+  
+  var theUser;
+  db.User.findOne({_id:userId}).then(function(user) {
+    theUser = user;
 
-  db.Config.find({key:key, $or:[{user:{$exists:false}},{'user._id':userId}]}).exec().then(
+    return db.Config.find({key:key, $or:[{user:{$exists:false}},{'user._id':userId}]}).exec();
+  })
+  .then(
 
     function(result) {
-      if(result.length === 0)
-        return deferred.resolve(null);
-        // return deferred.reject(key+' not found');
+      if(result.length === 0) {
+        return deferred.resolve(defaultValue);
+      }
 
       var base, custom;
-      _.forEach(result, function(obj){
-        if(obj.user) custom = obj;
-        else base = obj;
+      _.forEach(result, function(configObj){
+        if(configObj.user) { 
+          custom = configObj;
+        }
+        else if(configObj.rolespec) {
+          //a config object with a rolespec takes precidence over one without.
+          if(auth.checkRolesForUser(theUser, configObj.rolespec, true)) {
+            base = configObj;
+          }
+        }
+        else if(!base) {
+          base = configObj
+        }
       });
 
       base = base ? base.value : null;

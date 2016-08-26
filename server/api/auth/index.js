@@ -106,7 +106,7 @@ exports.getCurrentUserRoles = function(req) {
 
 
 var checkRolesForUser =
-exports.checkRolesForUser = function(user, rolespec) {
+exports.checkRolesForUser = function(user, rolespec, noShortCircuit) {
   //First, the no-restriction rolespec:
   if(!rolespec || !rolespec.length) {
     return true;
@@ -121,7 +121,7 @@ exports.checkRolesForUser = function(user, rolespec) {
   }
 
   //Short circuit the special SYSADMIN role
-  if(userHasRole['FnQ_eBYITOSC8kJA4Zul5g'])
+  if(!noShortCircuit && userHasRole['FnQ_eBYITOSC8kJA4Zul5g'])
     return true;
 
 
