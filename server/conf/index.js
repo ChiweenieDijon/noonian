@@ -50,13 +50,6 @@ var baseConfig = {
 
 
 exports.init = function(commandline) {
-  if(commandline.urlBase) {
-    var ub = commandline.urlBase;
-    if(ub.indexOf('/') !== 0) {
-      ub = '/'+ub;
-    }
-    baseConfig.urlBase = ub;
-  }
 
   var instance = commandline.instance || baseConfig.instance;
 
@@ -65,6 +58,21 @@ exports.init = function(commandline) {
       baseConfig,
       require('./instance/' + instance + '.js') || {});
   }
+
+
+  //Make sure urlBase is either empty or '/somepath...'
+  if(commandline.urlBase) {
+    var ub = commandline.urlBase;
+    if(ub.indexOf('/') !== 0) {
+      ub = '/'+ub;
+    }
+    baseConfig.urlBase = ub;
+  }
+  else if(baseConfig.urlBase && baseConfig.urlBase.indexOf('/') !== 0) {
+    //in config file, urlBase may or may not have leading slash
+    baseConfig.urlBase = '/'+baseConfig.urlBase;
+  }
+
 
   console.log('Loading Configuration:');
   console.log('  instance \t "%s" (%s)', baseConfig.instanceName, baseConfig.instanceId);

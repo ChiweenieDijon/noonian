@@ -134,8 +134,10 @@ exports.getAuthInterceptor = function(app) {
         next();
       }
       else {
-        console.log('REDIRECTING TO LOGIN!');
-        res.redirect(conf.urlBase+'/login.html?originalUrl='+querystring.escape(req.originalUrl));
+        var redirectPath = conf.urlBase+'/login.html?originalUrl='+querystring.escape(req.originalUrl);
+
+        console.log('REDIRECTING TO LOGIN: %s', redirectPath);
+        res.redirect(redirectPath);
 
         // var loginPath = app.get('appPath') + '/login.html';
         // res.status(401);
