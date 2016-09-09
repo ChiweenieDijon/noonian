@@ -216,6 +216,11 @@ controller.login = function(req, res, next) {
     var token = authHeader.substring(authHeader.indexOf(' ')+1);
 
     db.User.findOne({_id:req.user._id}).then(function(user) {
+      if(!user) {
+        res.clearCookie('access_token');
+        return res.redirect(conf.urlBase+'/login.html');
+      }
+
       var userData = {_id:user._id, isAdmin:false};
       for(var k in db.User._bo_meta_data.type_descriptor) {
         if(k.indexOf('_') !== 0 && k !== 'password')
