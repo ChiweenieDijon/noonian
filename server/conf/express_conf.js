@@ -21,6 +21,8 @@ module.exports = function(app) {
   app.set('view engine', 'html');
 
   app.use(compression());
+
+  app.use(/.*_raw_postbody.*/, bodyParser.text({type: '*/x-www-form-urlencoded'})); 
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json({limit:'10mb'}));
 
