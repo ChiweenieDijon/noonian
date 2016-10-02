@@ -46,6 +46,7 @@ var wsRoot = conf.urlBase+'/auth';
 
 var tokenAccessMap = {};
 var inactivityDuration = false;
+var publicUrl = false;
 
 var checkToken = function(token) {
   if(!inactivityDuration) return true;
@@ -123,13 +124,13 @@ exports.getAuthInterceptor = function(app) {
         next();
       }
       else if(
+        (publicUrl && publicUrl.test(req.originalUrl)) ||
         (req.originalUrl.indexOf(conf.urlBase+'/login.html') == 0 ) ||
         (req.originalUrl.indexOf(conf.urlBase+'/public') == 0 ) ||
         (req.originalUrl.indexOf(conf.urlBase+'/ws/public') == 0 ||
           req.originalUrl.indexOf(conf.urlBase+'/favicon') == 0 )
       ) {
-        //TODO regex in config to determine what constitutes "public resource"
-        //(i.e. no logged-in user required)
+        //(no logged-in user required)
         console.log('heading to public resource: '+req.originalUrl);
         next();
       }
@@ -192,6 +193,17 @@ exports.init = function(app) {
 
   configSvc.getParameter('sys.inactivityDuration', false).then(function(val) {
     inactivityDuration = val;
+  });
+
+  configSvc.getParameter('sys.publicUrl', false).then(function(val) {
+    if(val) {
+      try {
+        publicUrl = new RegExp(val);
+      }
+      catch(err) {
+        console.err('UNABLE TO LOAD publicUrl regex: %j', err);
+      }
+    }
   });
 
 };
