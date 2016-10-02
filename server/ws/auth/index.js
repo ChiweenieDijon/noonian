@@ -47,6 +47,7 @@ var wsRoot = conf.urlBase+'/auth';
 var tokenAccessMap = {};
 var inactivityDuration = false;
 var publicUrl = false;
+var anonymousUser = undefined;
 
 var checkToken = function(token) {
   if(!inactivityDuration) return true;
@@ -131,6 +132,7 @@ exports.getAuthInterceptor = function(app) {
           req.originalUrl.indexOf(conf.urlBase+'/favicon') == 0 )
       ) {
         //(no logged-in user required)
+        req.user = anonymousUser;
         console.log('heading to public resource: '+req.originalUrl);
         next();
       }
@@ -198,7 +200,10 @@ exports.init = function(app) {
   configSvc.getParameter('sys.publicUrl', false).then(function(val) {
     if(val) {
       try {
-        publicUrl = new RegExp(val);
+        publicUrl = new RegExp(val.regex);
+        if(val.userId) {
+          anonymousUser = {_id:val.userId};
+        }
       }
       catch(err) {
         console.err('UNABLE TO LOAD publicUrl regex: %j', err);
