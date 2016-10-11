@@ -30,14 +30,12 @@ Before proceeding, ensure the following software packages are installed on the m
  npm install
 ```
 
-*Note: for some reason bcrypt and node-gyp have given errors during the npm install. I've been able to get around them by installing them globally:*
+*Note: bcrypt and node-gyp may fail during the npm install. Depending on the platform (linux/win/osx) dependencies on native compilers (g++, xcode,...) may be causing the problem.  To see what you might be missing try:
 
 ```bash
- sudo npm install -g node-gyp
- sudo npm install -g bcrypt
+ npm install --verbose
 ```
-
-*... then try "npm install" again.*
+(if you see something like "make: g++: Command not found", you know you need to install g++ on your system)
 
 
 Finally, download the client-side dependencies using bower:
