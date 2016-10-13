@@ -68,6 +68,19 @@ var ftMap = {
   }
 };
 
+
+//These types, when persisted to filesystem, will be separated out to their own files
+var specialFsTypes = {
+	sourcecode:function(td) {
+		return {
+			extension:td.language || 'js'
+		};
+	},
+	'function':function() {
+		return {extension:'js'};
+	}
+};
+
 /**
  * Caches FieldType objects from db into ftMap.
  * used for initialization.
@@ -81,6 +94,10 @@ var cacheAndIndex = function() {
       var ft = ftList[i];
       ftMap[ft.name] = ft;
       ftMap[ft._id] = ft;
+      
+      if(!ft.toFileSystem && specialFsTypes[ft.name]) {
+		  ft.toFileSystem = specialFsTypes[ft.name];
+	  }
     }
     console.log('FieldTypes cached and indexed: %j', Object.keys(ftMap));
 

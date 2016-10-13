@@ -18,23 +18,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 var Q = require('q');
 var _ = require('lodash');
-
+var stringify = require('json-stable-stringify');
 
 var fs = require('fs');
-var path = require('path');
 
 var express = require('express');
 var oboe = require('oboe');
 
 var config = require('../config');
+var serverConf = require('../../conf');
 
 var db = require('./index');
 var GridFsService = require('./gridfs');
 var DataTriggerService = require('./datatrigger');
+var FieldTypeService = require('./fieldtypes.js');
 
 var PKG_DIR = 'server/data_pkg';
 
 var currentPkg; //An instance of BusinessObjectPackage if system is configured to be building a package; false if not.
+var syncPackages; //an array of package names that are synced to filesystem
 
 var updateCurrentPkg = function(currPkgKey) {
   console.log('Configured to build package: %s', currPkgKey);
@@ -71,6 +73,18 @@ exports.init = function() {
         updateCurrentPkg(false);
     }
     else if(currentPkg) {
+		
+		if(syncPackages && syncPackages.indexOf(currentPkg.key) > -1) {
+			//persist this to filesystem
+			console.log('PERSISTING TO %s - %j', currentPkg.key, this);
+			if(!isDelete) {
+				exports.writeObjectToPackageDir(currentPkg.key, this);
+			}
+			else {
+				exports.removeObjectFromPackageDir(currentPkg.key, this);
+			}
+		}
+	
       if(isUpdate || isDelete) {
         var targetObj = this;
         db.BusinessObjectPackageUpdate.findOne({'package._id':currentPkg._id, 'target_object._id':this._id}).then(function(bopu) {
@@ -143,7 +157,19 @@ exports.init = function() {
   });
 
 
-  return config.getParameter('sys.currentPackage', false).then(updateCurrentPkg);
+  return config.getParameter('sys.currentPackage', false).then(updateCurrentPkg)
+  .then(function() {
+	if(serverConf.syncPackages && serverConf.syncPackages.length) {
+	  console.log('Syncing packages w/ filesystem...');
+	  syncPackages = serverConf.syncPackages;
+	  var promiseChain = Q(true);
+	  _.forEach(serverConf.syncPackages, function(pkgKey) {
+		  promiseChain = promiseChain.then(exports.packageFromFs.bind(null, pkgKey));
+	  });
+	  return promiseChain;
+	}
+
+  });
 
 };
 
@@ -231,7 +257,7 @@ exports.buildPackage = function(bopId) {
     }
 
     if(toPush) {
-      pkgStream.write(comma+JSON.stringify(toPush));
+      pkgStream.write(comma+stringify(toPush));
       comma = ',';
     }
   };
@@ -266,7 +292,7 @@ exports.buildPackage = function(bopId) {
     });
 
     pkgStream.write('{"metadata":');
-    pkgStream.write(JSON.stringify(pkgMetaObj));
+    pkgStream.write(stringify(pkgMetaObj));
     pkgStream.write(',"updates":[')
 
 
@@ -314,7 +340,7 @@ exports.buildPackage = function(bopId) {
 
                 bop.manifest[targetClass][id] = ''+targetObj.__ver;
 
-                pkgStream.write(comma+JSON.stringify({
+                pkgStream.write(comma+stringify({
                   class:targetClass,
                   create:targetObj
                 }));
@@ -743,29 +769,241 @@ exports.applyLocalPackage = function(pkgName) {
 
 };
 
+var mkdir = function(dir) {
+	try {fs.mkdirSync(dir);} catch(err) {}
+};
+
+exports.removeObjectFromPackageDir = function(pkgKey, bo) {
+	try {
+		var className = bo._bo_meta_data.class_name;
+		var classDir = PKG_DIR+'/'+pkgKey+'/'+className;
+		var objFiles = fs.readdirSync(classDir);
+		_.forEach(objFiles, function(fileName) {
+			if(fileName.indexOf(bo._id) === 0) {
+				console.log('deleting %s/%s', classDir, fileName);
+				fs.unlink(classDir+'/'+fileName);
+			}
+		});
+	}
+	catch(err) {
+		console.error('problem deleting object %s from package %s', bo._id, pkgKey);
+		console.error(err);
+	}
+}
+
+var identityFn = function(stream, value) { return stream.write(''+value); };
+
+var writeObjectToPackageDir = 
+exports.writeObjectToPackageDir = function(pkgKey, bo) {
+	var className = bo._bo_meta_data.class_name;
+	var classDir = PKG_DIR+'/'+pkgKey+'/'+className;
+	mkdir(classDir);
+	
+	var targetPath = classDir+'/'+bo._id;
+	
+	var tdMap = bo._bo_meta_data.type_desc_map;
+	
+	var toBaseFile = {_id:bo._id, __ver:bo.__ver};
+	
+	//First, find the fields that should be put in separate files
+	_.forEach(tdMap, function(td, fieldName) {
+		if(fieldName === '_disp') return;
+		
+		var fth = FieldTypeService.getFieldTypeHandler(td);
+		if(fth && fth.toFileSystem && bo[fieldName]) {
+			var spec = fth.toFileSystem(td);
+			var filePath = targetPath+'.'+fieldName+'.'+spec.extension;
+			console.log('...writing %s', filePath);
+			var ws = fs.createWriteStream(filePath);
+			var writeFn = spec.writeFn || identityFn;
+			writeFn(ws, bo[fieldName]);
+			ws.end();
+		}
+		else {
+			toBaseFile[fieldName] = bo[fieldName];
+		}
+	});
+	
+	//Finish up by writing the base file
+	var filePath = targetPath+'.json';
+	console.log('...writing %s', filePath);
+	var ws = fs.createWriteStream(filePath);
+	ws.end(stringify(toBaseFile, {space:'\t'}));
+}
+
+
+
+var packageObjectsToFs = function(bop) {
+  var targetDir = PKG_DIR+'/'+bop.key;
+  mkdir(targetDir);
+  console.log('Writing package to %s', targetDir);
+  
+  var promiseArr = [];
+
+  //Dump the objects listed manifest to filesystem
+  if(bop.manifest) {
+    _.forEach(bop.manifest, function(idVerMap, className){
+      //Place data into data_pkg/<package key>/<bo class>/
+      var objDir = targetDir+'/'+className;
+      mkdir(objDir);
+      
+      //for each object in the manifest...
+      _.forEach(idVerMap, function(ver, objId) {
+        
+        promiseArr.push(
+          db[className].findOne({_id:objId}).then(function(obj) {
+            writeObjectToPackageDir(bop.key, obj);
+          })
+        );
+
+      });
+    });
+  }
+  else {
+	console.error('attempted to write pkg that doesnt have a manifest');
+  }
+  
+
+  return Q.all(promiseArr);
+};
+
 /**
  * Place package attached bop into data_pkg directory
  **/
-exports.packageToFs = function(bopId) {
+exports.packageToFs = function(bopId, singleFile) {
   var bopObj;
   return db.BusinessObjectPackage.findOne({_id:bopId})
     .then(function(bop) {
       bopObj = bop;
 
-      if(!bop || !bop.package_file || !bop.package_file.attachment_id) {
+      if(!bop) {
         throw 'Invalid BusinessObjectPackage';
       }
+      else if(singleFile && (!bop.package_file || !bop.package_file.attachment_id) ){
+        throw 'Missing package_file';
+      }
+      else if(singleFile) {
+        return GridFsService.getFile(bop.package_file.attachment_id).then(function(gridfsFileObj) {
+          console.log('Exporting package %s to data_pkg on filesystem', gridfsFileObj.metadata.filename);
+
+          var outputFile = fs.createWriteStream(PKG_DIR+'/'+gridfsFileObj.metadata.filename);
+          return gridfsFileObj.readstream.pipe(outputFile);
+
+        });  
+      }
       else {
-        return GridFsService.getFile(bop.package_file.attachment_id)
+        return packageObjectsToFs(bop);
       }
     })
-    .then(function(gridfsFileObj) {
-      console.log('Exporting package %s to data_pkg on filesystem', gridfsFileObj.metadata.filename);
-
-      var outputFile = fs.createWriteStream(PKG_DIR+'/'+gridfsFileObj.metadata.filename);
-      return gridfsFileObj.readstream.pipe(outputFile);
-
-    });
-
 };
+
+
+var importObject = function(boId, className, obj) {
+	obj._id = boId;
+		
+	if(className === 'BusinessObjectDef') {	
+        return db.installBusinessObjectDef(obj)
+	}
+	else {
+		var updateVer = obj.__ver;
+		delete obj.__ver;
+		
+		return db[className].findOne({_id:boId}).then(function(modelObj) {
+			
+			if(!modelObj) {
+				modelObj = new db[className](obj);
+			}
+			else {
+				_.assign(modelObj, obj);
+			}			
+			
+			return modelObj.save({useVersionId:updateVer, skipTriggers:true}, null);
+			
+		});
+	}
+};
+
+var fileRegex = /^([A-Za-z0-9_\-]+)\.([^\.]+\.)?(\w+)$/; //<bo_id>.<fieldName>.<extension>
+
+var importClassDir = function(srcDir, className) {
+	var promiseChain = Q(true);
+		
+	var objDir = srcDir+'/'+className;
+	var dirStat = fs.statSync(objDir);
+	if(dirStat.isDirectory()) {
+		console.log('Loading objects from %s', className);
+		
+		//Need to reconstruct the object potentially from multiple files.
+		//...construct index of id->fileinfo
+		var idMap = {};
+		var objFiles = fs.readdirSync(objDir);
+		_.forEach(objFiles, function(fileName) {
+			var filePath = objDir+'/'+fileName;
+			var match = fileRegex.exec(fileName);
+			if(match && match.length >= 4) {
+				var id = match[1];
+				var fieldName = match[2];
+				var ext = match[3];
+				if(!idMap[id]) {
+					idMap[id] = {};
+				}
+				if(fieldName) {
+					fieldName = fieldName.substring(0, fieldName.length-1);
+					idMap[id][fieldName] = filePath;
+				}
+				else {
+					idMap[id]._ = filePath;
+				}
+			}
+		});
+		
+		
+		//Now use the info from idMap to reconstruct the objects
+		_.forEach(idMap, function(fileMap, boId) {
+			var obj = JSON.parse(fs.readFileSync(fileMap._));
+			_.forEach(fileMap, function(fileName, field) {
+				if(field !== '_') {
+					obj[field] = fs.readFileSync(fileName, 'utf8');
+				}
+			});
+			promiseChain = promiseChain.then(importObject.bind(null, boId, className, obj));
+		});
+	}
+	return promiseChain;
+};
+
+/**
+ * Loads businessObjects from filesystem-exploded package directory
+ */
+exports.packageFromFs = function(pkgKey) {
+	
+	//Start by making sure base package is in the system
+	var deferred = Q.defer();
+	
+	exports.applyLocalPackage(pkgKey).finally(function() {
+		
+		var promiseChain = Q(true);
+	
+		var srcDir = PKG_DIR+'/'+pkgKey;
+		var classDirs = fs.readdirSync(srcDir);
+		
+		console.log('Base package install complete; pulling in files from %s...', srcDir);
+		
+		var bodIndex = classDirs.indexOf('BusinessObjectDef');
+		if(bodIndex > -1) {
+			classDirs[bodIndex] = classDirs[0];
+			classDirs[0] = 'BusinessObjectDef';
+		}
+		
+		_.forEach(classDirs, function(className) {
+			console.log('... %s', className);
+			promiseChain = promiseChain.then(importClassDir.bind(null, srcDir, className));
+		});
+		
+		deferred.resolve(promiseChain);
+	});
+	
+	return deferred.promise;
+};
+
 

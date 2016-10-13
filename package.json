@@ -1,7 +1,12 @@
 {
   "name": "noonian",
-  "version": "0.0.24",
+  "version": "0.0.29",
   "main": "server/app.js",
+  "repository":{
+	"type":"git",
+	"url":"https://github.com/ChiweenieDijon/noonian.git"
+  },
+  "license":"AGPL-3.0",
   "dependencies": {
     "bcrypt": "^0.8.3",
     "body-parser": "~1.5.0",
@@ -17,6 +22,7 @@
     "express-session": "~1.0.2",
     "gridfs-stream": "^1.1.1",
     "handlebars": "^4.0.5",
+    "json-stable-stringify": "^1.0.1",
     "jsonwebtoken": "^5.0.0",
     "lodash": "^3.9.3",
     "method-override": "~1.0.0",
