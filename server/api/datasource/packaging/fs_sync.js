@@ -30,6 +30,7 @@ var stringify = require('json-stable-stringify');
 
 var serverConf = require('../../../conf');
 
+var db = require('../index');
 var PkgService = require('./index');
 var FieldTypeService = require('../fieldtypes.js');
 
@@ -148,7 +149,16 @@ exports.packageFromFs = function(srcDir) {
     
     //sync pkg_meta.json (export of a BusinessObjectPackage object) in base of pkg directory
 	var bopFile = srcDir+'/pkg_meta.json';
-    var bopObj = JSON.parse(fs.readFileSync(bopFile));
+    
+    var bopObj;
+    
+    try {
+        bopObj = JSON.parse(fs.readFileSync(bopFile));
+    }
+    catch(err) {
+        console.log('Configured to sync from %s, but pkg_meta.json not found or invalid.', srcDir);
+        return Q(true);  
+    }
     
     
     return PkgService.importObject('BusinessObjectPackage', bopObj).then(function() {
@@ -271,8 +281,8 @@ exports.writeMetaFile = function(targetDir, bop) {
   * to a separate directory and its own git repo.
   * 
  */
-exports.packageObjectsToFs = function(bop) {
-  var targetDir = PKG_DIR+'/'+bop.key;
+exports.packageObjectsToFs = function(bop, targetDir) {
+  
   mkdir(targetDir);
   console.log('Writing package to %s', targetDir);
   
@@ -284,9 +294,6 @@ exports.packageObjectsToFs = function(bop) {
   
     //Dump the objects listed manifest to filesystem    
     _.forEach(bop.manifest, function(idVerMap, className){
-      //Place data into data_pkg/<package key>/<bo class>/
-      var objDir = targetDir+'/'+className;
-      mkdir(objDir);
       
       //for each object in the manifest...
       _.forEach(idVerMap, function(ver, objId) {
@@ -294,8 +301,8 @@ exports.packageObjectsToFs = function(bop) {
         promiseArr.push(
           db[className].findOne({_id:objId}).then(function(obj) {
               //Temporary force version id:
-              //obj.__ver = ver;
-            writeObjectToPackageDir(bop.key, obj);
+              obj.__ver = ver;
+            writeObjectToPackageDir(targetDir, obj);
           })
         );
 
@@ -303,7 +310,7 @@ exports.packageObjectsToFs = function(bop) {
     });
   }
   else {
-	console.error('attempted to write pkg that doesnt have a manifest');
+	console.log('empty package synced to %s (no manifest for %s!)', targetDir, bop.key);
   }
   
 

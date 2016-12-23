@@ -57,6 +57,7 @@ var diffTool = require('./diffpatch');
  */
 var pkgConfig;
 var packageKeyToId; //to look-up BOP id with package key
+var packageKeyToConfig;
 
 
 var updatePackageConfig = function() {
@@ -74,6 +75,7 @@ var updatePackageConfig = function() {
         var fsConfig = serverConf.packageFsConfig || {};
         
         packageKeyToId = {};//Build up BOP key->id map
+        packageKeyToConfig = {}; //and one for the Config
         pkgConfig = [];
         
         _.forEach(bopList, function(bop) {
@@ -82,6 +84,7 @@ var updatePackageConfig = function() {
             if(bop.enable_building || fsConfig[bop.key]) {
                 var cfg = {key:bop.key, _id:bop._id};
                 pkgConfig.push(cfg);
+                packageKeyToConfig[bop.key] = cfg;
                 
                 var bConfig = bop.build_config || {};
                 var fsPath = fsConfig[bop.key]
@@ -169,6 +172,10 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
     
     if(ignoreClasses[myClass]) {
         return;
+    }
+    
+    if(!db.UpdateLog) {
+        return console.error('missing UpdateLog business object.  System upgrade required.');
     }
     
     var updateType = isCreate ? 'create' : (isUpdate ? 'update' : 'delete');
@@ -373,9 +380,33 @@ exports.importObject = function(className, obj) {
 
 
 /**
+ * Exports a package's objects to filesystem, to begin filesystem sync and allow for 
+ * collaboration/source control in git
+ */
+exports.packageToFs = function(bopId) {
+    var bopObj;
+  return db.BusinessObjectPackage.findOne({_id:bopId})
+    .then(function(bop) {
+      bopObj = bop;
+
+      if(!bop) {
+        throw 'Invalid BusinessObjectPackage';
+      }
+      else {
+          var cfg = packageKeyToConfig[bop.key];
+          if(!cfg || !cfg.fs_path) {
+              throw 'Filesystem sync not configured for '+bop.key+'. Please set packageFsConfig in instance config.';
+          }
+          
+          return fsPackageSyncer.packageObjectsToFs(bop, cfg.fs_path);
+      }
+    });
+}
+
+/**
  * Convenience function to drop the full package json file (attached to BOP) into data_pkg directory.
  **/
-exports.packageToFs = function(bopId) {
+exports.packageFileExport = function(bopId) {
   var bopObj;
   return db.BusinessObjectPackage.findOne({_id:bopId})
     .then(function(bop) {
