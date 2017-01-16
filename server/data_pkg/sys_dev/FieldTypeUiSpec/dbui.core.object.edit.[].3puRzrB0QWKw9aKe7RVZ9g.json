@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:10",
+	"_id": "3puRzrB0QWKw9aKe7RVZ9g",
+	"doc": "Displays an {@link https://ace.c9.io|Ace editor}, and utilizes the {@link https://github.com/angular-ui/ui-ace|ui-ace} angular directive wrapper.\n\nUtilizes angular's $filter('json') to render object value to editor, and angular.fromJson to parse editor value into bound value.\n\n@param {Object|string} [displayTheme] name of theme to use for editor (if string), or an object mapping the type descriptors \"applicable\" value ('clientside','serverside' or 'default') to theme name.",
+	"fieldtypes": [
+		{
+			"_disp": "object",
+			"_id": "uMEzxXwVSgmj_dbfeY-fLA",
+			"name": "object"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.object.edit"
+}

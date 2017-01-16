@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:2",
+	"_id": "_7EZRGUeRYaiyU-YSZonhQ",
+	"abstract": false,
+	"class_name": "CssResource",
+	"definition": {
+		"content": {
+			"language": "css",
+			"type": "sourcecode"
+		}
+	},
+	"doc": "A WebResource containing cascading stylesheet (css) content.",
+	"superclass": {
+		"_disp": "WebResource",
+		"_id": "0TO-sBb1TjeAAzaMgd-8KQ"
+	},
+	"system": true
+}

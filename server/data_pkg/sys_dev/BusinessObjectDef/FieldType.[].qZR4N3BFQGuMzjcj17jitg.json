@@ -1,0 +1,42 @@
+{
+	"__ver": "sys:4",
+	"_id": "qZR4N3BFQGuMzjcj17jitg",
+	"abstract": false,
+	"class_name": "FieldType",
+	"definition": {
+		"doc": {
+			"type": "jsdoc"
+		},
+		"from_db": {
+			"applicable": "serverside",
+			"type": "function"
+		},
+		"get_validator": {
+			"type": "function"
+		},
+		"mongo_type": {
+			"enum": [
+				"String",
+				"Boolean",
+				"Number",
+				"Date",
+				"Mixed",
+				"Function",
+				"Buffer"
+			],
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},
+		"text_index": {
+			"type": "boolean"
+		},
+		"to_db": {
+			"applicable": "serverside",
+			"type": "function"
+		}
+	},
+	"doc": "A FieldType object defines a valid type for a Business Object field, and provides server-side information/logic for persisting it to MongoDB.  Any time you see \"type\" in a BusinessObjectDef's definition, the value corresponds to one of these.",
+	"system": true
+}

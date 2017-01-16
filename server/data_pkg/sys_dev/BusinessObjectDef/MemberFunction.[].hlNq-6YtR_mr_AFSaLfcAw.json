@@ -1,0 +1,38 @@
+{
+	"__ver": "sys:2",
+	"_id": "hlNq-6YtR_mr_AFSaLfcAw",
+	"abstract": false,
+	"class_name": "MemberFunction",
+	"definition": {
+		"_disp": "<%= business_object._disp %>.<%= name %>",
+		"applies_to": {
+			"enum": [
+				"client",
+				"server",
+				"both"
+			],
+			"type": "string"
+		},
+		"business_object": {
+			"ref_class": "BusinessObjectDef",
+			"type": "reference"
+		},
+		"doc": {
+			"type": "jsdoc"
+		},
+		"function": {
+			"type": "function"
+		},
+		"is_static": {
+			"type": "boolean"
+		},
+		"name": {
+			"type": "string"
+		},
+		"use_injection": {
+			"type": "boolean"
+		}
+	},
+	"doc": "Creating one of these effects a \"member\" function of a Business Object.  \nCan be \"static\" (i.e. called like so: db.SomeBo.memberFn(...)), or non-static, callable on instances of the owning business object: (new SomeBo()).memberFn(...)",
+	"system": true
+}

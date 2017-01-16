@@ -1,0 +1,43 @@
+{
+	"__ver": "sys:2",
+	"_id": "cSzNMWAYT2Whr1OqDdHGyg",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.MemberFunction",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"business_object",
+				"name",
+				[
+					"applies_to",
+					"is_static"
+				],
+				"use_injection",
+				"doc",
+				"function"
+			]
+		},
+		"list": {
+			"fields": [
+				"business_object",
+				"name",
+				"applies_to",
+				"doc"
+			]
+		},
+		"view": {
+			"layout": [
+				"business_object",
+				"name",
+				[
+					"applies_to",
+					"is_static"
+				],
+				"use_injection",
+				"doc",
+				"function"
+			]
+		}
+	}
+}

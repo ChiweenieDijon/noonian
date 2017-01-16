@@ -1,0 +1,29 @@
+{
+	"__ver": "sys:1",
+	"_id": "Oq6WcNJFSomqJf7Q3R_tyA",
+	"key": "sys.dbui.perspective.default.UiAction",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"key",
+				"function"
+			]
+		},
+		"list": {
+			"fields": [
+				"key",
+				"function"
+			],
+			"sort": {
+				"key": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"key",
+				"function"
+			]
+		}
+	}
+}

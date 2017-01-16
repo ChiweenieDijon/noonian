@@ -1,0 +1,50 @@
+<div>
+  <!-- Search box / query builder -->
+  <div class="row" ng-if="enableSearch">
+    <div ng-switch="perspective.isAdvancedSearch">
+      <div ng-switch-when="true">
+        <div class="col-sm-9" >
+          <query-builder bo-class="boClass" ng-model="perspective.filter" on-close="advancedSearch(false)"></query-builder>
+          <button type="button" class="btn btn-default" ng-click="execSearch()"><i class="fa fa-lg fa-search"></i></button>
+        </div>
+      </div>
+      <div class="col-sm-4" ng-switch-default>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="execSearch()"><i class="fa fa-lg fa-search"></i></button>
+          </span>
+          <input type="text" id="searchBox" class="form-control" placeholder="text search" ng-model="perspective.searchString" ng-change="searchStringChanged()" />
+          <span class="input-group-btn" ng-show="enableQuery">
+            <button type="button" class="btn btn-default" ng-click="advancedSearch(true)"><i class="fa fa-lg fa-cubes"></i></button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- actual table data -->
+  <dbui-object-table ng-model="dataArray" object-meta-data="objectMetaData" perspective="perspective" config="objectTableConfig"></dbui-object-table>
+
+  <!-- footer: filter, summary, paginator -->
+  <div ng-show="filterDescription" class="row" >
+    <div class="col-xs-12 text-center">
+      Filter: <strong>{{filterDescription}}</strong>
+    </div>
+  </div>
+
+  <div class="row" >
+    <div class="col-xs-12 text-center">
+      <span ng-show="dataLoading"><i class="fa fa-spinner fa-pulse"></i> loading...</span><span ng-show="!dataLoading"><strong>{{pageState.totalRecords}} records total</strong> <span ng-show="pageState.totalPages > 1"> (Showing {{pageState.rangeStart}} to {{pageState.rangeEnd}})</span></span>
+    </div>
+  </div>
+
+  <div ng-show="pageState.totalPages > 1" class="row">
+    <div class="col-xs-12 text-center">
+      <uib-pagination ng-model="pageState.current" ng-change="pageChanged()" class="pagination-sm" boundary-links="true"
+        total-items="pageState.totalRecords" items-per-page="pageState.pageSize" max-size="10"
+        previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;">
+      </uib-pagination>
+    </div>
+  </div>
+
+</div>

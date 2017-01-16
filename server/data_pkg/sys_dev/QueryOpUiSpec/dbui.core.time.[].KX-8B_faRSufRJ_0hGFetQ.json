@@ -1,0 +1,30 @@
+{
+	"__ver": "sys:1",
+	"_id": "KX-8B_faRSufRJ_0hGFetQ",
+	"editors": [
+		{
+			"$eq": true
+		},
+		{
+			"$before": true
+		},
+		{
+			"$after": true
+		},
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "time",
+			"_id": "uavtEE5AT2q5WcEcsWYTpw",
+			"name": "time"
+		}
+	],
+	"for_array": false,
+	"key": "dbui.core.time"
+}

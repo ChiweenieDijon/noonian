@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:4",
+	"_id": "EaQUGA7oS7qKanG4QbvYbQ",
+	"doc": "A floating point number; i.e. a numeric value allowing a decimal point.  Can optionally constrain to a range of values.\n\n@param {Number} [min] - minimum permitted value\n@param {Number} [max] - maximum permitted value",
+	"mongo_type": "Number",
+	"name": "float",
+	"text_index": false
+}

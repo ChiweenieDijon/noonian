@@ -1,0 +1,4 @@
+<div class="dbui-edit-field-string">
+    <input type="text" ng-if="!typeDesc.enum" class="form-control" id="{{elemId}}" ng-model="binding.value">
+    <select ng-if="typeDesc.enum" class="form-control" id="{{elemId}}" ng-model="binding.value" ng-options="val for val in typeDesc.enum"></select>
+</div>

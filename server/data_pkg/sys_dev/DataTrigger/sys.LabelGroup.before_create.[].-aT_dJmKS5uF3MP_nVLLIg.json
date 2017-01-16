@@ -1,0 +1,15 @@
+{
+	"__ver": "sys:2",
+	"_id": "-aT_dJmKS5uF3MP_nVLLIg",
+	"before_after": "before",
+	"business_object": {
+		"_disp": "LabelGroup",
+		"_id": "A_eCG8jqToSYTvnyiSYqRA",
+		"system": true
+	},
+	"doc": "Defaults language field to English if it isn't set.",
+	"key": "sys.LabelGroup.before_create",
+	"on_create": true,
+	"on_delete": false,
+	"on_update": false
+}

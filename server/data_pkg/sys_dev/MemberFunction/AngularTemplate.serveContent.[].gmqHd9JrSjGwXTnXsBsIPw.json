@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:1",
+	"_id": "gmqHd9JrSjGwXTnXsBsIPw",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "AngularTemplate",
+		"_id": "pzaSsQYLT7uvOx6Trp1wMw"
+	},
+	"is_static": false,
+	"name": "serveContent",
+	"use_injection": false
+}

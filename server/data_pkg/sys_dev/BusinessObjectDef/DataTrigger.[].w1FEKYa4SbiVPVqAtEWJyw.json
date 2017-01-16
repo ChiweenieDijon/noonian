@@ -1,0 +1,41 @@
+{
+	"__ver": "sys:3",
+	"_id": "w1FEKYa4SbiVPVqAtEWJyw",
+	"abstract": false,
+	"class_name": "DataTrigger",
+	"definition": {
+		"action": {
+			"applicable": "serverside",
+			"type": "function"
+		},
+		"before_after": {
+			"enum": [
+				"before",
+				"after"
+			],
+			"type": "string"
+		},
+		"business_object": {
+			"ref_class": "BusinessObjectDef",
+			"type": "reference"
+		},
+		"doc": {
+			"type": "jsdoc"
+		},
+		"key": {
+			"type": "path"
+		},
+		"on_create": {
+			"type": "boolean"
+		},
+		"on_delete": {
+			"type": "boolean"
+		},
+		"on_update": {
+			"type": "boolean"
+		}
+	},
+	"doc": "A DataTrigger is a mechanism that allows attaching logic to data changes of a particular class of Busness Object.  The \"action\" field is an injectable function that gets called upon create, update, and/or delete as specifed by the boolean fields.  The \"before_after\" field dictates whether the action is called before or after the Business Object is persisted to MongoDB.  If the action function returns a promise, the system waits until the promise is fulfilled, or fails if the promise is rejected.",
+	"superclass": null,
+	"system": true
+}

@@ -1,0 +1,53 @@
+{
+	"__ver": "sys:2",
+	"_id": "eSAFk0BgQ7iKh-q9q02ZUw",
+	"key": "sys.dbui.perspective.factories.AngularModule",
+	"system": true,
+	"value": {
+		"picker_list": {
+			"fields": [
+				"path",
+				"name",
+				"description"
+			]
+		},
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"config_function",
+				"js_dependencies",
+				"css_dependencies",
+				"external_mod_dependencies",
+				"mod_dependencies"
+			],
+			"related": [
+				{
+					"class": "AngularProvider",
+					"field": "module",
+					"perspective": "factories"
+				},
+				{
+					"class": "AngularProvider",
+					"field": "module",
+					"perspective": "controllers"
+				},
+				{
+					"class": "AngularProvider",
+					"field": "module",
+					"perspective": "directives"
+				},
+				{
+					"class": "AngularProvider",
+					"field": "module",
+					"perspective": "filters"
+				},
+				{
+					"class": "AngularTemplate",
+					"field": "module"
+				}
+			]
+		}
+	}
+}

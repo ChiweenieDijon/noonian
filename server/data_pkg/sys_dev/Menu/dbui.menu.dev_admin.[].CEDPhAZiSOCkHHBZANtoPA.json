@@ -1,0 +1,50 @@
+{
+	"__ver": "sys:2",
+	"_id": "CEDPhAZiSOCkHHBZANtoPA",
+	"definition": [
+		{
+			"action": {
+				"params": {
+					"className": "Config",
+					"perspective": "non_perspectives"
+				},
+				"state": "dbui.list"
+			},
+			"label": "config"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "User",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "users"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "Role",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "roles"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "DataAccessControl",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "dac"
+		}
+	],
+	"key": "dbui.menu.dev_admin",
+	"rolespec": [
+		"FnQ_eBYITOSC8kJA4Zul5g"
+	]
+}

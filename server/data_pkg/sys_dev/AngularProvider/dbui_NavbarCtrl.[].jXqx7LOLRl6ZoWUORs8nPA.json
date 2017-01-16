@@ -1,0 +1,23 @@
+{
+	"__ver": "sys:34",
+	"_id": "jXqx7LOLRl6ZoWUORs8nPA",
+	"doc": "Top \"nav bar\" region of DBUI.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbui_NavbarCtrl",
+	"parameters": [
+		"$rootScope",
+		"$scope",
+		"$location",
+		"$state",
+		"db",
+		"NoonAuth",
+		"NoonAction",
+		"Dbui",
+		"NoonConfig"
+	],
+	"path": "dbui/core",
+	"type": "controller"
+}

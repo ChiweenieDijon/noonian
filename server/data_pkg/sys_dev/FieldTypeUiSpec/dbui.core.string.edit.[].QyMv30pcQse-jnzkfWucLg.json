@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:15",
+	"_id": "QyMv30pcQse-jnzkfWucLg",
+	"doc": "Renders a text box for editing string, or a dropdown if type descriptor has an \"enum\" value, allowing selection from the allowed values.",
+	"fieldtypes": [
+		{
+			"_disp": "string",
+			"_id": "ZD_vX9d-RLqxGTOdZntz6Q",
+			"name": "string"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.string.edit"
+}

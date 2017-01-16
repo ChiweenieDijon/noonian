@@ -1,0 +1,34 @@
+{
+	"__ver": "sys:3",
+	"_id": "zqq006kzRgiWjMdclIEQ7Q",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.factories.related[AngularModule_module].AngularProvider",
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"type",
+				"doc"
+			],
+			"filter": {
+				"$or": [
+					{
+						"type": "factory"
+					},
+					{
+						"type": "service"
+					},
+					{
+						"type": "provider"
+					}
+				]
+			},
+			"sort": {
+				"path": "asc"
+			},
+			"title": "Factories/Services/Providers"
+		}
+	}
+}

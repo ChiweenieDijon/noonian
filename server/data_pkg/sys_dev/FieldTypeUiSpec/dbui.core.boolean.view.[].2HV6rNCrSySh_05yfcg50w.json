@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:4",
+	"_id": "2HV6rNCrSySh_05yfcg50w",
+	"doc": "Displays boolean value as text, optionally stylized by css classes specified in fieldCustomizations.\n\n@param {Object} [displayValue] - maps values ('true', 'false', 'null') to Objects specifying 'text' and css 'class' to be used for display",
+	"fieldtypes": [
+		{
+			"_disp": "boolean",
+			"_id": "WiUvP7txRQiF6tPM9FpFIw",
+			"name": "boolean"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.boolean.view"
+}

@@ -1,0 +1,16 @@
+<div ng-controller="dbui_SidebarCtrl" >
+	<uib-accordion close-others="false">
+
+		<uib-accordion-group  is-open="menuItem.isOpen" panel-class="panel-sidebar"  ng-repeat="menuItem in menu">
+      <uib-accordion-heading>
+          {{menuItem.label}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': menuItem.isOpen, 'glyphicon-chevron-right': !menuItem.isOpen}"></i>
+      </uib-accordion-heading>
+
+        <div ng-repeat="submenuItem in menuItem.submenu" >
+          <a href="#" ng-click="invokeAction(submenuItem.action)">{{submenuItem.label}}</a>
+        </div>
+
+	  </uib-accordion-group>
+
+	</uib-accordion>
+</div>

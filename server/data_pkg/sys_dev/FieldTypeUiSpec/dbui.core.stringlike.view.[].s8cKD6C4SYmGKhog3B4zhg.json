@@ -1,0 +1,47 @@
+{
+	"__ver": "sys:7",
+	"_id": "s8cKD6C4SYmGKhog3B4zhg",
+	"doc": "Simplest field viewer template for \"string-like\" types.  Simply renders value into a span element.",
+	"fieldtypes": [
+		{
+			"_disp": "string",
+			"_id": "ZD_vX9d-RLqxGTOdZntz6Q",
+			"name": "string"
+		},
+		{
+			"_disp": "integer",
+			"_id": "gxJBuQp7RkKLIV0cazfFnA",
+			"name": "integer"
+		},
+		{
+			"_disp": "email",
+			"_id": "S8eHnlXxQJqIPLM2q8HniQ",
+			"name": "email"
+		},
+		{
+			"_disp": "password",
+			"_id": "PkJTkOpsStGYcReZiDoEnQ",
+			"name": "password"
+		},
+		{
+			"_disp": "path",
+			"_id": "9_TB_-ppQnCpm3EKkO8naw",
+			"name": "path"
+		},
+		{
+			"_disp": "url",
+			"_id": "JMHHYAPlSgKuC5alDvehWA",
+			"name": "url"
+		},
+		{
+			"_disp": "float",
+			"_id": "EaQUGA7oS7qKanG4QbvYbQ",
+			"name": "float"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.stringlike.view"
+}

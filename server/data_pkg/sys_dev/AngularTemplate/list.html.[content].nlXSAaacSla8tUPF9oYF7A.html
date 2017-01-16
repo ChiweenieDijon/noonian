@@ -1,0 +1,13 @@
+<div>
+
+  <div class="row">
+    <div class="col-xs-12 dbui-header">
+      <h3 ng-hide="listPerspective.title">{{labels[boClass] || boClass}} List </h3>
+      <h3 ng-show="listPerspective.title">{{listPerspective.title}}</h3>
+      <button type="button" ng-repeat="action in actionList" class="btn btn-action" ng-click="invokeAction(action)"><i class="fa fa-lg" ng-class="action.icon" ></i> {{ action.label }}</button>
+    </div>
+  </div>
+
+  <dbui-business-object-browser bo-class="boClass" perspective="listPerspective" enable-query="true" enable-search="true" ></dbui-business-object-browser>
+
+</div>

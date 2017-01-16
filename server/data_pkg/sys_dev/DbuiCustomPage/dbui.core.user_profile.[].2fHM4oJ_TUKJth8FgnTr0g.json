@@ -1,0 +1,6 @@
+{
+	"__ver": "sys:5",
+	"_id": "2fHM4oJ_TUKJth8FgnTr0g",
+	"doc": "A \"user profile\" page.  Currently it is just an interface to change one's own password.\n@todo include an automatically-generated list of inputs that allows a user to set values for \"allow customize\" config keys.",
+	"key": "dbui.core.user_profile"
+}

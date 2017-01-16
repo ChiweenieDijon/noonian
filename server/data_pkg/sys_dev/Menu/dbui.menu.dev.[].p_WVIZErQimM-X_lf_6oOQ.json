@@ -1,0 +1,26 @@
+{
+	"__ver": "sys:10",
+	"_id": "p_WVIZErQimM-X_lf_6oOQ",
+	"definition": [
+		{
+			"isOpen": true,
+			"ref": "dbui.menu.dev_serverside"
+		},
+		{
+			"ref": "dbui.menu.dev_dbui_cust"
+		},
+		{
+			"ref": "dbui.menu.dev_webresource"
+		},
+		{
+			"ref": "dbui.menu.dev_angular"
+		},
+		{
+			"ref": "dbui.menu.dev_admin"
+		}
+	],
+	"key": "dbui.menu.dev",
+	"rolespec": [
+		"FnQ_eBYITOSC8kJA4Zul5g"
+	]
+}

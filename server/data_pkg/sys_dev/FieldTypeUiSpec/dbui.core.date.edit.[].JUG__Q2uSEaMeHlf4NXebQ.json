@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:36",
+	"_id": "JUG__Q2uSEaMeHlf4NXebQ",
+	"doc": "Utilizes dateStringEditor custom directive, which provides a text box with a date-picker button ({@link https://angular-ui.github.io/bootstrap/#/datepicker|ui-bootstrap})\n\n@param {string} [format] - format string for date {@link https://docs.angularjs.org/api/ng/filter/date} \n  if not present, defaults to \"MMMM dd, yyyy\"",
+	"fieldtypes": [
+		{
+			"_disp": "date",
+			"_id": "nplFum9LRdWvt5TW1LyulQ",
+			"name": "date"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.date.edit",
+	"link_fn": null
+}

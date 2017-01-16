@@ -1,0 +1,24 @@
+{
+	"__ver": "sys:24",
+	"_id": "kRd_Ft64QFey_at4tgphXA",
+	"css_dependencies": [
+		{
+			"_disp": "bootstrap.min.css",
+			"_id": "o4W541R8SOaAsLdTAFRwBw",
+			"name": "bootstrap.min.css",
+			"path": "bower_components/bootstrap/dist/css"
+		}
+	],
+	"js_dependencies": [
+		{
+			"_disp": "angular.min.js",
+			"_id": "YHk7GG6fQIKjEFXm7zTmFg",
+			"name": "angular.min.js",
+			"path": "bower_components/angular"
+		}
+	],
+	"name": "login.html",
+	"path": "/",
+	"rolespec": [
+	]
+}

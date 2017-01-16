@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "9_TB_-ppQnCpm3EKkO8naw",
+	"doc": "A representation of a path along some sort of abstract tree whose nodes are named with simple strings, e.g. a path on a filesystem.  Useful for organizing data hierarchically.\n\n@param {string} seperator - character that separates nodes on a path, such as \"/\" or \".\"",
+	"mongo_type": "String",
+	"name": "path",
+	"text_index": true
+}

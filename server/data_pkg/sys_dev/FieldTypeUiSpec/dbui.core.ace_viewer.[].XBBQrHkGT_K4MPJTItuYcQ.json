@@ -1,0 +1,27 @@
+{
+	"__ver": "sys:9",
+	"_id": "XBBQrHkGT_K4MPJTItuYcQ",
+	"doc": "Displays an {@link https://ace.c9.io|Ace editor} in read-only mode for various source-code data types.  Utilizes the {@link https://github.com/angular-ui/ui-ace|ui-ace} angular directive wrapper.  Optionally can simply render without ace editor if \"abbreviated\" parameter is present.\n\n@param {Object|string} [displayTheme] - name of theme to use for editor (if string), or an object mapping the type descriptors \"applicable\" value ('clientside','serverside' or 'default') to theme name.\n@param {boolean} [abbreviated] - if true, simply renders as text without using Ace editor and fancy formatting.",
+	"fieldtypes": [
+		{
+			"_disp": "sourcecode",
+			"_id": "vOaH1F-HRhefePjYFAGCBA",
+			"name": "sourcecode"
+		},
+		{
+			"_disp": "function",
+			"_id": "e-rYyVWHQoKi1om5SUBMcA",
+			"name": "function"
+		},
+		{
+			"_disp": "object",
+			"_id": "uMEzxXwVSgmj_dbfeY-fLA",
+			"name": "object"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.ace_viewer"
+}

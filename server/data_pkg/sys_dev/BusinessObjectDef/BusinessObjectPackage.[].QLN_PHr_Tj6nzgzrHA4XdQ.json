@@ -1,0 +1,49 @@
+{
+	"__ver": "sys:2",
+	"_id": "QLN_PHr_Tj6nzgzrHA4XdQ",
+	"abstract": false,
+	"class_name": "BusinessObjectPackage",
+	"definition": {
+		"build_config": {
+			"type": "object"
+		},
+		"dependencies": {
+			"type": "object"
+		},
+		"description": {
+			"type": "string"
+		},
+		"enable_building": {
+			"type": "boolean"
+		},
+		"installed_version": {
+			"type": "string"
+		},
+		"key": {
+			"seperator": ".",
+			"type": "path"
+		},
+		"major_version": {
+			"type": "integer"
+		},
+		"manifest": {
+			"type": "object"
+		},
+		"minor_version": {
+			"type": "integer"
+		},
+		"name": {
+			"type": "string"
+		},
+		"on_install_fn": {
+			"applicable": "serverside",
+			"type": "function"
+		},
+		"package_file": {
+			"type": "attachment"
+		}
+	},
+	"doc": "A \"package\" of Business Objects.  Facilitates the grouping of arbitrary business objects into sharable, versionable data packages.",
+	"superclass": null,
+	"system": true
+}

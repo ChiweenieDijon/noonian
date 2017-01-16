@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:10",
+	"_id": "nWxgcco1SJWxxpgCW1TjYg",
+	"doc": "Renders the pieces of the objectBrowser: a query-builder/search box, a dbui-object-table, and a paginator.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "object_browser.html",
+	"path": "dbui/reusable/core",
+	"provider": {
+		"_disp": "dbuiBusinessObjectBrowser",
+		"_id": "5W1f4vxWTte-kQvjjgpyLA"
+	},
+	"rolespec": [
+	]
+}

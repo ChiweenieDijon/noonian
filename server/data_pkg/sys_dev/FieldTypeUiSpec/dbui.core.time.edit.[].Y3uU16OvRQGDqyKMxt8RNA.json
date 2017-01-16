@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:5",
+	"_id": "Y3uU16OvRQGDqyKMxt8RNA",
+	"doc": "Utilizes a timeStringEditor custom directive for editing with a textbox and a \"time-picker\" dropdown.\n\n@param {string} [format] - format string for time; if not present, defaults to \"h:mm a\"",
+	"fieldtypes": [
+		{
+			"_disp": "time",
+			"_id": "uavtEE5AT2q5WcEcsWYTpw",
+			"name": "time"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.time.edit"
+}

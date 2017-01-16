@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:5",
+	"_id": "DochseC4RXmnUQc1xnjZkQ",
+	"doc": "Renders theObject's fields via dbui-field-viewers, according to perspective layout.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "object_viewer.html",
+	"path": "dbui/reusable/core",
+	"provider": {
+		"_disp": "dbuiObjectViewer",
+		"_id": "zLrdPMCOSMuj44EGALgmDw"
+	},
+	"rolespec": [
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"__ver": "sys:2",
+	"_id": "xVTEHwn0QZGCV0y3-40-sA",
+	"for_array": false,
+	"name": "$after",
+	"types": [
+		{
+			"_disp": "date",
+			"_id": "nplFum9LRdWvt5TW1LyulQ"
+		},
+		{
+			"_disp": "datetime",
+			"_id": "SRrCNHZCTvW6sTMtR3a0iQ"
+		},
+		{
+			"_disp": "time",
+			"_id": "uavtEE5AT2q5WcEcsWYTpw"
+		}
+	]
+}

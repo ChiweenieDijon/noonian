@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "bHeoPzsMScORdzjtX6GdoA",
+	"doc": "A reference to a Business Object.  \n\n@param {string} [ref_class] - name of Business Object class being referenced.  If omitted from the type descriptor, the individual values of the field must have a ref_class attribute.",
+	"mongo_type": "Mixed",
+	"name": "reference",
+	"text_index": false
+}

@@ -1,0 +1,23 @@
+<div>
+    <div class="col-md-12 dbui-header">
+      <h3>Password Change</h3>
+    </div>
+    <div class="row"><div class="col-md-12 "><p>Please type in your new password below:</p></div></div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-1">
+            <p class="alert" ng-class="messageClass">{{message}} <ul ng-show="complexityRequirements"><li ng-repeat="c in complexityRequirements">{{c}}</li></ul></p>
+            <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="pw" class="control-label">New Password</label>
+                  <input name="pw" type="password" class="form-control" ng-model="pw"/>
+                </div>
+                <div class="form-group">
+                  <label for="pwConfirm" class="control-label">Confirm New Password</label>
+                  <input name="pwConfirm" type="password" class="form-control" ng-model="pwConfirm" />
+                </div>
+                <button class="btn btn-default" value="Submit" ng-disabled="!pw || (pw != pwConfirm)" ng-click="submitChange()">Change Password</button>
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:6",
+	"_id": "xQhrwwpWR-uqqlbCrQ95xw",
+	"doc": "The template that is a placeholder for ui-router state dbui.home.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "home.html",
+	"path": "dbui/core/state",
+	"provider": {
+		"_disp": "dbui_HomePageCtrl",
+		"_id": "pc0Bq49iSFq_OCgsejPoWQ"
+	},
+	"rolespec": [
+	]
+}

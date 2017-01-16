@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:3",
+	"_id": "nRL5-PUBSTCrnHeAH6ZiPw",
+	"doc": "Renders a \"number\" input box for the numeric value, with a dollar sign icon to visually indicate that a dollar amount is to be typed in.",
+	"fieldtypes": [
+		{
+			"_disp": "money",
+			"_id": "cKFhGuY3SZ6_2YWKwkpqCA",
+			"name": "money"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.money.edit"
+}

@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:3",
+	"_id": "uEaZJyjDQXWMs-vNQrjiyQ",
+	"abstract": false,
+	"class_name": "UiAction",
+	"definition": {
+		"function": {
+			"applicable": "clientside",
+			"type": "function"
+		},
+		"key": {
+			"seperator": ".",
+			"type": "path"
+		}
+	},
+	"doc": "A UiAction is a piece of functionality that can be tied to the click of a menu item or a button.",
+	"system": true
+}

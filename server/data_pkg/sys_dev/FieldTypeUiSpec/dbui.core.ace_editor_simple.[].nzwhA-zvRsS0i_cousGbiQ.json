@@ -1,0 +1,23 @@
+{
+	"__ver": "sys:19",
+	"_id": "nzwhA-zvRsS0i_cousGbiQ",
+	"doc": "Displays an {@link https://ace.c9.io|Ace editor} for sourcecode and function data types.  Utilizes the {@link https://github.com/angular-ui/ui-ace|ui-ace} angular directive wrapper.\n\n@param {Object|string} [displayTheme] name of theme to use for editor (if string), or an object mapping the type descriptors \"applicable\" value ('clientside','serverside' or 'default') to theme name.",
+	"fieldtypes": [
+		{
+			"_disp": "sourcecode",
+			"_id": "vOaH1F-HRhefePjYFAGCBA",
+			"name": "sourcecode"
+		},
+		{
+			"_disp": "function",
+			"_id": "e-rYyVWHQoKi1om5SUBMcA",
+			"name": "function"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.ace_editor_simple",
+	"link_fn": null
+}

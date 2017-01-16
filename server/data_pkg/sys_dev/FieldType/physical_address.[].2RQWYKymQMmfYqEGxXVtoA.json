@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "2RQWYKymQMmfYqEGxXVtoA",
+	"doc": "A physical address: street, city, state, zip.  \n\n@todo refactor to utilize a more general 'named composite' mechanism for defining field types like this.\n@todo geoloc support",
+	"mongo_type": "Mixed",
+	"name": "physical_address",
+	"text_index": false
+}

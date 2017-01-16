@@ -1,0 +1,38 @@
+{
+	"__ver": "sys:1",
+	"_id": "csHQdrakQV-HfiudquIaeg",
+	"editors": [
+		{
+			"$eq": true
+		},
+		{
+			"$ne": true
+		},
+		{
+			"$gt": true
+		},
+		{
+			"$lt": true
+		},
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "integer",
+			"_id": "gxJBuQp7RkKLIV0cazfFnA",
+			"name": "integer"
+		},
+		{
+			"_disp": "float",
+			"_id": "EaQUGA7oS7qKanG4QbvYbQ",
+			"name": "float"
+		}
+	],
+	"for_array": false,
+	"key": "dbui.core.numeric"
+}

@@ -1,0 +1,28 @@
+{
+	"__ver": "sys:4",
+	"_id": "_kXc9xmXRK25KE0qkjrXVg",
+	"abstract": false,
+	"class_name": "DbuiCustomPage",
+	"definition": {
+		"body": {
+			"language": "html",
+			"type": "sourcecode"
+		},
+		"controller": {
+			"applicable": "clientside",
+			"type": "function"
+		},
+		"doc": {
+			"type": "jsdoc"
+		},
+		"key": {
+			"type": "path"
+		},
+		"rolespec": {
+			"type": "rolespec"
+		}
+	},
+	"doc": "A \"custom page\" accessible within the DBUI interface by navigating to the state \"dbui.custompage\", with a \"key\" parameter matching a DbuiCustomPage's key field.",
+	"superclass": null,
+	"system": true
+}

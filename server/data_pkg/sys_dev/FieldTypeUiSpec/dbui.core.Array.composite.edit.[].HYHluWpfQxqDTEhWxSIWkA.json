@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:8",
+	"_id": "HYHluWpfQxqDTEhWxSIWkA",
+	"fieldtypes": [
+		{
+			"_disp": "composite",
+			"_id": "ePi7MsceQMqn3qnVBlHkNA",
+			"name": "composite"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": true,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.Array.composite.edit"
+}

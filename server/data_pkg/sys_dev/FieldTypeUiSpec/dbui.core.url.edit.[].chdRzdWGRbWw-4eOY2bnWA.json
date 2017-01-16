@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:4",
+	"_id": "chdRzdWGRbWw-4eOY2bnWA",
+	"doc": "Renders an html element of type \"url\", providing a textbox for typing in a url.",
+	"fieldtypes": [
+		{
+			"_disp": "url",
+			"_id": "JMHHYAPlSgKuC5alDvehWA",
+			"name": "url"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.url.edit"
+}

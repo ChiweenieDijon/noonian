@@ -1,0 +1,54 @@
+{
+	"__ver": "sys:11",
+	"_id": "IhXNqXAyQiqGk28iCotr0Q",
+	"abstract": false,
+	"class_name": "AngularApp",
+	"definition": {
+		"body": {
+			"language": "html",
+			"type": "sourcecode"
+		},
+		"config_function": {
+			"applicable": "clientside",
+			"type": "function"
+		},
+		"css_dependencies": [
+			{
+				"denormalize_fields": [
+					"name",
+					"path"
+				],
+				"ref_class": "CssResource",
+				"type": "reference"
+			}
+		],
+		"head": {
+			"language": "html",
+			"type": "sourcecode"
+		},
+		"js_dependencies": [
+			{
+				"denormalize_fields": [
+					"name",
+					"path"
+				],
+				"ref_class": "JsResource",
+				"type": "reference"
+			}
+		],
+		"module": {
+			"denormalize_fields": [
+				"name",
+				"path"
+			],
+			"ref_class": "AngularModule",
+			"type": "reference"
+		}
+	},
+	"doc": "A WebResource that is an angular \"application\".  When resource is requested, the pieces are pulled together into a full html document and served to the client.",
+	"superclass": {
+		"_disp": "WebResource",
+		"_id": "0TO-sBb1TjeAAzaMgd-8KQ"
+	},
+	"system": true
+}

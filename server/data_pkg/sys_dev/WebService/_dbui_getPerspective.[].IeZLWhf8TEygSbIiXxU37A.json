@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:6",
+	"_id": "IeZLWhf8TEygSbIiXxU37A",
+	"doc": "Web service to retrieve an assembled {@link DbuiPerspective|DBUI perspective}.",
+	"path": "/dbui/getPerspective",
+	"rolespec": [
+	]
+}

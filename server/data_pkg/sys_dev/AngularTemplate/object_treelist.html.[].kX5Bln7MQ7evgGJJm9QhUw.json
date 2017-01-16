@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:7",
+	"_id": "kX5Bln7MQ7evgGJJm9QhUw",
+	"doc": "Operates on a set of objects whose hierarchy is defined by a \"path\" field.  Template operates on a tree that has been flattened by logic in the controller.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "object_treelist.html",
+	"path": "dbui/reusable/core",
+	"provider": {
+		"_disp": "dbuiObjectTree",
+		"_id": "zyR-OIZhQqmy70eVOj7twg"
+	},
+	"rolespec": [
+	]
+}

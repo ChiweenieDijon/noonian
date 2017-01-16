@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:1",
+	"_id": "3pQa7G08RPCvbNj-3SXnGw",
+	"key": "sys.dbui.bo.Config",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"allow_customize": "Allow Customization",
+		"key": "Key",
+		"rolespec": "For Specific Roles",
+		"user": "User",
+		"value": "Value"
+	}
+}

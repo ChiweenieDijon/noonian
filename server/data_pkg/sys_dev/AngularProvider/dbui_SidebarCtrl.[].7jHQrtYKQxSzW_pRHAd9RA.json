@@ -1,0 +1,20 @@
+{
+	"__ver": "sys:14",
+	"_id": "7jHQrtYKQxSzW_pRHAd9RA",
+	"doc": "Controller for sidebar region of DBUI.  Renders menu obtained from Dbui.getSidebarMenu().",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbui_SidebarCtrl",
+	"parameters": [
+		"$rootScope",
+		"$scope",
+		"Dbui",
+		"NoonAction",
+		"NoonAuth",
+		"$timeout"
+	],
+	"path": "dbui/core",
+	"type": "controller"
+}

@@ -1,0 +1,27 @@
+{
+	"__ver": "sys:3",
+	"_id": "A_eCG8jqToSYTvnyiSYqRA",
+	"abstract": false,
+	"class_name": "LabelGroup",
+	"definition": {
+		"key": {
+			"seperator": ".",
+			"type": "path"
+		},
+		"language": {
+			"denormalize_fields": [
+				"code"
+			],
+			"ref_class": "Language",
+			"type": "reference"
+		},
+		"system": {
+			"type": "boolean"
+		},
+		"value": {
+			"type": "object"
+		}
+	},
+	"doc": "A LabelGroup stores a logical grouping of internationalized labels, associated with a particular language.",
+	"system": true
+}

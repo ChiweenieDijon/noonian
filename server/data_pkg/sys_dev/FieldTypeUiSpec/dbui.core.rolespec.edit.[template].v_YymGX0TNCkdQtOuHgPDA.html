@@ -1,0 +1,9 @@
+<div class="dbui-edit-field-Array dbui-edit-container" >
+  <div class="row" ng-repeat="val in allRoles">
+    <div class="col-md-offset-1 col-md-6">
+        <label class="checkbox" >
+          <input type="checkbox" name="{{elemId}}_{{$index}}" ng-model="selectedValues[val._id]"> {{val.name}} </input>
+        </label>
+    </div>
+  </div>
+</div>

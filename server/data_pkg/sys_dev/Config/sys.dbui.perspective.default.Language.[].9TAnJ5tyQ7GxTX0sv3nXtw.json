@@ -1,0 +1,38 @@
+{
+	"__ver": "sys:1",
+	"_id": "9TAnJ5tyQ7GxTX0sv3nXtw",
+	"allow_customize": true,
+	"key": "sys.dbui.perspective.default.Language",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"name",
+				"code"
+			]
+		},
+		"list": {
+			"fields": [
+				"name",
+				"code"
+			],
+			"sort": {
+				"name": "asc"
+			}
+		},
+		"picker_list": {
+			"fields": [
+				"name"
+			],
+			"sort": {
+				"name": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"name",
+				"code"
+			]
+		}
+	}
+}

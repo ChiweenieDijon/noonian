@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:1",
+	"_id": "oot_vdKQTJqqhk2oqw97-g",
+	"key": "sys.dbui.perspective.default.related[AngularProvider_provider].AngularTemplate",
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"module"
+			],
+			"sort": {
+				"path": "asc"
+			}
+		}
+	}
+}

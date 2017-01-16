@@ -1,0 +1,64 @@
+<div class="navbar navbar-default navbar-static-top navbar-inner" ng-controller="dbui_NavbarCtrl" >
+    <p class="hidden-xs hidden-sm pull-left" style="min-height:20px; min-width:20px" ng-mouseenter="showToggleButton=true" ng-mouseleave="showToggleButton=false">
+        <button class="btn btn-default" ng-show="showToggleButton" ng-click="toggleSidebar()"><i class="fa fa-xl fa-chevron-left" ng-class="{'fa-chevron-left':!sidebarCollapsed, 'fa-chevron-right':sidebarCollapsed}"></i></button>
+    </p>
+  <div class="container">
+
+    <nav>
+      <ul class="nav navbar-nav">
+
+        <li class="dropdown" uib-dropdown>
+          <a id="sidebar_nav" class="nav-toggle dropdown-toggle hidden-lg hidden-md" role="button"  uib-dropdown-toggle>
+            <span><i class="fa fa-xl fa-bars"></i></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="menuitem" ng-repeat="menuItem in sidebarMenu">
+              <div class="nav-sidebar-submenu-header">{{menuItem.label}} </div>
+              <a ng-repeat="submenuItem in menuItem.submenu" href="#" ng-click="invokeAction(submenuItem.action)">{{submenuItem.label}}</a>
+            </li>
+          </ul>
+        </li>
+
+        <p class="navbar-brand hidden-xs" on-right-click="appTitleRightClick()">{{appTitle}}</p>
+
+        <li ng-class="{active: isActive('dbui.home')}"><a ui-sref="dbui.home">Home</a></li>
+
+        <!-- "Business Objects" drop-down -->
+        <li ng-show="isAdmin"  class="dropdown" uib-dropdown auto-close="disabled" is-open="boMenuOpen">
+            
+            <a class="dropdown-toggle" role="button" uib-dropdown-toggle>
+                System <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu" uib-dropdown-menu>
+                <li role="menuitem" ng-repeat="submenu in navbarMenu" is-open="submenu.isOpen">
+                    <a href role="button" ng-click="submenu.isOpen = !submenu.isOpen" style="font-weight:bold"> {{submenu.label}}</a>
+                    <ul role="menu" ng-show="submenu.isOpen">
+                        <li role="menuitem" ng-repeat="m in submenu.submenu"><a href role="button" ng-click="invokeAction(m.action)">{{m.label}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li ng-show="isAdmin && enablePackaging"  class="dropdown" uib-dropdown>
+            <a class="dropdown-toggle" role="button" uib-dropdown-toggle>
+                Package: <i>{{currPkg.key}}</i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li role="menuitem" ng-repeat="pkg in pkgList"><a href role="button" ng-click="switchPkg(pkg)"><i ng-if="pkg == currPkg" class="fa fa-xs fa-asterisk"></i> {{pkg.name}}</a></li>
+            </ul>
+        </li>
+      </ul>
+    </nav>
+
+
+    <div id="navbar-main">
+      
+      <!-- Right-hand side of navbar-->
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-show="loggedIn" class="hidden-xs"><p class="navbar-text">Hello {{ currentUser.name }}</p> </li>
+        <li ng-show="loggedIn"><a href="" ng-click="logout()">Logout</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:6",
+	"_id": "lRoO3i4TTsi142xvw7vnIA",
+	"doc": "The base template that is rendered for ui-router states dbui.edit and dbui.create",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "edit.html",
+	"path": "dbui/core/state",
+	"provider": {
+		"_disp": "dbui_EditCtrl",
+		"_id": "Hd7vderbSfKfJzks0xJTQg"
+	},
+	"rolespec": [
+	]
+}

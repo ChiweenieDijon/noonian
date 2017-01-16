@@ -1,0 +1,4 @@
+<div class="dbui-edit-field-integer">
+<input ng-if="!fieldCustomizations.dropdown" type="number" class="form-control" placeholder="(empty)" id="{{elemId}}" ng-model="binding.value">
+  <select ng-if="fieldCustomizations.dropdown" class="form-control" id="{{elemId}}" ng-model="binding.value" ng-options="n for n in valueRange"></select>
+</div>

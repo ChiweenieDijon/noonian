@@ -1,0 +1,52 @@
+{
+	"__ver": "sys:5",
+	"_id": "zk3SuXVIRi6GMnCej9_nUQ",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.filters.AngularProvider",
+	"rolespec": [
+	],
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"module",
+				"path",
+				"name",
+				"type",
+				"doc",
+				"parameters",
+				"function"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"module",
+				"name",
+				"type",
+				"doc"
+			],
+			"filter": {
+				"path": {
+					"$notcontains": "^dbui/|^noonian/"
+				},
+				"type": "filter"
+			},
+			"sort": {
+				"path": "asc"
+			},
+			"title": "Angular Filters"
+		},
+		"view": {
+			"layout": [
+				"module",
+				"path",
+				"name",
+				"type",
+				"doc",
+				"parameters",
+				"function"
+			]
+		}
+	}
+}

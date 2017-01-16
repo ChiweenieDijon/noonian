@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:2",
+	"_id": "hCyhlFUVRg-I67dGF-RcjQ",
+	"doc": "",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiCustomPage",
+	"parameters": [
+		"$compile",
+		"$injector",
+		"Dbui"
+	],
+	"path": "dbui/core/state",
+	"type": "directive"
+}

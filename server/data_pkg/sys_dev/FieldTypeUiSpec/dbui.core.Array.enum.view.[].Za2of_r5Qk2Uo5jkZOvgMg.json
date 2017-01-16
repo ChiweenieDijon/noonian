@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:4",
+	"_id": "Za2of_r5Qk2Uo5jkZOvgMg",
+	"doc": "Simple comma-separated list display of values.  Labels are internationalized using the \"db.enum.<EnumName>\" LabelGroup, if present.",
+	"fieldtypes": [
+		{
+			"_disp": "enum",
+			"_id": "z_2NESmpQ-29ACeUMhflNQ",
+			"name": "enum"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": true,
+	"key": "dbui.core.Array.enum.view"
+}

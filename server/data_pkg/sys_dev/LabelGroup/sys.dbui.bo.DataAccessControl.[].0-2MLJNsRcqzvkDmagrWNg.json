@@ -1,0 +1,21 @@
+{
+	"__ver": "sys:1",
+	"_id": "0-2MLJNsRcqzvkDmagrWNg",
+	"key": "sys.dbui.bo.DataAccessControl",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"allow_create": "Allow Create",
+		"allow_delete": "Allow Delete",
+		"allow_read": "Allow Read",
+		"allow_update": "Allow Update",
+		"business_object": "Business Object",
+		"condition": "Condition",
+		"field_restrictions": "Field Restrictions",
+		"rolespec": "Roles"
+	}
+}

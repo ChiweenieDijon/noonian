@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:1",
+	"_id": "1uza6hDGSvSEzgX0ls6QzQ",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "ImageResource",
+		"_id": "9nPBq3cpRbm5MyhyxSnZjA"
+	},
+	"is_static": false,
+	"name": "serveContent",
+	"use_injection": false
+}

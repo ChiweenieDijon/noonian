@@ -1,0 +1,9 @@
+<div class="dbui-edit-field-attachment form-inline">
+    <input type="file" id="{{elemId}}" class="ng-hide" attachment-uploader="binding.value" />
+    <button class="form-control" ng-show="!binding.value" ng-click="initiateUpload()">Upload File</button>
+    <span ng-show="uploading"><i class="fa fa-2x fa-spinner fa-pulse"></i> uploading...</span>
+    <div ng-show="binding.value">
+        <span>{{binding.value.filename}}</span>
+        <button class="form-control" ng-show="binding.value" ng-click="clear()">x</button>
+    </div>
+</div>

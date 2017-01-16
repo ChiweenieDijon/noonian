@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:36",
+	"_id": "d-IVhuAdQlilU16t8Xyd-w",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "AngularApp",
+		"_id": "IhXNqXAyQiqGk28iCotr0Q"
+	},
+	"is_static": false,
+	"name": "serveContent",
+	"use_injection": true
+}

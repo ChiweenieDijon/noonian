@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:2",
+	"_id": "hEP551o6TQKAtYuN6l2ALw",
+	"abstract": false,
+	"class_name": "Language",
+	"definition": {
+		"code": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		}
+	},
+	"doc": "A human language and its corresponding ISO 639 abbreviation. {@link https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes}",
+	"system": true
+}

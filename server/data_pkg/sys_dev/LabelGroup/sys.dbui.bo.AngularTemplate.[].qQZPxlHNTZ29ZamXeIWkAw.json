@@ -1,0 +1,20 @@
+{
+	"__ver": "sys:3",
+	"_id": "qQZPxlHNTZ29ZamXeIWkAw",
+	"key": "sys.dbui.bo.AngularTemplate",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"content": "Content",
+		"doc": "Documentation",
+		"module": "Module",
+		"name": "Name",
+		"path": "Path",
+		"provider": "Provider",
+		"rolespec": "Rolespec"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:5",
+	"_id": "uMEzxXwVSgmj_dbfeY-fLA",
+	"doc": "An arbitrary JSON object.  Can actually be an object, an array, a primitive, or null.",
+	"mongo_type": "Mixed",
+	"name": "object",
+	"text_index": false
+}

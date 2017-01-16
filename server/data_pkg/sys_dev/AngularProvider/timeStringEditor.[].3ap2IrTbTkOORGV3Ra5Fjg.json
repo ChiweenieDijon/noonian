@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:19",
+	"_id": "3ap2IrTbTkOORGV3Ra5Fjg",
+	"doc": "An editor for a \"time string\", bound via ngModel.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "timeStringEditor",
+	"parameters": [
+		"uibDateParser",
+		"$filter"
+	],
+	"path": "dbui/core/helper",
+	"type": "directive"
+}

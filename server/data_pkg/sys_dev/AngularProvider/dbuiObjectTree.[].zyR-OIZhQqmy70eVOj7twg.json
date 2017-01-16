@@ -1,0 +1,21 @@
+{
+	"__ver": "sys:6",
+	"_id": "zyR-OIZhQqmy70eVOj7twg",
+	"doc": "Renders a list of \"BusinessObject-like\" objects in a hierarchical tree defined by a \"path\" type field on the objects.\n\n@todo refactor to be like object-list directive - bound via ngModel to a list of business objects, with \"path\" object as a parameter.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiObjectTree",
+	"parameters": [
+		"$timeout",
+		"$q",
+		"db",
+		"NoonI18n",
+		"DbuiAction",
+		"NoonConfig",
+		"Dbui"
+	],
+	"path": "dbui/reusable/core",
+	"type": "directive"
+}

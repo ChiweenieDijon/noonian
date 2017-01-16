@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:7",
+	"_id": "iMYbBIZHRvqnpf6mAmeBBw",
+	"doc": "Input for a single query term: a dropdown of field names, a dropdown for operations, and, if applicable, a dbui-field-editor appropriate to the operation.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "querybuilder_term.html",
+	"path": "dbui/core/helper",
+	"provider": {
+		"_disp": "queryTermBuilder",
+		"_id": "1DR9d4BTQtafOsD03s3kPg"
+	},
+	"rolespec": [
+	]
+}

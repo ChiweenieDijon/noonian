@@ -1,0 +1,70 @@
+{
+	"__ver": "sys:5",
+	"_id": "kRvYH_xNQWGDwhBiTCx1KQ",
+	"definition": [
+		{
+			"action": {
+				"params": {
+					"className": "BusinessObjectDef",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "bods"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "DataTrigger",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "datatriggers"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "CodeModule",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "codemodules"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "WebService",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "webservices"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "Enumeration",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "enumerations"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "LabelGroup",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "labelgroups"
+		}
+	],
+	"key": "dbui.menu.dev_serverside",
+	"rolespec": [
+		"FnQ_eBYITOSC8kJA4Zul5g"
+	]
+}

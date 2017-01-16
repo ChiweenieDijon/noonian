@@ -1,0 +1,20 @@
+{
+	"__ver": "sys:2",
+	"_id": "1lAUvVINQu-8xKB3H0StaA",
+	"abstract": false,
+	"class_name": "DataExport",
+	"definition": {
+		"content_type": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},
+		"transform_fn": {
+			"applicable": "serverside",
+			"type": "function"
+		}
+	},
+	"doc": "A mechanism for plugging in a particular export data format.  The \"transform_fn\" accepts an input stream of business objects and an output stream to which it writes the data in the exported format.",
+	"system": true
+}

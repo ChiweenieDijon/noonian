@@ -1,0 +1,20 @@
+{
+	"__ver": "sys:3",
+	"_id": "5BKy2VxhTRqkuRDx74Byzg",
+	"key": "sys.dbui.bo.FieldType",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"doc": "Documentation",
+		"from_db": "From Db",
+		"get_validator": "Get Validator",
+		"mongo_type": "Mongo Type",
+		"name": "Name",
+		"text_index": "Text Index",
+		"to_db": "To Db"
+	}
+}

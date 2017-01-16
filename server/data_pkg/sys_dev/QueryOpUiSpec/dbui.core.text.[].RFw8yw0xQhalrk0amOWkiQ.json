@@ -1,0 +1,36 @@
+{
+	"__ver": "sys:2",
+	"_id": "RFw8yw0xQhalrk0amOWkiQ",
+	"editors": [
+		{
+			"$contains": {
+				"type": "string"
+			}
+		},
+		{
+			"$notcontains": {
+				"type": "string"
+			}
+		},
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "text",
+			"_id": "Qywi2S8xT86_tQl4leIXNA",
+			"name": "text"
+		},
+		{
+			"_disp": "jsdoc",
+			"_id": "EqIuGj81QTyVDFA7qRQNHg",
+			"name": "jsdoc"
+		}
+	],
+	"for_array": false,
+	"key": "dbui.core.text"
+}

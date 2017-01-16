@@ -1,0 +1,27 @@
+<div>
+  <div class="dbui-header modal-header">
+      <h3>View {{labels[boClass] || boClass}} <small uib-tooltip="Version: {{theObject.__ver}}">{{boId}}</small></h3>
+      <div style="padding-left:12px; font-style:italic">{{theObject._disp}}</div>
+      <button type="button" ng-repeat="action in actionList" class="btn btn-action" ng-click="invokeAction(action)"><i class="fa fa-lg" ng-class="action.icon" ></i> {{ action.label }}</button>
+  </div>
+  
+  <div class="modal-body">
+      <div class="row" ng-show="recordActionList.length > 0">
+        <div class="action-bar col-md-offset-1 col-sm-10 col-md-10 col-lg-10">
+          <button type="button" ng-repeat="action in recordActionList" class="btn btn-action" ng-click="invokeAction(action, theObject)"><i class="fa fa-lg" ng-class="action.icon" ></i> {{ action.label }}</button>
+        </div>
+      </div>
+    
+      <div class="view_container">
+        <dbui-object-viewer the-object="theObject" perspective="viewPerspective"></dbui-object-viewer>
+      </div>
+    
+      <!-- related -->
+      <dbui-related-viewer ng-if="viewPerspective.related" the-object="theObject" perspective-name="viewPerspective.name" related-spec="viewPerspective.related"></dbui-related-viewer>
+      
+  </div>
+  
+  <div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="$close()">Close</button>
+  </div>
+</div>

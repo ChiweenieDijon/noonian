@@ -1,0 +1,19 @@
+<div ng-repeat="sec in perspective.layout" class="dbui-subsection-container">
+  <div class="dbui-subsection-header" ng-if="sec.subheading" ng-click="sec.isHidden = !sec.isHidden">
+      <h4>{{labels._subheading[sec.subheading] ? labels._subheading[sec.subheading] : sec.subheading}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !sec.isHidden, 'glyphicon-chevron-right': sec.isHidden}"></i></h4>
+  </div>
+  <div ng-hide="sec.isHidden">
+    <div class="row" ng-repeat="r in sec.rows">
+      <form name="{{ formName || 'theForm' }}" class="form-horizontal">
+        <div class="{{colClass.top[r.length]}}" ng-repeat="fieldName in r">
+          <div class="form-group" ng-show="shouldShow(fieldName)">
+
+            <label for="{{fieldName}}" class="{{colClass.label[r.length]}} control-label" uib-tooltip="{{labels._tooltip[fieldName]}}" tooltip-placement="bottom"> {{ labels[fieldName] ? labels[fieldName] : fieldName }}</label>
+            <dbui-field-editor fieldtype="{{getTypeDesc(fieldName).type}}" type-desc="getTypeDesc(fieldName)" elem-id="fieldName" ng-model="getterSetter[fieldName]" ng-model-options="{ getterSetter: true }" class="{{colClass.value[r.length]}} dbui-edit-container" field-customizations="perspective.fieldCustomizations[fieldName]"></dbui-field-editor>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

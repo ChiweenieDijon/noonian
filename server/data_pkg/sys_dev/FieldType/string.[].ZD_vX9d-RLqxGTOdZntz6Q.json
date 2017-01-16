@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "ZD_vX9d-RLqxGTOdZntz6Q",
+	"doc": "Simple string value.  Can be limited to a specific set of values via the 'enum' parameter.\n\n@param {string[]} [enum] - array of permitted values for the field",
+	"mongo_type": "String",
+	"name": "string",
+	"text_index": true
+}

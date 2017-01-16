@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:29",
+	"_id": "iLXjm75iRgGisekV6pczvg",
+	"doc": "Utilizes a dateStringEditor custom directive for the month/day/year portion of the datetime, providing a text box with a date-picker button ({@link https://angular-ui.github.io/bootstrap/#/datepicker|ui-bootstrap})\n\nUtilizes a timeStringEditor custom directive for the hour/minute/second portion of the datetime, providing a textbox with a \"time-picker\" dropdown\n\n@param {string} [dateFormat] - format string for date portion {@link https://docs.angularjs.org/api/ng/filter/date} \n  if not present, defaults to \"MMMM dd, yyyy\"\n@param {string} [timeFormat] - format string for time portion\n  if not present, defaults to \"h:mm a\"",
+	"fieldtypes": [
+		{
+			"_disp": "datetime",
+			"_id": "SRrCNHZCTvW6sTMtR3a0iQ",
+			"name": "datetime"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.datetime.edit"
+}

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:13",
+	"_id": "R8TV3oHJRZG6KU9GlhfrIQ",
+	"doc": "Renders table of objects complete with clickable headers, tableActions, and recordActions.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "object_table.html",
+	"path": "dbui/reusable/core",
+	"provider": {
+		"_disp": "dbuiObjectTable",
+		"_id": "9en21yAeQAOdV_Uxm_C9sQ"
+	},
+	"rolespec": [
+	]
+}

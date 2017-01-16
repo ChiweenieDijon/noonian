@@ -1,0 +1,81 @@
+{
+	"__ver": "sys:2",
+	"_id": "4oreVV9bQE6POFFq8ruL1Q",
+	"allow_customize": true,
+	"key": "sys.dbui.perspective.default.BusinessObjectDef",
+	"rolespec": [
+	],
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				[
+					"class_name",
+					"system"
+				],
+				[
+					"superclass",
+					"abstract"
+				],
+				[
+					"doc"
+				],
+				[
+					"definition"
+				]
+			]
+		},
+		"list": {
+			"fields": [
+				"class_name",
+				"doc"
+			],
+			"filter": {
+				"system": {
+					"$isfalse": ""
+				}
+			},
+			"sort": {
+				"class_name": "asc"
+			}
+		},
+		"picker_list": {
+			"fields": [
+				"class_name",
+				"system",
+				"doc"
+			],
+			"sort": {
+				"class_name": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				[
+					"class_name",
+					"system"
+				],
+				[
+					"superclass",
+					"abstract"
+				],
+				[
+					"doc"
+				],
+				[
+					"definition"
+				]
+			],
+			"related": [
+				{
+					"class": "DataTrigger",
+					"field": "business_object"
+				},
+				{
+					"class": "DataAccessControl",
+					"field": "business_object"
+				}
+			]
+		}
+	}
+}

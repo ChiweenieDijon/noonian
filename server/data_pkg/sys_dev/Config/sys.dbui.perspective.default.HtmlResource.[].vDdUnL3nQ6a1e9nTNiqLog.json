@@ -1,0 +1,45 @@
+{
+	"__ver": "sys:1",
+	"_id": "vDdUnL3nQ6a1e9nTNiqLog",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.HtmlResource",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"name"
+			],
+			"sort": {
+				"path": "asc"
+			}
+		},
+		"picker_list": {
+			"fields": [
+				"path",
+				"name"
+			],
+			"sort": {
+				"path": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		}
+	}
+}

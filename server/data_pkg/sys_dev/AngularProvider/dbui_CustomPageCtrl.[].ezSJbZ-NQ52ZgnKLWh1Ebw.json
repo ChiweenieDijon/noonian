@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:4",
+	"_id": "ezSJbZ-NQ52ZgnKLWh1Ebw",
+	"doc": "The controller for ui-router state dbui.custompage",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbui_CustomPageCtrl",
+	"parameters": [
+		"$scope",
+		"$state",
+		"$stateParams"
+	],
+	"path": "dbui/core/state",
+	"type": "controller"
+}

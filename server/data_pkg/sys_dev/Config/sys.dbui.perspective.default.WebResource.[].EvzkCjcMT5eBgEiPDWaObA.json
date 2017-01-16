@@ -1,0 +1,40 @@
+{
+	"__ver": "sys:1",
+	"_id": "EvzkCjcMT5eBgEiPDWaObA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.WebResource",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"rolespec"
+			]
+		},
+		"folder": {
+			"fields": [
+				"name"
+			],
+			"pathField": "path"
+		},
+		"list": {
+			"fields": [
+				"path",
+				"name"
+			],
+			"sort": {
+				"path": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"rolespec"
+			]
+		}
+	}
+}

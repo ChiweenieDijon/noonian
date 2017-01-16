@@ -1,0 +1,60 @@
+{
+	"__ver": "sys:1",
+	"_id": "X1w4NWaxT2euz8uKoVzrXg",
+	"definition": [
+		{
+			"action": {
+				"params": {
+					"className": "HtmlResource",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "html"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "CssResource",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "css"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "JsResource",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "js"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "ImageResource",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "image"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "FileResource",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "file"
+		}
+	],
+	"key": "dbui.menu.dev_webresource",
+	"rolespec": [
+		"FnQ_eBYITOSC8kJA4Zul5g"
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "lh4L_i9JQM2YIhtbmLtcUw",
+	"doc": "Exports a BusinessObjectPackage attachement onto filesystem: noonian's 'data_pkg' directory.",
+	"path": "/pkg/toFilesystem",
+	"rolespec": [
+	]
+}

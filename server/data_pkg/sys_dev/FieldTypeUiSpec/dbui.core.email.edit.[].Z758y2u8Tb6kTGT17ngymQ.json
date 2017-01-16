@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:4",
+	"_id": "Z758y2u8Tb6kTGT17ngymQ",
+	"fieldtypes": [
+		{
+			"_disp": "email",
+			"_id": "S8eHnlXxQJqIPLM2q8HniQ",
+			"name": "email"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.email.edit"
+}

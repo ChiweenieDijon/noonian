@@ -1,0 +1,29 @@
+{
+	"__ver": "sys:3",
+	"_id": "KpTzs_FUS9ylachpjVI_XA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.Enumeration",
+	"rolespec": [
+	],
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"name",
+				"values"
+			]
+		},
+		"list": {
+			"fields": [
+				"name",
+				"values"
+			]
+		},
+		"view": {
+			"layout": [
+				"name",
+				"values"
+			]
+		}
+	}
+}

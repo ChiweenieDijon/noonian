@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:3",
+	"_id": "uavtEE5AT2q5WcEcsWYTpw",
+	"doc": "A \"clock time\" value, e.g. 1:30 PM.  Stored in database with millisecond-precision, as a string formatted as the time portion of an ISO 8601 date/time string.  (No timezone information stored, however).\n\n@todo add support for a \"resolution\" parameter, to specify if seconds/milliseconds should be stored.",
+	"mongo_type": "String",
+	"name": "time",
+	"text_index": false
+}

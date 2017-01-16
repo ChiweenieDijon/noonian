@@ -1,0 +1,38 @@
+{
+	"__ver": "sys:2",
+	"_id": "ddY7PaHnQsGCChSZfL12wg",
+	"abstract": false,
+	"class_name": "QueryOp",
+	"definition": {
+		"evaluate": {
+			"applicable": "serverside",
+			"type": "function"
+		},
+		"for_array": {
+			"type": "boolean"
+		},
+		"fromMongo": {
+			"applicable": "serverside",
+			"type": "function"
+		},
+		"name": {
+			"type": "string"
+		},
+		"stringify": {
+			"applicable": "serverside",
+			"type": "function"
+		},
+		"toMongo": {
+			"applicable": "serverside",
+			"type": "function"
+		},
+		"types": [
+			{
+				"ref_class": "FieldType",
+				"type": "reference"
+			}
+		]
+	},
+	"doc": "Encapsulates the logic of how to handle a particular query operation in the context a specified set of field types.",
+	"system": true
+}

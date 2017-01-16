@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:10",
+	"_id": "qwW8v9NIReKHdrGiRZl9tg",
+	"doc": "Renders the body of the perspective editor modal dialog: a list of \"Available Fields\" on the left, and \"Displayed Fields\" on the right, and buttons to manipulate the \"displayed fields\" list.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "perspective_editor.html",
+	"path": "dbui/reusable/dialog",
+	"provider": {
+		"_disp": "DbuiPerspectiveEditor",
+		"_id": "uIn4BYTnSuqQpF8sCTAiCQ"
+	},
+	"rolespec": [
+	]
+}

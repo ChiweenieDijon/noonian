@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:8",
+	"_id": "eoefRk8MQQqLX-MFLYPdSQ",
+	"doc": "Provides wrapper interface to call Noonian WebServices",
+	"module": {
+		"_disp": "noonian.api",
+		"_id": "NJnfAVnFSmuMcv9voRnaJQ"
+	},
+	"name": "NoonWebService",
+	"parameters": [
+		"$http",
+		"$q"
+	],
+	"path": "noonian/api",
+	"type": "factory"
+}

@@ -1,0 +1,22 @@
+{
+	"__ver": "sys:6",
+	"_id": "giVO3IurRbqdZ3WnhgHPHA",
+	"doc": "Renders a simple textarea for editing text content.",
+	"fieldtypes": [
+		{
+			"_disp": "text",
+			"_id": "Qywi2S8xT86_tQl4leIXNA",
+			"name": "text"
+		},
+		{
+			"_disp": "jsdoc",
+			"_id": "EqIuGj81QTyVDFA7qRQNHg",
+			"name": "jsdoc"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.text.edit"
+}

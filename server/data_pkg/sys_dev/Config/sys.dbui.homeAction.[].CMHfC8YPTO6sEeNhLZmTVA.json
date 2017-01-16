@@ -1,0 +1,13 @@
+{
+	"__ver": "sys:2",
+	"_id": "CMHfC8YPTO6sEeNhLZmTVA",
+	"allow_customize": false,
+	"key": "sys.dbui.homeAction",
+	"system": false,
+	"value": {
+		"params": {
+			"key": "dbui.core.oob_home"
+		},
+		"state": "dbui.custompage"
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"__ver": "sys:1",
+	"_id": "_K5c8nuqSHOof2sQkwfYBQ",
+	"abstract": false,
+	"class_name": "DataAccessControl",
+	"definition": {
+		"allow_create": {
+			"type": "boolean"
+		},
+		"allow_delete": {
+			"type": "boolean"
+		},
+		"allow_read": {
+			"type": "boolean"
+		},
+		"allow_update": {
+			"type": "boolean"
+		},
+		"business_object": {
+			"ref_class": "BusinessObjectDef",
+			"type": "reference"
+		},
+		"condition": {
+			"type": "object"
+		},
+		"field_restrictions": {
+			"type": "object"
+		},
+		"rolespec": {
+			"type": "rolespec"
+		}
+	},
+	"doc": "A DataAccessControl is created to permit a particular set of user Roles to perform a set of CRUD operations on a specific class of Business Object.  The \"condition\" field allows for conditional access based on the data itself.  The \"field_restrictions\" field allows finer-grained access control by placing restrictions or conditions on access to specific fields.",
+	"superclass": null,
+	"system": true
+}

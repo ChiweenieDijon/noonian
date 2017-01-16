@@ -1,0 +1,15 @@
+{
+	"__ver": "sys:2",
+	"_id": "TIi-Pfd1Sai81ENuQKBjvA",
+	"before_after": "after",
+	"business_object": {
+		"_disp": "Enumeration",
+		"_id": "gzp1tQoUTfek9ib8xQZp7Q",
+		"system": true
+	},
+	"doc": "Generate an English LabelGroup when an enumeration is created.",
+	"key": "sys.Enumeration.after_create",
+	"on_create": true,
+	"on_delete": false,
+	"on_update": false
+}

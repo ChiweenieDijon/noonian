@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:8",
+	"_id": "ZLuRTnxQRiuqsSqzmbL8Jw",
+	"doc": "A date picker and a textbox that allows manual editing.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "date_string_editor.html",
+	"path": "dbui/core/helper",
+	"provider": {
+		"_disp": "dateStringEditor",
+		"_id": "2UpyXO5lR3qV-oce53G_7A"
+	},
+	"rolespec": [
+	]
+}

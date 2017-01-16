@@ -1,0 +1,28 @@
+{
+	"__ver": "sys:1",
+	"_id": "vHByvw8nQz-_tASbX6g56g",
+	"for_array": false,
+	"name": "$gt",
+	"types": [
+		{
+			"_disp": "string",
+			"_id": "ZD_vX9d-RLqxGTOdZntz6Q"
+		},
+		{
+			"_disp": "email",
+			"_id": "S8eHnlXxQJqIPLM2q8HniQ"
+		},
+		{
+			"_disp": "phone",
+			"_id": "DDssakmDQoeACryXT377xw"
+		},
+		{
+			"_disp": "url",
+			"_id": "JMHHYAPlSgKuC5alDvehWA"
+		},
+		{
+			"_disp": "path",
+			"_id": "9_TB_-ppQnCpm3EKkO8naw"
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:5",
+	"_id": "BvydEKALTzK9ALeB_zibrg",
+	"doc": "Renders a simple text box for editing path.\n\n@todo should support auto-suggestion of path nodes using existing values in DB",
+	"fieldtypes": [
+		{
+			"_disp": "path",
+			"_id": "9_TB_-ppQnCpm3EKkO8naw",
+			"name": "path"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.path.edit"
+}

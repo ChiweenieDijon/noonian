@@ -1,0 +1,61 @@
+{
+	"__ver": "sys:3",
+	"_id": "Kohb_6sxTGC1eGdeRsCtMw",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.AngularTemplate",
+	"rolespec": [
+	],
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				[
+					"module",
+					"provider"
+				],
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"module"
+			],
+			"filter": {
+				"path": {
+					"$notcontains": "^dbui/"
+				}
+			},
+			"sort": {
+				"path": "asc"
+			}
+		},
+		"picker_list": {
+			"fields": [
+				"path",
+				"name"
+			],
+			"sort": {
+				"path": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				[
+					"module",
+					"provider"
+				],
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:4",
+	"_id": "SkSJmUFsQ2O7xgNpyQf5Vg",
+	"doc": "Lists the names of the roles in the rolespec, or \"(no restriction)\" if list is empty.",
+	"fieldtypes": [
+		{
+			"_disp": "rolespec",
+			"_id": "aeOhqBixSbigoy3yBkyScQ",
+			"name": "rolespec"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.rolespec.view"
+}

@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "e-rYyVWHQoKi1om5SUBMcA",
+	"doc": "A javascript function.\n\n@param {string} [applicable] - either \"clientside\" or \"serverside\" to indicate the context in which the function is meaningful (in web browser, or in node.js).",
+	"mongo_type": "Function",
+	"name": "function",
+	"text_index": false
+}

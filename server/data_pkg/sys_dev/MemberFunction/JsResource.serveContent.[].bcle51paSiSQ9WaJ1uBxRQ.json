@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:6",
+	"_id": "bcle51paSiSQ9WaJ1uBxRQ",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "JsResource",
+		"_id": "8q-MORjBS3qC0Dwh6dTIkw"
+	},
+	"is_static": false,
+	"name": "serveContent",
+	"use_injection": false
+}

@@ -1,0 +1,39 @@
+{
+	"__ver": "sys:1",
+	"_id": "0tydbMgIRdudkdXTyXt7qA",
+	"key": "sys.dbui.perspective.default.RemotePackageRepository",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"name",
+				"packages",
+				"url",
+				"auth"
+			]
+		},
+		"list": {
+			"fields": [
+				"name",
+				"packages"
+			]
+		},
+		"view": {
+			"layout": [
+				"name",
+				"packages",
+				"url",
+				"auth"
+			],
+			"recordActions": [
+				"edit",
+				"delete",
+				{
+					"icon": "fa-bolt",
+					"label": "Run Update",
+					"ws": "pkg/runUpdate"
+				}
+			]
+		}
+	}
+}

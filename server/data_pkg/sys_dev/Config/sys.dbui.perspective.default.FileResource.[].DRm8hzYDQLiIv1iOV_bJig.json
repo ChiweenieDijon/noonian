@@ -1,0 +1,41 @@
+{
+	"__ver": "sys:1",
+	"_id": "DRm8hzYDQLiIv1iOV_bJig",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.FileResource",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		},
+		"folder": {
+			"fields": [
+				"content"
+			],
+			"pathField": "path"
+		},
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"content",
+				"rolespec"
+			]
+		},
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		}
+	}
+}

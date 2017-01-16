@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:1",
+	"_id": "E-a8Xpq1Tja5pjgokvJu1A",
+	"key": "sys.dbui.bo.WebResource",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"doc": "Documentation",
+		"name": "Name",
+		"path": "Path",
+		"rolespec": "Roles"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:10",
+	"_id": "WGbVcsKwRWe3KL1p8OqS9A",
+	"doc": "Displays the Enumeration values as a group of checkboxes, allowing multiple to be selected.",
+	"fieldtypes": [
+		{
+			"_disp": "enum",
+			"_id": "z_2NESmpQ-29ACeUMhflNQ",
+			"name": "enum"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": true,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.Array.enum.edit"
+}

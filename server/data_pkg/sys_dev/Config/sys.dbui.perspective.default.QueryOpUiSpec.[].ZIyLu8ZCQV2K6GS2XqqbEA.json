@@ -1,0 +1,36 @@
+{
+	"__ver": "sys:4",
+	"_id": "ZIyLu8ZCQV2K6GS2XqqbEA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.QueryOpUiSpec",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"key",
+				[
+					"fieldtypes",
+					"for_array"
+				],
+				"editors"
+			]
+		},
+		"list": {
+			"fields": [
+				"key",
+				"for_array",
+				"fieldtypes"
+			]
+		},
+		"view": {
+			"layout": [
+				"key",
+				[
+					"fieldtypes",
+					"for_array"
+				],
+				"editors"
+			]
+		}
+	}
+}

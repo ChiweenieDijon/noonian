@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:1",
+	"_id": "tDmzVEMjQ0Ky1lpYoLnvCQ",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "HtmlResource",
+		"_id": "9lfB2NHJQdGXiCADh019SQ"
+	},
+	"is_static": false,
+	"name": "serveContent",
+	"use_injection": false
+}

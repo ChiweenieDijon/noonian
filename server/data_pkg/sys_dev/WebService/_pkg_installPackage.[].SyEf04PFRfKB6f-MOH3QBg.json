@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "SyEf04PFRfKB6f-MOH3QBg",
+	"doc": "Called via button on BusinessObjectPackage; installs the package (the .json file attachment) into the system",
+	"path": "/pkg/installPackage",
+	"rolespec": [
+	]
+}

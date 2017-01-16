@@ -1,0 +1,22 @@
+{
+	"__ver": "sys:4",
+	"_id": "3y_egv2CQ1aiRhukfvJIRg",
+	"doc": "Renders text content to a <pre> tag.  Optionally truncating w/ ellipsis if \"abbreviated\" parameter present.  Also adds a \"title\" attribute so that mouse-over shows complete text in a tooltip.\n\n@param {boolean} [abbreviated] - if true, displays only first 30 characters with '...'",
+	"fieldtypes": [
+		{
+			"_disp": "text",
+			"_id": "Qywi2S8xT86_tQl4leIXNA",
+			"name": "text"
+		},
+		{
+			"_disp": "jsdoc",
+			"_id": "EqIuGj81QTyVDFA7qRQNHg",
+			"name": "jsdoc"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.text.view"
+}

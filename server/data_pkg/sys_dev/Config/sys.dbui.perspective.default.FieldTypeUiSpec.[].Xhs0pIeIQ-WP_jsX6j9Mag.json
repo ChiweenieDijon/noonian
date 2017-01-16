@@ -1,0 +1,55 @@
+{
+	"__ver": "sys:6",
+	"_id": "Xhs0pIeIQ-WP_jsX6j9Mag",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.FieldTypeUiSpec",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"key",
+				"fieldtypes",
+				[
+					"for_editing",
+					"for_viewing"
+				],
+				[
+					"for_editing_array",
+					"for_viewing_array"
+				],
+				"doc",
+				"template",
+				"controller_fn",
+				"link_fn"
+			]
+		},
+		"list": {
+			"fields": [
+				"key",
+				"fieldtypes",
+				"for_editing",
+				"for_viewing",
+				"for_editing_array",
+				"for_viewing_array"
+			]
+		},
+		"view": {
+			"layout": [
+				"key",
+				"fieldtypes",
+				[
+					"for_editing",
+					"for_viewing"
+				],
+				[
+					"for_editing_array",
+					"for_viewing_array"
+				],
+				"doc",
+				"link_fn",
+				"controller_fn",
+				"template"
+			]
+		}
+	}
+}

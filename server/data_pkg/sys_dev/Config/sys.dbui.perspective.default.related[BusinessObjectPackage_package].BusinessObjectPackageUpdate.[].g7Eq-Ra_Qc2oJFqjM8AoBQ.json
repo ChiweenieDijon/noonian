@@ -1,0 +1,14 @@
+{
+	"__ver": "sys:1",
+	"_id": "g7Eq-Ra_Qc2oJFqjM8AoBQ",
+	"key": "sys.dbui.perspective.default.related[BusinessObjectPackage_package].BusinessObjectPackageUpdate",
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"target_object",
+				"updates"
+			]
+		}
+	}
+}

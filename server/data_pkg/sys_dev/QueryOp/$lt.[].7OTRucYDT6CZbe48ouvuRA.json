@@ -1,0 +1,36 @@
+{
+	"__ver": "sys:2",
+	"_id": "7OTRucYDT6CZbe48ouvuRA",
+	"for_array": false,
+	"name": "$lt",
+	"types": [
+		{
+			"_disp": "string",
+			"_id": "ZD_vX9d-RLqxGTOdZntz6Q"
+		},
+		{
+			"_disp": "email",
+			"_id": "S8eHnlXxQJqIPLM2q8HniQ"
+		},
+		{
+			"_disp": "phone",
+			"_id": "DDssakmDQoeACryXT377xw"
+		},
+		{
+			"_disp": "url",
+			"_id": "JMHHYAPlSgKuC5alDvehWA"
+		},
+		{
+			"_disp": "path",
+			"_id": "9_TB_-ppQnCpm3EKkO8naw"
+		},
+		{
+			"_disp": "integer",
+			"_id": "gxJBuQp7RkKLIV0cazfFnA"
+		},
+		{
+			"_disp": "float",
+			"_id": "EaQUGA7oS7qKanG4QbvYbQ"
+		}
+	]
+}

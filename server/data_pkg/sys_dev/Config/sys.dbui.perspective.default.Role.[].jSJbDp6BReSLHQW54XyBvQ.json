@@ -1,0 +1,34 @@
+{
+	"__ver": "sys:1",
+	"_id": "jSJbDp6BReSLHQW54XyBvQ",
+	"key": "sys.dbui.perspective.default.Role",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"name"
+			]
+		},
+		"list": {
+			"fields": [
+				"name"
+			],
+			"sort": {
+				"name": "asc"
+			}
+		},
+		"picker_list": {
+			"fields": [
+				"name"
+			],
+			"sort": {
+				"name": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"name"
+			]
+		}
+	}
+}

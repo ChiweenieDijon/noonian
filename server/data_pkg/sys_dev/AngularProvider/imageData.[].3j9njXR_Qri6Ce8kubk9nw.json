@@ -1,0 +1,14 @@
+{
+	"__ver": "sys:5",
+	"_id": "3j9njXR_Qri6Ce8kubk9nw",
+	"doc": "\"Helper\" attribute for the image fieldtype editor.  Attaches to a \"file\" html input tag, and converts selected image files to expected json object format (name, type, data, thumbdata), generating the thumbnail and data URL's.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "imageData",
+	"parameters": [
+	],
+	"path": "dbui/core/helper",
+	"type": "directive"
+}

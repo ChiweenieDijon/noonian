@@ -1,0 +1,14 @@
+{
+	"__ver": "sys:3",
+	"_id": "qt1-hwnEQmum-4hvi9O-Aw",
+	"doc": "Formats a telephone number to (xxx) xxx-xxxx",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "phoneFormat",
+	"parameters": [
+	],
+	"path": "dbui/core/helper",
+	"type": "filter"
+}

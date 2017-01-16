@@ -1,0 +1,23 @@
+{
+	"__ver": "sys:4",
+	"_id": "QGiwBe2MRDGQaJczxQJhcw",
+	"key": "sys.dbui.bo.MemberFunction",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"_tooltip": {
+			"use_injection": "if this is true, the function below will be invoked ONCE (injecting libraries/services) to retrieve the actual member function."
+		},
+		"applies_to": "Applies To",
+		"business_object": "Business Object",
+		"doc": "Documentation",
+		"function": "Function",
+		"is_static": "Static",
+		"name": "Name",
+		"use_injection": "Use Injection"
+	}
+}

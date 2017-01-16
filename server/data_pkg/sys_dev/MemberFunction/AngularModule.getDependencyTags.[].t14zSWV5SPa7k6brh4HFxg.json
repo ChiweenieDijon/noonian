@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:12",
+	"_id": "t14zSWV5SPa7k6brh4HFxg",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "AngularModule",
+		"_id": "G6NlMXjRQEeiqdsC6PP-Dw"
+	},
+	"is_static": false,
+	"name": "getDependencyTags",
+	"use_injection": true
+}

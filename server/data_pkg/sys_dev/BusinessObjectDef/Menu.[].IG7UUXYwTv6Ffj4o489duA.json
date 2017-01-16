@@ -1,0 +1,20 @@
+{
+	"__ver": "sys:1",
+	"_id": "IG7UUXYwTv6Ffj4o489duA",
+	"abstract": false,
+	"class_name": "Menu",
+	"definition": {
+		"definition": {
+			"type": "object"
+		},
+		"key": {
+			"separator": ".",
+			"type": "path"
+		},
+		"rolespec": {
+			"type": "rolespec"
+		}
+	},
+	"doc": "An ordered grouping of actions and submenus under a key.  Utilized by DBUI for the sidebar menu.",
+	"system": true
+}

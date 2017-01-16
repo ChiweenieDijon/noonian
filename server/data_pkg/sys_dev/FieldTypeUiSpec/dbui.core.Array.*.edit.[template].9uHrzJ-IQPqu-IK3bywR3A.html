@@ -1,0 +1,15 @@
+<div class="dbui-edit-field-Array dbui-edit-container" >
+  <div ng-repeat="item in binding.value track by $index" class="row array-editor-row">
+    <div class="input-group" style="width:auto">
+      <span class="btn btn-default input-group-addon" ng-hide="$index == editing" ng-click="removeItem($index)"><i class="fa fa-lg fa-remove "></i></span>
+      <span class="btn btn-default input-group-addon" ng-hide="$index != editing" ng-click="doneEditing()"><i class="fa fa-lg fa-check "></i></span>
+      <span class="btn btn-default input-group-addon" ng-hide="$index == editing" ng-click="editItem($index)"><i class="fa fa-lg fa-pencil "></i></span>
+   
+      <dbui-field-editor ng-hide="$index != editing" type-desc="itemTypeDesc" ng-model="binding.value[$index]" class="dbui-edit-container"></dbui-field-editor>
+      <dbui-field-viewer ng-hide="$index == editing" type-desc="itemTypeDesc" display-value="binding.value[$index]"  class="form-control dbui-view-array-elem" ></dbui-field-viewer>
+    </div>
+  </div>
+  <div class="row array-editor-row">
+   <div class="col-md-12" style="text-align:center"><span class="btn btn-default" ng-click="addItem()">&nbsp;&nbsp;&nbsp;<i class="fa fa-lg fa-plus "></i>&nbsp;&nbsp;&nbsp;</span></div>
+ </div>
+</div>

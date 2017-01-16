@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:8",
+	"_id": "NpOPK9reRguXCb0M8WqvIA",
+	"doc": "Displays time string by running it through angular's $filter('date')  {@link https://docs.angularjs.org/api/ng/filter/date} \n\n@param {string} [format] - format string for date.  If not present, defaults to \"'h:mm a\"",
+	"fieldtypes": [
+		{
+			"_disp": "time",
+			"_id": "uavtEE5AT2q5WcEcsWYTpw",
+			"name": "time"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.time.view"
+}

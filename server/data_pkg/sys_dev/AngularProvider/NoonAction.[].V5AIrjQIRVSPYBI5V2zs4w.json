@@ -1,0 +1,21 @@
+{
+	"__ver": "sys:25",
+	"_id": "V5AIrjQIRVSPYBI5V2zs4w",
+	"doc": "Provides interface to handle {@link action object}'s",
+	"module": {
+		"_disp": "noonian.api",
+		"_id": "NJnfAVnFSmuMcv9voRnaJQ"
+	},
+	"name": "NoonAction",
+	"parameters": [
+		"$http",
+		"$q",
+		"db",
+		"$state",
+		"$injector",
+		"$window",
+		"NoonWebService"
+	],
+	"path": "noonian/api",
+	"type": "service"
+}

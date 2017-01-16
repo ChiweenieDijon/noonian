@@ -1,0 +1,11 @@
+{
+	"__ver": "sys:3",
+	"_id": "6eMazeR1Q_yJMeYWnj0VhQ",
+	"allow_customize": true,
+	"key": "sys.dbui.sidebar_menu",
+	"rolespec": [
+		"FnQ_eBYITOSC8kJA4Zul5g"
+	],
+	"system": false,
+	"value": "dbui.menu.dev"
+}

@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "S8eHnlXxQJqIPLM2q8HniQ",
+	"doc": "An email address.",
+	"mongo_type": "String",
+	"name": "email",
+	"text_index": true
+}

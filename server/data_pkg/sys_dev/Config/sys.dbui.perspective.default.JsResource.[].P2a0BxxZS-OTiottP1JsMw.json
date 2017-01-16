@@ -1,0 +1,39 @@
+{
+	"__ver": "sys:5",
+	"_id": "P2a0BxxZS-OTiottP1JsMw",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.JsResource",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"name"
+			]
+		},
+		"picker_list": {
+			"fields": [
+				"path",
+				"name"
+			]
+		},
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		}
+	}
+}

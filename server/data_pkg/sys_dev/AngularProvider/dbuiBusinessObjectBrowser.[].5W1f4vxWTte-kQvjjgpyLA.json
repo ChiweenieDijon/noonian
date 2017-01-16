@@ -1,0 +1,25 @@
+{
+	"__ver": "sys:34",
+	"_id": "5W1f4vxWTte-kQvjjgpyLA",
+	"doc": "Renders a full-featured list of 1st class BusinessObjects, complete w/ pagination and optional search/query.\n@param {string} boClass - class name of BusinessObject's to display\n@param {Perspective} perspective - \"list\" perspective object driving the display\n@param {boolean) enableSearch - if true, a textbox is displayed to allow full text search against displayed data\n@param {boolean} enableQuery - if true, a dbui-query-builder is accessible to provide advanced querying against displayed data (forces enableSearch=true)",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiBusinessObjectBrowser",
+	"parameters": [
+		"$timeout",
+		"$q",
+		"db",
+		"NoonI18n",
+		"DbuiAction",
+		"NoonConfig",
+		"Dbui",
+		"DbuiPerspectiveEditor",
+		"$stateParams",
+		"DbuiFieldType",
+		"DbuiAlert"
+	],
+	"path": "dbui/reusable/core",
+	"type": "directive"
+}

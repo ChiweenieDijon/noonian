@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:2",
+	"_id": "L3YQRK0mSJGE1EK4_FDCCg",
+	"fieldtypes": [
+		{
+			"_disp": "attachment",
+			"_id": "vxlB7gSPTWqq98tG5lCcPQ",
+			"name": "attachment"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.attachment.edit"
+}

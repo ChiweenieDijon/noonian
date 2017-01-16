@@ -1,0 +1,19 @@
+{
+	"__ver": "sys:2",
+	"_id": "pq7sOK1ATRONqjsKnQ-e_A",
+	"key": "dbui.menu.dev_webresource",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"_submenu_label": "Web Resources",
+		"css": "CSS",
+		"file": "Files",
+		"html": "HTML",
+		"image": "Images",
+		"js": "Javascript"
+	}
+}

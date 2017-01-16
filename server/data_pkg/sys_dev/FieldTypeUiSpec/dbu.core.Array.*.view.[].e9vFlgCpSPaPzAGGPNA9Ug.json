@@ -1,0 +1,11 @@
+{
+	"__ver": "sys:2",
+	"_id": "e9vFlgCpSPaPzAGGPNA9Ug",
+	"fieldtypes": [
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": true,
+	"key": "dbu.core.Array.*.view"
+}

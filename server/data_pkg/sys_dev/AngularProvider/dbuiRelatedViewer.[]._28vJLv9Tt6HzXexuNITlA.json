@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:12",
+	"_id": "_28vJLv9Tt6HzXexuNITlA",
+	"doc": "Renders a tabbed set of BusinessObject tables related to a particular object.  \n@param {BusinessObject} theObject - the object to whom the displayed tables are related\n@param {string} [perspectiveName=default] - the name of the perspective to use for rendering the tables (can be overridden by individual relatedSpec)\n@param {Object[]} relatedSpec - specify which references to theObject are of interest\n@param {string} relatedSpec[].class - name of BusinessObject class containing reference to theObject\n@param {string} relatedSpec[].field - reference field of interest\n@param {string} [relatedSpec[].perspective] - name of perspective for displaying this",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiRelatedViewer",
+	"parameters": [
+		"Dbui",
+		"$q",
+		"NoonI18n"
+	],
+	"path": "dbui/reusable/core",
+	"type": "directive"
+}

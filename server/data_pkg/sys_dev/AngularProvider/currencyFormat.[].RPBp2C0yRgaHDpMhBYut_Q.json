@@ -1,0 +1,14 @@
+{
+	"__ver": "sys:5",
+	"_id": "RPBp2C0yRgaHDpMhBYut_Q",
+	"doc": "Filter for the \"money\" fieldtype editor.  Renders decimal number, adding in comma separators for thousands and prepending a dollar sign.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "currencyFormat",
+	"parameters": [
+	],
+	"path": "dbui/core/helper",
+	"type": "filter"
+}

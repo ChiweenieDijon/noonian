@@ -1,0 +1,15 @@
+{
+	"__ver": "sys:5",
+	"_id": "P7GzOrKTQAKP0UY8s8e5xA",
+	"before_after": "before",
+	"business_object": {
+		"_disp": "AngularProvider",
+		"_id": "ZWSBEFYOT6WlJG95iIm_rw",
+		"system": true
+	},
+	"doc": "When an AngularProvider is saved, parse out the parameters in the function definition and put into this.parameters array.  (If the parameters array isn't already populated!)",
+	"key": "sys.AngularProvider.before_save",
+	"on_create": true,
+	"on_delete": false,
+	"on_update": true
+}

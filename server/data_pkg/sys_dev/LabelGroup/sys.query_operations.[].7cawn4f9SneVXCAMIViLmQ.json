@@ -1,0 +1,31 @@
+{
+	"__ver": "sys:3",
+	"_id": "7cawn4f9SneVXCAMIViLmQ",
+	"key": "sys.query_operations",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"after": "is after",
+		"before": "is before",
+		"childOf": "is child of",
+		"contains": "contains",
+		"empty": "is empty",
+		"eq": "=",
+		"gt": "is greater than",
+		"gte": "is greater than or equals",
+		"isfalse": "is false",
+		"istrue": "is true",
+		"lt": "is less than",
+		"lte": "is less than or equals",
+		"ne": "doesn't equal",
+		"notcontains": "doesn't contain",
+		"notempty": "is not empty",
+		"regex": "matches regex",
+		"relative": "relative to now",
+		"todayminus": "within last n days"
+	}
+}

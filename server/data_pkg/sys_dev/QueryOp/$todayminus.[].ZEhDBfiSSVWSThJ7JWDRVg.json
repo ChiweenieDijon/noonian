@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:4",
+	"_id": "ZEhDBfiSSVWSThJ7JWDRVg",
+	"for_array": false,
+	"name": "$todayminus",
+	"types": [
+		{
+			"_disp": "date",
+			"_id": "nplFum9LRdWvt5TW1LyulQ"
+		},
+		{
+			"_disp": "datetime",
+			"_id": "SRrCNHZCTvW6sTMtR3a0iQ"
+		}
+	]
+}

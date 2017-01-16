@@ -1,0 +1,50 @@
+{
+	"__ver": "sys:2",
+	"_id": "AXmX40RPTXC56BjTfuMyUA",
+	"definition": [
+		{
+			"action": {
+				"params": {
+					"className": "Config",
+					"perspective": "perspectives"
+				},
+				"state": "dbui.list"
+			},
+			"label": "perspectives"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "Menu",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "menus"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "DbuiCustomPage",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "custom_pages"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "UiAction",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "ui_actions"
+		}
+	],
+	"key": "dbui.menu.dev_dbui_cust",
+	"rolespec": [
+		"FnQ_eBYITOSC8kJA4Zul5g"
+	]
+}

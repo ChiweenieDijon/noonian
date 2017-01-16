@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:2",
+	"_id": "yOXK_1eERwCC7K4QGkFciA",
+	"doc": "Renders the value, utilizing custom {@link CurrencyFormat} filter.",
+	"fieldtypes": [
+		{
+			"_disp": "money",
+			"_id": "cKFhGuY3SZ6_2YWKwkpqCA",
+			"name": "money"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.money.view"
+}

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:1",
+	"_id": "fVVSdgdOSgGPZjlhkT8ZGA",
+	"key": "sys.dbui.bo.QueryOpUiSpec",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"editors": "Editors",
+		"fieldtypes": "Fieldtypes",
+		"for_array": "For Array",
+		"key": "Key"
+	}
+}

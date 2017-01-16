@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:17",
+	"_id": "5dJkEI1PRmK41Hh2lw2y_w",
+	"doc": "Database access interface.",
+	"module": {
+		"_disp": "noonian.api",
+		"_id": "NJnfAVnFSmuMcv9voRnaJQ"
+	},
+	"name": "db",
+	"parameters": [
+		"$http",
+		"$q"
+	],
+	"path": "noonian/api",
+	"type": "factory"
+}

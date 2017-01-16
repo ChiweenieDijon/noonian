@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:5",
+	"_id": "6OYTWbEuSxGAYApNR85rAg",
+	"doc": "Renders sequence of \"clause groups\" containing multiple terms; editing of individual terms is delegated to queryTermBuilder directive.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "querybuilder.html",
+	"path": "dbui/reusable/core",
+	"provider": {
+		"_disp": "queryBuilder",
+		"_id": "q1yaFwgcR2WQu8xUaySIlw"
+	},
+	"rolespec": [
+	]
+}

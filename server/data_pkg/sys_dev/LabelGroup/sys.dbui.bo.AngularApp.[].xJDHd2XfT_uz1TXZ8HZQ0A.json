@@ -1,0 +1,23 @@
+{
+	"__ver": "sys:3",
+	"_id": "xJDHd2XfT_uz1TXZ8HZQ0A",
+	"key": "sys.dbui.bo.AngularApp",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"body": "Body",
+		"config_function": "Config Function",
+		"css_dependencies": "Css Dependencies",
+		"doc": "Doc",
+		"head": "Head",
+		"js_dependencies": "Js Dependencies",
+		"module": "Angular Module",
+		"name": "Name",
+		"path": "Path",
+		"rolespec": "Rolespec"
+	}
+}

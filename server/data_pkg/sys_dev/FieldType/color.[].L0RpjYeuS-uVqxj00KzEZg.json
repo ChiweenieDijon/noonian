@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "L0RpjYeuS-uVqxj00KzEZg",
+	"doc": "An RGB color.  Stored as a string formatted as standard css color spec: \"#RRGGBB\"",
+	"mongo_type": "String",
+	"name": "color",
+	"text_index": false
+}

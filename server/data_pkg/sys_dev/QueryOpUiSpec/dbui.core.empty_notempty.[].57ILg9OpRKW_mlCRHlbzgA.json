@@ -1,0 +1,51 @@
+{
+	"__ver": "sys:5",
+	"_id": "57ILg9OpRKW_mlCRHlbzgA",
+	"editors": [
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "sourcecode",
+			"_id": "vOaH1F-HRhefePjYFAGCBA",
+			"name": "sourcecode"
+		},
+		{
+			"_disp": "function",
+			"_id": "e-rYyVWHQoKi1om5SUBMcA",
+			"name": "function"
+		},
+		{
+			"_disp": "attachment",
+			"_id": "vxlB7gSPTWqq98tG5lCcPQ",
+			"name": "attachment"
+		},
+		{
+			"_disp": "image",
+			"_id": "lpmwbanlQH20mCWioX0H1g",
+			"name": "image"
+		},
+		{
+			"_disp": "color",
+			"_id": "L0RpjYeuS-uVqxj00KzEZg",
+			"name": "color"
+		},
+		{
+			"_disp": "password",
+			"_id": "PkJTkOpsStGYcReZiDoEnQ",
+			"name": "password"
+		},
+		{
+			"_disp": "object",
+			"_id": "uMEzxXwVSgmj_dbfeY-fLA",
+			"name": "object"
+		}
+	],
+	"for_array": false,
+	"key": "dbui.core.empty_notempty"
+}

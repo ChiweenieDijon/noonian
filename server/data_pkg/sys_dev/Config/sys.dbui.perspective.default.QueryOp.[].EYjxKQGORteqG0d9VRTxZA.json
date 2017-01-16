@@ -1,0 +1,43 @@
+{
+	"__ver": "sys:3",
+	"_id": "EYjxKQGORteqG0d9VRTxZA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.QueryOp",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"name",
+				[
+					"types",
+					"for_array"
+				],
+				"evaluate",
+				"stringify",
+				"toMongo"
+			]
+		},
+		"list": {
+			"fields": [
+				"name",
+				"types",
+				"for_array"
+			],
+			"sort": {
+				"name": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"name",
+				[
+					"types",
+					"for_array"
+				],
+				"evaluate",
+				"stringify",
+				"toMongo"
+			]
+		}
+	}
+}

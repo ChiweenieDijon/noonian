@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:2",
+	"_id": "LT7gGfGtSX6ruO8MqG-C0w",
+	"doc": "Renders a basic form: text elements for address, city, and zip; a dropdown for states (hard-coded list of states for now).\n\n@todo integrate more robust geographical data (e.g. zipcode and state database)",
+	"fieldtypes": [
+		{
+			"_disp": "physical_address",
+			"_id": "2RQWYKymQMmfYqEGxXVtoA",
+			"name": "physical_address"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.physical_address.edit"
+}

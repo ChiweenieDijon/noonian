@@ -1,0 +1,93 @@
+{
+	"__ver": "sys:5",
+	"_id": "BfVWyf-jTjaOPaH3AZYgig",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.BusinessObjectPackage",
+	"rolespec": [
+	],
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"package_file",
+				"key",
+				[
+					"name",
+					"enable_building"
+				],
+				"description",
+				"build_config",
+				"installed_version",
+				[
+					"major_version",
+					"minor_version"
+				],
+				"dependencies",
+				"manifest",
+				"on_install_fn"
+			]
+		},
+		"list": {
+			"fields": [
+				"key",
+				"name",
+				"enable_building",
+				"major_version",
+				"minor_version"
+			]
+		},
+		"picker_list": {
+			"fields": [
+				"key",
+				"name",
+				"major_version",
+				"minor_version"
+			]
+		},
+		"view": {
+			"layout": [
+				"package_file",
+				"key",
+				[
+					"name",
+					"enable_building"
+				],
+				"description",
+				"build_config",
+				"installed_version",
+				[
+					"major_version",
+					"minor_version"
+				],
+				"dependencies",
+				"manifest",
+				"on_install_fn"
+			],
+			"recordActions": [
+				"edit",
+				"delete",
+				{
+					"icon": "fa-cube",
+					"label": "Generate Package",
+					"ws": "pkg/buildPackage"
+				},
+				{
+					"icon": "fa-download",
+					"label": "Install Package",
+					"ws": "pkg/installPackage"
+				},
+				{
+					"icon": "fa-arrow-right",
+					"label": "To Filesystem",
+					"ws": "pkg/toFilesystem"
+				}
+			],
+			"related": [
+				{
+					"class": "UpdateLog",
+					"field": "package"
+				}
+			]
+		}
+	}
+}

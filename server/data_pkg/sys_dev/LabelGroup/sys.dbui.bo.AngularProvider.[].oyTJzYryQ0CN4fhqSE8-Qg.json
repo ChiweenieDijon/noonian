@@ -1,0 +1,20 @@
+{
+	"__ver": "sys:2",
+	"_id": "oyTJzYryQ0CN4fhqSE8-Qg",
+	"key": "sys.dbui.bo.AngularProvider",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"doc": "Documentation",
+		"function": "Function",
+		"module": "Angular Module",
+		"name": "Name",
+		"parameters": "Parameter List",
+		"path": "Path",
+		"type": "Provider Type"
+	}
+}

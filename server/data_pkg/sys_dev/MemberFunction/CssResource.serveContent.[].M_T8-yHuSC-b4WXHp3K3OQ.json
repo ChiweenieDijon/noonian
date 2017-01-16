@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:1",
+	"_id": "M_T8-yHuSC-b4WXHp3K3OQ",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "CssResource",
+		"_id": "_7EZRGUeRYaiyU-YSZonhQ"
+	},
+	"is_static": false,
+	"name": "serveContent",
+	"use_injection": false
+}
