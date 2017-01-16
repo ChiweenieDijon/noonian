@@ -276,7 +276,7 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
 
 /**
  * Apply package attached to a BusinessObjectPackage
- 
+ */
 exports.applyPackage = function(bopId) {
   var bopObj;
   return db.BusinessObjectPackage.findOne({_id:bopId})
@@ -292,7 +292,7 @@ exports.applyPackage = function(bopId) {
     })
     .then(function(gridfsFileObj) {
       console.log('Loading Data Package from %s', gridfsFileObj.metadata.filename);
-      return packageStreamer.applyPackageStream(gridfsFileObj.readstream).then(function(retBop) {
+      return packageStreamer.installPackage(gridfsFileObj.readstream).then(function(retBop) {
         bopObj = retBop;
       });
     })

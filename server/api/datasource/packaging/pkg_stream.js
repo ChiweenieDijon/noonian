@@ -92,14 +92,11 @@ exports.installPackage = function(pkgReadStream) {
     promiseChain = promiseChain.then(function(resultBop) {
         
       bop = resultBop;
-      // console.log(bop);
-
-      var installedVer = new PkgVersion(bop.major_version, bop.minor_version);
-      var targetVer = new PkgVersion(metaObj.major_version, metaObj.minor_version);
-
+      
       if(bop && !bop.bootstrap) {
         //We're performing an upgrade to an existing package
-        
+        var installedVer = new PkgVersion(bop.major_version, bop.minor_version);
+        var targetVer = new PkgVersion(metaObj.major_version, metaObj.minor_version);
         
         if( installedVer.compareTo(targetVer) >= 0) {
           // installed version is equal or newer
@@ -249,8 +246,6 @@ exports.buildPackage = function(bopId) {
     }); //end forEach(mergedManifest)
     
     return Q.all(versionCheckPromises);
-    
-    Q.all(versionCheckPromises).then(); //end Q.all(versionCheckPromises)
     
   }) //end initial BOP and UpdateLog lookup
   .then(function() {
