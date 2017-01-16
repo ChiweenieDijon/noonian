@@ -1,0 +1,32 @@
+{
+	"__ver": "sys:3",
+	"_id": "oKmeb35kScC15wC7BfpjGQ",
+	"editors": [
+		{
+			"$eq": true
+		},
+		{
+			"$ne": true
+		},
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "enum",
+			"_id": "z_2NESmpQ-29ACeUMhflNQ",
+			"name": "enum"
+		},
+		{
+			"_disp": "reference",
+			"_id": "bHeoPzsMScORdzjtX6GdoA",
+			"name": "reference"
+		}
+	],
+	"for_array": false,
+	"key": "dbui.core.empty_notempty_equality"
+}

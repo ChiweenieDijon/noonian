@@ -1,0 +1,4 @@
+<div ng-switch="fieldCustomizations.enableViewLink">
+  <a href ng-switch-when="true" ng-click="viewRefObj()">{{displayValue.ref_class ? displayValue.ref_class+':' : ''}} {{ displayValue._disp }}</a>
+  <span ng-switch-default>{{displayValue.ref_class ? displayValue.ref_class+':' : ''}} {{ displayValue._disp }}</span>
+</div>

@@ -1,0 +1,19 @@
+{
+	"__ver": "sys:1",
+	"_id": "U4yGzcuDQh2rjSA7O3s7Tw",
+	"key": "sys.dbui.bo.BusinessObjectDef",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"abstract": "Is Abstract",
+		"class_name": "Class Name",
+		"definition": "Definition",
+		"doc": "Documentation",
+		"superclass": "Superclass",
+		"system": "Is System"
+	}
+}

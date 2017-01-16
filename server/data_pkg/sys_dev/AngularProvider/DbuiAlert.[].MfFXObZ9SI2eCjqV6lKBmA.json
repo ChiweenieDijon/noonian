@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:10",
+	"_id": "MfFXObZ9SI2eCjqV6lKBmA",
+	"doc": "Service to post success/warning/danger notifications to the top-level DBUI.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "DbuiAlert",
+	"parameters": [
+		"$rootScope",
+		"$timeout"
+	],
+	"path": "dbui/api",
+	"type": "service"
+}

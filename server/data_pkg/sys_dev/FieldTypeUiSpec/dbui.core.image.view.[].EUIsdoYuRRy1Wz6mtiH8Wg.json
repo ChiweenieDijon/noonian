@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:2",
+	"_id": "EUIsdoYuRRy1Wz6mtiH8Wg",
+	"doc": "Simply renders an image's thumbData in an <img> tag.",
+	"fieldtypes": [
+		{
+			"_disp": "image",
+			"_id": "lpmwbanlQH20mCWioX0H1g",
+			"name": "image"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.image.view"
+}

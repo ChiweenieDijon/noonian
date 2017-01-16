@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:2",
+	"_id": "0-3ITOp9SGa71bHTqox3Dw",
+	"key": "sys.dbui.bo.WebService",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"doc": "Documentation",
+		"function": "Function",
+		"path": "Path",
+		"rolespec": "Rolespec"
+	}
+}

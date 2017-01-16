@@ -1,0 +1,44 @@
+{
+	"__ver": "sys:9",
+	"_id": "F51v_xUnQgehAn3ZVR8vgA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.AngularApp",
+	"rolespec": [
+	],
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"path",
+				"name",
+				"rolespec",
+				"module",
+				"css_dependencies",
+				"js_dependencies",
+				"config_function",
+				"head",
+				"body"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"module"
+			]
+		},
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"rolespec",
+				"module",
+				"css_dependencies",
+				"js_dependencies",
+				"config_function",
+				"head",
+				"body"
+			]
+		}
+	}
+}

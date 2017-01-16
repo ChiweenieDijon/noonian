@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:4",
+	"_id": "3Viz_TmyQRqPGTDKMEhv2A",
+	"doc": "Provides interface for retrieving configuration parameters.",
+	"module": {
+		"_disp": "noonian.api",
+		"_id": "NJnfAVnFSmuMcv9voRnaJQ"
+	},
+	"name": "NoonConfig",
+	"parameters": [
+		"$http",
+		"$q"
+	],
+	"path": "noonian/api",
+	"type": "factory"
+}

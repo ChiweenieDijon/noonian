@@ -1,0 +1,20 @@
+{
+	"__ver": "sys:1",
+	"_id": "TS9SHirsQXKol9WBYFN-ZA",
+	"key": "sys.dbui.bo.QueryOp",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"evaluate": "Evaluate",
+		"for_array": "Applies to Array",
+		"fromMongo": "From Mongo",
+		"name": "Name",
+		"stringify": "Stringify",
+		"toMongo": "To Mongo",
+		"types": "Types"
+	}
+}

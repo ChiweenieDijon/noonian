@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "aeOhqBixSbigoy3yBkyScQ",
+	"doc": "A role \"specification\", i.e. a concise way of representing a set of roles that apply to a given resource or permission.  Stored as an array of id's of Role objects, the semantics of which are \"a user with one of these roles is granted access to this resource or permission\".  An empty array or null value is a way of specifying \"no restriction\".",
+	"mongo_type": "Mixed",
+	"name": "rolespec",
+	"text_index": false
+}

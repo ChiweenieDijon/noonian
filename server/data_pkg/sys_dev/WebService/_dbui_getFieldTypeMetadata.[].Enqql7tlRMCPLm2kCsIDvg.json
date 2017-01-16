@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:27",
+	"_id": "Enqql7tlRMCPLm2kCsIDvg",
+	"doc": "Provides FieldType metadata for dealing with fields on the client side.\n@param {string} class_name  Name of Business Object class \n@param {string} view_or_edit\n@return",
+	"path": "/dbui/getFieldTypeMetadata",
+	"rolespec": [
+	]
+}

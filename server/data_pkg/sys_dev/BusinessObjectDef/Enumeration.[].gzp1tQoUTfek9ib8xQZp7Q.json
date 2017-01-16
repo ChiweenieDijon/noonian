@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:1",
+	"_id": "gzp1tQoUTfek9ib8xQZp7Q",
+	"abstract": false,
+	"class_name": "Enumeration",
+	"definition": {
+		"name": {
+			"type": "string"
+		},
+		"values": [
+			{
+				"type": "string"
+			}
+		]
+	},
+	"doc": "An Enumeration lists the possible values for a field of \"enum\" type.",
+	"system": true
+}

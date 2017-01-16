@@ -1,0 +1,22 @@
+{
+	"__ver": "sys:3",
+	"_id": "0TO-sBb1TjeAAzaMgd-8KQ",
+	"abstract": true,
+	"class_name": "WebResource",
+	"definition": {
+		"doc": {
+			"type": "jsdoc"
+		},
+		"name": {
+			"type": "string"
+		},
+		"path": {
+			"type": "path"
+		},
+		"rolespec": {
+			"type": "rolespec"
+		}
+	},
+	"doc": "A WebResource object is an item whose content is accessible via an http request.  Core Noonian functionality checks incoming requests against the path/name of WebResources, and checks the logged-in user's roles against the \"rolespec\".  If a match is found, and role check passes, the \"serveContent\" member function is called on the WebResource to send the response.",
+	"system": true
+}

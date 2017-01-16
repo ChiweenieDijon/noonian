@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:17",
+	"_id": "DG2H5d3ARH23lwhvepe0QQ",
+	"doc": "Displays a simple dropdown of the enumerated values to select from.  Labels for the values are internationalized using the \"db.enum.<EnumName>' LabelGroup, if present.  If the 'restrict' parameter is present, the selectable values are limited to the specified list.  \n\n@param {string[]} [restrict] - a list of values to display in the dropdown (a subset of the Enumeration's values)",
+	"fieldtypes": [
+		{
+			"_disp": "enum",
+			"_id": "z_2NESmpQ-29ACeUMhflNQ",
+			"name": "enum"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.enum.edit"
+}

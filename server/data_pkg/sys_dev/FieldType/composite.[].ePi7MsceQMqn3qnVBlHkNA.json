@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:4",
+	"_id": "ePi7MsceQMqn3qnVBlHkNA",
+	"doc": "A field type that is composed of various fields of it's own.  A composite field's own type descriptor contains a \"type_desc_map\" which has the same format as a BusinessObjectDef's descriptor, effectively making it a \"Second-class\" Business Object in a sense.  A value for a composite field receives a \"_bo_meta_data\" property, that in turn has a type_desc_map field and a class_name of \"OwnerClass#field_name\".  The type_desc_map is equipped with a 'construct' function, which is used to instantiate one of these \"second-class\" business objects. \n\n{@link CompositeFieldType}\n\n@param {Object} type_desc_map - a mapping of the type's \"sub-field\" names to their corresponding type descriptors. {@link TypeDescMap}",
+	"mongo_type": "Mixed",
+	"name": "composite",
+	"text_index": false
+}

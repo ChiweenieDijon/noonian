@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:3",
+	"_id": "7ugMfTjtQtyPiOiCpci9hA",
+	"doc": "Retrieves internationalized list of possible values for a particular enumerated type.\n\n@param {string} name - name of Enumeration to obtain \n@return {Object[]} array of objects w/ keys 'value' and 'label'",
+	"path": "/sys/i18n/getEnumerationValues",
+	"rolespec": [
+	]
+}

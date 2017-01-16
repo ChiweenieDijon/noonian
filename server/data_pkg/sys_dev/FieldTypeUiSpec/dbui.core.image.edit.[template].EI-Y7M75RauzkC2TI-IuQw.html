@@ -1,0 +1,6 @@
+<div class="dbui-edit-field-image">
+  <input id="{{elemId}}" type="file" accept="image/*"
+    image-data="binding.value" />
+  <img ng-show="binding.value" ng-src="{{binding.value.thumbData}}"/>
+  <button ng-show="binding.value" ng-click="clear()">clear</button>
+</div>

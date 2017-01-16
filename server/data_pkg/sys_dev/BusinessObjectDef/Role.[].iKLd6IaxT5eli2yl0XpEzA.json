@@ -1,0 +1,13 @@
+{
+	"__ver": "sys:1",
+	"_id": "iKLd6IaxT5eli2yl0XpEzA",
+	"abstract": false,
+	"class_name": "Role",
+	"definition": {
+		"name": {
+			"type": "string"
+		}
+	},
+	"doc": "A role that a user may have on the system.",
+	"system": true
+}

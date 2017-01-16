@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:9",
+	"_id": "rYbkzgFbRE6ba2QK6FbaNg",
+	"doc": "Renders a textbox alongside a \"picker\" button.  The textbox provides auto-complete as a value is typed in, and a reference can be selected from the dropdown that appears.  Alternatively, the \"picker\" button can be clicked, allowing the referenced value to be selected from a data table in a dialog box ({@link DbuiObjectPicker}).",
+	"fieldtypes": [
+		{
+			"_disp": "reference",
+			"_id": "bHeoPzsMScORdzjtX6GdoA",
+			"name": "reference"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.reference.edit"
+}

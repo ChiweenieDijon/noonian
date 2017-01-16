@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:6",
+	"_id": "v_YymGX0TNCkdQtOuHgPDA",
+	"fieldtypes": [
+		{
+			"_disp": "rolespec",
+			"_id": "aeOhqBixSbigoy3yBkyScQ",
+			"name": "rolespec"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.rolespec.edit"
+}

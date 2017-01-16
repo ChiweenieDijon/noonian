@@ -1,0 +1,23 @@
+{
+	"__ver": "sys:3",
+	"_id": "1nme6hlATsews3AMdvHyaA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.controllers.related[AngularModule_module].AngularProvider",
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"doc"
+			],
+			"filter": {
+				"type": "controller"
+			},
+			"sort": {
+				"path": "asc"
+			},
+			"title": "Controllers"
+		}
+	}
+}

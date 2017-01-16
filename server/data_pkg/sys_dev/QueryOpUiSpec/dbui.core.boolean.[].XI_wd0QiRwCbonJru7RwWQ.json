@@ -1,0 +1,27 @@
+{
+	"__ver": "sys:1",
+	"_id": "XI_wd0QiRwCbonJru7RwWQ",
+	"editors": [
+		{
+			"$istrue": false
+		},
+		{
+			"$isfalse": false
+		},
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "boolean",
+			"_id": "WiUvP7txRQiF6tPM9FpFIw",
+			"name": "boolean"
+		}
+	],
+	"for_array": false,
+	"key": "dbui.core.boolean"
+}

@@ -1,0 +1,20 @@
+<div>
+	<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-12 dbui-header">
+			<h3 ng-if="boId">Edit {{labels[boClass] || boClass}} <small>{{boId}}</small></h3>
+			<h3 ng-if="!boId">New {{labels[boClass] || boClass}}</h3>
+			<button type="button" ng-repeat="action in actionList" class="btn btn-action" ng-click="invokeAction(action)"><i class="fa fa-lg" ng-class="action.icon" ></i> {{ action.label }}</button>
+		</div>
+	</div>
+	<div class="row">
+		<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+	</div>
+	<div class="row" ng-show="recordActionList.length > 0">
+		<div class="action-bar col-md-offset-1 col-sm-10 col-md-10 col-lg-10">
+      <button type="button" ng-repeat="action in recordActionList" class="btn btn-action" ng-click="invokeAction(action)"><i class="fa fa-lg" ng-class="action.icon" ></i> {{ action.label }}</button>
+		</div>
+	</div>
+
+  <dbui-object-editor the-object="theObject" perspective="editPerspective" ></dbui-object-editor>
+
+</div>

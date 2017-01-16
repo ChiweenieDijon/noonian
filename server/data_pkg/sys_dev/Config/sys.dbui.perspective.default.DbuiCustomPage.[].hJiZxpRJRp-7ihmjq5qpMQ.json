@@ -1,0 +1,31 @@
+{
+	"__ver": "sys:4",
+	"_id": "hJiZxpRJRp-7ihmjq5qpMQ",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.DbuiCustomPage",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"key",
+				"doc",
+				"controller",
+				"body"
+			]
+		},
+		"list": {
+			"fields": [
+				"key",
+				"doc"
+			]
+		},
+		"view": {
+			"layout": [
+				"key",
+				"doc",
+				"controller",
+				"body"
+			]
+		}
+	}
+}

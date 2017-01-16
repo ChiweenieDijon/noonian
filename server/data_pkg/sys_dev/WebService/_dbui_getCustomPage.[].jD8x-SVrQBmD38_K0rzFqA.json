@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "jD8x-SVrQBmD38_K0rzFqA",
+	"doc": "Retrieve custom page by key.",
+	"path": "/dbui/getCustomPage",
+	"rolespec": [
+	]
+}

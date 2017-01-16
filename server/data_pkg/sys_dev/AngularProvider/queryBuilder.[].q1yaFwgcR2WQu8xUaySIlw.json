@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:12",
+	"_id": "q1yaFwgcR2WQu8xUaySIlw",
+	"doc": "A graphical tool for building a query against a specific business object class.  It allows construction of (a) ANDed together groups of ORed terms, and (b) ORed together groups of ANDed terms.\n\nQuery object bound via ngModel.\n\n@todo allow switching to a \"raw\" mode - json object editor - to allow manual typing of arbitrary query",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "queryBuilder",
+	"parameters": [
+		"DbuiFieldType",
+		"db"
+	],
+	"path": "dbui/reusable/core",
+	"type": "directive"
+}

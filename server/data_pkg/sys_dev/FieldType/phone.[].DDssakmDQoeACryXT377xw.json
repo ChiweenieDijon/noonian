@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "DDssakmDQoeACryXT377xw",
+	"doc": "A phone number.  Upon save to database, any formatting characters (parens, dashes, whitespace) are removed to insure only digits are stored in DB.",
+	"mongo_type": "String",
+	"name": "phone",
+	"text_index": true
+}

@@ -1,0 +1,6 @@
+<div ng-if="binding.value && subPerspective">
+    <dbui-object-table ng-model="binding.value" perspective="subPerspective" object-meta-data="objMetaData" config="tableConfig"></dbui-object-table>
+    <div class="row">
+        <div class="col-md-12" style="text-align:center"><span class="btn btn-default" ng-click="addItem()">&nbsp;&nbsp;&nbsp;<i class="fa fa-lg fa-plus " ></i>&nbsp;&nbsp;&nbsp;</span></div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{
+	"__ver": "sys:2",
+	"_id": "LomdQQiYRR-FjCWfD4DNzg",
+	"before_after": "before",
+	"business_object": {
+		"_disp": "Config",
+		"_id": "fz7jb19XR5K4aclPQdkjIw",
+		"system": true
+	},
+	"doc": "Set system=false",
+	"key": "sys.Config.before_create",
+	"on_create": true,
+	"on_delete": false,
+	"on_update": false
+}

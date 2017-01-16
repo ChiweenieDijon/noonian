@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:19",
+	"_id": "RSc8RWl_RCa0rJgZAQae5w",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "AngularModule",
+		"_id": "G6NlMXjRQEeiqdsC6PP-Dw"
+	},
+	"is_static": false,
+	"name": "serveContent",
+	"use_injection": true
+}

@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:8",
+	"_id": "uIn4BYTnSuqQpF8sCTAiCQ",
+	"doc": "Provides function to display a \"perspective editor\" modal; binds to perspective object whose field list is being edited.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "DbuiPerspectiveEditor",
+	"parameters": [
+		"$uibModal",
+		"$rootScope"
+	],
+	"path": "dbui/reusable/dialog",
+	"type": "service"
+}

@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "Tjiak1GXQq2BArAt7X9gew",
+	"doc": "Called via button on BusinessObjectPackage; builds updated version from manifest and associated BusinessObjectPackageUpdate records.",
+	"path": "/pkg/buildPackage",
+	"rolespec": [
+	]
+}

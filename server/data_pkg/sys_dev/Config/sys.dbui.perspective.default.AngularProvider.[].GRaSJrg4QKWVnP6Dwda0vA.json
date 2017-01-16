@@ -1,0 +1,49 @@
+{
+	"__ver": "sys:6",
+	"_id": "GRaSJrg4QKWVnP6Dwda0vA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.AngularProvider",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"module",
+				"path",
+				"name",
+				"type",
+				"doc",
+				"parameters",
+				"function"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"module",
+				"name",
+				"type",
+				"doc"
+			],
+			"sort": {
+				"path": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"module",
+				"path",
+				"name",
+				"type",
+				"doc",
+				"parameters",
+				"function"
+			],
+			"related": [
+				{
+					"class": "AngularTemplate",
+					"field": "provider"
+				}
+			]
+		}
+	}
+}

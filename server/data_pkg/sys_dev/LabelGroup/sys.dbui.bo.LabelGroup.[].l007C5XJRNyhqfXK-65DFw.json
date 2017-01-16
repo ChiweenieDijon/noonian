@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:1",
+	"_id": "l007C5XJRNyhqfXK-65DFw",
+	"key": "sys.dbui.bo.LabelGroup",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"key": "Key",
+		"language": "Language",
+		"value": "Value"
+	}
+}

@@ -1,0 +1,35 @@
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="picker-list-title">Available Fields</div>
+        <div class="list-group basic-picker-list">
+
+          <div class="list-group-item" ng-repeat="fi in availableFields" ng-hide="fi.included" ng-click="addField(fi)">
+            {{fi.fieldLabel}}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="picker-list-title">Displayed Fields</div>
+        <div class="list-group basic-picker-list">
+          <div class="list-group-item" ng-repeat="fieldName in fieldList" ng-class="{'selected-item':selectedForMove($index)}" ng-click="selectForMove($index)">
+
+            <span>{{getFieldLabel(fieldName)}}</span>
+            <button class="pull-right" ng-click="remove($index)"> <i class="fa fa-close"></i></button>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-default" ng-click="moveUp()" ng-disabled="!canMoveUp()"> <i class="fa fa-arrow-up"></i></button>
+          <button class="btn btn-default" ng-click="moveDown()" ng-disabled="!canMoveDown()"> <i class="fa fa-arrow-down"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="$close()">Done</button>
+</div>
+</div>

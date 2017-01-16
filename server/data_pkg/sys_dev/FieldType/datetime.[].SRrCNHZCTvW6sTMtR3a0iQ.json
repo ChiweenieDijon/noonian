@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "SRrCNHZCTvW6sTMtR3a0iQ",
+	"doc": "A full-fledged date/time value, which can be represented as a javascript Date or ISO 8601 string.",
+	"mongo_type": "Date",
+	"name": "datetime",
+	"text_index": false
+}

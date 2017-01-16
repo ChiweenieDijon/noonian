@@ -1,0 +1,42 @@
+{
+	"__ver": "sys:1",
+	"_id": "6zyebkpAS_m3IGJNU3-txQ",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.WebService",
+	"rolespec": [
+	],
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"path",
+				"doc",
+				"rolespec",
+				"function"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"rolespec",
+				"doc"
+			],
+			"filter": {
+				"path": {
+					"$notcontains": "^/sys/|^/dbui/|^/pkg/"
+				}
+			},
+			"sort": {
+				"path": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"path",
+				"doc",
+				"rolespec",
+				"function"
+			]
+		}
+	}
+}

@@ -1,0 +1,7 @@
+<div class="dbui-view-field-Array dbui-view-container">
+  <div ng-repeat="item in displayArr" class="row">
+    <dbui-field-viewer ng-if="item != null" type-desc="typeDesc[0]" field-customizations="fieldCustomizations" abbreviated="abbreviated" display-value="item" class="col-xs-12" ></dbui-field-viewer>
+    <div ng-if="item == null" >(empty)</div>
+  </div>
+  <div ng-if="ellipsis">...</div>
+</div>

@@ -1,0 +1,22 @@
+{
+	"__ver": "sys:7",
+	"_id": "ElEWFvl1T-u5DaRVdBhxCA",
+	"doc": "Renders a \"number\" input box, or alternatively a select element if \"dropdown\" parameter is set.\n\n@param {boolean} dropdown - utilize a dropdown box instead of a text box.  if true, dropdown allows integers between type descriptor's min and max values.",
+	"fieldtypes": [
+		{
+			"_disp": "integer",
+			"_id": "gxJBuQp7RkKLIV0cazfFnA",
+			"name": "integer"
+		},
+		{
+			"_disp": "float",
+			"_id": "EaQUGA7oS7qKanG4QbvYbQ",
+			"name": "float"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.numeric.edit"
+}

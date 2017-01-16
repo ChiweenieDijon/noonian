@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:1",
+	"_id": "2Zquz6iMQLS7V_ZyZWBR4Q",
+	"key": "sys.dbui.bo.RemotePackageRepository",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"auth": "Auth",
+		"name": "Name",
+		"packages": "Packages",
+		"url": "Url"
+	}
+}

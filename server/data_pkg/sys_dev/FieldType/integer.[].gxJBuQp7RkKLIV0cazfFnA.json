@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "gxJBuQp7RkKLIV0cazfFnA",
+	"doc": "An integer numeric value, i.e. no decimal point.   Can optionally constrain to a range of values.\n\n@param {Number} [min] - minimum permitted value\n@param {Number} [max] - maximum permitted value",
+	"mongo_type": "Number",
+	"name": "integer",
+	"text_index": false
+}

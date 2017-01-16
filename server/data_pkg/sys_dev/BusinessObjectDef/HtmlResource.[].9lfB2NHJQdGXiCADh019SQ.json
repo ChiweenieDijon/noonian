@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:1",
+	"_id": "9lfB2NHJQdGXiCADh019SQ",
+	"class_name": "HtmlResource",
+	"definition": {
+		"content": {
+			"language": "html",
+			"type": "sourcecode"
+		}
+	},
+	"doc": "A WebResource with HTML content.",
+	"superclass": {
+		"_disp": "WebResource",
+		"_id": "0TO-sBb1TjeAAzaMgd-8KQ"
+	},
+	"system": true
+}

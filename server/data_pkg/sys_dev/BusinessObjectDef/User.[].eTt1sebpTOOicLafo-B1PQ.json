@@ -1,0 +1,30 @@
+{
+	"__ver": "sys:2",
+	"_id": "eTt1sebpTOOicLafo-B1PQ",
+	"abstract": false,
+	"class_name": "User",
+	"definition": {
+		"language": {
+			"denormalize_fields": [
+				"code"
+			],
+			"ref_class": "Language",
+			"type": "reference"
+		},
+		"name": {
+			"type": "string"
+		},
+		"password": {
+			"hash": true,
+			"type": "password"
+		},
+		"roles": [
+			{
+				"ref_class": "Role",
+				"type": "reference"
+			}
+		]
+	},
+	"doc": "A user of the system.  Contains login information, language for I18n, and roles.",
+	"system": true
+}

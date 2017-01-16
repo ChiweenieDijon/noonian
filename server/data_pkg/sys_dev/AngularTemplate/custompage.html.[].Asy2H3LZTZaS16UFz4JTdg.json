@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:6",
+	"_id": "Asy2H3LZTZaS16UFz4JTdg",
+	"doc": "The base template that is rendered for ui-router state dbui.custompage.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "custompage.html",
+	"path": "dbui/core/state",
+	"provider": {
+		"_disp": "dbui_CustomPageCtrl",
+		"_id": "ezSJbZ-NQ52ZgnKLWh1Ebw"
+	},
+	"rolespec": [
+	]
+}

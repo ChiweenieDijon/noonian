@@ -1,0 +1,19 @@
+{
+	"__ver": "sys:12",
+	"_id": "Gh1s8LuGThywzsMA7BIMjg",
+	"doc": "The controller for ui-router state dbui.list.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbui_ListCtrl",
+	"parameters": [
+		"$scope",
+		"$stateParams",
+		"NoonI18n",
+		"DbuiAction",
+		"listPerspective"
+	],
+	"path": "dbui/core/state",
+	"type": "controller"
+}

@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:34",
+	"_id": "9en21yAeQAOdV_Uxm_C9sQ",
+	"doc": "Renders a table of \"BusinessObject-like\" objects\n@param {BusinessObjectLike[]} ngModel - data array that table is bound to\n@param {Perspective} perspective - perspective object driving layout of table and available actions\n@param {Object} objectMetaData - _bo_meta_data describing the objects being displayed\n@param {Object} [config] - extra configuration for driving display and action invocation \n@param {Object} config.aliasActions - map of action aliases to action objects \n@param {Object} config.recordActions - set of actions to make available for each displayed object; these actions are displayed after perspective's recordActions\n@param {Object} config.tableActions - set of actions to make available in the gear menu; these actions are displayed after perspective's tableActions\n@param {boolean|Object} config.cellEdit - if boolean, allow/disallow global cell edit of field values in table.  if Object, maps field name to boolean value (or function)\n@param {Function} [config.onSort] - function called when sorting changes via column header click, after perspective.sort is updated to reflect sort status. if null, sorting is disabled.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiObjectTable",
+	"parameters": [
+		"DbuiAction",
+		"NoonI18n"
+	],
+	"path": "dbui/reusable/core",
+	"type": "directive"
+}

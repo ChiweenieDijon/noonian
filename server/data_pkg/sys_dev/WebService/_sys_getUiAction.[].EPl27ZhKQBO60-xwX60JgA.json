@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "EPl27ZhKQBO60-xwX60JgA",
+	"doc": "Allows access to UiAction objects to DBUI users w/out having to explicitly give permission via DataAccessControl.",
+	"path": "/sys/getUiAction",
+	"rolespec": [
+	]
+}

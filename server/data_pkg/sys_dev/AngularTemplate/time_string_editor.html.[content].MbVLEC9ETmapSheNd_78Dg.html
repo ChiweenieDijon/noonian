@@ -1,0 +1,9 @@
+<div class="input-group" uib-dropdown>
+    <span class="input-group-btn">
+          <button type="button" class="btn btn-default" uib-dropdown-toggle><i class="fa fa-clock-o"></i></button>
+    </span>
+    <input type="text" id="{{elemId}}" placeholder="(empty)" class="form-control" ng-model="binding.value" ng-focus="onFocus($event)"  />
+    <ul class="dropdown-menu" uib-dropdown-menu style="max-height: 300px; overflow-y: scroll;">
+        <li ng-repeat="time in times"><a href ng-click='selectTime(time)'>{{time}}</a></li>
+    </ul>
+</div>

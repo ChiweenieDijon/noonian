@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:6",
+	"_id": "nlXSAaacSla8tUPF9oYF7A",
+	"doc": "The base template that is rendered for ui-router state dbui.list.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "list.html",
+	"path": "dbui/core/state",
+	"provider": {
+		"_disp": "dbui_ListCtrl",
+		"_id": "Gh1s8LuGThywzsMA7BIMjg"
+	},
+	"rolespec": [
+	]
+}

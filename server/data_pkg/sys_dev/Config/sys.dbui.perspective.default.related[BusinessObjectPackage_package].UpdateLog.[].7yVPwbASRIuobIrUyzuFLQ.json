@@ -1,0 +1,21 @@
+{
+	"__ver": "sys:1",
+	"_id": "7yVPwbASRIuobIrUyzuFLQ",
+	"key": "sys.dbui.perspective.default.related[BusinessObjectPackage_package].UpdateLog",
+	"system": false,
+	"value": {
+		"list": {
+			"fields": [
+				"timestamp",
+				"object_class",
+				"object_id",
+				"update_type",
+				"package",
+				"external_pkg"
+			],
+			"sort": {
+				"timestamp": "desc"
+			}
+		}
+	}
+}

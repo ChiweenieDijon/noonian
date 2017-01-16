@@ -1,0 +1,30 @@
+{
+	"__ver": "sys:2",
+	"_id": "R1r6pCVESdma9hj8GrfMaQ",
+	"abstract": false,
+	"class_name": "BusinessObjectDef",
+	"definition": {
+		"_disp": "<%= class_name %>",
+		"abstract": {
+			"type": "boolean"
+		},
+		"class_name": {
+			"type": "string"
+		},
+		"definition": {
+			"type": "object"
+		},
+		"doc": {
+			"type": "jsdoc"
+		},
+		"superclass": {
+			"ref_class": "BusinessObjectDef",
+			"type": "reference"
+		},
+		"system": {
+			"type": "boolean"
+		}
+	},
+	"doc": "Defines a class of Business Object by describing its composition.  Definition is a data \"schema\", with a structure similar to that used in the mongoose library {@link http://mongoosejs.com/docs/guide.html}.  The types available for defining fields are not limited to the standard JSON primitives; rather, fields are typed according to {@link FieldType} objects.",
+	"system": true
+}

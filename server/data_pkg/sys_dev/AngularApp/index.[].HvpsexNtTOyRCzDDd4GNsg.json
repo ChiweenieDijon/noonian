@@ -1,0 +1,24 @@
+{
+	"__ver": "sys:35",
+	"_id": "HvpsexNtTOyRCzDDd4GNsg",
+	"css_dependencies": [
+		{
+			"_disp": "app.css",
+			"_id": "mF2-m7xwSv-GOiV7I-YPNg",
+			"name": "app.css",
+			"path": "dbui/css"
+		}
+	],
+	"js_dependencies": [
+	],
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q",
+		"name": "noonian.dbui",
+		"path": "noonian/dbui"
+	},
+	"name": "index",
+	"path": "dbui",
+	"rolespec": [
+	]
+}

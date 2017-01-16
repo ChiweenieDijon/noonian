@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:21",
+	"_id": "1AvVYpoKRzaBCsiGkrDEaQ",
+	"doc": "Top \"nav bar\" region of DBUI.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "navbar.html",
+	"path": "dbui/core",
+	"provider": {
+		"_disp": "dbui_NavbarCtrl",
+		"_id": "jXqx7LOLRl6ZoWUORs8nPA"
+	},
+	"rolespec": [
+	]
+}

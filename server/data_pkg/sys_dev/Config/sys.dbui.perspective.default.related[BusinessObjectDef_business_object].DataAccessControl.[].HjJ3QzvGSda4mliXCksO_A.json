@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:1",
+	"_id": "HjJ3QzvGSda4mliXCksO_A",
+	"key": "sys.dbui.perspective.default.related[BusinessObjectDef_business_object].DataAccessControl",
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"rolespec",
+				"allow_create",
+				"allow_read",
+				"allow_update",
+				"allow_delete"
+			]
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"__ver": "sys:1",
+	"_id": "dkwBaED1TUSMvFlVkNOwKw",
+	"key": "sys.dbui.perspective.default.related[AngularModule_module].AngularModule",
+	"system": true,
+	"value": {
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"description",
+				"version",
+				"config_function",
+				"js_dependencies",
+				"css_dependencies",
+				"external_mod_dependencies",
+				"mod_dependencies"
+			],
+			"related": [
+				{
+					"class": "AngularProvider",
+					"field": "module"
+				}
+			]
+		}
+	}
+}

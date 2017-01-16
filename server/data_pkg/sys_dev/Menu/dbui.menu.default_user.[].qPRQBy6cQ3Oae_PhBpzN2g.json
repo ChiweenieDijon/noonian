@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:2",
+	"_id": "qPRQBy6cQ3Oae_PhBpzN2g",
+	"definition": [
+		{
+			"ref": "dbui.menu.user"
+		}
+	],
+	"key": "dbui.menu.default_user",
+	"rolespec": [
+	]
+}

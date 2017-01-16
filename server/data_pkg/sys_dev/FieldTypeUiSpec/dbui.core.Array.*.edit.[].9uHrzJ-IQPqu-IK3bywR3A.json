@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:19",
+	"_id": "9uHrzJ-IQPqu-IK3bywR3A",
+	"fieldtypes": [
+	],
+	"for_editing": false,
+	"for_editing_array": true,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.Array.*.edit",
+	"link_fn": null
+}

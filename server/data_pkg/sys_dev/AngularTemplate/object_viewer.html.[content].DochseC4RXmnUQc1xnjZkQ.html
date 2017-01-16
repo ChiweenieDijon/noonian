@@ -1,0 +1,20 @@
+<div>
+  <div ng-if="theObject" ng-repeat="sec in perspective.layout" class="dbui-subsection-container">
+    <div class="dbui-subsection-header" ng-if="sec.subheading" ng-click="sec.isHidden = !sec.isHidden">
+      <h4>{{labels._subheading[sec.subheading] ? labels._subheading[sec.subheading] : sec.subheading}}  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !sec.isHidden, 'glyphicon-chevron-right': sec.isHidden}"></i></h4>
+    </div>
+    <div ng-hide="sec.isHidden">
+      <div class="row" ng-repeat="r in sec.rows">
+        <form class="form-horizontal">
+          <div class="{{colClass.top[r.length]}}" ng-repeat="fieldName in r">
+            <div class="form-group" ng-if="shouldShow(fieldName)">
+              <label for="{{fieldName}}" class="{{colClass.label[r.length]}} control-label" >{{ labels[fieldName] ? labels[fieldName] : fieldName}}</label>
+              <dbui-field-viewer type-desc="typeDescMap[fieldName]" elem-id="fieldName" display-value="theObject[fieldName]" class="dbui-field-viewer {{colClass.value[r.length]}}" field-customizations="perspective.fieldCustomizations[fieldName]" ></dbui-field-viewer>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div><!-- end section div-->
+</div>

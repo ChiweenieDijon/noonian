@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:1",
+	"_id": "CzEs6oTgTrKrikVdgl4I2g",
+	"key": "sys.dbui.perspective.factories.related[AngularModule_module].AngularTemplate",
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"module"
+			],
+			"sort": {
+				"path": "asc"
+			}
+		}
+	}
+}

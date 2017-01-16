@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:76",
+	"_id": "shz0lNmSRhWP9DjcWypp7A",
+	"doc": "Uses ngModel to bind to an object's field value; utilizes the type descriptor to dynamically decide what kind of editor to display.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiFieldEditor",
+	"parameters": [
+		"$compile",
+		"$injector",
+		"DbuiFieldType"
+	],
+	"path": "dbui/reusable/core",
+	"type": "directive"
+}

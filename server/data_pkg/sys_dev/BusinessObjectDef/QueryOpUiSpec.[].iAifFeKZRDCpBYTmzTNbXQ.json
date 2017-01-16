@@ -1,0 +1,28 @@
+{
+	"__ver": "sys:4",
+	"_id": "iAifFeKZRDCpBYTmzTNbXQ",
+	"abstract": false,
+	"class_name": "QueryOpUiSpec",
+	"definition": {
+		"editors": {
+			"type": "object"
+		},
+		"fieldtypes": [
+			{
+				"denormalize_fields": [
+					"name"
+				],
+				"ref_class": "FieldType",
+				"type": "reference"
+			}
+		],
+		"for_array": {
+			"type": "boolean"
+		},
+		"key": {
+			"type": "path"
+		}
+	},
+	"doc": "A QueryOpUiSpec describes how DBUI's query builder should display query operations for a particular set of field types.",
+	"system": true
+}

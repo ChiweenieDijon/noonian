@@ -1,0 +1,20 @@
+<form class="form-inline">
+  <div class="form-group query-editor-term">
+    <!-- <select class="form-control" ng-change="fieldChanged(true)" ng-model="term.fieldInfo" ng-options="fi as fi.fieldLabel for fi in fieldList"></select> -->
+    <div class="form-control" uib-dropdown auto-close="disabled" is-open="fieldSelectorOpen">
+      <a href uib-dropdown-toggle >
+        {{term.fieldInfo.fieldLabel}} &nbsp;&nbsp;<span class="fa fa-lg fa-caret-down"></span>&nbsp;&nbsp;
+      </a>
+      <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
+        <li ng-repeat="fi in fieldList" role="menuitem">
+          <a href ng-click="fieldChanged(fi, true)">{{fi.fieldLabel}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <select class="form-control" ng-model="term.opInfo" ng-change="opChanged(true)" ng-options="opObj as opObj.label for opObj in opList track by opObj.op"></select>
+    <span ng-if="fieldEditorVisible">
+      <dbui-field-editor ng-model="term.value" type-desc="fieldEditorTypeDesc"></dbui-field-editor>
+    </span>
+  </div>
+</form>

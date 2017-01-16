@@ -1,0 +1,29 @@
+{
+	"__ver": "sys:1",
+	"_id": "2jfKy7M9Q6-QIOGOOwrf-Q",
+	"class_name": "RemotePackageRepository",
+	"definition": {
+		"auth": {
+			"type": "object"
+		},
+		"name": {
+			"type": "string"
+		},
+		"packages": [
+			{
+				"denormalize_fields": [
+					"key",
+					"major_version",
+					"minor_version"
+				],
+				"ref_class": "BusinessObjectPackage",
+				"type": "reference"
+			}
+		],
+		"url": {
+			"type": "url"
+		}
+	},
+	"doc": "Configures a set of packages on this system to be update-able via a remote noonian package repo (hosted using sys.package_repo)",
+	"system": true
+}

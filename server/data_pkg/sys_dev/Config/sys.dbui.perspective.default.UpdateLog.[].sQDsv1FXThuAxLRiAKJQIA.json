@@ -1,0 +1,60 @@
+{
+	"__ver": "sys:5",
+	"_id": "sQDsv1FXThuAxLRiAKJQIA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.UpdateLog",
+	"rolespec": [
+	],
+	"system": false,
+	"value": {
+		"edit": {
+			"layout": [
+				[
+					"timestamp",
+					"update_type"
+				],
+				[
+					"object_class",
+					"object_id",
+					"updated_version"
+				],
+				[
+					"package",
+					"external_pkg"
+				],
+				"revert_patch"
+			]
+		},
+		"list": {
+			"fields": [
+				"timestamp",
+				"object_class",
+				"object_id",
+				"update_type",
+				"package",
+				"external_pkg"
+			],
+			"sort": {
+				"timestamp": "desc"
+			}
+		},
+		"view": {
+			"layout": [
+				[
+					"timestamp",
+					"update_type"
+				],
+				[
+					"object_class",
+					"object_id",
+					"updated_version"
+				],
+				[
+					"package",
+					"external_pkg"
+				],
+				"revert_patch"
+			]
+		}
+	}
+}

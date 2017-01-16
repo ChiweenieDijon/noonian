@@ -1,0 +1,15 @@
+{
+	"__ver": "sys:3",
+	"_id": "mZ9F54oASxS70Cwk1eodeA",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "attachmentUploader",
+	"parameters": [
+		"$parse",
+		"$http"
+	],
+	"path": "dbui/core/helper",
+	"type": "directive"
+}

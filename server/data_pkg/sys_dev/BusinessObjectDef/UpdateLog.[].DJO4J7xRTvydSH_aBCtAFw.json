@@ -1,0 +1,40 @@
+{
+	"__ver": "sys:3",
+	"_id": "DJO4J7xRTvydSH_aBCtAFw",
+	"abstract": false,
+	"class_name": "UpdateLog",
+	"definition": {
+		"external_pkg": {
+			"type": "boolean"
+		},
+		"object_class": {
+			"type": "string"
+		},
+		"object_id": {
+			"type": "string"
+		},
+		"package": {
+			"ref_class": "BusinessObjectPackage",
+			"type": "reference"
+		},
+		"revert_patch": {
+			"type": "object"
+		},
+		"timestamp": {
+			"type": "datetime"
+		},
+		"update_type": {
+			"enum": [
+				"create",
+				"update",
+				"delete"
+			],
+			"type": "string"
+		},
+		"updated_version": {
+			"type": "string"
+		}
+	},
+	"doc": "Represents a single data change of a business object in the system - a create, update, or delete.\nStores diff history if \"enableHistory\" is enabled in instance config file",
+	"system": true
+}

@@ -1,0 +1,8 @@
+<div class="physical_address_editor" id="{{elemId}}">
+	<div><label for="{{elemId}}.address">Street</label><input type="text" id="{{elemId}}.address" ng-model="binding.value.address">
+	</div>
+	<div><label for="{{elemId}}.city">City</label><input type="text" id="{{elemId}}.city" ng-model="binding.value.city">
+    <label for="{{elemId}}.state">State</label><select id="{{elemId}}.state" ng-model="binding.value.state"
+        ng-options="val for val in states"></select></div>
+    <div><label for="{{elemId}}.zip">Zip</label><input type="text" id="{{elemId}}.zip" ng-model="binding.value.zip"></div>
+</div>

@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "Qywi2S8xT86_tQl4leIXNA",
+	"doc": "A block of text.",
+	"mongo_type": "String",
+	"name": "text",
+	"text_index": true
+}

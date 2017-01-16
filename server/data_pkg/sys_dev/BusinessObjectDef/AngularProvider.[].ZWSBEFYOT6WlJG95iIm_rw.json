@@ -1,0 +1,43 @@
+{
+	"__ver": "sys:9",
+	"_id": "ZWSBEFYOT6WlJG95iIm_rw",
+	"abstract": false,
+	"class_name": "AngularProvider",
+	"definition": {
+		"doc": {
+			"type": "text"
+		},
+		"function": {
+			"applicable": "clientside",
+			"type": "function"
+		},
+		"module": {
+			"ref_class": "AngularModule",
+			"type": "reference"
+		},
+		"name": {
+			"type": "string"
+		},
+		"parameters": [
+			{
+				"type": "string"
+			}
+		],
+		"path": {
+			"type": "path"
+		},
+		"type": {
+			"enum": [
+				"service",
+				"factory",
+				"provider",
+				"controller",
+				"directive",
+				"filter"
+			],
+			"type": "string"
+		}
+	},
+	"doc": "An Angular service, factory, provider, controller, directive, or filter.\nBelongs to an AngularModule, and has a name, and a function definition w/ a list of injected parameters.\n{@link https://docs.angularjs.org/guide/providers}\n'service' type: function is a constructor; instance is what is injected into other functions\n'factory' type: function returns value that is injected into other functions\n'provider' type: function is a constructor; an instance of which is accessible to module config (w/ \"Provider\" suffix).  must have $get member which is a factory used when injecting into non-config function.",
+	"system": true
+}

@@ -1,0 +1,22 @@
+{
+	"__ver": "sys:2",
+	"_id": "MwwmFSrdRGmgI24guVcCZg",
+	"editors": [
+		{
+			"$contains": true
+		},
+		{
+			"$notcontains": true
+		},
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+	],
+	"for_array": true,
+	"key": "dbui.core.Array.*"
+}

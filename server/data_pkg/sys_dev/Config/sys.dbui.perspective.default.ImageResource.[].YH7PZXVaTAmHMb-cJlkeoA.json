@@ -1,0 +1,36 @@
+{
+	"__ver": "sys:1",
+	"_id": "YH7PZXVaTAmHMb-cJlkeoA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.ImageResource",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"name"
+			],
+			"sort": {
+				"path": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		}
+	}
+}

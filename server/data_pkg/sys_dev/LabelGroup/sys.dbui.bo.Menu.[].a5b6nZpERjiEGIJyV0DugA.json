@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:2",
+	"_id": "a5b6nZpERjiEGIJyV0DugA",
+	"key": "sys.dbui.bo.Menu",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"definition": "Definition",
+		"key": "Key",
+		"rolespec": "Rolespec"
+	}
+}

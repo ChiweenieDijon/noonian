@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "JMHHYAPlSgKuC5alDvehWA",
+	"doc": "A URL string.",
+	"mongo_type": "String",
+	"name": "url",
+	"text_index": true
+}

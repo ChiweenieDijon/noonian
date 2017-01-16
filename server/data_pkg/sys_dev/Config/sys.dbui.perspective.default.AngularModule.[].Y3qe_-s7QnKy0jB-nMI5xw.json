@@ -1,0 +1,73 @@
+{
+	"__ver": "sys:15",
+	"_id": "Y3qe_-s7QnKy0jB-nMI5xw",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.AngularModule",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"config_function",
+				"js_dependencies",
+				"css_dependencies",
+				"external_mod_dependencies",
+				"mod_dependencies"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"doc"
+			]
+		},
+		"picker_list": {
+			"fields": [
+				"path",
+				"name",
+				"doc"
+			]
+		},
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"config_function",
+				"js_dependencies",
+				"css_dependencies",
+				"external_mod_dependencies",
+				"mod_dependencies"
+			],
+			"related": [
+				{
+					"class": "AngularProvider",
+					"field": "module",
+					"perspective": "factories"
+				},
+				{
+					"class": "AngularProvider",
+					"field": "module",
+					"perspective": "controllers"
+				},
+				{
+					"class": "AngularProvider",
+					"field": "module",
+					"perspective": "directives"
+				},
+				{
+					"class": "AngularProvider",
+					"field": "module",
+					"perspective": "filters"
+				},
+				{
+					"class": "AngularTemplate",
+					"field": "module"
+				}
+			]
+		}
+	}
+}

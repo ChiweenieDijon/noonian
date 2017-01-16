@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:3",
+	"_id": "4yT9t5IzTIqSCLFnR508rw",
+	"doc": "Used with dialog-view action to display",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "view-dialog.html",
+	"path": "dbui/core",
+	"provider": {
+		"_disp": "DbuiAction",
+		"_id": "7UVBjiqKRueVphLN5EtfLg"
+	},
+	"rolespec": [
+	]
+}

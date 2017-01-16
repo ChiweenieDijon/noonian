@@ -1,0 +1,23 @@
+{
+	"__ver": "sys:3",
+	"_id": "oThGB1UxRGiPK6tzu4PUXQ",
+	"abstract": false,
+	"class_name": "CodeModule",
+	"definition": {
+		"code": {
+			"applicable": "serverside",
+			"type": "function"
+		},
+		"doc": {
+			"type": "jsdoc"
+		},
+		"name": {
+			"type": "string"
+		},
+		"path": {
+			"type": "path"
+		}
+	},
+	"doc": "A server-side code module; injectable into data trigger and web service functions.",
+	"system": true
+}

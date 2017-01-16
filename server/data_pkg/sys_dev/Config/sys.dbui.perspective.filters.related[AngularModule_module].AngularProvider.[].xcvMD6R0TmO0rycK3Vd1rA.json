@@ -1,0 +1,23 @@
+{
+	"__ver": "sys:2",
+	"_id": "xcvMD6R0TmO0rycK3Vd1rA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.filters.related[AngularModule_module].AngularProvider",
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"doc"
+			],
+			"filter": {
+				"type": "filter"
+			},
+			"sort": {
+				"path": "asc"
+			},
+			"title": "Filters"
+		}
+	}
+}

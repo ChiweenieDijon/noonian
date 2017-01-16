@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:2",
+	"_id": "if2R-LabRcyDzpX_5X_ucQ",
+	"key": "sys.dbui.perspective.controllers.related[AngularProvider_provider].AngularTemplate",
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"module"
+			],
+			"sort": {
+				"path": "asc"
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:7",
+	"_id": "JlYdHTiWRoGbI81O-VPkXg",
+	"doc": "Puts \"relatedTables\" into a uib-tabset, each containing a full-on dbui-business-object-browser",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "relatedviewer.html",
+	"path": "dbui/reusable/core",
+	"provider": {
+		"_disp": "dbuiRelatedViewer",
+		"_id": "_28vJLv9Tt6HzXexuNITlA"
+	},
+	"rolespec": [
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "EqIuGj81QTyVDFA7qRQNHg",
+	"doc": "Text block for documenting code or software modules.  Can utilze JSDoc tags {@link http://usejsdoc.org}",
+	"mongo_type": "String",
+	"name": "jsdoc",
+	"text_index": true
+}

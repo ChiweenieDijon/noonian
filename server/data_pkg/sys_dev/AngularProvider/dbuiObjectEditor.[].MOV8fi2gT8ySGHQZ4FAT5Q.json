@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:6",
+	"_id": "MOV8fi2gT8ySGHQZ4FAT5Q",
+	"doc": "Renders a form, according to a perspective, for editing a \"BusinessObject-like\" object.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiObjectEditor",
+	"parameters": [
+		"Dbui",
+		"NoonI18n"
+	],
+	"path": "dbui/reusable/core",
+	"type": "directive"
+}

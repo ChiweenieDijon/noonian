@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:23",
+	"_id": "1KOgLhmgQj2AUKYIxflYqA",
+	"doc": "Directive to render a \"displayValue\" to dom; utilizes {@link TypeDescriptor| type descriptor} to dynamically choose which FieldTypeUiSpec to render with.\n@param displayValue value being rendered\n@param typeDesc type descriptor for the value being rendered\n@param {boolean} abbreviated show an 'abbreviated' view of the value (if applicable - depends upon specific type)\n@param fieldCustomizations type-specific {@link FieldCustomizations|field customizations} to apply",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiFieldViewer",
+	"parameters": [
+		"$compile",
+		"DbuiFieldType",
+		"$injector"
+	],
+	"path": "dbui/reusable/core",
+	"type": "directive"
+}

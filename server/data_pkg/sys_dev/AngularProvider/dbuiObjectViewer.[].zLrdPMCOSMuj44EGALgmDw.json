@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:6",
+	"_id": "zLrdPMCOSMuj44EGALgmDw",
+	"doc": "Renders a view of a \"BusinessObject-like\" object according to a perspective.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiObjectViewer",
+	"parameters": [
+		"$parse",
+		"Dbui",
+		"NoonI18n"
+	],
+	"path": "dbui/reusable/core",
+	"type": "directive"
+}

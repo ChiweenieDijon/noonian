@@ -1,0 +1,19 @@
+{
+	"__ver": "sys:2",
+	"_id": "wwX1-_BxSYWYOQdMBcUTjw",
+	"doc": "The controller for ui-router state dbui.folders",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbui_FoldersCtrl",
+	"parameters": [
+		"$scope",
+		"$state",
+		"$stateParams",
+		"Dbui",
+		"folderPerspective"
+	],
+	"path": "dbui/core/state",
+	"type": "controller"
+}

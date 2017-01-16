@@ -1,0 +1,62 @@
+{
+	"__ver": "sys:1",
+	"_id": "7Ii8-VwZSEm4dTV4_P5mAQ",
+	"editors": [
+		{
+			"$eq": true
+		},
+		{
+			"$ne": true
+		},
+		{
+			"$contains": {
+				"type": "string"
+			}
+		},
+		{
+			"$notcontains": {
+				"type": "string"
+			}
+		},
+		{
+			"$gt": {
+				"type": "string"
+			}
+		},
+		{
+			"$lt": {
+				"type": "string"
+			}
+		},
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "string",
+			"_id": "ZD_vX9d-RLqxGTOdZntz6Q",
+			"name": "string"
+		},
+		{
+			"_disp": "email",
+			"_id": "S8eHnlXxQJqIPLM2q8HniQ",
+			"name": "email"
+		},
+		{
+			"_disp": "phone",
+			"_id": "DDssakmDQoeACryXT377xw",
+			"name": "phone"
+		},
+		{
+			"_disp": "url",
+			"_id": "JMHHYAPlSgKuC5alDvehWA",
+			"name": "url"
+		}
+	],
+	"for_array": false,
+	"key": "dbui.core.stringlike"
+}

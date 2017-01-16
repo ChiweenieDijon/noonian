@@ -1,0 +1,40 @@
+{
+	"__ver": "sys:1",
+	"_id": "8bkpoJNqS6yAs24lNkbZDQ",
+	"editors": [
+		{
+			"$eq": true
+		},
+		{
+			"$before": true
+		},
+		{
+			"$after": true
+		},
+		{
+			"$todayminus": {
+				"type": "integer"
+			}
+		},
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "date",
+			"_id": "nplFum9LRdWvt5TW1LyulQ",
+			"name": "date"
+		},
+		{
+			"_disp": "datetime",
+			"_id": "SRrCNHZCTvW6sTMtR3a0iQ",
+			"name": "datetime"
+		}
+	],
+	"for_array": false,
+	"key": "dbui.core.datelike"
+}

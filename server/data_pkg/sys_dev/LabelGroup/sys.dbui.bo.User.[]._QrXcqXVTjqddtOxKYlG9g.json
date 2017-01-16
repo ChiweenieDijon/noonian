@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:1",
+	"_id": "_QrXcqXVTjqddtOxKYlG9g",
+	"key": "sys.dbui.bo.User",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"language": "Language",
+		"name": "Name",
+		"password": "Password",
+		"roles": "Assigned Roles"
+	}
+}

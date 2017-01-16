@@ -1,0 +1,44 @@
+{
+	"__ver": "sys:3",
+	"_id": "BVZPlBKCSVaoqTN8h3lvTA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.Config",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				[
+					"key"
+				],
+				[
+					"value"
+				],
+				[
+					"allow_customize",
+					"user"
+				],
+				"rolespec"
+			]
+		},
+		"list": {
+			"fields": [
+				"key",
+				"value"
+			],
+			"sort": {
+				"key": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"key",
+				"value",
+				[
+					"allow_customize",
+					"user"
+				],
+				"rolespec"
+			]
+		}
+	}
+}

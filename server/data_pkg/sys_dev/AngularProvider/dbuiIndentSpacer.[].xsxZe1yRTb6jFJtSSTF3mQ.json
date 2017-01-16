@@ -1,0 +1,13 @@
+{
+	"__ver": "sys:4",
+	"_id": "xsxZe1yRTb6jFJtSSTF3mQ",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbuiIndentSpacer",
+	"parameters": [
+	],
+	"path": "dbui/core/helper",
+	"type": "directive"
+}

@@ -1,0 +1,26 @@
+{
+	"__ver": "sys:2",
+	"_id": "pzaSsQYLT7uvOx6Trp1wMw",
+	"abstract": false,
+	"class_name": "AngularTemplate",
+	"definition": {
+		"content": {
+			"language": "html",
+			"type": "sourcecode"
+		},
+		"module": {
+			"ref_class": "AngularModule",
+			"type": "reference"
+		},
+		"provider": {
+			"ref_class": "AngularProvider",
+			"type": "reference"
+		}
+	},
+	"doc": "An HTML template that can be associated with an AngularModule, and/or an AngularProvider.  \n\nTODO: Currently the references are informational and for organizing code, and do not serve any functional purpose in the serving the content.  (in other words, an AngularTemplate is functionally the same as an HtmlResource).  However, when the \"export to filesystem\" functionality is implemented in the future, the AngularModule reference will be used to determine which templates are exported.",
+	"superclass": {
+		"_disp": "WebResource",
+		"_id": "0TO-sBb1TjeAAzaMgd-8KQ"
+	},
+	"system": true
+}

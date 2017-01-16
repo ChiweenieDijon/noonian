@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:1",
+	"_id": "f5jWkW__R7GMilAtgyOsjA",
+	"key": "sys.dbui.bo.BusinessObjectPackageUpdate",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"package": "Package",
+		"target_object": "Target Object",
+		"updates": "Updates"
+	}
+}

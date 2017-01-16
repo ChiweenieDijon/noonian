@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:2",
+	"_id": "mOJCSStLQ42WAXr3yJEMJA",
+	"fieldtypes": [
+		{
+			"_disp": "phone",
+			"_id": "DDssakmDQoeACryXT377xw",
+			"name": "phone"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.phone.edit"
+}

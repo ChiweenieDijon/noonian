@@ -1,0 +1,26 @@
+ <!-- navbar at the top -->
+<div ui-view="navBar"></div>
+
+<div class="container-fluid">
+    
+    <div class="row" ng-repeat="alert in dbui_alerts">
+        <div class="col-xs-12">
+            <uib-alert type="{{alert.type}}" close="closeDbuiAlert(alert)" >{{alert.msg}}</uib-alert>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        
+        <!-- CSS makes this invisible when smaller than md threshold; replaced w/ navbar button. -->
+        <div class="col-md-2 hidden-xs hidden-sm" ng-hide="sidebarCollapsed"> 
+            <div class="sidebar_main" ui-view="sideBar"></div>
+        </div>
+        <div class="col-md-1" ng-show="sidebarCollapsed"></div>
+
+        <div class="col-md-10 ">
+            <div ui-view="mainContainer"></div>
+        </div>
+  </div>
+  
+</div>

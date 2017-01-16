@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:8",
+	"_id": "GXO11xYsQLKmo_4Ohy-eaQ",
+	"doc": "Turn a query object into a human-readable string",
+	"path": "/dbui/stringifyQuery",
+	"rolespec": [
+	]
+}

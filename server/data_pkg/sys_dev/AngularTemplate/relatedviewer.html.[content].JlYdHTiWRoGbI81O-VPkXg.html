@@ -1,0 +1,9 @@
+  <div class="row" ng-if="relatedTables">
+    <div class="col-sm-12">
+      <uib-tabset>
+        <uib-tab ng-repeat="rt in relatedTables" heading="{{rt.title}}">
+          <dbui-business-object-browser bo-class="rt.class" perspective="rt.perspective" enable-search="true" enable-query="false"></dbui-business-object-browser>
+        </uib-tab>
+      </uib-tabset>
+    </div>
+  </div>

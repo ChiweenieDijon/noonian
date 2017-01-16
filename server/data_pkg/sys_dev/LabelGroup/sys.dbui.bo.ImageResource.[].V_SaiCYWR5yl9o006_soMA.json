@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:1",
+	"_id": "V_SaiCYWR5yl9o006_soMA",
+	"key": "sys.dbui.bo.ImageResource",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"content": "Content",
+		"doc": "Documentation",
+		"name": "Name",
+		"path": "Path",
+		"rolespec": "Roles"
+	}
+}

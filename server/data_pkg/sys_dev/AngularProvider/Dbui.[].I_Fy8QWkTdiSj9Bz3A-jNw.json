@@ -1,0 +1,23 @@
+{
+	"__ver": "sys:69",
+	"_id": "I_Fy8QWkTdiSj9Bz3A-jNw",
+	"doc": "Library of functions needed in various places within Dbui.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "Dbui",
+	"parameters": [
+		"$http",
+		"$q",
+		"$rootScope",
+		"NoonWebService",
+		"DbuiFieldType",
+		"DbuiAction",
+		"NoonI18n",
+		"db",
+		"NoonConfig"
+	],
+	"path": "dbui/core/api",
+	"type": "service"
+}

@@ -1,0 +1,68 @@
+{
+	"__ver": "sys:65",
+	"_id": "myP57XGhSNyDKrrcJFvO0Q",
+	"config_function": null,
+	"css_dependencies": [
+		{
+			"_disp": "bootstrap.min.css",
+			"_id": "o4W541R8SOaAsLdTAFRwBw",
+			"name": "bootstrap.min.css",
+			"path": "bower_components/bootstrap/dist/css"
+		},
+		{
+			"_disp": "font-awesome.min.css",
+			"_id": "rTEg0q5bQbiYsTXNOFCBvQ",
+			"name": "font-awesome.min.css",
+			"path": "bower_components/font-awesome/css"
+		}
+	],
+	"doc": "Module containing all services, controllers, directives for serving up the Noonian DBUI.",
+	"external_mod_dependencies": [
+		"ngCookies",
+		"ui.router",
+		"ui.bootstrap",
+		"ui.bootstrap.modal",
+		"ui.ace"
+	],
+	"js_dependencies": [
+		{
+			"_disp": "ace.js",
+			"_id": "GUOAqvm-T0K8quHjSH-P8w",
+			"name": "ace.js",
+			"path": "bower_components/ace-builds/src-min-noconflict"
+		},
+		{
+			"_disp": "angular-cookies.min.js",
+			"_id": "obYp82hZTaWS6ABYtZ2eJA",
+			"name": "angular-cookies.min.js",
+			"path": "bower_components/angular-cookies"
+		},
+		{
+			"_disp": "ui-bootstrap-tpls.js",
+			"_id": "GABEyCzfTNSuQeo0b1H6TA",
+			"name": "ui-bootstrap-tpls.js",
+			"path": "bower_components/angular-bootstrap"
+		},
+		{
+			"_disp": "angular-ui-router.min.js",
+			"_id": "mmYBlEfVRi2WM5nGcfm0VA",
+			"name": "angular-ui-router.min.js",
+			"path": "bower_components/angular-ui-router/release"
+		},
+		{
+			"_disp": "ui-ace.min.js",
+			"_id": "WGmUTuiGS5KfXGYV_sUHeQ",
+			"name": "ui-ace.min.js",
+			"path": "bower_components/angular-ui-ace"
+		}
+	],
+	"mod_dependencies": [
+		{
+			"_disp": "noonian.api",
+			"_id": "NJnfAVnFSmuMcv9voRnaJQ",
+			"name": "noonian.api"
+		}
+	],
+	"name": "noonian.dbui",
+	"path": "noonian/dbui"
+}

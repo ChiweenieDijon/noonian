@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:1",
+	"_id": "X0qnD1lBQUy1B_7v2gOAdg",
+	"for_array": false,
+	"name": "$eq",
+	"types": [
+		{
+			"_disp": "reference",
+			"_id": "bHeoPzsMScORdzjtX6GdoA"
+		}
+	]
+}

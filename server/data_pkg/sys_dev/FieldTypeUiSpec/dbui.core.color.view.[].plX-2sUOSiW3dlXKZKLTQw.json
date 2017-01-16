@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:2",
+	"_id": "plX-2sUOSiW3dlXKZKLTQw",
+	"doc": "Simply displays the color hex string, and sets it's own css background-color.",
+	"fieldtypes": [
+		{
+			"_disp": "color",
+			"_id": "L0RpjYeuS-uVqxj00KzEZg",
+			"name": "color"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.color.view"
+}

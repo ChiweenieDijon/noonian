@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:9",
+	"_id": "_nWPVWaMRlezcACfs6ZLHw",
+	"doc": "Simple display of the value -  internationalized using the \"db.enum.<EnumName>\" LabelGroup, if present.",
+	"fieldtypes": [
+		{
+			"_disp": "enum",
+			"_id": "z_2NESmpQ-29ACeUMhflNQ",
+			"name": "enum"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.enum.view"
+}

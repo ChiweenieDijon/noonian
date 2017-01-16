@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "LO0K56w7R4GWv3LZ7-tGJg",
+	"allow_customize": true,
+	"key": "sys.dbui.defaultPageSize",
+	"system": false,
+	"value": 10
+}

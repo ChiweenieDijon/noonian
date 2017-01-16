@@ -1,0 +1,11 @@
+<div class="dbui-edit-field-string">
+  <div class="form-group">
+    <div class="row" ng-repeat="ev in enumValues">
+      <div class="col-md-11 col-md-offset-1">
+          <label class="checkbox" >
+            <input type="checkbox" name="{{bindProperty}}_{{ev.value}}" ng-model="selectedValues[ev.value]"> {{ev.label}}
+          </label>
+      </div>  
+    </div>
+  </div>
+</div>

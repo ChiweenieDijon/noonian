@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:6",
+	"_id": "40032UdQRL2-Jdg-CUoIqg",
+	"doc": "The base template that is rendered for ui-router state dbui.folders.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "folders.html",
+	"path": "dbui/core/state",
+	"provider": {
+		"_disp": "dbui_FoldersCtrl",
+		"_id": "wwX1-_BxSYWYOQdMBcUTjw"
+	},
+	"rolespec": [
+	]
+}

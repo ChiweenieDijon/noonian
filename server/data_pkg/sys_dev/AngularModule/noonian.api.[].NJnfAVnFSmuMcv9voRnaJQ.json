@@ -1,0 +1,33 @@
+{
+	"__ver": "sys:7",
+	"_id": "NJnfAVnFSmuMcv9voRnaJQ",
+	"css_dependencies": [
+	],
+	"doc": "Module containing the API's for interacting with Noonian server-side, independent of DBUI. If you want to create an angular application that is not an extension or customization of DBUI, you can still leverage the Noonian system by utilizing this module.",
+	"external_mod_dependencies": [
+	],
+	"js_dependencies": [
+		{
+			"_disp": "jquery.min.js",
+			"_id": "QJ9VrGUoQya0fyEGoww65A",
+			"name": "jquery.min.js",
+			"path": "bower_components/jquery/dist"
+		},
+		{
+			"_disp": "angular.min.js",
+			"_id": "YHk7GG6fQIKjEFXm7zTmFg",
+			"name": "angular.min.js",
+			"path": "bower_components/angular"
+		},
+		{
+			"_disp": "lodash.min.js",
+			"_id": "2TDnTPuBRLCu1-DgDQdmKA",
+			"name": "lodash.min.js",
+			"path": "bower_components/lodash"
+		}
+	],
+	"mod_dependencies": [
+	],
+	"name": "noonian.api",
+	"path": "noonian/api"
+}

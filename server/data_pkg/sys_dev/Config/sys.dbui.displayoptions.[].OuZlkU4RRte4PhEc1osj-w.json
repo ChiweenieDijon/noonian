@@ -1,0 +1,40 @@
+{
+	"__ver": "sys:5",
+	"_id": "OuZlkU4RRte4PhEc1osj-w",
+	"allow_customize": false,
+	"key": "sys.dbui.displayoptions",
+	"system": false,
+	"value": {
+		"boolean": {
+			"displayValue": {
+				"false": {
+					"class": "boolean-false",
+					"text": "no"
+				},
+				"true": {
+					"class": "boolean-true",
+					"text": "yes"
+				}
+			}
+		},
+		"date": {
+			"format": "MMMM dd, yyyy"
+		},
+		"function": {
+			"displayTheme": {
+				"clientside": "monokai",
+				"default": "solarized_light",
+				"serverside": "dawn"
+			}
+		},
+		"object": {
+			"displayTheme": "dawn"
+		},
+		"reference": {
+			"enableViewLink": false
+		},
+		"sourcecode": {
+			"displayTheme": "monokai"
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:1",
+	"_id": "BK1V0jTiSqiA28ztAXUxog",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "FileResource",
+		"_id": "LHh5ZfA6Swq6cHb3CcmCgA"
+	},
+	"is_static": false,
+	"name": "serveContent",
+	"use_injection": true
+}

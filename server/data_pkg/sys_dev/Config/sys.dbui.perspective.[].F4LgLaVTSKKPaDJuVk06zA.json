@@ -1,0 +1,55 @@
+{
+	"__ver": "sys:2",
+	"_id": "F4LgLaVTSKKPaDJuVk06zA",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective",
+	"rolespec": [
+	],
+	"system": false,
+	"value": {
+		"edit": {
+			"actions": [
+				"list",
+				"new"
+			],
+			"recordActions": [
+				"save",
+				"delete",
+				"view"
+			]
+		},
+		"folder": {
+			"actions": [
+				"new"
+			]
+		},
+		"list": {
+			"actions": [
+				"new"
+			],
+			"recordActions": [
+				"view",
+				"edit"
+			],
+			"tableActions": [
+				"edit_perspective",
+				"refresh_data",
+				{
+					"icon": "fa-external-link-square",
+					"label": "Export CSV",
+					"ui_action": "dbui.export_csv"
+				}
+			]
+		},
+		"view": {
+			"actions": [
+				"list",
+				"new"
+			],
+			"recordActions": [
+				"edit",
+				"delete"
+			]
+		}
+	}
+}

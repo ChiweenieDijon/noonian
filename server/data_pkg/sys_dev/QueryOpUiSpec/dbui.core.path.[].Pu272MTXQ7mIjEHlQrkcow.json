@@ -1,0 +1,46 @@
+{
+	"__ver": "sys:1",
+	"_id": "Pu272MTXQ7mIjEHlQrkcow",
+	"editors": [
+		{
+			"$eq": true
+		},
+		{
+			"$ne": true
+		},
+		{
+			"$contains": {
+				"type": "string"
+			}
+		},
+		{
+			"$notcontains": {
+				"type": "string"
+			}
+		},
+		{
+			"$childOf": true
+		},
+		{
+			"$gt": true
+		},
+		{
+			"$lt": true
+		},
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "path",
+			"_id": "9_TB_-ppQnCpm3EKkO8naw",
+			"name": "path"
+		}
+	],
+	"for_array": false,
+	"key": "dbui.core.path"
+}

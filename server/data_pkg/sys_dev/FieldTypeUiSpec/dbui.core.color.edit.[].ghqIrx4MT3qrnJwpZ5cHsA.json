@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:3",
+	"_id": "ghqIrx4MT3qrnJwpZ5cHsA",
+	"doc": "Simple input text box, augmented with a decoration that shows the color.  \n\n@todo utilize some fancy color picker component.",
+	"fieldtypes": [
+		{
+			"_disp": "color",
+			"_id": "L0RpjYeuS-uVqxj00KzEZg",
+			"name": "color"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.color.edit"
+}

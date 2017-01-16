@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:5",
+	"_id": "k46CuIUYRU2t6MV-r3PrXQ",
+	"doc": "Displays date by simply running it through angular's *date* filter.  {@link https://docs.angularjs.org/api/ng/filter/date} \n\n@param {string} [format] - format string for date.  If not present, defaults to \"'MMMM dd, yyyy  h:mm a\"",
+	"fieldtypes": [
+		{
+			"_disp": "datetime",
+			"_id": "SRrCNHZCTvW6sTMtR3a0iQ",
+			"name": "datetime"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.datetime.view"
+}

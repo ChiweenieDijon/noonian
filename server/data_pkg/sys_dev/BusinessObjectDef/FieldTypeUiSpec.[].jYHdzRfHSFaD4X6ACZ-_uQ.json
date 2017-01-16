@@ -1,0 +1,49 @@
+{
+	"__ver": "sys:6",
+	"_id": "jYHdzRfHSFaD4X6ACZ-_uQ",
+	"abstract": false,
+	"class_name": "FieldTypeUiSpec",
+	"definition": {
+		"controller_fn": {
+			"applicable": "clientside",
+			"type": "function"
+		},
+		"doc": {
+			"type": "jsdoc"
+		},
+		"fieldtypes": [
+			{
+				"denormalize_fields": [
+					"name"
+				],
+				"ref_class": "FieldType",
+				"type": "reference"
+			}
+		],
+		"for_editing": {
+			"type": "boolean"
+		},
+		"for_editing_array": {
+			"type": "boolean"
+		},
+		"for_viewing": {
+			"type": "boolean"
+		},
+		"for_viewing_array": {
+			"type": "boolean"
+		},
+		"key": {
+			"type": "path"
+		},
+		"link_fn": {
+			"applicable": "clientside",
+			"type": "function"
+		},
+		"template": {
+			"language": "html",
+			"type": "sourcecode"
+		}
+	},
+	"doc": "A template/function bundle that holds the UI pieces for editing/viewing a field value. A FieldTypeUiSpec applies to a set of FieldTypes based on the value of the fieldtypes array.\nAn empty 'fieldtypes' array implies this UiSpec is applicable universally. (more specific UiSpecs will take precidence)",
+	"system": true
+}

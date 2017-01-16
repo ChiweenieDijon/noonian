@@ -1,0 +1,23 @@
+{
+	"__ver": "sys:3",
+	"_id": "knpIXitAQh2Mf2d6ctQOow",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.directives.related[AngularModule_module].AngularProvider",
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"path",
+				"name",
+				"doc"
+			],
+			"filter": {
+				"type": "directive"
+			},
+			"sort": {
+				"path": "asc"
+			},
+			"title": "Directives"
+		}
+	}
+}

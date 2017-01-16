@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:1",
+	"_id": "qHIq7pPjQgG4R_owGIU85Q",
+	"definition": [
+		{
+			"action": {
+				"params": {
+					"key": "dbui.core.user_profile"
+				},
+				"state": "dbui.custompage"
+			},
+			"label": "password_change"
+		}
+	],
+	"key": "dbui.menu.user",
+	"rolespec": [
+	]
+}

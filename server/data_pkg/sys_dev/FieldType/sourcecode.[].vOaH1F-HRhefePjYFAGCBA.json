@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "vOaH1F-HRhefePjYFAGCBA",
+	"doc": "A block of sourcecode.\n\n@param {string} language - name of programming language; corresponds to Ace editor \"mode\" parameter",
+	"mongo_type": "String",
+	"name": "sourcecode",
+	"text_index": false
+}

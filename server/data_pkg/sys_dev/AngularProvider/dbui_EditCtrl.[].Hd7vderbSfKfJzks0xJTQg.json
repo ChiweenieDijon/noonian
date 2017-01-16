@@ -1,0 +1,22 @@
+{
+	"__ver": "sys:11",
+	"_id": "Hd7vderbSfKfJzks0xJTQg",
+	"doc": "The controller for ui-router states dbui.edit and dbui.create",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbui_EditCtrl",
+	"parameters": [
+		"$scope",
+		"$state",
+		"db",
+		"DbuiAlert",
+		"DbuiAction",
+		"NoonI18n",
+		"theObject",
+		"editPerspective"
+	],
+	"path": "dbui/core/state",
+	"type": "controller"
+}

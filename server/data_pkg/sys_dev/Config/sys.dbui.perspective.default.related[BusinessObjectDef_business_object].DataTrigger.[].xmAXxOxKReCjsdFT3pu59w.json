@@ -1,0 +1,20 @@
+{
+	"__ver": "sys:2",
+	"_id": "xmAXxOxKReCjsdFT3pu59w",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.related[BusinessObjectDef_business_object].DataTrigger",
+	"rolespec": [
+	],
+	"system": true,
+	"value": {
+		"list": {
+			"fields": [
+				"key",
+				"doc"
+			],
+			"sort": {
+				"key": "asc"
+			}
+		}
+	}
+}

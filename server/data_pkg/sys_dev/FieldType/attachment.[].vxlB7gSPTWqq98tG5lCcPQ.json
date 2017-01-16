@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:2",
+	"_id": "vxlB7gSPTWqq98tG5lCcPQ",
+	"doc": "An arbitrary file attachment.  The actual content of the file is stored in mongoDB's special collections \"fs.files\" and \"fs.chunks\", with the value of an \"attachment\" type field being a reference to the object in fs.files.",
+	"mongo_type": "Mixed",
+	"name": "attachment",
+	"text_index": false
+}

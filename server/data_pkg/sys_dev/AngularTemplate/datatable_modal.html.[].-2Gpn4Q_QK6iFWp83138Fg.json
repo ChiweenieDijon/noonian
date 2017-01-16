@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:9",
+	"_id": "-2Gpn4Q_QK6iFWp83138Fg",
+	"doc": "Template for modal \"picker\" dialog.  Utilized in DbuiObjectPicker.showPickerDialog",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "datatable_modal.html",
+	"path": "dbui/reusable/dialog",
+	"provider": {
+		"_disp": "DbuiObjectPicker",
+		"_id": "T9gLsPzJT7iKmH1uKk76BQ"
+	},
+	"rolespec": [
+	]
+}

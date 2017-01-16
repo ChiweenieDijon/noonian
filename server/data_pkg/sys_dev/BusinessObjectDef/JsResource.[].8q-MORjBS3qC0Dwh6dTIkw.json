@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:3",
+	"_id": "8q-MORjBS3qC0Dwh6dTIkw",
+	"abstract": false,
+	"class_name": "JsResource",
+	"definition": {
+		"content": {
+			"language": "javascript",
+			"type": "sourcecode"
+		}
+	},
+	"doc": "A WebResource with javascript content.  When resource is requested, \"content\" is served with ContentType \"application/javascript\".",
+	"superclass": {
+		"_disp": "WebResource",
+		"_id": "0TO-sBb1TjeAAzaMgd-8KQ"
+	},
+	"system": true
+}

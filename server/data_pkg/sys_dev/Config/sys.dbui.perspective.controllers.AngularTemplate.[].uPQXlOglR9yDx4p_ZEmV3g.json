@@ -1,0 +1,21 @@
+{
+	"__ver": "sys:2",
+	"_id": "uPQXlOglR9yDx4p_ZEmV3g",
+	"key": "sys.dbui.perspective.controllers.AngularTemplate",
+	"system": true,
+	"value": {
+		"view": {
+			"layout": [
+				[
+					"module",
+					"provider"
+				],
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:2",
+	"_id": "Y-CAFkrLQDaUXl3yZAUpyw",
+	"key": "sys.dbui.bo.DbuiCustomPage",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"body": "Body",
+		"controller": "Controller",
+		"doc": "Documentation",
+		"key": "Key"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:3",
+	"_id": "z_2NESmpQ-29ACeUMhflNQ",
+	"doc": "An \"enumerated\" type - a value selected from a limited set of possible values.  The list of possible values is specified by referencing an {@link Enumeration} object by name.\n\n@param {string} enum - name of Enumeration",
+	"mongo_type": "String",
+	"name": "enum",
+	"text_index": true
+}

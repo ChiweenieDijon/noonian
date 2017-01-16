@@ -1,0 +1,21 @@
+{
+	"__ver": "sys:1",
+	"_id": "LKubEUuoQtOlBpvsmH6opg",
+	"key": "sys.dbui.bo.UpdateLog",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": false,
+	"value": {
+		"external_pkg": "External Pkg",
+		"object_class": "Object Class",
+		"object_id": "Object Id",
+		"package": "Package",
+		"revert_patch": "Revert Patch",
+		"timestamp": "Timestamp",
+		"update_type": "Update Type",
+		"updated_version": "Updated Version"
+	}
+}

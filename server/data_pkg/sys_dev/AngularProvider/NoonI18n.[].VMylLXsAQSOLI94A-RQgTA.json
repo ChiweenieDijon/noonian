@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:17",
+	"_id": "VMylLXsAQSOLI94A-RQgTA",
+	"doc": "Provides interface for retrieving internationalized labels.",
+	"module": {
+		"_disp": "noonian.api",
+		"_id": "NJnfAVnFSmuMcv9voRnaJQ"
+	},
+	"name": "NoonI18n",
+	"parameters": [
+		"NoonWebService",
+		"$q"
+	],
+	"path": "noonian/api",
+	"type": "factory"
+}

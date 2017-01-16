@@ -1,0 +1,6 @@
+  <p class="input-group">
+    <span class="input-group-btn">
+      <button type="button" class="btn btn-default" ng-click="togglePicker()"><i class="fa fa-calendar"></i></button>
+    </span>
+    <input type="text" id="{{elemId}}" placeholder="(empty)" class="form-control" uib-datepicker-popup="{{displayFormat}}" ng-model="binding.value" is-open="pickerOpen" datepicker-options="dateOptions" ng-model-options='ngModelOptions' close-text="Close" />
+  </p>

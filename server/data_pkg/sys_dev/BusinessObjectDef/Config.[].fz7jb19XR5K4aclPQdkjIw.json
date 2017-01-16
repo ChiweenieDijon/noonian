@@ -1,0 +1,30 @@
+{
+	"__ver": "sys:1",
+	"_id": "fz7jb19XR5K4aclPQdkjIw",
+	"abstract": false,
+	"class_name": "Config",
+	"definition": {
+		"allow_customize": {
+			"type": "boolean"
+		},
+		"key": {
+			"seperator": ".",
+			"type": "path"
+		},
+		"rolespec": {
+			"type": "rolespec"
+		},
+		"system": {
+			"type": "boolean"
+		},
+		"user": {
+			"ref_class": "User",
+			"type": "reference"
+		},
+		"value": {
+			"type": "object"
+		}
+	},
+	"doc": "A configuration value, keyed by a dotted path.  Value can be an arbitrary JSON object, and the \"user\" field allows user-specific customization if desired.",
+	"system": true
+}

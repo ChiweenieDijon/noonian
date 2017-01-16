@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:41",
+	"_id": "dfknFcxcQGWvTrHw0DZcIA",
+	"doc": "Service to handle client-side field type and query op stuff: \n- provide accessors and retain a cache of field type \"ui spec\" objects that contain templates/controllers for viewing/editing fields\n- provide mapping of field types to available query op's",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "DbuiFieldType",
+	"parameters": [
+		"NoonWebService",
+		"NoonI18n",
+		"db",
+		"$q"
+	],
+	"path": "dbui/core/api",
+	"type": "service"
+}

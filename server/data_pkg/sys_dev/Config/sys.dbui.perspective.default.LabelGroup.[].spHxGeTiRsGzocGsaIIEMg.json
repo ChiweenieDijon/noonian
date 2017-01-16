@@ -1,0 +1,39 @@
+{
+	"__ver": "sys:1",
+	"_id": "spHxGeTiRsGzocGsaIIEMg",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.LabelGroup",
+	"rolespec": [
+	],
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"key",
+				"value",
+				"language"
+			]
+		},
+		"list": {
+			"fields": [
+				"key",
+				"language"
+			],
+			"filter": {
+				"system": {
+					"$isfalse": ""
+				}
+			},
+			"sort": {
+				"key": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"key",
+				"value",
+				"language"
+			]
+		}
+	}
+}

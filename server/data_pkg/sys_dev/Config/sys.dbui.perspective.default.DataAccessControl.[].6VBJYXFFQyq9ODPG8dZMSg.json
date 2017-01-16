@@ -1,0 +1,69 @@
+{
+	"__ver": "sys:1",
+	"_id": "6VBJYXFFQyq9ODPG8dZMSg",
+	"key": "sys.dbui.perspective.default.DataAccessControl",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				[
+					"business_object"
+				],
+				[
+					"allow_read",
+					"allow_create"
+				],
+				[
+					"allow_update",
+					"allow_delete"
+				],
+				[
+					"rolespec"
+				],
+				[
+					"condition"
+				],
+				[
+					"field_restrictions"
+				]
+			]
+		},
+		"list": {
+			"fields": [
+				"business_object",
+				"rolespec",
+				"allow_create",
+				"allow_read",
+				"allow_update",
+				"allow_delete"
+			],
+			"sort": {
+				"business_object": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				[
+					"business_object"
+				],
+				[
+					"allow_read",
+					"allow_create"
+				],
+				[
+					"allow_update",
+					"allow_delete"
+				],
+				[
+					"rolespec"
+				],
+				[
+					"condition"
+				],
+				[
+					"field_restrictions"
+				]
+			]
+		}
+	}
+}

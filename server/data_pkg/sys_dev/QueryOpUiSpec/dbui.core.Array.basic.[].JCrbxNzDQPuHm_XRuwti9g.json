@@ -1,0 +1,76 @@
+{
+	"__ver": "sys:2",
+	"_id": "JCrbxNzDQPuHm_XRuwti9g",
+	"editors": [
+		{
+			"$empty": false
+		},
+		{
+			"$notempty": false
+		}
+	],
+	"fieldtypes": [
+		{
+			"_disp": "attachment",
+			"_id": "vxlB7gSPTWqq98tG5lCcPQ",
+			"name": "attachment"
+		},
+		{
+			"_disp": "composite",
+			"_id": "ePi7MsceQMqn3qnVBlHkNA",
+			"name": "composite"
+		},
+		{
+			"_disp": "function",
+			"_id": "e-rYyVWHQoKi1om5SUBMcA",
+			"name": "function"
+		},
+		{
+			"_disp": "image",
+			"_id": "lpmwbanlQH20mCWioX0H1g",
+			"name": "image"
+		},
+		{
+			"_disp": "jsdoc",
+			"_id": "EqIuGj81QTyVDFA7qRQNHg",
+			"name": "jsdoc"
+		},
+		{
+			"_disp": "object",
+			"_id": "uMEzxXwVSgmj_dbfeY-fLA",
+			"name": "object"
+		},
+		{
+			"_disp": "password",
+			"_id": "PkJTkOpsStGYcReZiDoEnQ",
+			"name": "password"
+		},
+		{
+			"_disp": "physical_address",
+			"_id": "2RQWYKymQMmfYqEGxXVtoA",
+			"name": "physical_address"
+		},
+		{
+			"_disp": "sourcecode",
+			"_id": "vOaH1F-HRhefePjYFAGCBA",
+			"name": "sourcecode"
+		},
+		{
+			"_disp": "text",
+			"_id": "Qywi2S8xT86_tQl4leIXNA",
+			"name": "text"
+		},
+		{
+			"_disp": "rolespec",
+			"_id": "aeOhqBixSbigoy3yBkyScQ",
+			"name": "rolespec"
+		},
+		{
+			"_disp": "money",
+			"_id": "cKFhGuY3SZ6_2YWKwkpqCA",
+			"name": "money"
+		}
+	],
+	"for_array": true,
+	"key": "dbui.core.Array.basic"
+}

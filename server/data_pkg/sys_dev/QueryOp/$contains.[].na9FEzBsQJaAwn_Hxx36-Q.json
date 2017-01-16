@@ -1,0 +1,12 @@
+{
+	"__ver": "sys:1",
+	"_id": "na9FEzBsQJaAwn_Hxx36-Q",
+	"for_array": true,
+	"name": "$contains",
+	"types": [
+		{
+			"_disp": "reference",
+			"_id": "bHeoPzsMScORdzjtX6GdoA"
+		}
+	]
+}

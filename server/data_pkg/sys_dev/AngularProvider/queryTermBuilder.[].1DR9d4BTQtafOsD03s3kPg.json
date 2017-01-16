@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:21",
+	"_id": "1DR9d4BTQtafOsD03s3kPg",
+	"doc": "A piece of queryBuilder - a directive for editing an individual term of a query  (a field+op+value chunk: e.g. {\"some_field\":{$eq:\"some value\"}})",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "queryTermBuilder",
+	"parameters": [
+		"DbuiFieldType",
+		"db",
+		"$timeout"
+	],
+	"path": "dbui/core/helper",
+	"type": "directive"
+}

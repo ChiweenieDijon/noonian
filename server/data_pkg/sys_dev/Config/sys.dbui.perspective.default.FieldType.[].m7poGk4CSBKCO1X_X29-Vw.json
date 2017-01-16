@@ -1,0 +1,80 @@
+{
+	"__ver": "sys:4",
+	"_id": "m7poGk4CSBKCO1X_X29-Vw",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.FieldType",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				[
+					"name"
+				],
+				[
+					"doc"
+				],
+				[
+					"mongo_type",
+					"text_index"
+				],
+				[
+					"get_validator"
+				],
+				[
+					"to_db"
+				],
+				[
+					"from_db"
+				]
+			]
+		},
+		"list": {
+			"fields": [
+				"name",
+				"mongo_type",
+				"doc"
+			],
+			"sort": {
+				"name": "asc"
+			}
+		},
+		"picker_list": {
+			"fields": [
+				"name",
+				"mongo_type"
+			],
+			"sort": {
+				"name": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				[
+					"name"
+				],
+				[
+					"doc"
+				],
+				[
+					"mongo_type",
+					"text_index"
+				],
+				[
+					"get_validator"
+				],
+				[
+					"to_db"
+				],
+				[
+					"from_db"
+				]
+			],
+			"related": [
+				{
+					"class": "FieldTypeUiSpec",
+					"field": "fieldtypes"
+				}
+			]
+		}
+	}
+}

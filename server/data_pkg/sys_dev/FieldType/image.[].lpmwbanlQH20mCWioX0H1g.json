@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:3",
+	"_id": "lpmwbanlQH20mCWioX0H1g",
+	"doc": "A graphical image: png, jpeg, etc.  Stored in mongo as an object containing properties for metadata ('name', 'type'), and base64-encoded binary data ('data', 'thumbData').  \n\nThe format of the binary data is in fact a proper \"data URL\" ({@link https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs}) that can be rendered in the browser by placing in an html <img> tag's src attribute.\n\n@todo possibly add parameter to specify storage preference (base64 property, fs.chunks, ...)",
+	"mongo_type": "Mixed",
+	"name": "image",
+	"text_index": false
+}

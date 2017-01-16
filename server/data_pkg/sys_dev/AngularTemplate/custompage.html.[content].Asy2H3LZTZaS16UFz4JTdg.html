@@ -1,0 +1,4 @@
+<div ng-controller="dbui_CustomPageCtrl">
+  <div ng-if="resourcePath" ng-include src="resourcePath" ></div>
+  <dbui-custom-page ng-if="pageKey" key="{{pageKey}}"></dbui-custom-page>
+</div>

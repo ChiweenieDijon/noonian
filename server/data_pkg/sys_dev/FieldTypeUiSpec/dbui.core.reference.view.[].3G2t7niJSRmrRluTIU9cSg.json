@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:8",
+	"_id": "3G2t7niJSRmrRluTIU9cSg",
+	"doc": "Renders the \"_disp\" value from the reference object, if present.  Optionally, can render as a clickable link to invoke a view dialog of the referenced object.\n\n@param {boolean} [enableViewLink] - if true, renders the text as a clickable link that invokes the \"dialog-view\" action.",
+	"fieldtypes": [
+		{
+			"_disp": "reference",
+			"_id": "bHeoPzsMScORdzjtX6GdoA",
+			"name": "reference"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.reference.view"
+}

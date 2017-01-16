@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:1",
+	"_id": "OsHGskAGTUWcWsUUMDkVLA",
+	"doc": "Called from a RemotePackageRepository button; checks for updates on configured remote repo.",
+	"path": "/pkg/runUpdate",
+	"rolespec": [
+	]
+}

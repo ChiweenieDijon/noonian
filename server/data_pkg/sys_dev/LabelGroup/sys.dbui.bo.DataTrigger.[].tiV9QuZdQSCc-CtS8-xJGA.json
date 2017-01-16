@@ -1,0 +1,21 @@
+{
+	"__ver": "sys:1",
+	"_id": "tiV9QuZdQSCc-CtS8-xJGA",
+	"key": "sys.dbui.bo.DataTrigger",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"action": "Action",
+		"before_after": "Before/After",
+		"business_object": "Business Object",
+		"doc": "Documentation",
+		"key": "Key",
+		"on_create": "On Create",
+		"on_delete": "On Delete",
+		"on_update": "On Update"
+	}
+}

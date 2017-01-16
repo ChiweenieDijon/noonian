@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:10",
+	"_id": "c-Sh5WEEQqW1adX257yZVQ",
+	"doc": "The sidebar region in the DBUI: renders a menu into uib-accordion-groups.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "sidebar.html",
+	"path": "dbui/core",
+	"provider": {
+		"_disp": "dbui_SidebarCtrl",
+		"_id": "7jHQrtYKQxSzW_pRHAd9RA"
+	},
+	"rolespec": [
+	]
+}

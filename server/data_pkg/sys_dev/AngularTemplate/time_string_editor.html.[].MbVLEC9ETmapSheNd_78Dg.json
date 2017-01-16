@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:10",
+	"_id": "MbVLEC9ETmapSheNd_78Dg",
+	"doc": "A textbox for direct editing, alongside a dropdown for convenience.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "time_string_editor.html",
+	"path": "dbui/core/helper",
+	"provider": {
+		"_disp": "timeStringEditor",
+		"_id": "3ap2IrTbTkOORGV3Ra5Fjg"
+	},
+	"rolespec": [
+	]
+}

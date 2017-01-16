@@ -1,0 +1,32 @@
+{
+	"__ver": "sys:1",
+	"_id": "kvJ1SBi-QeqtaeRTwRO5Rg",
+	"key": "sys.dbui.perspective.default.Menu",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"key",
+				"definition",
+				"rolespec"
+			]
+		},
+		"list": {
+			"fields": [
+				"key",
+				"definition"
+			],
+			"sort": {
+				"key": "asc"
+			}
+		},
+		"view": {
+			"layout": [
+				"key",
+				"definition",
+				"definition_fn",
+				"rolespec"
+			]
+		}
+	}
+}

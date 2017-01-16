@@ -1,0 +1,21 @@
+{
+	"__ver": "sys:5",
+	"_id": "m4wYLW6UQeW429OeHQAQfw",
+	"key": "sys.dbui.bo.AngularModule",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"config_function": "Config Function",
+		"css_dependencies": "CSS Dependencies",
+		"doc": "Documentation",
+		"external_mod_dependencies": "Module Dependencies (external)",
+		"js_dependencies": "JS Dependencies",
+		"mod_dependencies": "Module Dependencies",
+		"name": "Name",
+		"path": "Path"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:1",
+	"_id": "9nPBq3cpRbm5MyhyxSnZjA",
+	"abstract": false,
+	"class_name": "ImageResource",
+	"definition": {
+		"content": {
+			"type": "image"
+		}
+	},
+	"doc": "A WebResource that is a graphical image.  Image data is stored as an 'image' type field (base64 encoded), so for exceptionally large images, it may be more appropriate to use FileResource.",
+	"superclass": {
+		"_disp": "WebResource",
+		"_id": "0TO-sBb1TjeAAzaMgd-8KQ"
+	},
+	"system": true
+}

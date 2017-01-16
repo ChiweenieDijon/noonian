@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:3",
+	"_id": "cKFhGuY3SZ6_2YWKwkpqCA",
+	"doc": "An amount of money, in a particular currency.  Stored in mongo as an object with 'amount' and 'currency' attributes.\n\n@todo this is pretty much a placeholder at this time; everything is forced to 'USD' for currency.",
+	"mongo_type": "Mixed",
+	"name": "money",
+	"text_index": false
+}

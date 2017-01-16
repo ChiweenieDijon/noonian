@@ -1,0 +1,77 @@
+{
+	"__ver": "sys:7",
+	"_id": "w2U0lB56Sq2Mb-6r3WDBsw",
+	"allow_customize": false,
+	"key": "sys.dbui.navbar_menu",
+	"system": true,
+	"value": [
+		{
+			"classes": [
+				"BusinessObjectDef",
+				"CodeModule",
+				"DataExport",
+				"DataTrigger",
+				"Enumeration",
+				"FieldType",
+				"LabelGroup",
+				"MemberFunction",
+				"QueryOp",
+				"WebService"
+			],
+			"title": "Serverside/DB Dev"
+		},
+		{
+			"classes": [
+				"AngularApp",
+				"AngularModule",
+				"AngularProvider",
+				"AngularTemplate",
+				"DbuiCustomPage",
+				"UiAction"
+			],
+			"title": "Clientside Dev"
+		},
+		{
+			"classes": [
+				"FieldTypeUiSpec",
+				"QueryOpUiSpec"
+			],
+			"title": "Low-Level DBUI"
+		},
+		{
+			"classes": [
+				"WebResource",
+				"CssResource",
+				"FileResource",
+				"HtmlResource",
+				"ImageResource",
+				"JsResource"
+			],
+			"title": "Web Resources"
+		},
+		{
+			"classes": [
+				"Config",
+				"DataAccessControl",
+				"Menu",
+				"Role",
+				"User"
+			],
+			"title": "Admin"
+		},
+		{
+			"classes": [
+				"Language"
+			],
+			"title": "Ref Data"
+		},
+		{
+			"classes": [
+				"BusinessObjectPackage",
+				"BusinessObjectPackageUpdate",
+				"RemotePackageRepository"
+			],
+			"title": "Packaging"
+		}
+	]
+}

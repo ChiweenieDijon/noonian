@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:6",
+	"_id": "EI-Y7M75RauzkC2TI-IuQw",
+	"doc": "Utilizes a \"file\" input to allow selecting image files from client-side filesystem, in conjunction with custom {@link ImageData} directive to convert selected images to the expected data URLs.",
+	"fieldtypes": [
+		{
+			"_disp": "image",
+			"_id": "lpmwbanlQH20mCWioX0H1g",
+			"name": "image"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.image.edit"
+}

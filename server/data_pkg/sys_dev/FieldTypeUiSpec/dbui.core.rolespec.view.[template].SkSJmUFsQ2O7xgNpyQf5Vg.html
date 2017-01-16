@@ -1,0 +1,6 @@
+<div>
+  <span ng-if="!displayValue || !displayValue.length"><i>(no restriction)</i></span>
+  <span ng-repeat="role in roleNames">
+    <strong>{{role}}</strong><span ng-if="!$last">, </span>
+  </span>
+</div>

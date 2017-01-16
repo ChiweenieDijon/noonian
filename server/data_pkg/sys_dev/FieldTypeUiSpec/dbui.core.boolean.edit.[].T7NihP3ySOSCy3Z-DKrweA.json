@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:7",
+	"_id": "T7NihP3ySOSCy3Z-DKrweA",
+	"doc": "Displays a checkbox (for a standard true/false boolean) or a dropdown (for a \"trinary\" or nullable boolean).\n\n@param {Object} [displayValue] - maps values ('true', 'false', 'null') to Objects specifying 'text' and css 'class' to be used for display",
+	"fieldtypes": [
+		{
+			"_disp": "boolean",
+			"_id": "WiUvP7txRQiF6tPM9FpFIw",
+			"name": "boolean"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.boolean.edit"
+}

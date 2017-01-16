@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:7",
+	"_id": "T9gLsPzJT7iKmH1uKk76BQ",
+	"doc": "Provides function to display an \"object picker\" modal; notifiaction of selected object is done via callaback.",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "DbuiObjectPicker",
+	"parameters": [
+		"Dbui",
+		"$uibModal",
+		"$rootScope"
+	],
+	"path": "dbui/reusable/dialog",
+	"type": "factory"
+}

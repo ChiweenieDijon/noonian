@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:5",
+	"_id": "UEzEc9S3SnidfoZ6EefZqQ",
+	"doc": "Factory for $httpProvider.interceptors\nIntercepts angular's http interaction to handle authentication tokens/errors/etc.",
+	"module": {
+		"_disp": "noonian.api",
+		"_id": "NJnfAVnFSmuMcv9voRnaJQ"
+	},
+	"name": "NoonAuthInterceptor",
+	"parameters": [
+		"$q",
+		"$cookieStore",
+		"$window"
+	],
+	"path": "noonian/helper",
+	"type": "factory"
+}

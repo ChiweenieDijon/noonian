@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:2",
+	"_id": "FKpvB_JNSoOF2tVEuXEkIQ",
+	"doc": "Simply render component values to a couple of divs.",
+	"fieldtypes": [
+		{
+			"_disp": "physical_address",
+			"_id": "2RQWYKymQMmfYqEGxXVtoA",
+			"name": "physical_address"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.physical_address.view"
+}

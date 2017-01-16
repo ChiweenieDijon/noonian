@@ -1,0 +1,21 @@
+{
+	"__ver": "sys:6",
+	"_id": "qo19scAPQ1OlMmbEWlceMg",
+	"doc": "Provides interface to handle authentication, login/logout, tokens/cookies, ...",
+	"module": {
+		"_disp": "noonian.api",
+		"_id": "NJnfAVnFSmuMcv9voRnaJQ"
+	},
+	"name": "NoonAuth",
+	"parameters": [
+		"$rootScope",
+		"$http",
+		"$q",
+		"db",
+		"$state",
+		"$cookies",
+		"NoonAuthInterceptor"
+	],
+	"path": "noonian/api",
+	"type": "factory"
+}

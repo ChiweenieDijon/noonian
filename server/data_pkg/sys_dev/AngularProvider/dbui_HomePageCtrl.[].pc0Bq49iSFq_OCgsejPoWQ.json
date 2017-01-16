@@ -1,0 +1,17 @@
+{
+	"__ver": "sys:5",
+	"_id": "pc0Bq49iSFq_OCgsejPoWQ",
+	"doc": "The controller for ui-router state dbui.home",
+	"module": {
+		"_disp": "noonian.dbui",
+		"_id": "myP57XGhSNyDKrrcJFvO0Q"
+	},
+	"name": "dbui_HomePageCtrl",
+	"parameters": [
+		"$scope",
+		"NoonConfig",
+		"NoonAction"
+	],
+	"path": "dbui/core/state",
+	"type": "controller"
+}

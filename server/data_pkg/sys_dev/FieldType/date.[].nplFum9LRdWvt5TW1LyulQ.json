@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:5",
+	"_id": "nplFum9LRdWvt5TW1LyulQ",
+	"doc": "A simple date:  a day/month/year.  No time or timezone information.  Stored in Mongo as a string formatted yyyy-MM-dd.\n\n@todo add typedesc parameter 'resolution' to allow month/year or just year.",
+	"mongo_type": "String",
+	"name": "date",
+	"text_index": false
+}

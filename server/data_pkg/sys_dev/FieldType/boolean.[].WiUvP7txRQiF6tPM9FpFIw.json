@@ -1,0 +1,8 @@
+{
+	"__ver": "sys:4",
+	"_id": "WiUvP7txRQiF6tPM9FpFIw",
+	"doc": "Standard boolean value of true or false.  Supports a \"trinary\" mode which allows values of true, false, or null.\n\n@param {string} [subtype] - if present, and equal to \"trinary\", system will allow 'null' value in addition to true/false",
+	"mongo_type": "Boolean",
+	"name": "boolean",
+	"text_index": false
+}

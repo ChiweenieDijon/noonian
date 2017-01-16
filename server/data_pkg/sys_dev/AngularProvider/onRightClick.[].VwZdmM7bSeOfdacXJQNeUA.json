@@ -1,0 +1,15 @@
+{
+	"__ver": "sys:1",
+	"_id": "VwZdmM7bSeOfdacXJQNeUA",
+	"doc": "Binds an angular expression to the right-click of an element",
+	"module": {
+		"_disp": "noonian.api",
+		"_id": "NJnfAVnFSmuMcv9voRnaJQ"
+	},
+	"name": "onRightClick",
+	"parameters": [
+		"$parse"
+	],
+	"path": "noonian/lib",
+	"type": "directive"
+}

@@ -1,0 +1,12 @@
+<div class="dbui-edit-field-reference">
+	<p class="input-group">
+	<span class="input-group-btn">
+      <button type="button" class="btn btn-default" ng-click="showPicker()"><i class="fa fa-ellipsis-h"></i></button>
+    </span>
+	<input type="text" class="form-control" autocomplete="off" id="{{elemId}}" ng-model="refDisplayText"
+	 placeholder="(empty)"
+   ng-blur="lostFocus()"
+	 uib-typeahead="stub._disp for stub in getRefs($viewValue)"
+   typeahead-on-select="onSelect($item, $model, $label)">
+   </p>
+</div>

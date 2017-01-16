@@ -1,0 +1,16 @@
+{
+	"__ver": "sys:1",
+	"_id": "5VU7BvKZRRG2dH3kfZVxYA",
+	"for_array": false,
+	"name": "$gt",
+	"types": [
+		{
+			"_disp": "integer",
+			"_id": "gxJBuQp7RkKLIV0cazfFnA"
+		},
+		{
+			"_disp": "float",
+			"_id": "EaQUGA7oS7qKanG4QbvYbQ"
+		}
+	]
+}

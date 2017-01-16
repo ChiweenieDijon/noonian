@@ -1,0 +1,52 @@
+{
+	"__ver": "sys:12",
+	"_id": "G6NlMXjRQEeiqdsC6PP-Dw",
+	"abstract": false,
+	"class_name": "AngularModule",
+	"definition": {
+		"config_function": {
+			"applicable": "clientside",
+			"type": "function"
+		},
+		"css_dependencies": [
+			{
+				"denormalize_fields": [
+					"name",
+					"path"
+				],
+				"ref_class": "CssResource",
+				"type": "reference"
+			}
+		],
+		"external_mod_dependencies": [
+			{
+				"type": "string"
+			}
+		],
+		"js_dependencies": [
+			{
+				"denormalize_fields": [
+					"name",
+					"path"
+				],
+				"ref_class": "JsResource",
+				"type": "reference"
+			}
+		],
+		"mod_dependencies": [
+			{
+				"denormalize_fields": [
+					"name"
+				],
+				"ref_class": "AngularModule",
+				"type": "reference"
+			}
+		]
+	},
+	"doc": "A WebResource that is an angular module.  \nA module is composed of the AngularProviders (factories, controllers, directives, filters, etc) and AngularTemplates that reference it. \nWhen resource is requested, the components are pulled together into a single document, and served with a content type of 'application/javascript'.",
+	"superclass": {
+		"_disp": "WebResource",
+		"_id": "0TO-sBb1TjeAAzaMgd-8KQ"
+	},
+	"system": true
+}

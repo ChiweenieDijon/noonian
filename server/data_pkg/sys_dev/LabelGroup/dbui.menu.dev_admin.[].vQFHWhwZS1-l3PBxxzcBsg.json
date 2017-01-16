@@ -1,0 +1,18 @@
+{
+	"__ver": "sys:2",
+	"_id": "vQFHWhwZS1-l3PBxxzcBsg",
+	"key": "dbui.menu.dev_admin",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": true,
+	"value": {
+		"_submenu_label": "Admin",
+		"config": "Configuration",
+		"dac": "Data Access Controls",
+		"roles": "Roles",
+		"users": "Users"
+	}
+}

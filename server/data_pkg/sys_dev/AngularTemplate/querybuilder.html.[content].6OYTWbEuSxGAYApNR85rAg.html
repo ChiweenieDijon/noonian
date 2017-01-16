@@ -1,0 +1,43 @@
+<div class="querybuilder">
+
+  <div ng-repeat="clauseGroup in queryModel.clauseGroups"> <!-- Each clauseGroup is a set of 1 or more terms connected by innerConj -->
+
+    <div class="row">
+      <div class="querybuilder-clausegroup-container col-md-12">
+
+        <div ng-repeat="clause in clauseGroup">
+          <div class="row">
+            <div class="col-md-1">
+              <button class="btn btn-default" ng-click="removeTerm(clauseGroup, $index)">x</button>
+            </div>
+            <div class="querybuilder-term-container col-md-11">
+              <query-term-builder ng-if="fieldList" field-list="fieldList" ng-model="clauseGroup[$index]"></query-term-builder>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-offset-3 col-md-9" ng-switch="$last">
+              <span ng-switch-when="true">
+                <button ng-if="queryModel.innerConj" class="btn btn-primary" ng-click="newTerm(clauseGroup)">{{conjLabels[queryModel.innerConj]}}</button>
+                <span ng-if="!queryModel.innerConj">
+                  <button class="btn btn-primary" ng-click="newTerm(clauseGroup, '$and')">&amp;</button>
+                  <button class="btn btn-primary" ng-click="newTerm(clauseGroup, '$or')">or</button>
+                </span>
+              </span>
+              <span ng-switch-default>{{conjLabels[queryModel.innerConj]}}</span>
+            </div>
+          </div>
+        </div> <!-- end clause-in-clauseGroup iteration-->
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div ng-switch="$last" class="col-md-11 col-md-offset-1"> <!-- after each clauseGroup -->
+        <span ng-switch-when="true"><button ng-if="queryModel.outerConj" class="btn btn-default" ng-click="newClauseGroup()">{{conjLabels[queryModel.outerConj]}}</button></span>
+        <span ng-switch-default>{{conjLabels[queryModel.outerConj]}}</span>
+      </div>
+    </div>
+
+  </div> <!-- end clauseGroup-in-queryModel iteration -->
+
+</div>

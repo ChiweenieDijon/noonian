@@ -1,0 +1,29 @@
+{
+	"__ver": "sys:1",
+	"_id": "447ODSNfR4S1BcDTKHehoA",
+	"key": "sys.dbui.perspective.default.BusinessObjectPackageUpdate",
+	"system": true,
+	"value": {
+		"edit": {
+			"layout": [
+				"updates",
+				"target_object",
+				"package"
+			]
+		},
+		"list": {
+			"fields": [
+				"package",
+				"target_object",
+				"updates"
+			]
+		},
+		"view": {
+			"layout": [
+				"package",
+				"target_object",
+				"updates"
+			]
+		}
+	}
+}
