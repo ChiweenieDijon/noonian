@@ -92,7 +92,33 @@ var cleanupProjection = function(projectionObj) {
       delete projectionObj[exclusionFields[i]];
     }
   }
-}
+};
+
+/**
+ *  Search for any $noonian_context objects within the queryObj, replace with values from actual context.
+ *   Keys mapping to an object such as {$noonian_context:'dotted.spec.string'}
+ *   will be mapped to context.dotted.spec.string
+ */
+var applyContext = function(queryObj, context) {
+    
+    for(var k in queryObj) {
+        
+        var val = queryObj[k];
+        
+        if(val && val instanceof Object) {
+            var contextSelector = val.$noonian_context; 
+            
+            if(contextSelector) {
+                //pull value from context and replace in queryObj:
+                queryObj[k] = _.get(context, contextSelector);
+            }
+            else {
+                //recurse into the query
+                applyContext(val, context);
+            }
+        }
+    }
+};
 
 
 controller.list = function(req, res) {
@@ -132,7 +158,14 @@ controller.list = function(req, res) {
 
   var TargetModel = db[className];
 
-  auth.aggregateReadDacs(req, TargetModel).then(function(dacObj){
+  Q.all([
+    auth.getCurrentUser(req),
+    auth.aggregateReadDacs(req, TargetModel)
+  ])
+  .then(function(resultArr){
+    var currUser = resultArr[0]
+    var dacObj = resultArr[1];
+    
     var dacCond = dacObj.condition;
     var dacProj = dacObj.fieldRestrictions;
 
@@ -158,6 +191,8 @@ controller.list = function(req, res) {
     }
 
     cleanupProjection(fields);
+    
+    applyContext(queryObj, {currentUser:currUser});
 
     TargetModel.count(queryObj, function(err, totalRecords) {
       if(err)
@@ -289,7 +324,15 @@ controller.get = function(req, res) {
 
   var TargetModel = db[className];
 
-  auth.aggregateReadDacs(req, TargetModel).then(function(dacObj){
+  //auth.aggregateReadDacs(req, TargetModel).then(function(dacObj){
+  Q.all([
+    auth.getCurrentUser(req),
+    auth.aggregateReadDacs(req, TargetModel)
+  ])
+  .then(function(resultArr){
+    var currUser = resultArr[0]
+    var dacObj = resultArr[1];
+      
     var dacCond = dacObj.condition;
     var dacProj = dacObj.fieldRestrictions;
 
@@ -306,6 +349,8 @@ controller.get = function(req, res) {
         fields=dacProj;
     }
     cleanupProjection(fields);
+    
+    applyContext(queryObj, {currentUser:currUser});
 
     TargetModel.findOne(queryObj, fields, function(err, result){
       if(err) { return wsUtil.handleError(res, err); }
@@ -346,7 +391,15 @@ controller.save = function(req, res) {
     /*
       *** Single-item update ***
     */
-    auth.aggregateUpdateDacs(req, TargetModel).then(function(dacObj){
+    //auth.aggregateUpdateDacs(req, TargetModel).then(function(dacObj){
+    Q.all([
+        auth.getCurrentUser(req),
+        auth.aggregateUpdateDacs(req, TargetModel)
+    ])
+    .then(function(resultArr){
+      var currUser = resultArr[0]
+      var dacObj = resultArr[1];
+    
       var dacCond = dacObj.condition;
       var dacProj = dacObj.fieldRestrictions;
 
@@ -359,7 +412,8 @@ controller.save = function(req, res) {
       if(dacCond) {
         queryObj = {$and:[queryObj, dacCond]};
       }
-
+      
+      applyContext(queryObj, {currentUser:currUser});
 
       TargetModel.findOne(queryObj, function(err, result) {
         if(err) { return wsUtil.handleError(res, err); }
@@ -375,10 +429,8 @@ controller.save = function(req, res) {
 
         _.assign(result, newObj); //Apply fields from newObj atop result
 
-        auth.getCurrentUser(req).then(function(u) {
-          return result.save({currentUser:u}, null);
-        })
-        .then(function (saveResult) {
+        
+        return result.save({currentUser:currUser}, null).then(function (saveResult) {
           delete saveResult._current_user;
           return res.json({result:saveResult, nModified:1});
         },
@@ -398,7 +450,15 @@ controller.save = function(req, res) {
     /*
       *** Batch update ***
     */
-    auth.aggregateUpdateDacs(req, TargetModel).then(function(dacObj){
+    //auth.aggregateUpdateDacs(req, TargetModel).then(function(dacObj){
+    Q.all([
+        auth.getCurrentUser(req),
+        auth.aggregateUpdateDacs(req, TargetModel)
+    ])
+    .then(function(resultArr){
+      var currUser = resultArr[0]
+      var dacObj = resultArr[1];
+      
       var dacCond = dacObj.condition;
       var dacProj = dacObj.fieldRestrictions;
 
@@ -415,7 +475,9 @@ controller.save = function(req, res) {
       if(dacProj)
         if(stripForbiddenFields(dacProj, updateObj))
           console.log('WARNING: attempted to update restricted field: user %s, record %s %s', req.user._id, className, id);
-
+    
+      applyContext(queryObj, {currentUser:currUser});
+      
       TargetModel.update(queryObj, updateObj, {multi:true}, function(err, result) {
         if(err)
           return wsUtil.handleError(res, err);
@@ -434,7 +496,15 @@ controller.save = function(req, res) {
     /*
       *** Single insert ***
     */
-    auth.aggregateCreateDacs(req, TargetModel).then(function(dacObj){
+    //auth.aggregateCreateDacs(req, TargetModel).then(function(dacObj){
+    Q.all([
+        auth.getCurrentUser(req),
+        auth.aggregateCreateDacs(req, TargetModel)
+    ])
+    .then(function(resultArr){
+      var currUser = resultArr[0]
+      var dacObj = resultArr[1];
+      
       var dacCond = dacObj.condition;
       var dacProj = dacObj.fieldRestrictions;
 
@@ -444,13 +514,14 @@ controller.save = function(req, res) {
           console.log('WARNING: attempted to insert w/ restricted field: user %s, record %s %j', req.user._id, className, newObj);
 
       var newModelObj = new TargetModel(newObj);
+      
+      if(dacCond) {
+          applyContext(dacCond, {currentUser:currUser});
+      }
 
       if(auth.checkCondition(dacCond, newModelObj)) {
-
-        auth.getCurrentUser(req).then(function(u) {
-          return newModelObj.save({currentUser:u}, null);
-        })
-        .then(function(saveResult) {
+        
+        return newModelObj.save({currentUser:currUser}, null).then(function(saveResult) {
           delete saveResult._current_user;
           //Respond with the inserted object as the result
           return res.json({result:saveResult, nInserted:1});
@@ -494,7 +565,14 @@ controller.remove = function(req, res) {
   }
 
 
-  auth.aggregateDeleteDacs(req, TargetModel).then(function(dacObj){
+  //auth.aggregateDeleteDacs(req, TargetModel).then(function(dacObj){
+  Q.all([
+    auth.getCurrentUser(req),
+    auth.aggregateDeleteDacs(req, TargetModel)
+  ])
+  .then(function(resultArr) {
+    var currUser = resultArr[0];
+    var dacObj = resultArr[1];
     var dacCond = dacObj.condition;
 
     var queryObj;
@@ -504,8 +582,10 @@ controller.remove = function(req, res) {
     else {
       queryObj = conditions;
     }
+    
+    applyContext(queryObj, {currentUser:currUser});
 
-    TargetModel.remove(conditions, function(err, result) {
+    TargetModel.remove(queryObj, function(err, result) {
       if(err) { return wsUtil.handleError(res, err); }
       return res.json({result:"success", nRemoved:result.length}); //TODO if result.length=0, is it success?
     });

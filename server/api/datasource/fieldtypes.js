@@ -99,7 +99,7 @@ var cacheAndIndex = function() {
 		  ft.toFileSystem = specialFsTypes[ft.name];
 	  }
     }
-    console.log('FieldTypes cached and indexed: %j', Object.keys(ftMap));
+    //console.log('FieldTypes cached and indexed: %j', Object.keys(ftMap));
 
   });
 };

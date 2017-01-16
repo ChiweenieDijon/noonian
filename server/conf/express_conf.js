@@ -32,10 +32,18 @@ module.exports = function(app) {
 
   if(conf.urlBase) {
     app.use(conf.urlBase, express.static(path.join(conf.root, 'client')));
+    if(conf.staticContent) {
+        app.use(conf.urlBase, express.static(path.join(conf.root, conf.staticContent)));
+    }
   }
   else {
     app.use(express.static(path.join(conf.root, 'client')));
+    if(conf.staticContent) {
+        app.use(express.static(path.join(conf.root, conf.staticContent)));
+    }
   }
+  
+  
 
   // app.use(express.static(path.join(conf.root, '.tmp')));
   // app.use(express.static(path.join(conf.root, 'client')));
