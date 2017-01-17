@@ -6,3 +6,4 @@ pid.*
 client/bower_components
 server/conf/instance
 !server/conf/instance/template.js
+uploads
