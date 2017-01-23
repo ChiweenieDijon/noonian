@@ -39,8 +39,9 @@ var DataTriggerService = require('../datatrigger');
 
 var fsPackageSyncer = require('./fs_sync');
 var packageStreamer = require('./pkg_stream');
-exports.buildPackage = packageStreamer.buildPackage;
 
+exports.buildPackage = packageStreamer.buildPackage;
+exports.applyPackageStream = exports.installPackageStream = packageStreamer.installPackage;
 
 var diffTool = require('./diffpatch');
 
@@ -431,4 +432,21 @@ exports.packageFileExport = function(bopId) {
 };
 
 
+exports.parseVersionString = function(verStr) {
+  var major = 0;
+  var minor = 0;
+
+  if(verStr) {
+    var dotPos = verStr.indexOf('.');
+    if(dotPos > -1) {
+      major = +(verStr.substring(0, dotPos));
+      minor = +(verStr.substring(dotPos+1));
+    }
+    else {
+      minor = +verStr;
+    }
+  }
+
+  return new packageStreamer.PkgVersion(major, minor);
+};
 

@@ -39,7 +39,7 @@ var stringify = function(obj) {
 }
 
 
-var PkgVersion = function(major, minor) {
+var PkgVersion = exports.PkgVersion = function(major, minor) {
     this.major = major;
     this.minor = minor;
     this.compareTo = function(otherVer) {
@@ -280,10 +280,18 @@ exports.buildPackage = function(bopId) {
       deferred.reject(err);
     });
 
+    
+    //don't want to serialize __ver, but save it off
+    var verOrig = bop.__ver;
+    bop.__ver = undefined;
+    
     pkgStream.write('{\n"metadata":');
     pkgStream.write(stringify(bop));
     
+    
+    bop.__ver = verOrig;
     bop.package_file = attachmentMetaObj;
+    
     
     pkgStream.write(',\n"business_objects":[\n');
     
