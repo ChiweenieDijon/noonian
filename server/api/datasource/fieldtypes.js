@@ -134,7 +134,9 @@ var bootstrapTypeMap = {
   'object':Mixed,
   'attachment':Mixed,
   'password':Mixed,
-  'image':Mixed
+  'image':Mixed,
+  'datetime':Date,
+  'url':String
 };
 
 
