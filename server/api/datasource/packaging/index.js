@@ -36,6 +36,7 @@ var db = require('../index');
 var GridFsService = require('../gridfs');
 var DataTriggerService = require('../datatrigger');
 
+var VersionId = require('../version_id');
 
 var fsPackageSyncer = require('./fs_sync');
 var packageStreamer = require('./pkg_stream');
@@ -352,30 +353,90 @@ exports.applyLocalPackage = function(pkgName) {
  * 
  * @param className
  * @param obj JSON object
+ * @param pacakgeRef - reference to BusinessObjectPackage on who's behalf this object is being imported;
+ *                     if not present, no version checking will occur
  */
-exports.importObject = function(className, obj) {
+exports.importObject = function(className, obj, packageRef) {
     var boId = obj._id;
     
-	if(className === 'BusinessObjectDef') {	
-        return db.installBusinessObjectDef(obj)
-	}
-	else {
-		var updateVer = obj.__ver;
-		delete obj.__ver;
-		
-		return db[className].findOne({_id:boId}).then(function(modelObj) {
-			
-			if(!modelObj) {
-				modelObj = new db[className](obj);
-			}
-			else {
-				_.assign(modelObj, obj);
-			}			
-			
-			return modelObj.save({useVersionId:updateVer, skipTriggers:true}, null);
-			
-		});
-	}
+    if(!db[className]) {
+        //May happen if installing a package who's dependencies aren't installed
+        if(!packageRef || ! db.PackageConflict) {                
+            throw new Error('missing class '+className);
+        }
+        //Flag the problem via a PackageConflict
+        var conflictObj = new db.PackageConflict({
+            package:packageRef,
+            conflict_type:'missing class',
+            object_class:className,
+            object_id:boId,
+            package_version_id:obj.__ver,
+            merged_object:obj
+        });
+        return conflictObj.save();
+    }
+    
+    return db[className].findOne({_id:boId}).then(function(modelObj) {
+        
+        if(packageRef && modelObj && db.PackageConflict) {
+            //Check validity of stepping from current version -> update version
+            var updateVer = obj.__ver;
+            
+            var currentVer = new VersionId(modelObj.__ver);
+            var pkgVer = new VersionId(updateVer);
+            var versionRel = pkgVer.relationshipTo(currentVer);
+            
+            if(versionRel.same) {
+                //No need for any more work
+                return;
+            }
+            
+            if(!versionRel.descendant) {
+                //update is not a decendent of currentVer, raise a flag
+                var conflictObj = new db.PackageConflict({
+                    package:packageRef,
+                    object_class:className,
+                    object_id:boId,
+                    installed_version_id:modelObj.__ver,
+                    package_version_id:updateVer
+                });
+                
+                if(versionRel.cousin) {
+                    conflictObj.conflict_type = 'divergent';
+                    //incorporate all data needed to perform a merge
+                    conflictObj.installed_object = modelObj.toPlainObject();
+                    conflictObj.merged_object = obj;
+                    //diff from installed -> package version
+                    conflictObj.diff = diffTool.diff(conflictObj.installed_object, conflictObj.merged_object);
+                } 
+                else {
+                    conflictObj.conflict_type = 'independent update';
+                    //installed one is actually newer; diff serves to highlight the local changes made to the package version
+                    conflictObj.diff = diffTool.diff(obj, modelObj.toPlainObject());
+                }
+                
+                return conflictObj.save();
+            }
+        }
+        
+        if(className === 'BusinessObjectDef') {
+            return db.installBusinessObjectDef(obj)
+        }
+                
+        var updateVer = obj.__ver;
+        delete obj.__ver;
+        
+        if(!modelObj) {
+            modelObj = new db[className](obj);
+        }
+        else {
+            _.assign(modelObj, obj);
+        }			
+        
+        return modelObj.save({useVersionId:updateVer, skipTriggers:true}, null);
+        
+    });
+	
 };
 
 

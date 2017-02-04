@@ -47,6 +47,69 @@ VersionId.prototype.increment = function() {
   }
 };
 
+VersionId.prototype.difference = function(otherVersionId) {
+    //Subtract each term in otherVersionId from this one
+    var diff = _.clone(this.instanceMap);
+    _.forEach(otherVersionId.instanceMap, function(val, key) {
+        diff[key] = (diff[key] || 0) - val;
+    });
+    return diff;
+};
+
+VersionId.prototype.relationshipTo = function(otherVersionId) {
+    //compute this - other
+    var diff = this.difference(otherVersionId);
+    
+    var hasNeg = false;
+    var hasPos = false;
+    
+    _.forEach(diff, function(val) {
+        if(val > 0) {
+            hasPos = true;
+        }
+        if(val < 0) {
+            hasNeg = true;
+        }
+    });
+    
+    return {
+        same:       (!hasPos && !hasNeg),   //all terms equal
+        descendant: (hasPos && !hasNeg),    //all terms larger in this
+        ancestor:   (!hasPos && hasNeg),    //all terms larger in other
+        cousin:     (hasPos && hasNeg)      //some terms larger, some smaller
+    };
+};
+
+VersionId.prototype.isDescendantOf = function(otherVersionId) {
+    var diff = this.difference(otherVersionId);
+    
+    var hasNeg = false;
+    var hasPos = false;
+    
+    _.forEach(diff, function(val) {
+        if(val > 0) {
+            hasPos = true;
+        }
+        if(val < 0) {
+            hasNeg = true;
+        }
+    });
+    return hasPos && !hasNeg;
+};
+
+VersionId.prototype.isAncestorOrSelf = function(otherVersionId) {
+    var diff = this.difference(otherVersionId);
+    
+    var hasPos = false;
+    
+    _.forEach(diff, function(val) {
+        if(val > 0) {
+            hasPos = true;
+        }
+    });
+    return !hasPos;
+};
+
 VersionId.prototype.toString = function() {
   var resultArr = [];
   _.forEach(this.instanceMap, function(counter, instance) {
