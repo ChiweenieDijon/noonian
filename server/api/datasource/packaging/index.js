@@ -379,6 +379,7 @@ exports.importObject = function(className, obj, packageRef) {
     return db[className].findOne({_id:boId}).then(function(modelObj) {
         
         if(packageRef && modelObj && db.PackageConflict) {
+            
             //Check validity of stepping from current version -> update version
             var updateVer = obj.__ver;
             
@@ -387,8 +388,14 @@ exports.importObject = function(className, obj, packageRef) {
             var versionRel = pkgVer.relationshipTo(currentVer);
             
             if(versionRel.same) {
-                //No need for any more work
-                return;
+                //If they're the same
+                if(className === 'BusinessObjectDef') {
+                    //Special case: always refresh BOD's w/ system datalayer
+                    return db.installBusinessObjectDef(obj);
+                }
+                else {
+                    return;
+                }
             }
             
             if(!versionRel.descendant) {
@@ -420,7 +427,7 @@ exports.importObject = function(className, obj, packageRef) {
         }
         
         if(className === 'BusinessObjectDef') {
-            return db.installBusinessObjectDef(obj)
+            return db.installBusinessObjectDef(obj);
         }
                 
         var updateVer = obj.__ver;
