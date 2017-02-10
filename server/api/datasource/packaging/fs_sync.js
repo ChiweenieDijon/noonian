@@ -161,7 +161,7 @@ exports.packageFromFs = function(srcDir) {
     }
     
     
-    return PkgService.importObject('BusinessObjectPackage', bopObj).then(function() {
+    return PkgService.importObject('BusinessObjectPackage', bopObj, false).then(function() {
         
         var promiseChain = Q(true);
         
@@ -251,7 +251,7 @@ function importClassDir(srcDir, className) {
         
         //Import the list
         _.forEach(jsonObjects, function(obj) {
-            promiseChain = promiseChain.then(PkgService.importObject.bind(null, className, obj));
+            promiseChain = promiseChain.then(PkgService.importObject.bind(null, className, obj, false));
         });
         
 	}

@@ -342,21 +342,34 @@ var createAndCacheModel = function(forBod) {
 
 
 
-var augmentModelsWithMemberFunctions = function() {
+var augmentModelsWithMemberFunctions = function(singleClass) {
   if(!modelCache.MemberFunction) {
-    console.log('NEED TO UPGRADE SYS PKG!!!!!  Missing MemberFunction');
+    //console.log('NEED TO UPGRADE SYS PKG!!!!!  Missing MemberFunction');
     return;
   }
+  
+  var queryObj = {};
+  if(singleClass && modelCache[singleClass]) {
+      queryObj.business_object = modelCache[singleClass]._bo_meta_data.bod_id;
+  }
 
-  return modelCache.MemberFunction.find({}).then(function(memberFnList) {
+    
+  return modelCache.MemberFunction.find(queryObj).then(function(memberFnList) {
     _.forEach(memberFnList, function(memberFnObj) {
-
+      
       if(memberFnObj.business_object &&
          memberFnObj.name &&
          memberFnObj.function &&
          (memberFnObj.applies_to == 'server' || memberFnObj.applies_to == 'both')) {
-
-        var ModelObj = modelCache[memberFnObj.business_object._disp];
+        
+        console.log('Installing Member Function %s.%s', memberFnObj.business_object._disp, memberFnObj.name);
+        
+        var ModelObj = modelById[memberFnObj.business_object._id];
+        //console.log('ModelObj: %j', (ModelObj && ModelObj._bo_meta_data && ModelObj._bo_meta_data.class_name));
+        if(!ModelObj) {
+            return console.error('Invalid BOD ref in MemberFunction object')
+        }
+        
         var targetObj;
         if(memberFnObj.is_static) {
           targetObj = ModelObj;
@@ -482,6 +495,10 @@ exports.installBusinessObjectDef = function(bodObj) {
       return deferredBodSave.apply(new BusinessObjectDef(bodObj));
     }
 
+  })
+  .then(function() {
+      //restore any memberfunctions we may have trampled
+      return augmentModelsWithMemberFunctions(className);
   })
   .then(function() {
       //Any BODs waiting for this one

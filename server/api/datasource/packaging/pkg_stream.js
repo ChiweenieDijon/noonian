@@ -74,8 +74,9 @@ exports.installPackage = function(pkgReadStream) {
   var bop;
 
   var promiseChain;
-
-
+  
+  var packageRef = false;
+  
   oboe(pkgReadStream)
   .node('metadata', function(metaObj) {
       
@@ -110,15 +111,22 @@ exports.installPackage = function(pkgReadStream) {
       //TODO dependency check: metaObj.dependencies against system
 
       //update the bop
+      delete metaObj.__ver;
       _.assign(bop, metaObj);
+      if(!bop.bootstrap) {
+        return bop.save().then(function() {
+            packageRef = {_id:bop._id};
+            console.log('set packageRef %j', packageRef);
+        });
+      }
     });
 
   })
 
   .node('!.business_objects.*', function(obj) {
-    promiseChain = promiseChain.then(
-        PkgService.importObject.bind(null, obj._class, obj)
-    );
+    promiseChain = promiseChain.then(function() {
+        return PkgService.importObject(obj._class, obj, packageRef);
+    });
 
     return oboe.drop;  //As we process the list, don't retain data in memory
   })
@@ -129,10 +137,7 @@ exports.installPackage = function(pkgReadStream) {
 
   .done(function() {
     promiseChain.then(function() {
-      if(!bop.bootstrap) {
-        return bop.save();
-      }
-      else if(db.BusinessObjectPackage) {
+      if(bop.bootstrap && db.BusinessObjectPackage) {
           //if we were bootstrapping, the BusinessObjectPackasge should now be available
         bop = new db.BusinessObjectPackage(bop);
         return bop.save();

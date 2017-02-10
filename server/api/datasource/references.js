@@ -388,6 +388,15 @@ exports.repair = function() {
           var handleRef = function(refTd, fieldVal, arrIndex) {
             var refId = fieldVal._id;
             var refClass = refTd.ref_class || fieldVal.ref_class; //ref_class can be defined in the field for non-specific references
+            if(!db[refClass]) {
+                console.log('found reference to nonexistant class %s -> %s', className, refClass);
+                var badRef = {
+                  bo:bo, field:refTd.field_name, refId:refId, arrIndex:arrIndex
+                };
+                //Clean these up later!
+                badRefs.push(badRef);
+                return Q(true);
+            }
             // console.log('handleRef %j', fieldVal);
             //Check if the reference is valid, if so update disp and denormalized fields
             return db[refClass].count({_id:refId}).exec().then(function(matchCount) {
