@@ -37,6 +37,25 @@ VersionId.newVersionIdString = function() {
   return MY_INSTANCE+':1';
 };
 
+VersionId.merge = function(a, b) {
+    var allKeys = _.union(Object.keys(a.instanceMap),Object.keys(b.instanceMap));
+    var merged = {};
+    _.forEach(allKeys, function(k) {
+        var aVal = a.instanceMap[k] || 0;
+        var bVal = b.instanceMap[k] || 0;
+        if(aVal > bVal) {
+            merged[k] = aVal;
+        }
+        else {
+            merged[k] = bVal;
+        }
+    });
+    
+    var ret = new VersionId('');
+    ret.instanceMap = merged;
+    return ret;
+};
+
 VersionId.prototype.increment = function() {
   var instanceMap = this.instanceMap;
   if(!instanceMap[MY_INSTANCE]) {
@@ -109,6 +128,8 @@ VersionId.prototype.isAncestorOrSelf = function(otherVersionId) {
     });
     return !hasPos;
 };
+
+
 
 VersionId.prototype.toString = function() {
   var resultArr = [];

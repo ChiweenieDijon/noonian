@@ -36,7 +36,7 @@ var db = require('../index');
 var GridFsService = require('../gridfs');
 var DataTriggerService = require('../datatrigger');
 
-var VersionId = require('../version_id');
+var VersionId = exports.VersionId = require('../version_id');
 
 var fsPackageSyncer = require('./fs_sync');
 var packageStreamer = require('./pkg_stream');
