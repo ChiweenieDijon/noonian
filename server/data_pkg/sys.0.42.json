@@ -66,14 +66,14 @@
 			"DochseC4RXmnUQc1xnjZkQ": "sys:5",
 			"JlYdHTiWRoGbI81O-VPkXg": "sys:7",
 			"MbVLEC9ETmapSheNd_78Dg": "sys:10",
-			"R8TV3oHJRZG6KU9GlhfrIQ": "sys:13",
+			"R8TV3oHJRZG6KU9GlhfrIQ": "sys:14",
 			"ZLuRTnxQRiuqsSqzmbL8Jw": "sys:8",
-			"c-Sh5WEEQqW1adX257yZVQ": "sys:10",
+			"c-Sh5WEEQqW1adX257yZVQ": "sys:16",
 			"hbhKtxpDQLaUvyA7hogLWw": "sys:14",
-			"iMYbBIZHRvqnpf6mAmeBBw": "sys:7",
+			"iMYbBIZHRvqnpf6mAmeBBw": "sys:8",
 			"kX5Bln7MQ7evgGJJm9QhUw": "sys:9",
 			"lRoO3i4TTsi142xvw7vnIA": "sys:7",
-			"nWxgcco1SJWxxpgCW1TjYg": "sys:10",
+			"nWxgcco1SJWxxpgCW1TjYg": "sys:11",
 			"nlXSAaacSla8tUPF9oYF7A": "sys:6",
 			"qwW8v9NIReKHdrGiRZl9tg": "sys:10",
 			"rnTzkxz-SoayJMPtHFEPcA": "sys:6",
@@ -108,6 +108,7 @@
 			"hlNq-6YtR_mr_AFSaLfcAw": "sys:2",
 			"iAifFeKZRDCpBYTmzTNbXQ": "sys:4",
 			"iKLd6IaxT5eli2yl0XpEzA": "sys:1",
+			"iLfiQteMQQ-daJIeQ37y5w": "sys:1",
 			"jYHdzRfHSFaD4X6ACZ-_uQ": "sys:6",
 			"oThGB1UxRGiPK6tzu4PUXQ": "sys:3",
 			"plm6y5qRRwm8imWAPvkMrA": "deleted",
@@ -137,6 +138,7 @@
 			"BVZPlBKCSVaoqTN8h3lvTA": "sys:3",
 			"BfVWyf-jTjaOPaH3AZYgig": "sys:5",
 			"CMHfC8YPTO6sEeNhLZmTVA": "sys:2",
+			"CVk1ivsMS0qS1kCvrEk0dg": "sys:3",
 			"CzEs6oTgTrKrikVdgl4I2g": "sys:1",
 			"DRm8hzYDQLiIv1iOV_bJig": "sys:1",
 			"EYjxKQGORteqG0d9VRTxZA": "sys:3",
@@ -184,7 +186,7 @@
 			"spHxGeTiRsGzocGsaIIEMg": "sys:1",
 			"uPQXlOglR9yDx4p_ZEmV3g": "sys:2",
 			"vDdUnL3nQ6a1e9nTNiqLog": "sys:1",
-			"w2U0lB56Sq2Mb-6r3WDBsw": "sys:9",
+			"w2U0lB56Sq2Mb-6r3WDBsw": "sys:10",
 			"xcvMD6R0TmO0rycK3Vd1rA": "sys:2",
 			"xmAXxOxKReCjsdFT3pu59w": "sys:2",
 			"yjoQfy6JT9OfNzPFSEHqEQ": "sys:3",
@@ -294,6 +296,9 @@
 			"mmYBlEfVRi2WM5nGcfm0VA": "sys:4",
 			"obYp82hZTaWS6ABYtZ2eJA": "sys:4"
 		},
+		"JsonResource": {
+			"dVP-kFNxSVqdwwn2cY7VbQ": "deleted"
+		},
 		"LabelGroup": {
 			"0-2MLJNsRcqzvkDmagrWNg": "sys:1",
 			"0-3ITOp9SGa71bHTqox3Dw": "sys:2",
@@ -326,11 +331,12 @@
 			"f5jWkW__R7GMilAtgyOsjA": "sys:1",
 			"fVVSdgdOSgGPZjlhkT8ZGA": "sys:1",
 			"fphmOTaoTjeuZwiJ3A_eeA": "sys:1",
+			"jUvRflD4R5G5nrgacVEZqw": "sys:1",
 			"l007C5XJRNyhqfXK-65DFw": "sys:1",
 			"m4wYLW6UQeW429OeHQAQfw": "sys:5",
 			"mttLJj-BSYS3LobLEoa1bA": "sys:1",
 			"oyTJzYryQ0CN4fhqSE8-Qg": "sys:2",
-			"pq7sOK1ATRONqjsKnQ-e_A": "sys:2",
+			"pq7sOK1ATRONqjsKnQ-e_A": "sys:3",
 			"q8GFjcCzSKm-Jj30-dNzpQ": "sys:1",
 			"qQZPxlHNTZ29ZamXeIWkAw": "sys:3",
 			"tiV9QuZdQSCc-CtS8-xJGA": "sys:1",
@@ -530,6 +536,7 @@
 			"BK1V0jTiSqiA28ztAXUxog": "sys:1",
 			"M_T8-yHuSC-b4WXHp3K3OQ": "sys:1",
 			"RSc8RWl_RCa0rJgZAQae5w": "sys:19",
+			"Rk-_b0GMSI2IrwAJjZwqzw": "sys:1",
 			"bcle51paSiSQ9WaJ1uBxRQ": "sys:6",
 			"d-IVhuAdQlilU16t8Xyd-w": "sys:36",
 			"gmqHd9JrSjGwXTnXsBsIPw": "sys:1",
@@ -540,7 +547,7 @@
 			"AXmX40RPTXC56BjTfuMyUA": "sys:2",
 			"CEDPhAZiSOCkHHBZANtoPA": "sys:2",
 			"RnuXn3mXQiKUO604UiGN9Q": "sys:4",
-			"X1w4NWaxT2euz8uKoVzrXg": "sys:1",
+			"X1w4NWaxT2euz8uKoVzrXg": "sys:2",
 			"kRvYH_xNQWGDwhBiTCx1KQ": "sys:5",
 			"p_WVIZErQimM-X_lf_6oOQ": "sys:10",
 			"qHIq7pPjQgG4R_owGIU85Q": "sys:1",
@@ -621,7 +628,7 @@
 			"w-lHVPreRRSku89vhlyagA": "sys:2"
 		}
 	},
-	"minor_version": 40,
+	"minor_version": 42,
 	"name": "Core System"
 },
 "business_objects":[
@@ -1491,6 +1498,24 @@
 		}
 	},
 	"doc": "A role that a user may have on the system.",
+	"system": true
+},
+{
+	"__ver": "sys:1",
+	"_class": "BusinessObjectDef",
+	"_id": "iLfiQteMQQ-daJIeQ37y5w",
+	"abstract": false,
+	"class_name": "JsonResource",
+	"definition": {
+		"content": {
+			"type": "object"
+		}
+	},
+	"doc": "A WebResource with JSON content.  When resource is requested, \"content\" is served with ContentType \"application/json\".",
+	"superclass": {
+		"_disp": "WebResource",
+		"_id": "0TO-sBb1TjeAAzaMgd-8KQ"
+	},
 	"system": true
 },
 {
@@ -2829,10 +2854,10 @@
 },
 {
 	"__t": "AngularTemplate",
-	"__ver": "sys:13",
+	"__ver": "sys:14",
 	"_class": "AngularTemplate",
 	"_id": "R8TV3oHJRZG6KU9GlhfrIQ",
-	"content": "<div>\n\n  <div class=\"row dbui-table-data\">\n    <div class=\"col-xs-12\">\n\n      <table class=\"table table-striped table-hover\">\n        <col style=\"width:8%\"/>\n        <thead>\n          <tr>\n            <th class=\"text-center\">\n              <span ng-if=\"tableActions.length\" uib-dropdown>\n                <a href id=\"cog-button\" uib-dropdown-toggle ><i class=\"fa fa-2x fa-cog\"></i></a>\n                <ul class=\"uib-dropdown-menu\" role=\"menu\" aria-labelledby=\"cog-button\">\n                  <li role=\"menuitem\" ng-repeat=\"action in tableActions\"><a href ng-click=\"invokeTableAction(action)\"> <i ng-if=\"action.icon\" ng-class=\"action.icon\" class=\"fa\"></i> {{action.label}}</a><div ng-hide=\"$last\" class=\"divider\"></div></li>\n                </ul>\n              </span>\n              <span ng-if=\"!tableActions.length\"><i class=\"fa fa-2x fa-cog\"></i></span>\n            </th>\n            <th ng-repeat=\"f in perspective.fields\">\n              <a href=\"\" ng-if=\"allowSort\" ng-click=\"colHeaderClick($event, f)\" on-right-click=\"colHeaderRightClick($event, f)\">{{getFieldLabel(f)}}</a>\n              <span ng-if=\"!allowSort\">{{getFieldLabel(f)}}</span> &nbsp; <i class=\"fa fa-sm\" ng-class=\"columnDecorations[f]\"></i>\n            </th>\n          </tr>\n        </thead>\n        <tbody>\n            <tr ng-repeat=\"dataObj in objectArray\">\n\n              <td class=\"text-center\">\n                <span ng-repeat=\"action in recordActions\">\n                  <a href=\"\" class=\"datatable_btn\" ng-click=\"invokeRecordAction(dataObj, action, $parent.$index)\"><i ng-class=\"action.icon\" class=\"fa fa-2x\"></i></a>\n                </span>\n              </td>\n\n              <td ng-repeat=\"field in perspective.fields\">\n                <dbui-field-viewer ng-if=\"!(editing(dataObj, field) || getValue(dataObj, field) == null)\" type-desc=\"getTypeDesc(field)\"  display-value=\"getValue(dataObj, field)\" abbreviated=\"true\" field-customizations=\"perspective.fieldCustomizations[field]\" ng-click=\"cellClicked(dataObj, field)\"></dbui-field-viewer>\n                <div class=\"text-center\" ng-if=\"allowEdit(field) && !editing(dataObj, field) && getValue(dataObj, field) == null\">\n                  <a href=\"\" class=\"datatable_btn\" ng-click=\"cellClicked(dataObj, field)\"><i class=\"fa fa-2x fa-edit\"></i></a>\n                </div>\n                <dbui-field-editor ng-if=\"editing(dataObj, field)\" type-desc=\"getTypeDesc(field)\" ng-model=\"dataObj[field]\" field-customizations=\"perspective.fieldCustomizations[fieldName]\"></dbui-field-editor>\n              </td>\n\n            </tr>\n        </tbody>\n      </table>\n\n    </div>\n  </div>\n\n</div>\n",
+	"content": "<div>\n\n  <div class=\"row dbui-table-data\">\n    <div class=\"col-xs-12\">\n\n      <table class=\"table table-striped table-hover\">\n        <col style=\"width:8%\"/>\n        <thead>\n          <tr>\n            <th class=\"text-center\">\n              <span ng-if=\"tableActions.length\" uib-dropdown>\n                <a href id=\"cog-button\" uib-dropdown-toggle ><i class=\"fa fa-2x fa-cog\"></i></a>\n                <ul class=\"dropdown-menu\" uib-dropdown-menu role=\"menu\" aria-labelledby=\"cog-button\">\n                  <li role=\"menuitem\" ng-repeat=\"action in tableActions\"><a href ng-click=\"invokeTableAction(action)\"> <i ng-if=\"action.icon\" ng-class=\"action.icon\" class=\"fa\"></i> {{action.label}}</a><div ng-hide=\"$last\" class=\"divider\"></div></li>\n                </ul>\n              </span>\n              <span ng-if=\"!tableActions.length\"><i class=\"fa fa-2x fa-cog\"></i></span>\n            </th>\n            <th ng-repeat=\"f in perspective.fields\">\n              <a href=\"\" ng-if=\"allowSort\" ng-click=\"colHeaderClick($event, f)\" on-right-click=\"colHeaderRightClick($event, f)\">{{getFieldLabel(f)}}</a>\n              <span ng-if=\"!allowSort\">{{getFieldLabel(f)}}</span> &nbsp; <i class=\"fa fa-sm\" ng-class=\"columnDecorations[f]\"></i>\n            </th>\n          </tr>\n        </thead>\n        <tbody>\n            <tr ng-repeat=\"dataObj in objectArray\">\n\n              <td class=\"text-center\">\n                <span ng-repeat=\"action in recordActions\">\n                  <a href=\"\" class=\"datatable_btn\" ng-click=\"invokeRecordAction(dataObj, action, $parent.$index)\"><i ng-class=\"action.icon\" class=\"fa fa-2x\"></i></a>\n                </span>\n              </td>\n\n              <td ng-repeat=\"field in perspective.fields\">\n                <dbui-field-viewer ng-if=\"!(editing(dataObj, field) || getValue(dataObj, field) == null)\" type-desc=\"getTypeDesc(field)\"  display-value=\"getValue(dataObj, field)\" abbreviated=\"true\" field-customizations=\"perspective.fieldCustomizations[field]\" ng-click=\"cellClicked(dataObj, field)\"></dbui-field-viewer>\n                <div class=\"text-center\" ng-if=\"allowEdit(field) && !editing(dataObj, field) && getValue(dataObj, field) == null\">\n                  <a href=\"\" class=\"datatable_btn\" ng-click=\"cellClicked(dataObj, field)\"><i class=\"fa fa-2x fa-edit\"></i></a>\n                </div>\n                <dbui-field-editor ng-if=\"editing(dataObj, field)\" type-desc=\"getTypeDesc(field)\" ng-model=\"dataObj[field]\" field-customizations=\"perspective.fieldCustomizations[fieldName]\"></dbui-field-editor>\n              </td>\n\n            </tr>\n        </tbody>\n      </table>\n\n    </div>\n  </div>\n\n</div>\n",
 	"doc": "Renders table of objects complete with clickable headers, tableActions, and recordActions.",
 	"module": {
 		"_disp": "noonian.dbui",
@@ -2869,10 +2894,10 @@
 },
 {
 	"__t": "AngularTemplate",
-	"__ver": "sys:10",
+	"__ver": "sys:16",
 	"_class": "AngularTemplate",
 	"_id": "c-Sh5WEEQqW1adX257yZVQ",
-	"content": "<div ng-controller=\"dbui_SidebarCtrl\" >\n\t<uib-accordion close-others=\"false\">\n\n\t\t<uib-accordion-group  is-open=\"menuItem.isOpen\" panel-class=\"panel-sidebar\"  ng-repeat=\"menuItem in menu\">\n      <uib-accordion-heading>\n          {{menuItem.label}} <i class=\"pull-right glyphicon\" ng-class=\"{'glyphicon-chevron-down': menuItem.isOpen, 'glyphicon-chevron-right': !menuItem.isOpen}\"></i>\n      </uib-accordion-heading>\n\n        <div ng-repeat=\"submenuItem in menuItem.submenu\" >\n          <a href=\"#\" ng-click=\"invokeAction(submenuItem.action)\">{{submenuItem.label}}</a>\n        </div>\n\n\t  </uib-accordion-group>\n\n\t</uib-accordion>\n</div>\n",
+	"content": "<div ng-controller=\"dbui_SidebarCtrl\" >\n\t<uib-accordion close-others=\"false\">\n\t    \n\t    <div uib-accordion-group  is-open=\"menuItem.isOpen\" class=\"panel-sidebar\"  ng-repeat=\"menuItem in menu\">\n\t        <uib-accordion-heading>\n                {{menuItem.label}} <i class=\"pull-right glyphicon\" ng-class=\"{'glyphicon-chevron-down': menuItem.isOpen, 'glyphicon-chevron-right': !menuItem.isOpen}\"></i>\n            </uib-accordion-heading>\n            <div ng-repeat=\"submenuItem in menuItem.submenu\" >\n                <a href=\"#\" ng-click=\"invokeAction(submenuItem.action)\">{{submenuItem.label}}</a>\n            </div>\n\t  </div>\n\n\t</uib-accordion>\n</div>\n",
 	"doc": "The sidebar region in the DBUI: renders a menu into uib-accordion-groups.",
 	"module": {
 		"_disp": "noonian.dbui",
@@ -2909,10 +2934,10 @@
 },
 {
 	"__t": "AngularTemplate",
-	"__ver": "sys:7",
+	"__ver": "sys:8",
 	"_class": "AngularTemplate",
 	"_id": "iMYbBIZHRvqnpf6mAmeBBw",
-	"content": "<form class=\"form-inline\">\n  <div class=\"form-group query-editor-term\">\n    <!-- <select class=\"form-control\" ng-change=\"fieldChanged(true)\" ng-model=\"term.fieldInfo\" ng-options=\"fi as fi.fieldLabel for fi in fieldList\"></select> -->\n    <div class=\"form-control\" uib-dropdown auto-close=\"disabled\" is-open=\"fieldSelectorOpen\">\n      <a href uib-dropdown-toggle >\n        {{term.fieldInfo.fieldLabel}} &nbsp;&nbsp;<span class=\"fa fa-lg fa-caret-down\"></span>&nbsp;&nbsp;\n      </a>\n      <ul class=\"uib-dropdown-menu\" role=\"menu\" aria-labelledby=\"single-button\">\n        <li ng-repeat=\"fi in fieldList\" role=\"menuitem\">\n          <a href ng-click=\"fieldChanged(fi, true)\">{{fi.fieldLabel}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <select class=\"form-control\" ng-model=\"term.opInfo\" ng-change=\"opChanged(true)\" ng-options=\"opObj as opObj.label for opObj in opList track by opObj.op\"></select>\n    <span ng-if=\"fieldEditorVisible\">\n      <dbui-field-editor ng-model=\"term.value\" type-desc=\"fieldEditorTypeDesc\"></dbui-field-editor>\n    </span>\n  </div>\n</form>\n",
+	"content": "<form class=\"form-inline\">\n  <div class=\"form-group query-editor-term\">\n    <!-- <select class=\"form-control\" ng-change=\"fieldChanged(true)\" ng-model=\"term.fieldInfo\" ng-options=\"fi as fi.fieldLabel for fi in fieldList\"></select> -->\n    <div class=\"form-control\" uib-dropdown auto-close=\"disabled\" is-open=\"fieldSelectorOpen\">\n      <a href uib-dropdown-toggle >\n        {{term.fieldInfo.fieldLabel}} &nbsp;&nbsp;<span class=\"fa fa-lg fa-caret-down\"></span>&nbsp;&nbsp;\n      </a>\n      <ul uib-dropdown-menu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"single-button\">\n        <li ng-repeat=\"fi in fieldList\" role=\"menuitem\">\n          <a href ng-click=\"fieldChanged(fi, true)\">{{fi.fieldLabel}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <select class=\"form-control\" ng-model=\"term.opInfo\" ng-change=\"opChanged(true)\" ng-options=\"opObj as opObj.label for opObj in opList track by opObj.op\"></select>\n    <span ng-if=\"fieldEditorVisible\">\n      <dbui-field-editor ng-model=\"term.value\" type-desc=\"fieldEditorTypeDesc\"></dbui-field-editor>\n    </span>\n  </div>\n</form>\n",
 	"doc": "Input for a single query term: a dropdown of field names, a dropdown for operations, and, if applicable, a dbui-field-editor appropriate to the operation.",
 	"module": {
 		"_disp": "noonian.dbui",
@@ -2969,10 +2994,10 @@
 },
 {
 	"__t": "AngularTemplate",
-	"__ver": "sys:10",
+	"__ver": "sys:11",
 	"_class": "AngularTemplate",
 	"_id": "nWxgcco1SJWxxpgCW1TjYg",
-	"content": "<div>\n  <!-- Search box / query builder -->\n  <div class=\"row\" ng-if=\"enableSearch\">\n    <div ng-switch=\"perspective.isAdvancedSearch\">\n      <div ng-switch-when=\"true\">\n        <div class=\"col-sm-9\" >\n          <query-builder bo-class=\"boClass\" ng-model=\"perspective.filter\" on-close=\"advancedSearch(false)\"></query-builder>\n          <button type=\"button\" class=\"btn btn-default\" ng-click=\"execSearch()\"><i class=\"fa fa-lg fa-search\"></i></button>\n        </div>\n      </div>\n      <div class=\"col-sm-4\" ng-switch-default>\n        <div class=\"input-group\">\n          <span class=\"input-group-btn\">\n            <button type=\"button\" class=\"btn btn-default\" ng-click=\"execSearch()\"><i class=\"fa fa-lg fa-search\"></i></button>\n          </span>\n          <input type=\"text\" id=\"searchBox\" class=\"form-control\" placeholder=\"text search\" ng-model=\"perspective.searchString\" ng-change=\"searchStringChanged()\" />\n          <span class=\"input-group-btn\" ng-show=\"enableQuery\">\n            <button type=\"button\" class=\"btn btn-default\" ng-click=\"advancedSearch(true)\"><i class=\"fa fa-lg fa-cubes\"></i></button>\n          </span>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- actual table data -->\n  <dbui-object-table ng-model=\"dataArray\" object-meta-data=\"objectMetaData\" perspective=\"perspective\" config=\"objectTableConfig\"></dbui-object-table>\n\n  <!-- footer: filter, summary, paginator -->\n  <div ng-show=\"filterDescription\" class=\"row\" >\n    <div class=\"col-xs-12 text-center\">\n      Filter: <strong>{{filterDescription}}</strong>\n    </div>\n  </div>\n\n  <div class=\"row\" >\n    <div class=\"col-xs-12 text-center\">\n      <span ng-show=\"dataLoading\"><i class=\"fa fa-spinner fa-pulse\"></i> loading...</span><span ng-show=\"!dataLoading\"><strong>{{pageState.totalRecords}} records total</strong> <span ng-show=\"pageState.totalPages > 1\"> (Showing {{pageState.rangeStart}} to {{pageState.rangeEnd}})</span></span>\n    </div>\n  </div>\n\n  <div ng-show=\"pageState.totalPages > 1\" class=\"row\">\n    <div class=\"col-xs-12 text-center\">\n      <uib-pagination ng-model=\"pageState.current\" ng-change=\"pageChanged()\" class=\"pagination-sm\" boundary-links=\"true\"\n        total-items=\"pageState.totalRecords\" items-per-page=\"pageState.pageSize\" max-size=\"10\"\n        previous-text=\"&lsaquo;\" next-text=\"&rsaquo;\" first-text=\"&laquo;\" last-text=\"&raquo;\">\n      </uib-pagination>\n    </div>\n  </div>\n\n</div>\n",
+	"content": "<div>\n  <!-- Search box / query builder -->\n  <div class=\"row\" ng-if=\"enableSearch\">\n    <div ng-switch=\"perspective.isAdvancedSearch\">\n      <div ng-switch-when=\"true\">\n        <div class=\"col-sm-9\" >\n          <query-builder bo-class=\"boClass\" ng-model=\"perspective.filter\" on-close=\"advancedSearch(false)\"></query-builder>\n          <button type=\"button\" class=\"btn btn-default\" ng-click=\"execSearch()\"><i class=\"fa fa-lg fa-search\"></i></button>\n        </div>\n      </div>\n      <div class=\"col-sm-4\" ng-switch-default>\n        <div class=\"input-group\">\n          <span class=\"input-group-btn\">\n            <button type=\"button\" class=\"btn btn-default\" ng-click=\"execSearch()\"><i class=\"fa fa-lg fa-search\"></i></button>\n          </span>\n          <input type=\"text\" id=\"searchBox\" class=\"form-control\" placeholder=\"text search\" ng-model=\"perspective.searchString\" ng-change=\"searchStringChanged()\" />\n          <span class=\"input-group-btn\" ng-show=\"enableQuery\">\n            <button type=\"button\" class=\"btn btn-default\" ng-click=\"advancedSearch(true)\"><i class=\"fa fa-lg fa-cubes\"></i></button>\n          </span>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- actual table data -->\n  <dbui-object-table ng-model=\"dataArray\" object-meta-data=\"objectMetaData\" perspective=\"perspective\" config=\"objectTableConfig\"></dbui-object-table>\n\n  <!-- footer: filter, summary, paginator -->\n  <div ng-show=\"filterDescription\" class=\"row\" >\n    <div class=\"col-xs-12 text-center\">\n      Filter: <strong>{{filterDescription}}</strong>\n    </div>\n  </div>\n\n  <div class=\"row\" >\n    <div class=\"col-xs-12 text-center\">\n      <span ng-show=\"dataLoading\"><i class=\"fa fa-spinner fa-pulse\"></i> loading...</span><span ng-show=\"!dataLoading\"><strong>{{pageState.totalRecords}} records total</strong> <span ng-show=\"pageState.totalPages > 1\"> (Showing {{pageState.rangeStart}} to {{pageState.rangeEnd}})</span></span>\n    </div>\n  </div>\n\n  <div ng-show=\"pageState.totalPages > 1\" class=\"row\">\n    <div class=\"col-xs-12 text-center\">\n      <ul uib-pagination ng-model=\"pageState.current\" ng-change=\"pageChanged()\" class=\"pagination-sm\" boundary-links=\"true\"\n        total-items=\"pageState.totalRecords\" items-per-page=\"pageState.pageSize\" max-size=\"10\"\n        previous-text=\"&lsaquo;\" next-text=\"&rsaquo;\" first-text=\"&laquo;\" last-text=\"&raquo;\">\n      </ul>\n    </div>\n  </div>\n\n</div>\n",
 	"doc": "Renders the pieces of the objectBrowser: a query-builder/search box, a dbui-object-table, and a paginator.",
 	"module": {
 		"_disp": "noonian.dbui",
@@ -3759,6 +3784,48 @@
 			"key": "dbui.core.oob_home"
 		},
 		"state": "dbui.custompage"
+	}
+},
+{
+	"__ver": "sys:3",
+	"_class": "Config",
+	"_id": "CVk1ivsMS0qS1kCvrEk0dg",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.JsonResource",
+	"rolespec": [
+	],
+	"system": false,
+	"value": {
+		"edit": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		},
+		"list": {
+			"fields": [
+				"path",
+				"name"
+			]
+		},
+		"picker_list": {
+			"fields": [
+				"path",
+				"name"
+			]
+		},
+		"view": {
+			"layout": [
+				"path",
+				"name",
+				"doc",
+				"content",
+				"rolespec"
+			]
+		}
 	}
 },
 {
@@ -5632,7 +5699,7 @@
 	}
 },
 {
-	"__ver": "sys:9",
+	"__ver": "sys:10",
 	"_class": "Config",
 	"_id": "w2U0lB56Sq2Mb-6r3WDBsw",
 	"allow_customize": false,
@@ -5681,7 +5748,8 @@
 				"FileResource",
 				"HtmlResource",
 				"ImageResource",
-				"JsResource"
+				"JsResource",
+				"JsonResource"
 			],
 			"title": "Web Resources"
 		},
@@ -7903,6 +7971,25 @@
 	}
 },
 {
+	"__ver": "sys:1",
+	"_class": "LabelGroup",
+	"_id": "jUvRflD4R5G5nrgacVEZqw",
+	"key": "sys.dbui.bo.JsonResource",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": false,
+	"value": {
+		"content": "Content",
+		"doc": "Doc",
+		"name": "Name",
+		"path": "Path",
+		"rolespec": "Rolespec"
+	}
+},
+{
 	"__pkg": "sys",
 	"__ver": "sys:1",
 	"_class": "LabelGroup",
@@ -7984,7 +8071,7 @@
 	}
 },
 {
-	"__ver": "sys:2",
+	"__ver": "sys:3",
 	"_class": "LabelGroup",
 	"_id": "pq7sOK1ATRONqjsKnQ-e_A",
 	"key": "dbui.menu.dev_webresource",
@@ -8000,7 +8087,8 @@
 		"file": "Files",
 		"html": "HTML",
 		"image": "Images",
-		"js": "Javascript"
+		"js": "Javascript",
+		"json": "JSON"
 	}
 },
 {
@@ -9656,6 +9744,20 @@
 	"use_injection": true
 },
 {
+	"__ver": "sys:1",
+	"_class": "MemberFunction",
+	"_id": "Rk-_b0GMSI2IrwAJjZwqzw",
+	"applies_to": "server",
+	"business_object": {
+		"_disp": "JsonResource",
+		"_id": "iLfiQteMQQ-daJIeQ37y5w"
+	},
+	"function": "function (outStream, nodeRequire) {\n    //If outStream is an http response, set content-type appropriately\n    if(typeof outStream.type === 'function') {\n        outStream.type('application/json');\n    }\n    outStream.write(JSON.stringify(this.content));\n    return outStream.end();\n}",
+	"is_static": false,
+	"name": "serveContent",
+	"use_injection": false
+},
+{
 	"__ver": "sys:6",
 	"_class": "MemberFunction",
 	"_id": "bcle51paSiSQ9WaJ1uBxRQ",
@@ -9909,7 +10011,7 @@
 	]
 },
 {
-	"__ver": "sys:1",
+	"__ver": "sys:2",
 	"_class": "Menu",
 	"_id": "X1w4NWaxT2euz8uKoVzrXg",
 	"definition": [
@@ -9952,6 +10054,16 @@
 				"state": "dbui.list"
 			},
 			"label": "image"
+		},
+		{
+			"action": {
+				"params": {
+					"className": "JsonResource",
+					"perspective": "default"
+				},
+				"state": "dbui.list"
+			},
+			"label": "json"
 		},
 		{
 			"action": {
