@@ -4,7 +4,7 @@
   "dependencies": {
     "ace-builds": "~1.2.0",
     "angular": "~1.5.7",
-    "angular-bootstrap": "~0.14.2",
+    "angular-bootstrap": "~2.4.0",
     "angular-cookies": "~1.4.7",
     "angular-ui-ace": "~0.2.3",
     "angular-ui-router": "~0.2.15",
