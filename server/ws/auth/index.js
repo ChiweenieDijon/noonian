@@ -40,6 +40,9 @@ var db = require('../../api/datasource');
 var auth = require('../../api/auth');
 var configSvc = require('../../api/config');
 
+
+var tfa;
+
 var controller = {};
 var wsRoot = conf.urlBase+'/auth';
 
@@ -166,15 +169,13 @@ exports.init = function(app) {
   passport.use(
     new LocalStrategy({
         usernameField: 'username',
-        passwordField: 'password'
+        passwordField: 'password',
+        passReqToCallback:true
       },
 
-    function(username, password, done) {
+    function(req, username, password, done) {
 
-      db.User.findOne(
-        {
-          name: username
-        },
+      db.User.findOne({name: username},
         function(err, user) {
           if (err) return done(err);
 
@@ -187,7 +188,44 @@ exports.init = function(app) {
           if (!user.password.matches(password)) {
             return done(null, false, { error: '$invalid_credentials' });
           }
-          return done(null, user);
+          
+          //Password matches for valid user, now check for 2-factor if applicable...
+          if(tfa) {              
+              var providedCode = req.body.second_factor_code;
+              var ip = req.connection.remoteAddress;
+              
+              //console.log('TFA configured; checking for user %s at IP %s', user.name, ip);
+              
+              //Do we have a code?
+              if(providedCode) {
+                  //console.log('...validating code %s', providedCode);
+                  tfa.validate2fa(user, ip, providedCode).then(function(validationResult) {
+                      if(validationResult.success) {
+                          return done(null, user);
+                      }
+                  });
+              }
+              else {
+                  //none provided... does this user require one?
+                  tfa.requires2fa(user, ip).then(function(isRequired) {
+                      if(isRequired) {
+                          console.log('TWO FACTOR DEEMED REQUIRED');
+                          tfa.initiate2fa(user, ip).then(function() {
+                              return done(null, false, { user:user._id, twoFactorRequired:true });
+                          });
+                      }
+                      else {
+                          //2fa not requried for this user; login process complete
+                          return done(null, user);
+                      }
+                  });
+                  
+              }
+          }
+          else {
+              //no two-factor configured; login process complete
+              return done(null, user);
+          }
         }
       );
     }
@@ -210,6 +248,12 @@ exports.init = function(app) {
       }
     }
   });
+  
+  if(conf.twoFactorAuth && db.TwoFactorAuthImplementation) {
+      console.log('TWO-FACTOR AUTH CONFIGURED: %s', conf.twoFactorAuth.implementation);
+      var TwoFactorAuthUtil = require('./twofactor');
+      tfa = new TwoFactorAuthUtil(val);
+  }
 
 };
 
@@ -260,22 +304,12 @@ controller.login = function(req, res, next) {
     passport.authenticate('local',
 
       function (err, user, info) {
-
-        if(req.body.redirectme) {
-          if(!error && user) {
-            var token = signToken(user._id);
-            loginToken(token);
-            res.cookie('access_token', token, {path:(conf.urlBase+'/')});
-            return res.redirect(req.body.redirectme);
-          }
-
           
-        }
-
         var error = err || info;
 
         if (error) return res.status(401).json(error);
         if (!user) return res.status(404).json({message: 'Something went wrong, please try again.'});
+        
 
         //Generate a token to be used for subsequent requests
         var token = signToken(user._id);
