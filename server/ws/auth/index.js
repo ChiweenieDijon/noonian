@@ -252,7 +252,7 @@ exports.init = function(app) {
   if(conf.twoFactorAuth && db.TwoFactorAuthImplementation) {
       console.log('TWO-FACTOR AUTH CONFIGURED: %s', conf.twoFactorAuth.implementation);
       var TwoFactorAuthUtil = require('./twofactor');
-      tfa = new TwoFactorAuthUtil(val);
+      tfa = new TwoFactorAuthUtil(conf.twoFactorAuth);
   }
 
 };
