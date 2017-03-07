@@ -8,7 +8,7 @@
 	"manifest": {
 		"AngularApp": {
 			"HvpsexNtTOyRCzDDd4GNsg": "sys:35",
-			"kRd_Ft64QFey_at4tgphXA": "sys:24"
+			"kRd_Ft64QFey_at4tgphXA": "sys:26"
 		},
 		"AngularModule": {
 			"NJnfAVnFSmuMcv9voRnaJQ": "sys:7",
@@ -39,7 +39,7 @@
 			"VMylLXsAQSOLI94A-RQgTA": "sys:17",
 			"VwZdmM7bSeOfdacXJQNeUA": "sys:1",
 			"_28vJLv9Tt6HzXexuNITlA": "sys:12",
-			"dfknFcxcQGWvTrHw0DZcIA": "sys:43",
+			"dfknFcxcQGWvTrHw0DZcIA": "sys:44",
 			"eoefRk8MQQqLX-MFLYPdSQ": "sys:8",
 			"ezSJbZ-NQ52ZgnKLWh1Ebw": "sys:4",
 			"hCyhlFUVRg-I67dGF-RcjQ": "sys:2",
@@ -92,6 +92,7 @@
 			"Dyf49QfST2CwXH1TYOSgHQ": "sys:1",
 			"G6NlMXjRQEeiqdsC6PP-Dw": "sys:12",
 			"IG7UUXYwTv6Ffj4o489duA": "sys:1",
+			"IfDt7M3yTMOt6D2BkMP66A": "sys:6",
 			"IhXNqXAyQiqGk28iCotr0Q": "sys:11",
 			"LHh5ZfA6Swq6cHb3CcmCgA": "sys:3",
 			"QLN_PHr_Tj6nzgzrHA4XdQ": "sys:2",
@@ -111,6 +112,7 @@
 			"iLfiQteMQQ-daJIeQ37y5w": "sys:1",
 			"jYHdzRfHSFaD4X6ACZ-_uQ": "sys:6",
 			"oThGB1UxRGiPK6tzu4PUXQ": "sys:3",
+			"pQIx0YDZQJSLi1cNHxwKlA": "sys:3",
 			"plm6y5qRRwm8imWAPvkMrA": "deleted",
 			"pzaSsQYLT7uvOx6Trp1wMw": "sys:2",
 			"qZR4N3BFQGuMzjcj17jitg": "sys:4",
@@ -120,12 +122,14 @@
 		"CodeModule": {
 			"9f_aeR8HQE-HqePHGgquNg": "sys:13",
 			"iV-ugHjjQo29KbS3E0UxQg": "sys:12",
-			"pwMVRvdjSU-2Ak0BWDA6AA": "sys:2"
+			"pwMVRvdjSU-2Ak0BWDA6AA": "sys:3"
 		},
 		"Config": {
+			"-H2Rcmo1Sriv9cRoQiYxGQ": "sys:2",
 			"076TmOduSve4_ZvYrqSLig": "sys:5",
 			"0KZWeNuMSJyW7QImA9AndA": "sys:1",
 			"0tydbMgIRdudkdXTyXt7qA": "sys:2",
+			"1Ot34-g6Q12L6OoxKi401A": "sys:2",
 			"1nme6hlATsews3AMdvHyaA": "sys:3",
 			"447ODSNfR4S1BcDTKHehoA": "sys:1",
 			"4oreVV9bQE6POFFq8ruL1Q": "sys:2",
@@ -139,6 +143,7 @@
 			"BfVWyf-jTjaOPaH3AZYgig": "sys:5",
 			"CMHfC8YPTO6sEeNhLZmTVA": "sys:2",
 			"CVk1ivsMS0qS1kCvrEk0dg": "sys:3",
+			"Cu-EL7B2SZyDpkAj_QzZIg": "sys:6",
 			"CzEs6oTgTrKrikVdgl4I2g": "sys:1",
 			"DRm8hzYDQLiIv1iOV_bJig": "sys:1",
 			"EYjxKQGORteqG0d9VRTxZA": "sys:3",
@@ -147,6 +152,7 @@
 			"F51v_xUnQgehAn3ZVR8vgA": "sys:9",
 			"GDzTJ1SERbyhOIKYYkNkNA": "sys:4",
 			"GRaSJrg4QKWVnP6Dwda0vA": "sys:6",
+			"Hj3COO0iQyufTftJqfUt_Q": "sys:4",
 			"HjJ3QzvGSda4mliXCksO_A": "sys:1",
 			"J9SNvBpBQAGYMkbPYRYPrA": "sys:1",
 			"Kohb_6sxTGC1eGdeRsCtMw": "sys:3",
@@ -180,7 +186,7 @@
 			"m7poGk4CSBKCO1X_X29-Vw": "sys:4",
 			"mXLpqs_6RYO6jfseoLep_g": "sys:5",
 			"oot_vdKQTJqqhk2oqw97-g": "sys:1",
-			"qqVlSIILTbiGNUzOtHQqcg": "sys:1",
+			"qqVlSIILTbiGNUzOtHQqcg": "sys:2",
 			"sQDsv1FXThuAxLRiAKJQIA": "sys:5",
 			"s_sYihekR-CwwhMvagVpRQ": "sys:5",
 			"spHxGeTiRsGzocGsaIIEMg": "sys:1",
@@ -189,6 +195,7 @@
 			"w2U0lB56Sq2Mb-6r3WDBsw": "sys:10",
 			"xcvMD6R0TmO0rycK3Vd1rA": "sys:2",
 			"xmAXxOxKReCjsdFT3pu59w": "sys:2",
+			"yfTTwRezQFKAnbUGICed4w": "sys:4",
 			"yjoQfy6JT9OfNzPFSEHqEQ": "sys:3",
 			"zk3SuXVIRi6GMnCej9_nUQ": "sys:5",
 			"zqq006kzRgiWjMdclIEQ7Q": "sys:3"
@@ -211,6 +218,9 @@
 			"2fHM4oJ_TUKJth8FgnTr0g": "sys:5",
 			"wGwX2SpXRjWE7iLAAQkROQ": "sys:5"
 		},
+		"Enumeration": {
+			"ziaKbpUeTYC8t691DU1tug": "sys:1"
+		},
 		"FieldType": {
 			"2RQWYKymQMmfYqEGxXVtoA": "sys:1",
 			"9_TB_-ppQnCpm3EKkO8naw": "sys:2",
@@ -231,6 +241,7 @@
 			"e-rYyVWHQoKi1om5SUBMcA": "sys:2",
 			"ePi7MsceQMqn3qnVBlHkNA": "sys:4",
 			"gxJBuQp7RkKLIV0cazfFnA": "sys:1",
+			"jOZVJVLOTmGK6Ppf7JNnCw": "sys:1",
 			"lpmwbanlQH20mCWioX0H1g": "sys:3",
 			"nplFum9LRdWvt5TW1LyulQ": "sys:5",
 			"uMEzxXwVSgmj_dbfeY-fLA": "sys:5",
@@ -241,6 +252,7 @@
 		},
 		"FieldTypeUiSpec": {
 			"0EOzSaCaS2OrxRIr2WfbXA": "sys:3",
+			"1-8wwUmiSpSdYgICK078Vw": "sys:1",
 			"2HV6rNCrSySh_05yfcg50w": "sys:4",
 			"3G2t7niJSRmrRluTIU9cSg": "sys:8",
 			"3puRzrB0QWKw9aKe7RVZ9g": "sys:10",
@@ -257,6 +269,7 @@
 			"L3YQRK0mSJGE1EK4_FDCCg": "sys:2",
 			"LT7gGfGtSX6ruO8MqG-C0w": "sys:2",
 			"NpOPK9reRguXCb0M8WqvIA": "sys:8",
+			"QYBXXHdmQzuWMhjDeBgVLA": "sys:1",
 			"QyMv30pcQse-jnzkfWucLg": "sys:15",
 			"SkSJmUFsQ2O7xgNpyQf5Vg": "sys:4",
 			"T7NihP3ySOSCy3Z-DKrweA": "sys:7",
@@ -310,8 +323,10 @@
 			"7NOuKKSLSxytgyMyw3mm2w": "sys:2",
 			"7cawn4f9SneVXCAMIViLmQ": "sys:3",
 			"8X3sML8-SS6icy3ql5brQg": "sys:1",
+			"8ztMXn4uQ-CZFu8GyFEVhg": "sys:1",
 			"CoWMlx_mQjCR23MRd_OMNA": "sys:2",
 			"E-a8Xpq1Tja5pjgokvJu1A": "sys:1",
+			"EWIt-os4Q4Cez3WAYSicBg": "sys:1",
 			"LKubEUuoQtOlBpvsmH6opg": "sys:1",
 			"NhgQZhe2SlSXrY8IJlW0-g": "sys:1",
 			"Q8e8BUTARj6S6PCQs827wg": "sys:7",
@@ -339,10 +354,12 @@
 			"pq7sOK1ATRONqjsKnQ-e_A": "sys:3",
 			"q8GFjcCzSKm-Jj30-dNzpQ": "sys:1",
 			"qQZPxlHNTZ29ZamXeIWkAw": "sys:3",
+			"rXLbwEJ_RrCjtdHyfECIIw": "sys:1",
 			"tiV9QuZdQSCc-CtS8-xJGA": "sys:1",
 			"uxOzgKeRRKCguGbhyQtD3g": "sys:1",
 			"vQFHWhwZS1-l3PBxxzcBsg": "sys:2",
-			"xJDHd2XfT_uz1TXZ8HZQ0A": "sys:3"
+			"xJDHd2XfT_uz1TXZ8HZQ0A": "sys:3",
+			"yOHJcevIQVKQuzvD4LC_SQ": "sys:1"
 		},
 		"Language": {
 			"-9v21P2lEeSFtiimx_V4dw": "sys:1",
@@ -597,11 +614,16 @@
 		"Role": {
 			"FnQ_eBYITOSC8kJA4Zul5g": "sys:1"
 		},
+		"TwoFactorAuthImplementation": {
+			"GaulTlfcRgGe0DkrJcq_tQ": "sys:4",
+			"fqJ0O30bRBGZx_MbdZJH-g": "sys:2"
+		},
 		"UiAction": {
 			"i8CPDhK4SXKT7tT8JknLQw": "sys:1",
 			"zIbWSxNgRiGVY_G7j_jYsA": "sys:1"
 		},
 		"User": {
+			"68J3HOTcSUOm6DRlj9VfNg": "sys:2",
 			"F66q6aJKSWC0zsezoPIXGQ": "deleted",
 			"vl22Nf2XTNym2-X90sxOag": "sys:3"
 		},
@@ -628,7 +650,7 @@
 			"w-lHVPreRRSku89vhlyagA": "sys:2"
 		}
 	},
-	"minor_version": 42,
+	"minor_version": 43,
 	"name": "Core System"
 },
 "business_objects":[
@@ -987,6 +1009,36 @@
 		}
 	},
 	"doc": "An ordered grouping of actions and submenus under a key.  Utilized by DBUI for the sidebar menu.",
+	"system": true
+},
+{
+	"__ver": "sys:6",
+	"_class": "BusinessObjectDef",
+	"_id": "IfDt7M3yTMOt6D2BkMP66A",
+	"abstract": false,
+	"class_name": "TwoFactorAuthLoginRequest",
+	"definition": {
+		"code": {
+			"type": "string"
+		},
+		"created_date": {
+			"type": "datetime"
+		},
+		"ip": {
+			"type": "string"
+		},
+		"modified_date": {
+			"type": "datetime"
+		},
+		"user": {
+			"ref_class": "User",
+			"type": "reference"
+		},
+		"validated": {
+			"type": "boolean"
+		}
+	},
+	"doc": "Holds the code sent to a user as part of the 2-factor authentication process.",
 	"system": true
 },
 {
@@ -1594,6 +1646,27 @@
 	"system": true
 },
 {
+	"__ver": "sys:3",
+	"_class": "BusinessObjectDef",
+	"_id": "pQIx0YDZQJSLi1cNHxwKlA",
+	"abstract": false,
+	"class_name": "TwoFactorAuthImplementation",
+	"definition": {
+		"doc": {
+			"type": "text"
+		},
+		"factory_fn": {
+			"applicable": "serverside",
+			"type": "function"
+		},
+		"name": {
+			"type": "string"
+		}
+	},
+	"doc": "Provides a specific implementation for two-factor Auth",
+	"system": true
+},
+{
 	"__ver": "sys:2",
 	"_class": "BusinessObjectDef",
 	"_id": "pzaSsQYLT7uvOx6Trp1wMw",
@@ -1758,11 +1831,11 @@
 },
 {
 	"__t": "AngularApp",
-	"__ver": "sys:24",
+	"__ver": "sys:26",
 	"_class": "AngularApp",
 	"_id": "kRd_Ft64QFey_at4tgphXA",
-	"body": "<div class=\"container\" ng-controller=\"LoginController\">\n      <div class=\"row\">\n        <div class=\"col-sm-6\">{{message}}</div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-sm-6\">\n          <form class=\"form-horizontal\" ng-submit=\"submit()\">\n            <div class=\"form-group\">\n              <label for=\"username\" class=\"control-label\">Username</label>\n              <input type=\"text\" class=\"form-control\" ng-model=\"postData.username\"/>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"password\" class=\"control-label\">Password</label>\n              <input type=\"password\" class=\"form-control\" ng-model=\"postData.password\" />\n            </div>\n            \n            <input type=\"submit\" class=\"btn btn-default\" value=\"Login\" />\n          </form>\n        </div>\n      </div>\n  </div>",
-	"config_function": "function ($controllerProvider, $locationProvider) {\n    \n    $locationProvider.html5Mode(true);\n    \n    $controllerProvider.register('LoginController', function($scope, $http, $location, $window) {\n        console.log('LoginController');\n        \n        document.cookie = 'access_token=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';\n        \n        $scope.message = \"Please enter username and password below\";\n        $scope.postData = {};\n        \n        var urlParams = $location.search();\n        \n        \n        $scope.submit = function() {\n            \n            $http({\n                method:'POST',\n                url:'auth/login',\n                data:$scope.postData\n            }).then(\n                //Success:\n                function(resp) {\n                    console.log('Login response: ', resp);\n                    var redirectLink = (urlParams && urlParams.originalUrl) || '.';\n                    $window.location.href = redirectLink;\n                },\n                //ERROR\n                function(resp) {\n                    console.log('ERROR', resp);\n                    if(resp.data && resp.data.error === '$invalid_credentials') {\n                        $scope.message = 'Invalid login credentials.  Please try again.';\n                    }\n                    else {\n                        $scope.message = (resp.data && resp.data.error) || resp.statusText\n                    }\n                }\n            );\n            \n        }\n    })\n}",
+	"body": "<div class=\"container\" ng-controller=\"LoginController\">\n      <div class=\"row\">\n        <div class=\"col-sm-6\">{{message}}</div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-sm-6\">\n          <form class=\"form-horizontal\" ng-submit=\"submit()\">\n            <div class=\"form-group\" ng-hide=\"twoFactor\">\n              <label for=\"username\" class=\"control-label\">Username</label>\n              <input type=\"text\" class=\"form-control\" ng-model=\"postData.username\"/>\n            </div>\n            <div class=\"form-group\" ng-hide=\"twoFactor\">\n              <label for=\"password\" class=\"control-label\">Password</label>\n              <input name=\"password\" type=\"password\" class=\"form-control\" ng-model=\"postData.password\" />\n            </div>\n            \n            <div class=\"form-group\" ng-show=\"twoFactor\">\n                <label for=\"verifycode\" class=\"control-label\">Verification code</label>\n                <input name=\"verifycode\" type=\"text\" class=\"form-control\" ng-model=\"postData.second_factor_code\" />\n            </div>\n            \n            <input type=\"submit\" class=\"btn btn-default\" value=\"Login\" />\n          </form>\n        </div>\n      </div>\n  </div>",
+	"config_function": "function ($controllerProvider, $locationProvider) {\n    \n    $locationProvider.html5Mode(true);\n    \n    $controllerProvider.register('LoginController', function($scope, $http, $location, $window) {\n        console.log('LoginController');\n        \n        document.cookie = 'access_token=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';\n        \n        $scope.message = \"Please enter username and password below\";\n        $scope.postData = {};\n        \n        var urlParams = $location.search();\n        \n        \n        $scope.submit = function() {\n            \n            $http({\n                method:'POST',\n                url:'auth/login',\n                data:$scope.postData\n            }).then(\n                //Success:\n                function(resp) {\n                    console.log('Login response: ', resp);\n                    var redirectLink = (urlParams && urlParams.originalUrl) || '.';\n                    $window.location.href = redirectLink;\n                },\n                //ERROR\n                function(resp) {\n                    console.log('ERROR', resp);\n                    if(resp.data && resp.data.error === '$invalid_credentials') {\n                        $scope.message = 'Invalid login credentials.  Please try again.';\n                    }\n                    else if(resp.data && resp.data.twoFactorRequired) {\n                        $scope.twoFactor = true;\n                        $scope.message = 'Two-factor authentication required.  Please type in code sent to your phone.';\n                    }\n                    else {\n                        $scope.message = (resp.data && resp.data.error) || resp.statusText\n                    }\n                }\n            );\n            \n        }\n    })\n}",
 	"css_dependencies": [
 		{
 			"_disp": "bootstrap.min.css",
@@ -2365,11 +2438,11 @@
 	"type": "directive"
 },
 {
-	"__ver": "sys:43",
+	"__ver": "sys:44",
 	"_class": "AngularProvider",
 	"_id": "dfknFcxcQGWvTrHw0DZcIA",
 	"doc": "Service to handle client-side field type and query op stuff: \n- provide accessors and retain a cache of field type \"ui spec\" objects that contain templates/controllers for viewing/editing fields\n- provide mapping of field types to available query op's",
-	"function": "function (NoonWebService, NoonI18n, db, $q) {\n    var THIS = this;\n    \n    //Map fieldtype name to appropriate FieldTypeUiSpec object\n    var viewSpecs = {};\n    var editSpecs = {};\n    var viewArrSpecs = {};\n    var editArrSpecs = {};\n    \n    var specMaps = {view:viewSpecs, edit:editSpecs};\n    var arrSpecMaps = {view:viewArrSpecs, edit:editArrSpecs};\n    \n    var queryOpLabels;\n    var queryOpMap = {}; //Map fieldtype name to list of queryop\n    \n    var cachePromises = {}; //keep track of classes for whom we've called cache()\n    \n    /**\n     * DbuiFieldType.init\n     * \n     */\n    this.init = function() {\n        console.log('initializing DbuiFieldType'); \n        \n        //Pull in queryop metadata\n        return NoonWebService.call('dbui/getQueryOpMetadata').then(function(result) {\n            \n            _.forEach(result, function(editorSpec) {\n                _.forEach(editorSpec.types, function(typeName) {\n                   queryOpMap[typeName] = editorSpec.queryops; \n                });\n            });\n            \n        });\n        \n    };\n    \n    /**\n     * \n     * @private\n     */\n    var getTypeName = function(typeDesc) {\n        if(typeDesc instanceof Array) {\n            return typeDesc[0].type+'[]';\n        }\n        else if(typeDesc) {\n            return typeDesc.type;\n        }\n    };\n    \n    var applicableWildcard = function(typeDesc) {\n        return typeDesc instanceof Array ? '*[]' : '*';\n    };\n    \n    /**\n     * DbuiFieldType.cacheTypeInfo\n     * call getFieldTypeMetadata to cache templates/controllers/etc. for a fieldtype or fieldtypes of a specific class\n     * @private\n     */\n    var cacheTypeInfo = function (wsParams, viewEdit) {\n        // console.log('cacheTypeInfo', wsParams, viewEdit);\n        return NoonWebService.call('dbui/getFieldTypeMetadata', wsParams).then(function(resultObj) {\n            \n            _.forEach(resultObj.result, function(specObj) {\n                var typeList;\n                if(specObj.fieldtypes && specObj.fieldtypes.length) {\n                    typeList = specObj.fieldtypes;\n                }\n                else {\n                    typeList = ['*'];\n                }\n                \n                var specMap;\n                if(specObj.for_array) {\n                    specMap = arrSpecMaps[viewEdit];\n                }\n                else {\n                    specMap = specMaps[viewEdit];\n                }\n                \n                _.forEach(typeList, function(typeName) {\n                    // console.log('saving template for ', typeName);\n                    if(!specMap[typeName]) {\n                        specMap[typeName] = {};\n                    }\n                    if(specObj.key.indexOf('dbui.core') === 0) {\n                        specMap[typeName].default = specObj;\n                    }\n                    else {\n                        specMap[typeName][specObj.key] = specObj;\n                    }\n                });\n            });\n            \n        },\n        function(err) {\n            console.error('Bad result for cacheTypeInfo ', wsParams, err);\n        });\n    };\n    \n    /** \n     * DbuiFieldType.cacheTypeInfoForFieldtype\n     * Retrieves and caches FieldTypeUiSpec data for fields of specified fieldtype\n     */\n    var cacheTypeInfoForFieldtype = function(typeDesc, viewEdit) {\n        return cacheTypeInfo( {field_type:getTypeName(typeDesc),view_or_edit:viewEdit}, viewEdit );\n    };\n    \n    /** \n     * DbuiFieldType.cacheTypeInfoForClass\n     * Retrieves and caches FieldTypeUiSpec data for fields of specified class\n     */\n    this.cacheTypeInfoForClass = function(className) {\n        if(!cachePromises[className]) {\n            cachePromises[className] = cacheTypeInfo({class_name:className,view_or_edit:'view'}, 'view')\n                .then(cacheTypeInfo.bind(null, {class_name:className,view_or_edit:'edit'}, 'edit'));\n        }\n        return cachePromises[className];\n    };\n    \n    \n    var getSpecFromCache = function(typeDesc, viewEdit) {\n        var typeName;\n        var specMap;\n        if(typeDesc instanceof Array) {\n            specMap = arrSpecMaps[viewEdit];\n            typeName = typeDesc[0].type;\n        }\n        else {\n            specMap = specMaps[viewEdit];\n            typeName = typeDesc.type;\n        }\n        \n        if(specMap[typeName]) {\n           return specMap[typeName];\n        }\n        else if(specMap['*']) {\n            return specMap['*'];\n        }\n    };\n    \n    /**\n     * DbuiFieldType.getSpec\n     */\n    this.getSpec = function(typeDesc, viewEdit, fieldCustomizations) {\n        var fc = fieldCustomizations || {};\n        var specKey = fc.uiSpec || 'default';\n        \n        \n        var specObj = getSpecFromCache(typeDesc, viewEdit);\n        if(specObj) {\n            return $q.resolve(specObj[specKey]);\n        }\n        \n        //Not cached, retrieve it from server:\n        return cacheTypeInfoForFieldtype(typeDesc, viewEdit).then(function() {\n            return getSpecFromCache(typeDesc, viewEdit)[specKey];\n        });\n        \n    };\n    \n    \n    /**\n     * \n     */\n    var getOpList =\n    this.getOpList = function(typeDesc) {\n        var typeName = getTypeName(typeDesc);\n        if(queryOpMap[typeName]) {\n            return queryOpMap[typeName];\n        }\n        else {\n            var wc = applicableWildcard(typeDesc);\n            if(queryOpMap[wc]) {\n                return queryOpMap[wc];\n            }\n        }\n    };\n    \n    /**\n     * \n     */\n    this.getOpInfo = function(typeDesc, opName) {\n        var opInfoList = getOpList(typeDesc);\n        for(var i=0; i < opInfoList.length; i++) {\n            if(opName === opInfoList[i].op) {\n                return opInfoList[i];\n            }\n        }\n    };\n    \n    \n    \n    \n    var expandRefPlaceholder = function(fieldList, boLabelGroup, denormOnly) {\n        var myPos;\n        for(myPos=0; myPos < fieldList.length ; myPos++) {\n          if(fieldList[myPos] === this)\n            break;\n        }\n        //Remove the placeholder\n        fieldList.splice(myPos, 1);\n\n        //Insert the items for the ref fields\n        var namePrefix = this.fieldName;\n        var refTd = db[this.td.ref_class]._bo_meta_data.type_desc_map;\n\n        var refFieldList = denormOnly ? (this.td.denormalize_fields || []) : Object.keys(refTd);\n\n        for(var i=0; i < refFieldList.length; i++) {\n          var refFieldName = refFieldList[i];\n          var qualifiedSubfield = namePrefix+refFieldName;\n          var fi = {\n            fieldName:qualifiedSubfield,\n            fieldLabel: boLabelGroup[namePrefix.substring(0, namePrefix.length-1)]+'.'+(boLabelGroup[qualifiedSubfield] || refFieldName),\n            td:refTd[refFieldName]\n          };\n\n          fieldList.splice(myPos, 0, fi);\n        }\n\n      };\n      \n    /**\n     * DbuiFieldType.getAugmentedFieldList\n     *  returns a promise -> array of objects describing the fields of bo className\n     *  {\n     *    fieldName:'field name - dotted if ref sub-field',\n     *    fieldLabel:'from i18n getBoLabelGroup, for language of current user',\n     *    td: typedesc object copied from bo metadata\n     *    refPlaceholder: boolean - true if this is a placeholder for a reference field,\n     *    expand: function to expand this placeholder into entries for reference fields\n     *  }\n     **/\n    this.getAugmentedFieldList = function(className, denormOnly, searchableOnly) {\n\n      return NoonI18n.getBoLabelGroup(className).$promise.then(function(boLabelGroup) {\n        var Model = db[className];\n        var typeDescMap = Model._bo_meta_data.type_desc_map;\n        var resultList = [];\n\n        boLabelGroup._abbreviated = boLabelGroup._abbreviated || {};\n\n        for(var f in typeDescMap) {\n          if(f.indexOf('_') === 0)\n            continue;\n          \n          var td = typeDescMap[f];\n          \n          if(searchableOnly && !getOpList(td)) \n            continue;\n\n          \n          var fieldLabel = boLabelGroup._abbreviated[f] || boLabelGroup[f] || f;\n          var fieldInfo = {\n            fieldName:f,\n            fieldLabel:fieldLabel,\n            td:td\n          };\n          resultList.push(fieldInfo);\n\n          if(td.type === 'reference' && (!denormOnly || td.denormalize_fields)) {\n            var fiPlaceholder = {\n              fieldName:f+'.',\n              fieldLabel:fieldLabel+'...',\n              td:td,\n              refPlaceholder:true\n            };\n\n            fiPlaceholder.expand = expandRefPlaceholder.bind(fiPlaceholder, resultList, boLabelGroup, denormOnly);\n            resultList.push(fiPlaceholder);\n          }\n\n        }//end typeDescMap iteration\n\n        resultList.sort(function(a, b) {\n          if (a.fieldLabel < b.fieldLabel)\n            return -1;\n          if (a.fieldLabel > b.fieldLabel)\n            return 1;\n          return 0;\n        });\n\n\n        return resultList;\n      });\n\n\n    };\n    \n\n}",
+	"function": "function (NoonWebService, NoonI18n, db, $q) {\n    var THIS = this;\n    \n    //Map fieldtype name to appropriate FieldTypeUiSpec object\n    var viewSpecs = {};\n    var editSpecs = {};\n    var viewArrSpecs = {};\n    var editArrSpecs = {};\n    \n    var specMaps = {view:viewSpecs, edit:editSpecs};\n    var arrSpecMaps = {view:viewArrSpecs, edit:editArrSpecs};\n    \n    var queryOpLabels;\n    var queryOpMap = {}; //Map fieldtype name to list of queryop\n    \n    var cachePromises = {}; //keep track of classes for whom we've called cache()\n    \n    /**\n     * DbuiFieldType.init\n     * \n     */\n    this.init = function() {\n        console.log('initializing DbuiFieldType'); \n        \n        //Pull in queryop metadata\n        return NoonWebService.call('dbui/getQueryOpMetadata').then(function(result) {\n            \n            _.forEach(result, function(editorSpec) {\n                _.forEach(editorSpec.types, function(typeName) {\n                   queryOpMap[typeName] = editorSpec.queryops; \n                });\n            });\n            \n        });\n        \n    };\n    \n    /**\n     * \n     * @private\n     */\n    var getTypeName = function(typeDesc) {\n        if(typeDesc instanceof Array) {\n            return typeDesc[0].type+'[]';\n        }\n        else if(typeDesc) {\n            return typeDesc.type;\n        }\n    };\n    \n    var applicableWildcard = function(typeDesc) {\n        return typeDesc instanceof Array ? '*[]' : '*';\n    };\n    \n    /**\n     * DbuiFieldType.cacheTypeInfo\n     * call getFieldTypeMetadata to cache templates/controllers/etc. for a fieldtype or fieldtypes of a specific class\n     * @private\n     */\n    var cacheTypeInfo = function (wsParams, viewEdit) {\n        // console.log('cacheTypeInfo', wsParams, viewEdit);\n        return NoonWebService.call('dbui/getFieldTypeMetadata', wsParams).then(function(resultObj) {\n            \n            _.forEach(resultObj.result, function(specObj) {\n                var typeList;\n                if(specObj.fieldtypes && specObj.fieldtypes.length) {\n                    typeList = specObj.fieldtypes;\n                }\n                else {\n                    typeList = ['*'];\n                }\n                \n                var specMap;\n                if(specObj.for_array) {\n                    specMap = arrSpecMaps[viewEdit];\n                }\n                else {\n                    specMap = specMaps[viewEdit];\n                }\n                \n                _.forEach(typeList, function(typeName) {\n                    // console.log('saving template for ', typeName);\n                    if(!specMap[typeName]) {\n                        specMap[typeName] = {};\n                    }\n                    if(specObj.key.indexOf('dbui.core') === 0) {\n                        specMap[typeName].default = specObj;\n                    }\n                    else {\n                        specMap[typeName][specObj.key] = specObj;\n                    }\n                });\n            });\n            \n        },\n        function(err) {\n            console.error('Bad result for cacheTypeInfo ', wsParams, err);\n        });\n    };\n    \n    /** \n     * DbuiFieldType.cacheTypeInfoForFieldtype\n     * Retrieves and caches FieldTypeUiSpec data for fields of specified fieldtype\n     */\n    var cacheTypeInfoForFieldtype = function(typeDesc, viewEdit) {\n        var typeName = getTypeName(typeDesc);\n        var promiseCacheKey = typeName+'|'+viewEdit;\n        \n        if(!cachePromises[promiseCacheKey]) {\n            cachePromises[promiseCacheKey] = cacheTypeInfo( {field_type:typeName,view_or_edit:viewEdit}, viewEdit );\n        }\n        \n        return cachePromises[promiseCacheKey];\n    };\n    \n    /** \n     * DbuiFieldType.cacheTypeInfoForClass\n     * Retrieves and caches FieldTypeUiSpec data for fields of specified class\n     */\n    this.cacheTypeInfoForClass = function(className) {\n        if(!cachePromises[className]) {\n            cachePromises[className] = cacheTypeInfo({class_name:className,view_or_edit:'view'}, 'view')\n                .then(cacheTypeInfo.bind(null, {class_name:className,view_or_edit:'edit'}, 'edit'));\n        }\n        return cachePromises[className];\n    };\n    \n    \n    var getSpecFromCache = function(typeDesc, viewEdit) {\n        var typeName;\n        var specMap;\n        if(typeDesc instanceof Array) {\n            specMap = arrSpecMaps[viewEdit];\n            typeName = typeDesc[0].type;\n        }\n        else {\n            specMap = specMaps[viewEdit];\n            typeName = typeDesc.type;\n        }\n        \n        if(specMap[typeName]) {\n           return specMap[typeName];\n        }\n        else if(specMap['*']) {\n            return specMap['*'];\n        }\n    };\n    \n    /**\n     * DbuiFieldType.getSpec\n     */\n    this.getSpec = function(typeDesc, viewEdit, fieldCustomizations) {\n        var fc = fieldCustomizations || {};\n        var specKey = fc.uiSpec || 'default';\n        \n        \n        var specObj = getSpecFromCache(typeDesc, viewEdit);\n        if(specObj) {\n            return $q.resolve(specObj[specKey]);\n        }\n        \n        //Not cached, retrieve it from server:\n        return cacheTypeInfoForFieldtype(typeDesc, viewEdit).then(function() {\n            return getSpecFromCache(typeDesc, viewEdit)[specKey];\n        });\n        \n    };\n    \n    \n    /**\n     * \n     */\n    var getOpList =\n    this.getOpList = function(typeDesc) {\n        var typeName = getTypeName(typeDesc);\n        if(queryOpMap[typeName]) {\n            return queryOpMap[typeName];\n        }\n        else {\n            var wc = applicableWildcard(typeDesc);\n            if(queryOpMap[wc]) {\n                return queryOpMap[wc];\n            }\n        }\n    };\n    \n    /**\n     * \n     */\n    this.getOpInfo = function(typeDesc, opName) {\n        var opInfoList = getOpList(typeDesc);\n        for(var i=0; i < opInfoList.length; i++) {\n            if(opName === opInfoList[i].op) {\n                return opInfoList[i];\n            }\n        }\n    };\n    \n    \n    \n    \n    var expandRefPlaceholder = function(fieldList, boLabelGroup, denormOnly) {\n        var myPos;\n        for(myPos=0; myPos < fieldList.length ; myPos++) {\n          if(fieldList[myPos] === this)\n            break;\n        }\n        //Remove the placeholder\n        fieldList.splice(myPos, 1);\n\n        //Insert the items for the ref fields\n        var namePrefix = this.fieldName;\n        var refTd = db[this.td.ref_class]._bo_meta_data.type_desc_map;\n\n        var refFieldList = denormOnly ? (this.td.denormalize_fields || []) : Object.keys(refTd);\n\n        for(var i=0; i < refFieldList.length; i++) {\n          var refFieldName = refFieldList[i];\n          var qualifiedSubfield = namePrefix+refFieldName;\n          var fi = {\n            fieldName:qualifiedSubfield,\n            fieldLabel: boLabelGroup[namePrefix.substring(0, namePrefix.length-1)]+'.'+(boLabelGroup[qualifiedSubfield] || refFieldName),\n            td:refTd[refFieldName]\n          };\n\n          fieldList.splice(myPos, 0, fi);\n        }\n\n      };\n      \n    /**\n     * DbuiFieldType.getAugmentedFieldList\n     *  returns a promise -> array of objects describing the fields of bo className\n     *  {\n     *    fieldName:'field name - dotted if ref sub-field',\n     *    fieldLabel:'from i18n getBoLabelGroup, for language of current user',\n     *    td: typedesc object copied from bo metadata\n     *    refPlaceholder: boolean - true if this is a placeholder for a reference field,\n     *    expand: function to expand this placeholder into entries for reference fields\n     *  }\n     **/\n    this.getAugmentedFieldList = function(className, denormOnly, searchableOnly) {\n\n      return NoonI18n.getBoLabelGroup(className).$promise.then(function(boLabelGroup) {\n        var Model = db[className];\n        var typeDescMap = Model._bo_meta_data.type_desc_map;\n        var resultList = [];\n\n        boLabelGroup._abbreviated = boLabelGroup._abbreviated || {};\n\n        for(var f in typeDescMap) {\n          if(f.indexOf('_') === 0)\n            continue;\n          \n          var td = typeDescMap[f];\n          \n          if(searchableOnly && !getOpList(td)) \n            continue;\n\n          \n          var fieldLabel = boLabelGroup._abbreviated[f] || boLabelGroup[f] || f;\n          var fieldInfo = {\n            fieldName:f,\n            fieldLabel:fieldLabel,\n            td:td\n          };\n          resultList.push(fieldInfo);\n\n          if(td.type === 'reference' && (!denormOnly || td.denormalize_fields)) {\n            var fiPlaceholder = {\n              fieldName:f+'.',\n              fieldLabel:fieldLabel+'...',\n              td:td,\n              refPlaceholder:true\n            };\n\n            fiPlaceholder.expand = expandRefPlaceholder.bind(fiPlaceholder, resultList, boLabelGroup, denormOnly);\n            resultList.push(fiPlaceholder);\n          }\n\n        }//end typeDescMap iteration\n\n        resultList.sort(function(a, b) {\n          if (a.fieldLabel < b.fieldLabel)\n            return -1;\n          if (a.fieldLabel > b.fieldLabel)\n            return 1;\n          return 0;\n        });\n\n\n        return resultList;\n      });\n\n\n    };\n    \n\n}",
 	"module": {
 		"_disp": "noonian.dbui",
 		"_id": "myP57XGhSNyDKrrcJFvO0Q"
@@ -3109,12 +3182,33 @@
 	"path": "sys/dbui"
 },
 {
-	"__ver": "sys:2",
+	"__ver": "sys:3",
 	"_class": "CodeModule",
 	"_id": "pwMVRvdjSU-2Ak0BWDA6AA",
-	"code": "function (db, _, Q) {\n    var exports = {};\n    var ENGLISH_ID='-9vPfv2lEeSFtiimx_V4dw';\n\n    /**\n     * @private\n     */\n    var autogenLabelGroup = function(className) {\n      var key = 'sys.dbui.bo.'+className;\n    \n      if(db[className]) {\n        console.log(\"Auto-generating LabelGroup for %s\", className);\n         //Create a LabelGroup for i18n\n         var lg = new db.LabelGroup({\n           key:key,\n           language:{_id:'-9vPfv2lEeSFtiimx_V4dw'},\n           value:{}\n         });\n    \n         for(var f in db[className]._bo_meta_data.type_descriptor) {\n           if(f.indexOf('_') !== 0) {\n             lg.value[f] = _.startCase(f);\n           }\n         }\n    \n         return lg.save();\n       }\n       return null;\n    };\n    \n    /**\n     * I18n.getLabelGroup\n     * Retrieve label group for a particular user.\n     */\n    exports.getLabelGroup = function(key, user) {\n      var lang = user && user.language ? user.language._id : ENGLISH_ID; //default to english\n    \n      return db.LabelGroup.findOne({key:key, 'language._id':lang}).then(function(lg){\n        return lg && lg.value;\n      });\n    \n    };\n    \n    /**\n     * I18n.getBoLabelGroup\n     * *resolves immediate reference sub-fields; TODO also resolve inheritance, composites!\n    */\n    exports.getBoLabelGroup = function(className, user) {\n      var lang = user && user.language ? user.language._id : ENGLISH_ID; //default to english\n    \n    \n      var keyPrefix = 'sys.dbui.bo.';\n      var baseKey = keyPrefix+className;\n    \n      var boMetaData = db[className]._bo_meta_data;\n    \n      var queryKeyList = [baseKey]; //LabelGroup keys we'll be asking for\n    \n      var fieldToLgKey = {}; //Maps a ref field name to correpsonding LabelGroup key\n    \n      //first, determine all the reference fields and build a list of corresponding LabelGroup keys.\n      _.forEach(boMetaData.type_descriptor, function(td, fieldName) {\n        if(td.type === 'reference') {\n          var myKey = keyPrefix+td.ref_class;\n          queryKeyList.push(myKey);\n          fieldToLgKey[fieldName] = myKey;\n        }\n      });\n    \n      //Query for all the necessary LabelGroup's\n      return db.LabelGroup.find({key:{$in:queryKeyList}, 'language._id':lang}).then(function(lgList){\n        var lgMap = _.indexBy(lgList, 'key');\n        var composite;\n        var initPromise;\n    \n        if(lgMap[baseKey]) {\n          composite = lgMap[baseKey].value;\n          initPromise = Q(true);\n        }\n        else {\n          initPromise = autogenLabelGroup(className).then(function(newLg) {\n            composite = newLg.value;\n          });\n        }\n    \n        return initPromise.then(function() {\n          _.forEach(fieldToLgKey, function(lgKey, fieldName) {\n            if(lgMap[lgKey]) {\n              var fieldPrefix = fieldName+'.';\n              var labelPrefix = ''; //(composite[fieldName] || fieldName)+': ';\n    \n              _.forEach(lgMap[lgKey].value, function(subLabel, subField) {\n                composite[fieldPrefix+subField] = labelPrefix+subLabel;\n              });\n            }\n          });\n    \n          return composite;\n        });\n      });\n    };\n    \n    \n    return exports;\n}",
+	"code": "function (db, _, Q) {\n    var exports = {};\n    var ENGLISH_ID='-9vPfv2lEeSFtiimx_V4dw';\n\n    /**\n     * @private\n     */\n    var autogenLabelGroup = function(className) {\n      var key = 'sys.dbui.bo.'+className;\n      \n      var typeDescMap;\n      \n      if(db[className]) {\n          typeDescMap = db[className]._bo_meta_data.type_descriptor;\n      }\n      else if(className.indexOf('#') > -1) {\n          var hashPos = className.indexOf('#');\n          var baseClass = className.substring(0, hashPos);\n          var field = className.substring(hashPos+1);\n          \n          var td = db[baseClass] && db[baseClass]._bo_meta_data.type_descriptor[field];\n          \n          if(td instanceof Array) {\n              td = td[0]\n          }\n          \n          if(td && td.type === 'composite') {\n              typeDescMap = td.type_desc_map;\n          }\n      }\n    \n      if(typeDescMap) {\n        console.log(\"Auto-generating LabelGroup for %s\", className);\n         //Create a LabelGroup for i18n\n         var lg = new db.LabelGroup({\n           key:key,\n           language:{_id:'-9vPfv2lEeSFtiimx_V4dw'},\n           value:{}\n         });\n    \n         for(var f in typeDescMap) {\n           if(f.indexOf('_') !== 0) {\n             lg.value[f] = _.startCase(f);\n           }\n         }\n    \n         return lg.save();\n       }\n       return null;\n    };\n    \n    /**\n     * I18n.getLabelGroup\n     * Retrieve label group for a particular user.\n     */\n    exports.getLabelGroup = function(key, user) {\n      var lang = user && user.language ? user.language._id : ENGLISH_ID; //default to english\n    \n      return db.LabelGroup.findOne({key:key, 'language._id':lang}).then(function(lg){\n        return lg && lg.value;\n      });\n    \n    };\n    \n    /**\n     * I18n.getBoLabelGroup\n     * *resolves immediate reference sub-fields; TODO also resolve inheritance!\n    */\n    exports.getBoLabelGroup = function(className, user) {\n      var lang = user && user.language ? user.language._id : ENGLISH_ID; //default to english\n    \n    \n      var keyPrefix = 'sys.dbui.bo.';\n      var baseKey = keyPrefix+className;\n    \n      var boMetaData;\n      \n      if(db[className]) {\n          boMetaData = db[className]._bo_meta_data;\n      }\n      else if(className.indexOf('#') > -1) {\n          var hashPos = className.indexOf('#');\n          var baseClass = className.substring(0, hashPos);\n          var field = className.substring(hashPos+1);\n          \n          var td = db[baseClass] && db[baseClass]._bo_meta_data.type_descriptor[field];\n          \n          if(td instanceof Array) {\n              td = td[0]\n          }\n          \n          if(!td || td.type !== 'composite') {\n              throw new Error('Invalid class name: '+className);\n          }\n          \n          boMetaData = {\n              type_descriptor:td.type_desc_map\n          };\n      }\n      else {\n          throw new Error('Invalid class name: '+className);\n      }\n    \n      var queryKeyList = [baseKey]; //LabelGroup keys we'll be asking for\n    \n      var fieldToLgKey = {}; //Maps a ref field name to correpsonding LabelGroup key\n    \n      //first, determine all the reference fields and build a list of corresponding LabelGroup keys.\n      _.forEach(boMetaData.type_descriptor, function(td, fieldName) {\n        if(td.type === 'reference') {\n          var myKey = keyPrefix+td.ref_class;\n          queryKeyList.push(myKey);\n          fieldToLgKey[fieldName] = myKey;\n        }\n      });\n    \n      //Query for all the necessary LabelGroup's\n      return db.LabelGroup.find({key:{$in:queryKeyList}, 'language._id':lang}).then(function(lgList){\n        var lgMap = _.indexBy(lgList, 'key');\n        var composite;\n        var initPromise;\n    \n        if(lgMap[baseKey]) {\n          composite = lgMap[baseKey].value;\n          initPromise = Q(true);\n        }\n        else {\n          initPromise = autogenLabelGroup(className).then(function(newLg) {\n            composite = newLg.value;\n          });\n        }\n    \n        return initPromise.then(function() {\n          _.forEach(fieldToLgKey, function(lgKey, fieldName) {\n            if(lgMap[lgKey]) {\n              var fieldPrefix = fieldName+'.';\n              var labelPrefix = ''; //(composite[fieldName] || fieldName)+': ';\n    \n              _.forEach(lgMap[lgKey].value, function(subLabel, subField) {\n                composite[fieldPrefix+subField] = labelPrefix+subLabel;\n              });\n            }\n          });\n    \n          return composite;\n        });\n      });\n    };\n    \n    \n    return exports;\n}",
 	"name": "I18n",
 	"path": "sys/api"
+},
+{
+	"__ver": "sys:2",
+	"_class": "Config",
+	"_id": "-H2Rcmo1Sriv9cRoQiYxGQ",
+	"key": "sys.dbui.perspective.default.Person",
+	"system": false,
+	"value": {
+		"edit": {
+			"layout": [
+				"phone",
+				"user"
+			]
+		},
+		"list": {
+			"fields": [
+				"phone",
+				"user"
+			]
+		}
+	}
 },
 {
 	"__ver": "sys:5",
@@ -3234,6 +3328,32 @@
 					"label": "Run Update",
 					"ws": "pkg/runUpdate"
 				}
+			]
+		}
+	}
+},
+{
+	"__ver": "sys:2",
+	"_class": "Config",
+	"_id": "1Ot34-g6Q12L6OoxKi401A",
+	"key": "sys.dbui.perspective.default.TwoFactorAuthLoginRequest",
+	"system": false,
+	"value": {
+		"list": {
+			"fields": [
+				"code",
+				"created_date",
+				"user"
+			]
+		},
+		"view": {
+			"layout": [
+				"code",
+				"created_date",
+				"ip",
+				"modified_date",
+				"user",
+				"validated"
 			]
 		}
 	}
@@ -3829,6 +3949,26 @@
 	}
 },
 {
+	"__ver": "sys:6",
+	"_class": "Config",
+	"_id": "Cu-EL7B2SZyDpkAj_QzZIg",
+	"allow_customize": false,
+	"key": "sys.two_factor_auth",
+	"rolespec": [
+	],
+	"system": false,
+	"value": {
+		"condition": "TEST_ROLE",
+		"implementation": "SimpleTest",
+		"refresh_period": "24",
+		"userToPhone": {
+			"phoneField": "phone",
+			"refClass": "Person",
+			"refField": "user"
+		}
+	}
+},
+{
 	"__ver": "sys:1",
 	"_class": "Config",
 	"_id": "CzEs6oTgTrKrikVdgl4I2g",
@@ -4198,6 +4338,21 @@
 				}
 			]
 		}
+	}
+},
+{
+	"__ver": "sys:4",
+	"_class": "Config",
+	"_id": "Hj3COO0iQyufTftJqfUt_Q",
+	"allow_customize": false,
+	"key": "twilio.auth",
+	"rolespec": [
+	],
+	"system": false,
+	"value": {
+		"phone": "+1##########",
+		"sid": "TWILIO_SID",
+		"token": "TWILIO_TOKEN"
 	}
 },
 {
@@ -5456,7 +5611,7 @@
 },
 {
 	"__pkg": "sys",
-	"__ver": "sys:1",
+	"__ver": "sys:2",
 	"_class": "Config",
 	"_id": "qqVlSIILTbiGNUzOtHQqcg",
 	"key": "sys.dbui.perspective.default.User",
@@ -5470,6 +5625,15 @@
 			]
 		},
 		"list": {
+			"fields": [
+				"name",
+				"roles"
+			],
+			"sort": {
+				"name": "asc"
+			}
+		},
+		"picker_list": {
 			"fields": [
 				"name",
 				"roles"
@@ -5827,6 +5991,38 @@
 	}
 },
 {
+	"__ver": "sys:4",
+	"_class": "Config",
+	"_id": "yfTTwRezQFKAnbUGICed4w",
+	"allow_customize": false,
+	"key": "sys.dbui.perspective.default.TwoFactorAuthImplementation",
+	"rolespec": [
+	],
+	"system": false,
+	"value": {
+		"edit": {
+			"layout": [
+				"name",
+				"doc",
+				"factory_fn"
+			]
+		},
+		"list": {
+			"fields": [
+				"name",
+				"doc"
+			]
+		},
+		"view": {
+			"layout": [
+				"name",
+				"doc",
+				"factory_fn"
+			]
+		}
+	}
+},
+{
 	"__ver": "sys:3",
 	"_class": "Config",
 	"_id": "yjoQfy6JT9OfNzPFSEHqEQ",
@@ -6052,6 +6248,22 @@
 },
 {
 	"__ver": "sys:1",
+	"_class": "Enumeration",
+	"_id": "ziaKbpUeTYC8t691DU1tug",
+	"name": "TimeDuration",
+	"values": [
+		"milliseconds",
+		"seconds",
+		"minutes",
+		"hours",
+		"days",
+		"weeks",
+		"months",
+		"years"
+	]
+},
+{
+	"__ver": "sys:1",
 	"_class": "FieldType",
 	"_id": "2RQWYKymQMmfYqEGxXVtoA",
 	"doc": "A physical address: street, city, state, zip.  \n\n@todo refactor to utilize a more general 'named composite' mechanism for defining field types like this.\n@todo geoloc support",
@@ -6254,6 +6466,15 @@
 	"text_index": false
 },
 {
+	"__ver": "sys:1",
+	"_class": "FieldType",
+	"_id": "jOZVJVLOTmGK6Ppf7JNnCw",
+	"doc": "Represents a duration of time",
+	"mongo_type": "Mixed",
+	"name": "duration",
+	"text_index": false
+},
+{
 	"__pkg": "sys",
 	"__ver": "sys:3",
 	"_class": "FieldType",
@@ -6345,6 +6566,25 @@
 	"for_viewing_array": false,
 	"key": "dbui.core.date.view",
 	"template": "<div>\n  <span>{{displayValue | date:format}}</span>\n</div>"
+},
+{
+	"__ver": "sys:1",
+	"_class": "FieldTypeUiSpec",
+	"_id": "1-8wwUmiSpSdYgICK078Vw",
+	"controller_fn": "function ($scope, NoonI18n) {\n    \n    NoonI18n.getEnumerationValues('TimeDuration').$promise.then(function(enumValues){\n\n      if($scope.typeDesc.units && $scope.typeDesc.units.length) {\n        $scope.units = [];\n        var keepVals = {};\n\n        for(var i=0; i < $scope.typeDesc.units.length; i++) {\n          keepVals[$scope.typeDesc.units[i]] = true;\n        }\n\n        for(var i=0; i < enumValues.length; i++) {\n          var curr = enumValues[i];\n          if(keepVals[curr.value] || ($scope.binding && $scope.binding.value && curr.value === $scope.binding.value.unit)) {\n            $scope.units.push(curr);\n          }\n        }\n      }\n      else {\n        $scope.units = enumValues;\n      }\n    });\n    \n}",
+	"fieldtypes": [
+		{
+			"_disp": "duration",
+			"_id": "jOZVJVLOTmGK6Ppf7JNnCw",
+			"name": "duration"
+		}
+	],
+	"for_editing": true,
+	"for_editing_array": false,
+	"for_viewing": false,
+	"for_viewing_array": false,
+	"key": "dbui.core.duration.edit",
+	"template": "<div >\n  <input class=\"form-control\" style=\"width:40%;display:inline-block\" type=\"number\" step=\"any\" ng-model=\"binding.value.number\" elem-id=\"{{elemId}}.number\">\n  <select class=\"form-control\" style=\"width:40%;display:inline-block\" ng-options=\"unit.value as unit.label for unit in units\" ng-model=\"binding.value.unit\" elem-id=\"{{elemId}}.unit\"></select>\n</div>"
 },
 {
 	"__ver": "sys:4",
@@ -6665,6 +6905,25 @@
 	"for_viewing_array": false,
 	"key": "dbui.core.time.view",
 	"template": "<div>\n  <span>{{displayDate | date:format}}</span>\n</div>"
+},
+{
+	"__ver": "sys:1",
+	"_class": "FieldTypeUiSpec",
+	"_id": "QYBXXHdmQzuWMhjDeBgVLA",
+	"controller_fn": "function (NoonI18n) {\n    NoonI18n.getEnumerationValues('TimeDuration')\n      .$promise.then(function(result) {\n        var labelMap = {};\n        for(var i=0; i < result.length; i++) {\n          labelMap[result[i].value] = result[i].label;\n        }\n        $scope.enumLabels = labelMap;\n    });\n}",
+	"fieldtypes": [
+		{
+			"_disp": "duration",
+			"_id": "jOZVJVLOTmGK6Ppf7JNnCw",
+			"name": "duration"
+		}
+	],
+	"for_editing": false,
+	"for_editing_array": false,
+	"for_viewing": true,
+	"for_viewing_array": false,
+	"key": "dbui.core.duration.view",
+	"template": "<div>\n  <span>{{displayValue.number}} {{enumLabels[displayValue.unit]}}</span>\n</div>"
 },
 {
 	"__ver": "sys:15",
@@ -7560,6 +7819,28 @@
 	}
 },
 {
+	"__ver": "sys:1",
+	"_class": "LabelGroup",
+	"_id": "8ztMXn4uQ-CZFu8GyFEVhg",
+	"key": "db.enum.TimeDuration",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": false,
+	"value": {
+		"days": "Days",
+		"hours": "Hours",
+		"milliseconds": "Milliseconds",
+		"minutes": "Minutes",
+		"months": "Months",
+		"seconds": "Seconds",
+		"weeks": "Weeks",
+		"years": "Years"
+	}
+},
+{
 	"__ver": "sys:2",
 	"_class": "LabelGroup",
 	"_id": "CoWMlx_mQjCR23MRd_OMNA",
@@ -7595,6 +7876,22 @@
 		"name": "Name",
 		"path": "Path",
 		"rolespec": "Roles"
+	}
+},
+{
+	"__ver": "sys:1",
+	"_class": "LabelGroup",
+	"_id": "EWIt-os4Q4Cez3WAYSicBg",
+	"key": "sys.dbui.bo.Person",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": false,
+	"value": {
+		"phone": "Phone",
+		"user": "User"
 	}
 },
 {
@@ -8130,6 +8427,23 @@
 	}
 },
 {
+	"__ver": "sys:1",
+	"_class": "LabelGroup",
+	"_id": "rXLbwEJ_RrCjtdHyfECIIw",
+	"key": "sys.dbui.bo.TwoFactorAuthImplementation",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": false,
+	"value": {
+		"doc": "Doc",
+		"factory_fn": "Factory Fn",
+		"name": "Name"
+	}
+},
+{
 	"__pkg": "sys",
 	"__ver": "sys:1",
 	"_class": "LabelGroup",
@@ -8209,6 +8523,23 @@
 		"name": "Name",
 		"path": "Path",
 		"rolespec": "Rolespec"
+	}
+},
+{
+	"__ver": "sys:1",
+	"_class": "LabelGroup",
+	"_id": "yOHJcevIQVKQuzvD4LC_SQ",
+	"key": "sys.dbui.bo.TwoFactorAuthLoginRequest",
+	"language": {
+		"_disp": "English",
+		"_id": "-9vPfv2lEeSFtiimx_V4dw",
+		"code": "en"
+	},
+	"system": false,
+	"value": {
+		"code": "Code",
+		"created_date": "Created Date",
+		"user": "User"
 	}
 },
 {
@@ -11277,6 +11608,21 @@
 	"name": "ROLE_SYSADMIN"
 },
 {
+	"__ver": "sys:4",
+	"_class": "TwoFactorAuthImplementation",
+	"_id": "GaulTlfcRgGe0DkrJcq_tQ",
+	"doc": "Simple test implementation that logs the code to console.",
+	"factory_fn": "function () {\n    return {\n        sendCode:function(dest, code) {\n            console.log('Sending to %s: [%s]', dest, code);\n            return {result:dest+' '+code};\n        }\n    };\n}",
+	"name": "SimpleTest"
+},
+{
+	"__ver": "sys:2",
+	"_class": "TwoFactorAuthImplementation",
+	"_id": "fqJ0O30bRBGZx_MbdZJH-g",
+	"factory_fn": "function (nodeRequire, Q, config) {\n    var getTwilioClient = nodeRequire('twilio');\n    \n    var formatPhone = function(phoneStr) {\n        //Assume we're only dealing w/ US numbers\n        //Format needs to be +1AAA#######\n        \n        //first clear out non-digits\n        phoneStr = phoneStr && phoneStr.replace(/\\D/g, '');\n        \n        //need at least areacode plus 7 digits\n        if(!phoneStr || phoneStr.length <10) {\n            return false;\n        }\n        if(phoneStr.length < 11) {\n            phoneStr = '1'+phoneStr;\n        }\n        \n        return '+'+phoneStr;\n        \n    };\n    \n    return {\n        sendCode:function(dest, code) {\n            console.log('TWILIO SEND CODE');\n            var deferred = Q.defer();\n            config.getParameter('twilio.auth', false).then(function(authParams) {\n                console.log('TWILIO SEND CODE! %s %s %j', dest, code, authParams);\n                if(!authParams || !authParams.sid || !authParams.token || !authParams.phone) {\n                    console.error('Bad config twilio.auth');\n                    deferred.reject('Bad config twilio.auth');\n                }\n                \n                var to = formatPhone(dest);\n                \n                if(!to) {\n                    return deferred.reject('Bad phone number '+dest);\n                }\n                \n                var twilioClient = getTwilioClient(authParams.sid, authParams.token);\n                \n                \n                \n                twilioClient.sendMessage(\n                    {\n                        to: to, \n                        from: authParams.phone,\n                        body: 'Verification Code: '+code\n                    }, \n                    function(err, responseData) {\n                        if(!err) {\n                            deferred.resolve(responseData);\n                        }\n                        else {\n                            deferred.reject(err);\n                        }\n                    }\n                );\n            });\n            \n            return deferred.promise;\n        }\n    };\n}",
+	"name": "Twilio"
+},
+{
 	"__ver": "sys:1",
 	"_class": "UiAction",
 	"_id": "i8CPDhK4SXKT7tT8JknLQw",
@@ -11289,6 +11635,21 @@
 	"_id": "zIbWSxNgRiGVY_G7j_jYsA",
 	"function": "function () {\n    var persp = this.perspectiveObj;\n    \n    var url='export/Vs_E0HrSSk6_aNtNUvexaw/'+this.className+'?';\n    var queryStr = null;\n    \n    var select = persp.fields;\n    var where = persp.filter;\n    var sort = persp.sort;\n    \n    var appendToQueryStr = function(str) {\n        queryStr = queryStr ? queryStr+'&'+str : str;\n    }\n    \n    if(persp.fields) {\n        appendToQueryStr('fields='+angular.toJson(persp.fields));\n        \n        var selectObj = {};\n        for(var i=0; i < persp.fields.length; i++) {\n          var f = persp.fields[i];\n          selectObj[f] = 1;\n        }\n        appendToQueryStr('select='+angular.toJson(selectObj));\n    }\n    \n    if(persp.filter || persp.searchString) {\n        appendToQueryStr('where='+angular.toJson(persp.getEffectiveQuery()));\n    }\n    \n    if(persp.sort) {\n        appendToQueryStr('sort='+angular.toJson(persp.sort));\n    }\n    \n\n    window.open(url+queryStr);\n}",
 	"key": "dbui.export_csv"
+},
+{
+	"__ver": "sys:2",
+	"_class": "User",
+	"_id": "68J3HOTcSUOm6DRlj9VfNg",
+	"name": "test",
+	"password": {
+		"hash": "$2a$10$y77aMyr5E30rP5.tQwcdxOdnqvGhZ8FCO9cz4cawVtSJ61sUugiNO"
+	},
+	"roles": [
+		{
+			"_disp": "TEST_ROLE",
+			"_id": "XXcEtJJ7TwSHOXlwJjz7cA"
+		}
+	]
 },
 {
 	"__pkg": "sys",
