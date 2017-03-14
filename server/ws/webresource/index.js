@@ -41,16 +41,42 @@ exports.init = function(app) {
 
 }
 
-
+/**
+ * Obtain content of a WebResource business object, specified by request path.
+ * http://server:port/urlBase/pathelem1/pathelem2/name
+ * WebResource naming conventions:
+ * 1) path is optional; if empty, defaults to root:  http://server:port/urlbase/name
+ * 2) name is manditory, and must not contain slashes (slashes belong in path)
+ * 
+ * Sometimes browser requests something with trailing slash:
+ * http://server:port/urlBase/pathelem1/pathelem2/name/
+ * 
+ * Parameters may be appended:
+ * http://server:port/urlBase/pathelem1/pathelem2/name?param1=a&param2=b
+ */
 controller.getWebResource = function(req, res) {
+    
+  //First, trim off the urlBase from request path (including leading slash)
   var firstSlash = 1;
   if(conf.urlBase) {
     firstSlash = conf.urlBase.length+1;
   }
-  var lastSlash = req.path.lastIndexOf('/');
-  var path = req.path.substring(firstSlash, lastSlash);
-  var name = req.path.substring(lastSlash+1);
+  
+  var reqPath = req.path.substring(firstSlash);
+  
+  //Next trim off trailing slash
+  var len = reqPath.length;
+  if(reqPath[len-1] === '/') {
+      reqPath = reqPath.substring(0, len-1);
+  }
+  
+  //Split off path from name
+  var lastSlash = reqPath.lastIndexOf('/');
+  
+  var path = reqPath.substring(0, lastSlash) || '/'; //if lastSlash==-1, path is empty string
+  var name = reqPath.substring(lastSlash+1);
 
+  //strip off url parameters
   var qPos = name.indexOf('?');
   if(qPos > -1) {
     name = name.substring(0, qPos);
@@ -70,14 +96,29 @@ controller.getWebResource = function(req, res) {
 
       //Before returning a 404, let's look for 'parent' resources:
       return db.WebResource.find({},{name:1, path:1}).then(function(fullList) {
-          var fullRequestedPath = path+'/'+name;
+          var fullRequestedPath;
+          if(path && path !== '/') {
+              fullRequestedPath = path+'/'+name;
+          }
+          else {
+              fullRequestedPath = name;
+          }
+          
           console.log('Requested: %s', fullRequestedPath);
 
           var longestMatch;
           var longestMatchLength = 0;
 
           _.forEach(fullList, function(wr) {
-            var myFullPath = wr.path + '/' + wr.name;
+            var myFullPath;
+            
+            if(wr.path && wr.path !== '/') {
+                myFullPath = wr.path+'/'+wr.name;
+            }
+            else {
+                myFullPath = wr.name;
+            }
+            
             //Requested path begins w/ path of the resource...
             if(fullRequestedPath.indexOf(myFullPath) === 0 && myFullPath.length > longestMatchLength) {
               longestMatchLength = myFullPath.length;
