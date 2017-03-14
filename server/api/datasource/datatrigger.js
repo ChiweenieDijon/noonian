@@ -123,7 +123,7 @@ exports.init = function() {
 
 
 
-var processTriggers = function(bodId, beforeAfter, createUpdateDelete, modelObj, keyFilter) {
+var processTriggers = function(bodId, beforeAfter, createUpdateDelete, modelObj, keyFilter, saveOptions) {
   // var promises = [];
   var promiseChain = Q(true);
 
@@ -149,7 +149,8 @@ var processTriggers = function(bodId, beforeAfter, createUpdateDelete, modelObj,
     id:modelObj._id,
     isUpdate:(createUpdateDelete==='onUpdate'),
     isCreate:(createUpdateDelete==='onCreate'),
-    isDelete:(createUpdateDelete==='onDelete')
+    isDelete:(createUpdateDelete==='onDelete'),
+    saveOptions:saveOptions
   };
 
 
@@ -182,34 +183,34 @@ var processTriggers = function(bodId, beforeAfter, createUpdateDelete, modelObj,
 
 
 
-exports.processBeforeCreate = function(modelObj, keyFilter) {
+exports.processBeforeCreate = function(modelObj, keyFilter, saveOptions) {
 	// console.log("**BEFORE CREATE for "+modelObj._bo_meta_data.class_name);
-  return processTriggers(modelObj._bo_meta_data.bod_id, 'before', 'onCreate', modelObj, keyFilter);
+  return processTriggers(modelObj._bo_meta_data.bod_id, 'before', 'onCreate', modelObj, keyFilter, saveOptions);
 };
 
-exports.processBeforeUpdate = function(modelObj, keyFilter) {
+exports.processBeforeUpdate = function(modelObj, keyFilter, saveOptions) {
 	// console.log("**BEFORE UPDATE for "+modelObj._bo_meta_data.class_name);
-  return processTriggers(modelObj._bo_meta_data.bod_id, 'before', 'onUpdate', modelObj, keyFilter);
+  return processTriggers(modelObj._bo_meta_data.bod_id, 'before', 'onUpdate', modelObj, keyFilter, saveOptions);
 };
 
-exports.processBeforeDelete = function(modelObj, keyFilter) {
+exports.processBeforeDelete = function(modelObj, keyFilter, saveOptions) {
 	// console.log("**BEFORE DELETE for "+modelObj._bo_meta_data.class_name);
-	return processTriggers(modelObj._bo_meta_data.bod_id, 'before', 'onDelete', modelObj, keyFilter);
+	return processTriggers(modelObj._bo_meta_data.bod_id, 'before', 'onDelete', modelObj, keyFilter, saveOptions);
 };
 
 
 
-exports.processAfterCreate = function(modelObj, keyFilter) {
+exports.processAfterCreate = function(modelObj, keyFilter, saveOptions) {
 	// console.log("**AFTER CREATE for "+modelObj._bo_meta_data.class_name);
-	return processTriggers(modelObj._bo_meta_data.bod_id, 'after', 'onCreate', modelObj, keyFilter);
+	return processTriggers(modelObj._bo_meta_data.bod_id, 'after', 'onCreate', modelObj, keyFilter, saveOptions);
 };
 
-exports.processAfterUpdate = function(modelObj, keyFilter) {
+exports.processAfterUpdate = function(modelObj, keyFilter, saveOptions) {
 	// console.log("**AFTER UPDATE for "+modelObj._bo_meta_data.class_name);
-  return processTriggers(modelObj._bo_meta_data.bod_id, 'after', 'onUpdate', modelObj, keyFilter);
+  return processTriggers(modelObj._bo_meta_data.bod_id, 'after', 'onUpdate', modelObj, keyFilter, saveOptions);
 };
 
-exports.processAfterDelete = function(modelObj, keyFilter) {
+exports.processAfterDelete = function(modelObj, keyFilter, saveOptions) {
 	// console.log("**AFTER DELETE for "+modelObj._bo_meta_data.class_name);
-	return processTriggers(modelObj._bo_meta_data.bod_id, 'after', 'onDelete', modelObj, keyFilter);
+	return processTriggers(modelObj._bo_meta_data.bod_id, 'after', 'onDelete', modelObj, keyFilter, saveOptions);
 };

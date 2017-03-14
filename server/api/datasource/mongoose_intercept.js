@@ -127,7 +127,7 @@ var proto_save = function(options, fn) {
     firstPromise = Q(true);
   }
 
-  return firstPromise.then(beforeDataTrigger.bind(null, THIS, keyFilter)) //invoke "before" data trigger, passing
+  return firstPromise.then(beforeDataTrigger.bind(null, THIS, keyFilter, options)) //invoke "before" data trigger, passing
     .then(function() {
       // console.log("Calling wrapped save %j", THIS);
       FieldTypeService.processToDb(THIS);
@@ -151,7 +151,7 @@ var proto_save = function(options, fn) {
     })
     .then(function(modelObj) {
       FieldTypeService.processFromDb(modelObj);
-      return afterDataTrigger(modelObj, keyFilter).then(function(){return modelObj;});
+      return afterDataTrigger(modelObj, keyFilter, options).then(function(){return modelObj;});
     })
     .then(
       function(modelObj) { callOnDone(null, modelObj) },
@@ -186,12 +186,12 @@ var proto_remove = function(options, fn) {
     keyFilter = options.filterTriggers;
   }
 
-  return datatrigger.processBeforeDelete(THIS, keyFilter)
+  return datatrigger.processBeforeDelete(THIS, keyFilter, options)
     .then(function() {
       return wrappedRemove();
     })
     .then(function() {
-      return datatrigger.processAfterDelete({_id:THIS._id, _previous:THIS, _bo_meta_data:THIS._bo_meta_data}, keyFilter);
+      return datatrigger.processAfterDelete({_id:THIS._id, _previous:THIS, _bo_meta_data:THIS._bo_meta_data}, keyFilter, options);
     })
     .then(
       function() { callOnDone(null, THIS) },
