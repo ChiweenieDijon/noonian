@@ -93,7 +93,7 @@ var getPhoneForUser = function(theUser, phoneMapping) {
     
     if(typeof phoneMapping === 'string') {
         //phoneMapping is a string -> phone is a field on the User itself
-        deferred.resolve(theUser[phoneMapping]);
+        deferred.resolve(_.get(theUser,phoneMapping));
     }
     else {
         //phoneMapping is object -> phone is a field somewhere else
