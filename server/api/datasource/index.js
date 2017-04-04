@@ -391,7 +391,7 @@ var augmentModelsWithMemberFunctions = function(singleClass) {
 
         Object.defineProperty(targetObj, memberFnObj.name, {
           enumerable:false,
-          writable:false,
+          writable:true,
           value:theFunction
         });
 
