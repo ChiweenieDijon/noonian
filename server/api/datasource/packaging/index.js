@@ -264,10 +264,20 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
     
     var retPromise = updateLogObj.save({skipTriggers:true});
     
-    if(targetPkg && targetPkg.enableFilesystemSync) {
-        retPromise = retPromise.then(function(logObj) {
-            fsPackageSyncer.writeObjectToPackageDir(targetPkg.fs_path, logObj);
-        });
+    /*
+     * We want to persist the UpdateLog object so that the package can be built
+     * on an instance populated from the objects on the filesystem.
+     * Objects belonging to the package are enumerated in the manifest, 
+     * so we only need to keep track of creates and deletes
+     * 
+     */
+    if(targetPkg && targetPkg.enableFilesystemSync) {  //we're syncing to the filesystem
+        if(!isUpdate || serverConf.enableHistory) {
+            // its either a create or delete OR we want to save all history        
+            retPromise = retPromise.then(function(logObj) {
+                fsPackageSyncer.writeObjectToPackageDir(targetPkg.fs_path, logObj);
+            });
+        }
     }
     
     return retPromise;
