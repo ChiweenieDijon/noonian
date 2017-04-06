@@ -36,6 +36,7 @@
     "morgan": "~1.0.0",
     "multiparty": "^4.1.2",
     "node-mysql": "^0.4.2",
+    "node-sass": "^4.5.2",
     "node-uuid": "^1.4.3",
     "nodemailer": "^1.10.0",
     "oboe": "^2.1.2",
