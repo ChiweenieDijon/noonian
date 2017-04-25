@@ -370,7 +370,7 @@ controller.get = function(req, res) {
 
 //Save: insert or update a single item, or batch update multiple according to criteria
 controller.save = function(req, res) {
-  console.log("SAVE: %j", req.body);
+  //console.log("SAVE: %j", req.body);
   var className = req.params.className;
   var id = req.params.id;
   if(req.body._id) {
@@ -378,7 +378,7 @@ controller.save = function(req, res) {
       id = req.body._id;
     delete req.body._id;
   }
-  // console.log("WS save %s %s %j", className, id, req.body);
+  console.log("Save %s.%s", className, id);
 
   var conditions;
   if(req.query.where) {
