@@ -222,6 +222,32 @@ exports.satisfiesCondition = function(modelObj, condition) {
 
 };
 
+/**
+ *  Search for any $noonian_context objects within the queryObj, replace with values from actual context.
+ *   Keys mapping to an object such as {$noonian_context:'dotted.spec.string'}
+ *   will be mapped to context.dotted.spec.string
+ *  *Mutates queryObj!*
+ */
+var applyNoonianContext =
+exports.applyNoonianContext = function(queryObj, context) {
+    
+    for(var k in queryObj) {
+        var val = queryObj[k];
+        
+        if(val && val instanceof Object) {
+            var contextSelector = val.$noonian_context; 
+            
+            if(contextSelector) {
+                //pull value from context and replace in queryObj:
+                queryObj[k] = _.get(context, contextSelector);
+            }
+            else {
+                //recurse into the query
+                applyNoonianContext(val, context);
+            }
+        }
+    }
+};
 
 /**
  * Process any custom query operators to create a query for mongodb

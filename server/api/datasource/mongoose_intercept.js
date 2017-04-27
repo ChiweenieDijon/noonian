@@ -244,6 +244,15 @@ var query_exec = function(op, callback) {
 
 
 /**
+ *  Search for any $noonian_context objects within the queryObj, replace with values from actual context.
+ *   Keys mapping to an object such as {$noonian_context:'dotted.spec.string'}
+ *   will be mapped to context.dotted.spec.string
+ *  *Mutates queryObj!*
+ */
+var applyNoonianContext = QueryOpService.applyNoonianContext;
+
+
+/**
  * Model.find(conditions, fields, options, callback)
  */
 var find = function(conditions, fields, options, callback) {
@@ -266,6 +275,10 @@ var find = function(conditions, fields, options, callback) {
 
   // console.log("**Intercepted find() for "+this._bo_meta_data.class_name);
   // massageConditions(conditions, this._bo_meta_data.type_descriptor);
+  if(options && options.noonianContext) {
+      applyNoonianContext(conditions, options.noonianContext);
+  }
+  
   QueryOpService.queryToMongo(conditions, this._bo_meta_data);
   // console.log("Model.find query conditions: %j", conditions);
   var wrappedFind = this._noon_wrapped.find.bind(this); //this.find_wrapped.bind(this);
@@ -313,6 +326,11 @@ var findOne = function(conditions, fields, options, callback) {
     fields = null;
     options = null;
   }
+  
+  if(options && options.noonianContext) {
+      applyNoonianContext(conditions, options.noonianContext);
+  }
+  
   // console.log("**Intercepted findOne() for "+this._bo_meta_data.class_name);
   // massageConditions(conditions, this._bo_meta_data.type_descriptor);
   QueryOpService.queryToMongo(conditions, this._bo_meta_data);
@@ -336,11 +354,20 @@ var findOne = function(conditions, fields, options, callback) {
 /**
  * Model.remove(conditions, callback)
  */
-var remove = function(conditions, callback) {
-  if ('function' === typeof conditions) {
+var remove = function(conditions, options, callback) {
+    if ('function' == typeof conditions) {
     callback = conditions;
       conditions = {};
+      options = null;
+  } else if ('function' == typeof options) {
+      callback = options;
+      options = null;
   }
+  
+  if(options && options.noonianContext) {
+      applyNoonianContext(conditions, options.noonianContext);
+  }
+    
   // console.log("**Intercepted batch remove() for "+this._bo_meta_data.class_name);
   //This one we'll do differently than simply calling the wrapped Model.remove:
   // query according to the conditions
@@ -372,14 +399,24 @@ var remove = function(conditions, callback) {
 /**
  * Model.count(conditions, callback)
  */
- var count = function(conditions, callback) {
-  if ('function' === typeof conditions) {
+ var count = function(conditions, options, callback) {
+  if ('function' == typeof conditions) {
     callback = conditions;
       conditions = {};
+      options = null;
+  } else if ('function' == typeof options) {
+      callback = options;
+      options = null;
   }
+  
+  if(options && options.noonianContext) {
+      applyNoonianContext(conditions, options.noonianContext);
+  }
+  
+  
   // massageConditions(conditions, this._bo_meta_data.type_descriptor);
   QueryOpService.queryToMongo(conditions, this._bo_meta_data);
-
+  
   var wrappedCount = this._noon_wrapped.count.bind(this);
   return wrappedCount(conditions, callback);//this.count_wrapped(conditions, callback);
 };
