@@ -14,7 +14,7 @@ var conditionChecker = db._svc.QueryOpService.satisfiesCondition;
  * initialized using config item under sys.two_factor_auth
  */
 var TFA = function(tfaConfig) {
-    
+    //console.log('Constructing TFA Utility: %j', tfaConfig);
     var THIS = this;
     
     THIS.config = tfaConfig;
@@ -136,7 +136,7 @@ TFA.prototype.requires2fa = function(user, ip) {
         
         //First step: look for recently validated 2FA
         if(THIS.config.refresh_period) {
-            return db.TwoFactorAuthLoginRequest.find({user:user._id, ip:ip, validated:true}).sort({created_date:'asc'}).exec();
+            return db.TwoFactorAuthLoginRequest.find({user:user._id, ip:ip, validated:true}).sort({created_date:'desc'}).exec();
         }
         else {
             //no refresh_period -> recent validations don't matter
