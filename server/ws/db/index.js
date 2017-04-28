@@ -94,36 +94,10 @@ var cleanupProjection = function(projectionObj) {
   }
 };
 
-/**
- *  Search for any $noonian_context objects within the queryObj, replace with values from actual context.
- *   Keys mapping to an object such as {$noonian_context:'dotted.spec.string'}
- *   will be mapped to context.dotted.spec.string
- */
-var applyContext = function(queryObj, context) {
-    
-    for(var k in queryObj) {
-        
-        var val = queryObj[k];
-        
-        if(val && val instanceof Object) {
-            var contextSelector = val.$noonian_context; 
-            
-            if(contextSelector) {
-                //pull value from context and replace in queryObj:
-                queryObj[k] = _.get(context, contextSelector);
-            }
-            else {
-                //recurse into the query
-                applyContext(val, context);
-            }
-        }
-    }
-};
-
 
 controller.list = function(req, res) {
   var className = req.params.className;
-  // console.log("WS list %s", className);
+   //console.log("WS list %s", className);
 
   var conditions = null,
     fields,
@@ -154,7 +128,7 @@ controller.list = function(req, res) {
     } catch(e) {console.log(e)}
   }
 
-  // console.log('%s %j %j %j %s %s', className,conditions,fields,sort,limit,skip);
+   //console.log('%s %j %j %j %s %s', className,conditions,fields,sort,limit,skip);
 
   var TargetModel = db[className];
 
@@ -163,7 +137,7 @@ controller.list = function(req, res) {
     auth.aggregateReadDacs(req, TargetModel)
   ])
   .then(function(resultArr){
-    var currUser = resultArr[0]
+    var currUser = resultArr[0].toPlainObject()
     var dacObj = resultArr[1];
     
     var dacCond = dacObj.condition;
@@ -192,18 +166,19 @@ controller.list = function(req, res) {
 
     cleanupProjection(fields);
     
-    applyContext(queryObj, {currentUser:currUser});
+    var queryOptions = {noonianContext:{currentUser:currUser}};
+    
 
-    TargetModel.count(queryObj, function(err, totalRecords) {
+    TargetModel.count(queryObj, queryOptions, function(err, totalRecords) {
       if(err)
         return wsUtil.handleError(res, err);
-
+      
       var query;
 
       if(!groupBy) {
         //Simple case: not a group-by query.  just do a find.
-        query = TargetModel.find(queryObj, fields);
-
+        query = TargetModel.find(queryObj, fields, queryOptions);
+        
         if(sort)
           query.sort(sort);
         if(skip)
@@ -330,7 +305,7 @@ controller.get = function(req, res) {
     auth.aggregateReadDacs(req, TargetModel)
   ])
   .then(function(resultArr){
-    var currUser = resultArr[0]
+    var currUser = resultArr[0].toPlainObject()
     var dacObj = resultArr[1];
       
     var dacCond = dacObj.condition;
@@ -350,9 +325,9 @@ controller.get = function(req, res) {
     }
     cleanupProjection(fields);
     
-    applyContext(queryObj, {currentUser:currUser});
+    var queryOptions = {noonianContext:{currentUser:currUser}};
 
-    TargetModel.findOne(queryObj, fields, function(err, result){
+    TargetModel.findOne(queryObj, fields, queryOptions, function(err, result){
       if(err) { return wsUtil.handleError(res, err); }
       if(!result) { return wsUtil.handleError(res, className+" "+id+" not found", 404); }
       return res.json({result:result});
@@ -397,7 +372,7 @@ controller.save = function(req, res) {
         auth.aggregateUpdateDacs(req, TargetModel)
     ])
     .then(function(resultArr){
-      var currUser = resultArr[0]
+      var currUser = resultArr[0].toPlainObject();
       var dacObj = resultArr[1];
     
       var dacCond = dacObj.condition;
@@ -413,9 +388,9 @@ controller.save = function(req, res) {
         queryObj = {$and:[queryObj, dacCond]};
       }
       
-      applyContext(queryObj, {currentUser:currUser});
+      var queryOptions = {noonianContext:{currentUser:currUser}};
 
-      TargetModel.findOne(queryObj, function(err, result) {
+      TargetModel.findOne(queryObj, null, queryOptions, function(err, result) {
         if(err) { return wsUtil.handleError(res, err); }
         if(!result) { return wsUtil.handleError(res, "Not authorized to update", 401); }
 
@@ -456,7 +431,7 @@ controller.save = function(req, res) {
         auth.aggregateUpdateDacs(req, TargetModel)
     ])
     .then(function(resultArr){
-      var currUser = resultArr[0]
+      var currUser = resultArr[0].toPlainObject()
       var dacObj = resultArr[1];
       
       var dacCond = dacObj.condition;
@@ -476,7 +451,9 @@ controller.save = function(req, res) {
         if(stripForbiddenFields(dacProj, updateObj))
           console.log('WARNING: attempted to update restricted field: user %s, record %s %s', req.user._id, className, id);
     
-      applyContext(queryObj, {currentUser:currUser});
+      
+      //var queryOptions = {noonianContext:{currentUser:currUser}, multi:true};
+      //TODO: mongoose batch update is not yet wrapped; therefore no data triggers or noonianContext
       
       TargetModel.update(queryObj, updateObj, {multi:true}, function(err, result) {
         if(err)
@@ -502,7 +479,7 @@ controller.save = function(req, res) {
         auth.aggregateCreateDacs(req, TargetModel)
     ])
     .then(function(resultArr){
-      var currUser = resultArr[0]
+      var currUser = resultArr[0].toPlainObject()
       var dacObj = resultArr[1];
       
       var dacCond = dacObj.condition;
@@ -516,7 +493,7 @@ controller.save = function(req, res) {
       var newModelObj = new TargetModel(newObj);
       
       if(dacCond) {
-          applyContext(dacCond, {currentUser:currUser});
+          db._svc.QueryOpService.applyNoonianContext(dacCond, {currentUser:currUser});
       }
 
       if(auth.checkCondition(dacCond, newModelObj)) {
@@ -583,9 +560,9 @@ controller.remove = function(req, res) {
       queryObj = conditions;
     }
     
-    applyContext(queryObj, {currentUser:currUser});
+    var queryOptions = {noonianContext:{currentUser:currUser}};
 
-    TargetModel.remove(queryObj, function(err, result) {
+    TargetModel.remove(queryObj, queryOptions, function(err, result) {
       if(err) { return wsUtil.handleError(res, err); }
       return res.json({result:"success", nRemoved:result.length}); //TODO if result.length=0, is it success?
     });
