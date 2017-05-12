@@ -212,6 +212,10 @@ exports.init = function(app) {
                           console.log('TWO FACTOR DEEMED REQUIRED');
                           tfa.initiate2fa(user, ip).then(function() {
                               return done(null, false, { user:user._id, twoFactorRequired:true });
+                          },
+                          function(err) {
+                              console.log(err.message);
+                              return done(null, false, {error:err.message});
                           });
                       }
                       else {

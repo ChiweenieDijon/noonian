@@ -184,7 +184,7 @@ TFA.prototype.initiate2fa = function(user, ip) {
         //Next, find the destination phone number
         return getPhoneForUser(user, THIS.config.userToPhone).then(function(destPhone) {
             if(!destPhone) {
-                throw new Error('Couldnt find phone number for user '+user.name);
+                throw new Error('$missing_phone');
             }
             
             //Now send the actual code
