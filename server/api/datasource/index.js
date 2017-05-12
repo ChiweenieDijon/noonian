@@ -242,8 +242,11 @@ var createMongoSchema = function(forBod) {
 
   //__pkg attribute to differentiate arbitrary objects based on package
   mongoSchemaDef.__pkg = String;
+  
+  //__disp attribute persists dynamically-generated _disp field.
+  mongoSchemaDef.__disp = String;
 
-	var mongoSchema;
+  var mongoSchema;
   var schemaOptions = {collection:forBod.class_name};
 
   if(forBod.abstract) {
@@ -634,6 +637,16 @@ exports.init = function(conf) {
             if(this._bo_meta_data.type_desc_map.modified_date) {
               this.modified_date = new Date();
             }
+          }
+        );
+        
+        //Data trigger for "created_date", "modified_date",
+        DataTriggerService.registerDataTrigger('sys.internal.disp', null, 'before', true, true, false,
+          function() {
+              if(this._bo_meta_data.type_desc_map._disp) {
+                this.__disp = this._disp;
+                //console.log('SETTING __disp = %s', this.__disp);
+              }
           }
         );
       });
