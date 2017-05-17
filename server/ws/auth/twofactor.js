@@ -37,7 +37,7 @@ var TFA = function(tfaConfig) {
         THIS.conditionChecker = function(user) {
             var hasRequiredRole = false;
             _.forEach(user.roles, function(r) {
-                if(condition.indexOf(THIS.roleMap[r._id]) > -1) {
+                if(r && condition.indexOf(THIS.roleMap[r._id]) > -1) {
                     hasRequiredRole = true;
                 } 
             });
