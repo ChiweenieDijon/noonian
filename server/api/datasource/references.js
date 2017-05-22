@@ -349,6 +349,7 @@ exports.repair = function() {
       var deferred = Q.defer();
       bodPromiseList.push(deferred.promise);
 
+      
       var badRefs = [];
 
       var className = bod.class_name;
@@ -374,8 +375,9 @@ exports.repair = function() {
 
       //if this class has reference fields...
       if(myRefFields.length > 0) {
-        var promiseList = [];
-
+          
+        var currentPromise = Q(true); //will be processing objects one at a time; this holds promise resolved when most recent object completes
+          
         var projection = {__ver:1};
         for(var i=0; i < myRefFields.length; i++) {
           projection[myRefFields[i].field_name] = 1;
@@ -384,7 +386,10 @@ exports.repair = function() {
         //Stream in all the objects of this type, grabbing the ref fields:
         var objStream = db[bod.class_name].find({}, projection).stream();
         objStream.on('data', function(bo) {
-
+          objStream.pause();  //force one-at-a-time processing; resumes when this object is completed
+          
+          var refHandlePromises = [];
+          
           var handleRef = function(refTd, fieldVal, arrIndex) {
             var refId = fieldVal._id;
             var refClass = refTd.ref_class || fieldVal.ref_class; //ref_class can be defined in the field for non-specific references
@@ -438,16 +443,20 @@ exports.repair = function() {
             if(!fieldVal) return;
 
             if(!refTd.is_array) {
-              promiseList.push(handleRef(refTd, fieldVal));
+              refHandlePromises.push(handleRef(refTd, fieldVal));
             }
             else {
               for(var i=0; i < fieldVal.length; i++) {
                 if(fieldVal[i])
-                  promiseList.push(handleRef(refTd, fieldVal[i], i));
+                  refHandlePromises.push(handleRef(refTd, fieldVal[i], i));
               }
             }
 
           });//end ref field iteration
+          
+          currentPromise = Q.allSettled(refHandlePromises).then(function() {
+              objStream.resume();
+          });
 
 
         }).on('error', function (err) {
@@ -455,7 +464,7 @@ exports.repair = function() {
           deferred.reject(err);
         }).on('close', function () {
           // the stream is closed
-          Q.allSettled(promiseList).then(function() {
+          currentPromise.then(function() {
             console.log('Finished processing %s', className);
             deferred.resolve(badRefs);
           })

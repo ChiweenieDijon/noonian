@@ -66,40 +66,43 @@ db.init(conf)
 
             promise = promise.then(function() {
                 console.log('...fix disp requsted...');
-                var saveBo = function(bo) {
-                    return bo.save({useVersionId:bo.__ver, skipTriggers:true}, null);
-                };
                 
-                return db.BusinessObjectDef.find({'definition._disp':{$exists:true}}).lean().then(function(bodList) {
+                return db.BusinessObjectDef.find({}).lean().then(function(bodList) {
                     
-                    var promiseList = [];
+                    var promiseList = []; //one promise per BOD
                     
                     _.forEach(bodList, function(bod) {
                         console.log('FIXING __disp on %s', bod.class_name);
                         
                         var deferred = Q.defer();   //fulfilled when all objects of this class are saved.
-                        var promiseChain = Q(true); //chains save() calls so that they are sequential
+                        promiseList.push(deferred.promise);
+                        
+                        
+                        var currentPromise = Q(true);
                         
                         var objStream = db[bod.class_name].find({}).stream();
                         objStream.on('data', function(bo) {
+                            objStream.pause();
                             
                             bo.__disp = bo._disp;
-                            promiseChain = promiseChain.then(saveBo.bind(null, bo));                            
+                            currentPromise = bo.save({useVersionId:bo.__ver, skipTriggers:true}, null).then(function() {
+                                objStream.resume();
+                            });                            
                             
                         }).on('error', function (err) {
                           console.error('error during processing fixdisp on BOD %s - %s', bod.class_name, err);
                           deferred.reject(err);
                         }).on('close', function () {
-                          promiseChain.then(function() {
+                          currentPromise.then(function() {
                             console.log('Finished processing %s', bod.class_name);
                             deferred.resolve(true);
                           })
                         });;
                         
-                        promiseList.push(deferred.promise);
-                    });
+                        
+                    }); //End bodList iteration
                     
-                    return Q.allSettled(promiseList);
+                    return Q.all(promiseList);
                 });
             });
         }
