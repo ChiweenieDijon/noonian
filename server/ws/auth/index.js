@@ -52,8 +52,18 @@ var inactivityDuration = false;
 var publicUrl = false;
 var anonymousUser = undefined;
 
+var inactivityExemptions = {};
+try {
+    var whitelist = require('../../tokenWhitelist.json');
+    if(whitelist && whitelist instanceof Array) {
+        _.forEach(whitelist, function(t) {
+            inactivityExemptions[t] = true;
+        });
+    }
+} catch(err) {}
+
 var checkToken = function(token) {
-  if(!inactivityDuration) return true;
+  if(!inactivityDuration || inactivityExemptions[token]) return true;
 
   var lastAccess = tokenAccessMap[token];
   if(lastAccess === undefined) return false;
