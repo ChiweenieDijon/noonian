@@ -50,7 +50,7 @@ exports.getLabelGroup = function(key, user) {
   var lang = user && user.language ? user.language._id : ENGLISH_ID; //default to english
 
   return db.LabelGroup.findOne({key:key, 'language._id':lang}).then(function(lg){
-    return lg.value;
+    return lg ? lg.value : {};
   });
 
 };
