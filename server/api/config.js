@@ -49,20 +49,25 @@ exports.getParameter = function(key, defaultValue) {
 
 };
 
-exports.saveParameter = function(key, value) {
+exports.saveParameter = function(key, value, userId) {
 
   var query = {key:key};
+  
+  if(userId) {
+    query['user._id'] = userId;
+  }
 
-  return db.Config.find(query).exec()
+  return db.Config.findOne(query).exec()
     .then(function(result){
-      if(result.length > 0) {
-        result[0].value = value;
-        return result[0].save();
-      }
-      else {
-        var newConfig = new db.Config({key:key, value:value});
-        return newConfig.save();
-      }
+        var configObj = result || new db.Config({key:key});
+        
+        configObj.value = value;
+        
+        if(userId) {
+            configObj.user = {_id:userId};
+        }
+        
+        return configObj.save();
     });
 
 };

@@ -42,6 +42,7 @@ exports.init = function(app) {
   var router = express.Router();
 
   router.get('/param/:key', wsUtil.wrap(controller.getParam));
+  router.post('/customizeParam/:key', wsUtil.wrap(controller.customizeParam));
 
   app.use(wsRoot, router);
 }
@@ -71,6 +72,27 @@ controller.getParam = function(req, res) {
     wsUtil.handleError.bind(this, res) //Error handler for promise rejection
   );
 
+};
+
+/**
+ * Set a "customization" param: attaches current user to the config key
+ */
+controller.customizeParam = function(req, res) {
+    var key = req.params.key;
+    var value = req.body.value;
+    
+     config.saveParameter(key, value, req.user._id).then(
+        function(result) {
+          if(result != undefined) {
+            return res.json({result:result});
+          }
+          else {
+            return wsUtil.handleError(res, 'Error customizing config key:'+key);
+          }
+        },
+        wsUtil.handleError.bind(this, res) //Error handler for promise rejection
+      );
+    
 };
 
 
