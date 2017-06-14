@@ -24,6 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 var fs = require('fs');
 var express = require('express');
 
+var _ = require('lodash');
+
 var conf = require('./conf');
 
 //Read commandline args
@@ -62,6 +64,13 @@ process.on('SIGINT', function() {
 
 
 var app = express();
+
+if(conf.expressSettings) {
+    console.log('including settings for express.js: %j', conf.expressSettings);
+    _.forEach(conf.expressSettings, function(val, key) {
+        app.set(key, val);
+    });
+}
 
 // Setup server
 var setupServer = function() {
