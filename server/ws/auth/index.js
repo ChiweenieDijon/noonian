@@ -202,7 +202,7 @@ exports.init = function(app) {
           //Password matches for valid user, now check for 2-factor if applicable...
           if(tfa) {              
               var providedCode = req.body.second_factor_code;
-              var ip = req.connection.remoteAddress;
+              var ip = req.ip;
               
               //console.log('TFA configured; checking for user %s at IP %s', user.name, ip);
               
