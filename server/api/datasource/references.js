@@ -165,7 +165,7 @@ var processOutwardRefs = function(isUpdate, isDelete) {
               }
 
               refIds[refId] = true;
-              modelObj[fieldName][i] = refStub = {_id:refId, _disp:refDisp}; //In case its a full object instead of a stub
+              modelObj[fieldName][i] = refStub = {_id:refId, _disp:refDisp, ref_class:refStub.ref_class}; //In case its a full object instead of a stub
 
               var promise = db[refClass].findById(refId).then(setDisp.bind(refStub, modelObj, fieldName, typeDesc[fieldName][0]));
               promises.push(promise);
