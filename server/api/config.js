@@ -79,7 +79,7 @@ exports.getCustomizedParameter = function(key, userId, defaultValue) {
   db.User.findOne({_id:userId}).then(function(user) {
     theUser = user;
 
-    return db.Config.find({key:key, $or:[{user:{$exists:false}},{'user._id':userId}]}).exec();
+    return db.Config.find({key:key, $or:[{user:{$exists:false}},{user:null},{'user._id':userId}]}).exec();
   })
   .then(
 
