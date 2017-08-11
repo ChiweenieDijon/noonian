@@ -111,7 +111,7 @@ exports = module.exports = app;
 
 
 //Initialize server components:
-require('./api/datasource').init(conf)
+require('./api/datasource').init(conf).then(require('./api/schedule').init)
   .then(
     setupServer,
     function(err){console.error("ERROR INITIALIZING DATASOURCE: %s", err); if(err.stack) console.error(err.stack); terminate(1);}
