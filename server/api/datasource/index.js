@@ -637,6 +637,15 @@ exports.init = function(conf) {
             if(this._bo_meta_data.type_desc_map.modified_date) {
               this.modified_date = new Date();
             }
+            //_current_user
+            if(this._current_user) {
+                if(isCreate && this._bo_meta_data.type_desc_map.created_by) {
+                    this.created_by = {_id:this._current_user._id, _disp:this._current_user._disp};
+                }
+                if(this._bo_meta_data.type_desc_map.modified_by) {
+                    this.modified_by = {_id:this._current_user._id, _disp:this._current_user._disp};
+                }
+            }
           }
         );
         
