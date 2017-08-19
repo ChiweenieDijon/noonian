@@ -366,10 +366,16 @@ var conjLabels = {
  * Convert query object to human-readable string
  **/
 var stringifyQuery =
-exports.stringifyQuery = function(queryObj, boMetaData, fieldLabels) {
+exports.stringifyQuery = function(queryObj, boMetaData, fieldLabels, noonianContext) {
 
   if(!queryObj)
     return '';
+
+  if(noonianContext) {
+      console.log('applying context %j', noonianContext);
+      queryObj = _.clone(queryObj, true); //deep clone to avoid altering the passed-in object
+      applyNoonianContext(queryObj, noonianContext);
+  }
 
   var condKeys = Object.keys(queryObj);
 
