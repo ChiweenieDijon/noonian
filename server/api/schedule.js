@@ -71,6 +71,10 @@ var scheduleTrigger = function(st) {
 };
 
 exports.init = function(conf) {
+    if(!db.ScheduleTrigger) {
+        console.log('ScheduleTrigger not available; upgrade sys package!');
+        return Q(true);
+    }
     
     DataTriggerService.registerDataTrigger('sys.internal.scheduler', 'UfkDq2TKQAm4OWijwTpokQ', 'after', true, true, true, 
         function(isCreate, isDelete) {
