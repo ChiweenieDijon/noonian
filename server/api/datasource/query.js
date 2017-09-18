@@ -255,7 +255,7 @@ exports.applyNoonianContext = function(queryObj, context) {
  **/
 var queryToMongo =
 exports.queryToMongo = function(queryObj, boMetaData) {
-  // console.log("CONVERTING TO MONGO: %j", queryObj);
+  //console.log("CONVERTING TO MONGO: %j", queryObj);
 
   if(!initialized) return; //If we're bootstrapping, QueryOp's haven't yet been loaded, but system can still do basic queries
 
@@ -263,10 +263,11 @@ exports.queryToMongo = function(queryObj, boMetaData) {
     return;
 
   var keys = Object.keys(queryObj);
+  
   for(var keyIndex = 0; keyIndex < keys.length; keyIndex++) {
     var k = keys[keyIndex];
     var v = queryObj[k];
-
+    
     //First, check if it's a grouping clause:
     if(k === "$or" || k === "$and" || k === "$nor") {
       //v is an array of terms... handle each one recursively
@@ -287,15 +288,13 @@ exports.queryToMongo = function(queryObj, boMetaData) {
         console.log('WARNING naked QueryOp doesnt have * key! %s %j', k, queryOpByOpName[k]);
       }
     }
-    else if(boMetaData.getTypeDescriptor(k)) {
-
+    else if(boMetaData.getTypeDescriptor(k) instanceof Object) {
       //k should be a valid field
       var fieldName = k;
       var clause = queryObj[fieldName];
       var td = boMetaData.getTypeDescriptor(k);
       var typeName = td instanceof Array ? 'array:'+td[0].type : td.type;
-
-
+      
       if(typeof clause === 'string' && queryOpByOpName.$eq[typeName]) {
         var queryOpObj = queryOpByOpName.$eq[typeName];
         if(queryOpObj.toMongo) {
