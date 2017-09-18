@@ -199,18 +199,24 @@ exports.aggregateDacs = function(req, TargetBoModel, opField, frField ) {
     dacQuery.$and[0][opField]=true; //allow_[read|create|update|delete] = true
 
     db.DataAccessControl.find(dacQuery).then(function(dacQueryResult) {
-      // console.log('dacQueryResult %j', dacQueryResult);
+       console.log('dacQueryResult %j', dacQueryResult);
       if(dacQueryResult.length == 0)
         return deferred.reject('$role_check_failure');
 
       var compositeCond = [];
+      var existsConditionlessDac = false; //If role matches a DAC w/o condition, then grant access condition-free
+      var existsFieldRestrictionlessDac = false;  //... and same logic for field restrictions
       var compositeFieldRestriction = null;
 
       for(var i=0; i < dacQueryResult.length; i++) {
         var dac = dacQueryResult[i];
         if(dac.condition) {
-          compositeCond.push(dac.condition); //TODO process condition to substitute CURRENT_USER fields!!!
+          compositeCond.push(dac.condition); 
         }
+        else {
+            existsConditionlessDac = true;
+        }
+        
         if(dac.field_restrictions && frField) {
           if(!compositeFieldRestriction)
             compositeFieldRestriction = dac.field_restrictions;
@@ -222,15 +228,20 @@ exports.aggregateDacs = function(req, TargetBoModel, opField, frField ) {
             }
           }
         }
+        else {
+            existsFieldRestrictionlessDac = true;
+        }
       }
       //We've pulled together the conditions, and aggregated the field restrictions
       var result = {};
-      if(compositeCond.length == 1)
-        result.condition = compositeCond[0];
-      else if(compositeCond.length > 1)
-        result.condition = {$or:compositeCond};
-
-      if(compositeFieldRestriction) {
+      if(!existsConditionlessDac) {
+          if(compositeCond.length == 1)
+            result.condition = compositeCond[0];
+          else if(compositeCond.length > 1)
+            result.condition = {$or:compositeCond};
+      }
+        
+      if(!existsFieldRestrictionlessDac && compositeFieldRestriction) {
         result.fieldRestrictions = {};
         for(var f in compositeFieldRestriction) {
           if(!compositeFieldRestriction[f][frField])
