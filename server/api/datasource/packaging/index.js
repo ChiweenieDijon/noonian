@@ -166,7 +166,8 @@ exports.init = function() {
  */
  var ignoreClasses = {
     BusinessObjectPackage:true,
-    UpdateLog:true
+    UpdateLog:true,
+    PackageConflict:true
 };
 
 exports.updateLogger = function(isCreate, isUpdate, isDelete) {
