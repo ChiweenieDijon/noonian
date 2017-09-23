@@ -134,7 +134,7 @@ exports.getAuthInterceptor = function(app) {
         }
       }
       else if(req.originalUrl === conf.urlBase+'/auth/login') {
-        console.log('heading to /auth/login');
+        //console.log('heading to /auth/login');
         next();
       }
       else if(
@@ -146,7 +146,7 @@ exports.getAuthInterceptor = function(app) {
       ) {
         //(no logged-in user required)
         req.user = anonymousUser;
-        console.log('heading to public resource: '+req.originalUrl);
+        //console.log('heading to public resource: '+req.originalUrl);
         next();
       }
       else {
@@ -286,7 +286,7 @@ function signToken(id) {
 **/
 controller.login = function(req, res, next) {
   if(!req.params.username && !req.params.password && req.user && req.user._id) {
-    console.log("ALREADY LOGGED IN!!! %j", req.user);
+    //console.log("ALREADY LOGGED IN!!! %j", req.user);
     var authHeader = req.headers.authorization;
     var token = authHeader.substring(authHeader.indexOf(' ')+1);
 
@@ -314,7 +314,7 @@ controller.login = function(req, res, next) {
     });
   }
   else {
-    console.log('ATTEMPTING LOGIN');
+    //console.log('ATTEMPTING LOGIN');
     passport.authenticate('local',
 
       function (err, user, info) {

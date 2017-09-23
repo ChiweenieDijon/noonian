@@ -82,7 +82,7 @@ controller.getWebResource = function(req, res) {
     name = name.substring(0, qPos);
   }
 
-  console.log('WebResource - path:%s name:%s', path, name);
+  //console.log('WebResource - path:%s name:%s', path, name);
 
   //First, look for exact path and name
   // if we don't find it, assume requested path is a child path of another resource (e.g. a URL representation of a state in an angular app)
@@ -104,7 +104,7 @@ controller.getWebResource = function(req, res) {
               fullRequestedPath = name;
           }
           
-          console.log('Requested: %s', fullRequestedPath);
+          //console.log('Requested: %s', fullRequestedPath);
 
           var longestMatch;
           var longestMatchLength = 0;

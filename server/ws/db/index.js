@@ -353,7 +353,7 @@ controller.save = function(req, res) {
       id = req.body._id;
     delete req.body._id;
   }
-  console.log("Save %s.%s", className, id);
+  //console.log("Save %s.%s", className, id);
 
   var conditions;
   if(req.query.where) {
@@ -522,7 +522,7 @@ controller.save = function(req, res) {
 
 //Remove: either a single by ID or batch based on criteria.
 controller.remove = function(req, res) {
-  console.log("REMOVE: %j", req.params);
+  //console.log("REMOVE: %j", req.params);
   var className = req.params.className;
   var id = req.params.id;
   var conditions;

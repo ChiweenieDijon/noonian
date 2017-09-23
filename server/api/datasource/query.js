@@ -371,7 +371,7 @@ exports.stringifyQuery = function(queryObj, boMetaData, fieldLabels, noonianCont
     return '';
 
   if(noonianContext) {
-      console.log('applying context %j', noonianContext);
+      //console.log('applying context %j', noonianContext);
       queryObj = _.clone(queryObj, true); //deep clone to avoid altering the passed-in object
       applyNoonianContext(queryObj, noonianContext);
   }

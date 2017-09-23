@@ -162,7 +162,7 @@ var processTriggers = function(bodId, beforeAfter, createUpdateDelete, modelObj,
     }
 
     try {
-      console.log('invoking %s DataTrigger %s for %s.%s',  createUpdateDelete,dt.key, modelObj._bo_meta_data.class_name, modelObj._id);
+      //console.log('invoking %s DataTrigger %s for %s.%s',  createUpdateDelete,dt.key, modelObj._bo_meta_data.class_name, modelObj._id);
       // promises.push(
       //   invokerTool.invokeAndReturnPromise(dt.action, injectables, modelObj)
       // );

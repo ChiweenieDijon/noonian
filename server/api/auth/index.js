@@ -199,7 +199,7 @@ exports.aggregateDacs = function(req, TargetBoModel, opField, frField ) {
     dacQuery.$and[0][opField]=true; //allow_[read|create|update|delete] = true
 
     db.DataAccessControl.find(dacQuery).then(function(dacQueryResult) {
-       console.log('dacQueryResult %j', dacQueryResult);
+       //console.log('dacQueryResult %j', dacQueryResult);
       if(dacQueryResult.length == 0)
         return deferred.reject('$role_check_failure');
 
@@ -316,7 +316,7 @@ var cleanupProjection = function(projectionObj) {
 var checkReadDacs =
 exports.checkReadDacs = function(req, TargetBoModel, query) {
   var deferred = Q.defer();
-  console.log('checkReadDacs %s, %j', TargetBoModel._bo_meta_data.class_name, query);
+  //console.log('checkReadDacs %s, %j', TargetBoModel._bo_meta_data.class_name, query);
 
   aggregateDacs(req, TargetBoModel, 'allow_read', 'read').then(
     function(dacObj){
