@@ -70,6 +70,8 @@ controller.getWebResource = function(req, res) {
       reqPath = reqPath.substring(0, len-1);
   }
   
+  reqPath = decodeURIComponent(reqPath);
+  
   //Split off path from name
   var lastSlash = reqPath.lastIndexOf('/');
   
