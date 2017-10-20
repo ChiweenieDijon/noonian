@@ -26,7 +26,22 @@ var db = require('../api/datasource');
 var datatrigger = require('../api/datasource/datatrigger');
 
 
-var globalInjections = {};
+var nodeRequire = function(libName) {
+  return require(libName);
+}
+
+var globalInjections = {
+    Q:Q,
+    '_':_,
+    db:db,
+    config:require('../api/config'),
+    auth:require('../api/auth'),
+    i18n:require('../api/i18n'),
+    invoker:exports,
+    nodeRequire:nodeRequire,
+    httpRequestLib:require('request')
+    // https:require('https')
+  };
 
 
 
@@ -88,9 +103,7 @@ exports.invokeAndReturnPromise = function(fnToInvoke, injetedParamMap, fnThis) {
 };
 
 
-var nodeRequire = function(libName) {
-  return require(libName);
-}
+
 
 
 var addGlobalInjectable = function(cm) {
@@ -126,18 +139,7 @@ exports.init = function() {
     return null;
   });
 
-  globalInjections = {
-    Q:Q,
-    '_':_,
-    db:db,
-    config:require('../api/config'),
-    auth:require('../api/auth'),
-    i18n:require('../api/i18n'),
-    invoker:exports,
-    nodeRequire:nodeRequire,
-    httpRequestLib:require('request')
-    // https:require('https')
-  }
+
 
   return db.CodeModule.find({}).exec().then(function(codeModules) {
     _.forEach(codeModules, function(cm) {
