@@ -232,8 +232,7 @@ var applyNoonianContext =
 exports.applyNoonianContext = function(queryObj, context) {
     
     for(var k in queryObj) {
-        var val = queryObj[k];
-        
+        var val = queryObj[k];        
         if(val && val instanceof Object) {
             var contextSelector = val.$noonian_context; 
             
@@ -370,8 +369,7 @@ exports.stringifyQuery = function(queryObj, boMetaData, fieldLabels, noonianCont
   if(!queryObj)
     return '';
 
-  if(noonianContext) {
-      //console.log('applying context %j', noonianContext);
+  if(noonianContext) {      
       queryObj = _.clone(queryObj, true); //deep clone to avoid altering the passed-in object
       applyNoonianContext(queryObj, noonianContext);
   }
@@ -453,7 +451,7 @@ exports.stringifyQuery = function(queryObj, boMetaData, fieldLabels, noonianCont
 
     var result;
     if(queryOpObj && queryOpObj.stringify) {
-      result = (fieldLabels[fieldName] || fieldName) + ' ' + queryOpObj.stringify(clause[op] ? clause[op] : clause);
+      result = (fieldLabels[fieldName] || fieldName) + ' ' + queryOpObj.stringify(clause && clause[op] ? clause[op] : clause);
     }
     else {
       result = (fieldLabels[fieldName] || fieldName) + ' ' + op + ' ' + clause;
