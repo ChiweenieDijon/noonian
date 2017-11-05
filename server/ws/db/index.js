@@ -154,6 +154,9 @@ controller.list = function(req, res) {
     else {
       queryObj = conditions || {};
     }
+    
+    queryObj.$useContext = {currentUser:currUser};
+    
     // console.log("Querying %s: %j", className, queryObj);
 
     //Incorporate field restrictions into the projection
@@ -165,20 +168,19 @@ controller.list = function(req, res) {
     }
 
     cleanupProjection(fields);
-    
-    var queryOptions = {noonianContext:{currentUser:currUser}};
-    
+       
 
-    TargetModel.count(queryObj, queryOptions, function(err, totalRecords) {
+    TargetModel.count(queryObj, function(err, totalRecords) {
       if(err)
         return wsUtil.handleError(res, err);
-      
+
       var query;
 
       if(!groupBy) {
         //Simple case: not a group-by query.  just do a find.
-        query = TargetModel.find(queryObj, fields, queryOptions);
-        
+
+        query = TargetModel.find(queryObj, fields);
+
         if(sort)
           query.sort(sort);
         if(skip)
@@ -315,6 +317,7 @@ controller.get = function(req, res) {
 
     if(dacCond) {
       queryObj = {$and:[queryObj, dacCond]};
+      queryObj.$useContext = {currentUser:currUser};
     }
 
     if(dacProj) {
@@ -325,9 +328,8 @@ controller.get = function(req, res) {
     }
     cleanupProjection(fields);
     
-    var queryOptions = {noonianContext:{currentUser:currUser}};
-
-    TargetModel.findOne(queryObj, fields, queryOptions, function(err, result){
+    
+    TargetModel.findOne(queryObj, fields, function(err, result){
       if(err) { return wsUtil.handleError(res, err); }
       if(!result) { return wsUtil.handleError(res, className+" "+id+" not found", 404); }
       return res.json({result:result});
@@ -353,7 +355,6 @@ controller.save = function(req, res) {
       id = req.body._id;
     delete req.body._id;
   }
-  //console.log("Save %s.%s", className, id);
 
   var conditions;
   if(req.query.where) {
@@ -386,11 +387,10 @@ controller.save = function(req, res) {
       //Append the DAC condition to the query
       if(dacCond) {
         queryObj = {$and:[queryObj, dacCond]};
+        queryObj.$useContext = {currentUser:currUser};
       }
       
-      var queryOptions = {noonianContext:{currentUser:currUser}};
-
-      TargetModel.findOne(queryObj, null, queryOptions, function(err, result) {
+      TargetModel.findOne(queryObj, null, function(err, result) {
         if(err) { return wsUtil.handleError(res, err); }
         if(!result) { return wsUtil.handleError(res, "Not authorized to update", 401); }
 
@@ -403,7 +403,6 @@ controller.save = function(req, res) {
             console.log('WARNING: attempted to update restricted field: user %s, record %s %s', req.user._id, className, id);
 
         _.assign(result, newObj); //Apply fields from newObj atop result
-
         
         return result.save({currentUser:currUser}, null).then(function (saveResult) {
           delete saveResult._current_user;
@@ -452,7 +451,7 @@ controller.save = function(req, res) {
           console.log('WARNING: attempted to update restricted field: user %s, record %s %s', req.user._id, className, id);
     
       
-      //var queryOptions = {noonianContext:{currentUser:currUser}, multi:true};
+      
       //TODO: mongoose batch update is not yet wrapped; therefore no data triggers or noonianContext
       
       TargetModel.update(queryObj, updateObj, {multi:true}, function(err, result) {
@@ -473,7 +472,7 @@ controller.save = function(req, res) {
     /*
       *** Single insert ***
     */
-    //auth.aggregateCreateDacs(req, TargetModel).then(function(dacObj){
+    //console.log('single insert');
     Q.all([
         auth.getCurrentUser(req),
         auth.aggregateCreateDacs(req, TargetModel)
@@ -481,7 +480,7 @@ controller.save = function(req, res) {
     .then(function(resultArr){
       var currUser = resultArr[0].toPlainObject()
       var dacObj = resultArr[1];
-      
+
       var dacCond = dacObj.condition;
       var dacProj = dacObj.fieldRestrictions;
 
@@ -491,7 +490,7 @@ controller.save = function(req, res) {
           console.log('WARNING: attempted to insert w/ restricted field: user %s, record %s %j', req.user._id, className, newObj);
 
       var newModelObj = new TargetModel(newObj);
-      
+
       if(dacCond) {
           db._svc.QueryOpService.applyNoonianContext(dacCond, {currentUser:currUser});
       }
@@ -499,6 +498,7 @@ controller.save = function(req, res) {
       if(auth.checkCondition(dacCond, newModelObj)) {
         
         return newModelObj.save({currentUser:currUser}, null).then(function(saveResult) {
+          
           delete saveResult._current_user;
           //Respond with the inserted object as the result
           return res.json({result:saveResult, nInserted:1});
@@ -527,7 +527,6 @@ controller.remove = function(req, res) {
   var id = req.params.id;
   var conditions;
 
-  // console.log("WS delete %s %s %j", className, id);
   if(req.query.where) {
     conditions = JSON.parse(req.query.where);
   }
@@ -542,7 +541,6 @@ controller.remove = function(req, res) {
   }
 
 
-  //auth.aggregateDeleteDacs(req, TargetModel).then(function(dacObj){
   Q.all([
     auth.getCurrentUser(req),
     auth.aggregateDeleteDacs(req, TargetModel)
@@ -560,9 +558,13 @@ controller.remove = function(req, res) {
       queryObj = conditions;
     }
     
-    var queryOptions = {noonianContext:{currentUser:currUser}};
+    if(!id || dacCond) {
+      //id -implies-> simple query w/ no context;
+      //dacCond -implies-> extra conditions that may need context
+      queryObj.$useContext = {currentUser:currUser};
+    }
 
-    TargetModel.remove(queryObj, queryOptions, function(err, result) {
+    TargetModel.remove(queryObj, function(err, result) {
       if(err) { return wsUtil.handleError(res, err); }
       return res.json({result:"success", nRemoved:result.length}); //TODO if result.length=0, is it success?
     });

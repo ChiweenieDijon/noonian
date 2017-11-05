@@ -39,62 +39,35 @@ var VersionId = require('./version_id');
 var dummyFn = function() {};
 
 
-/*
-********************************************************
- * The below functions intecept calls to mongose public api.
- * First the prototype functions (when the Model object refers to a document)
- * Then to the "static" functions.
-********************************************************
- TODO: stuff inherited from Document
- */
 
-/**
- * Model.prototype.save(options, fn)
- */
-var proto_save = function(options, fn) {
-  if(this._stub) {
-    throw "Attempting to save a stub Model object - call unstub() first";
+
+
+
+const hook_preSave = function(next, options) {
+  //console.log('PRE-SAVE HOOK %j', this._id);
+  if(this.__noon_status) {
+    console.log('DUPLICATE PRE-SAVE %j', this._id);
+    return next();
   }
-
-  if ('function' == typeof options) {
-      fn = options;
-      options = undefined;
-  }
-  if (!options) {
-      options = {};
-  }
-
-  // console.log("**Intercepted save for "+this._bo_meta_data.class_name);
-  var wrappedSave = this._noon_wrapped_proto.save.bind(this, options); //this.save_wrapped.bind(this, options);
-  var callOnDone;
-  if(('function' === typeof fn))
-    callOnDone = fn;
-  else
-    callOnDone = dummyFn;
-
-
   var THIS = this;
-
   var isUpdate = !this.isNew;
+  
+  //Hang onto some info we need to retain for the "post" hook
+  this.__noon_status = {
+    options,
+    isUpdate
+  };
 
-  var beforeDataTrigger, afterDataTrigger;
+  var beforeDataTrigger;
   if(options.skipTriggers) {
-    beforeDataTrigger = afterDataTrigger = function() {return Q(true)};
+    beforeDataTrigger = function() {return Q(true)};
   }
   else {
-    beforeDataTrigger = datatrigger[isUpdate ? 'processBeforeUpdate' : 'processBeforeCreate'];
-    afterDataTrigger = datatrigger[isUpdate ? 'processAfterUpdate' : 'processAfterCreate'];
+    beforeDataTrigger = datatrigger[isUpdate ? 'processBeforeUpdate' : 'processBeforeCreate'];    
     if(options.currentUser) {
       THIS._current_user = options.currentUser;
     }
   }
-
-
-
-  // if(options._datatrigger_meta_data) {
-  //   console.log('mongoose_intercept options: %j', options);
-  //   THIS._dt_meta_data = options._dt_meta_data
-  // }
 
   var keyFilter;
   if(options.filterTriggers) {
@@ -117,7 +90,7 @@ var proto_save = function(options, fn) {
       }
 
       THIS._previous = {__ver:result.__ver};
-      for(var fieldName in THIS._bo_meta_data.type_descriptor) {
+      for(var fieldName in THIS._bo_meta_data.type_desc_map) {
         if(fieldName.indexOf('_') !== 0)
           THIS._previous[fieldName] = result[fieldName];
       }
@@ -126,255 +99,199 @@ var proto_save = function(options, fn) {
   else {
     firstPromise = Q(true);
   }
+  
+  firstPromise
+    .then(beforeDataTrigger.bind(null, THIS, keyFilter, options)) //invoke "before" data triggers
+    .then(
+      function() {
+        //console.log("SAVE after 'before' triggers: %j", THIS);
+        FieldTypeService.processToDb(THIS);
 
-  return firstPromise.then(beforeDataTrigger.bind(null, THIS, keyFilter, options)) //invoke "before" data trigger, passing
-    .then(function() {
-      // console.log("Calling wrapped save %j", THIS);
-      FieldTypeService.processToDb(THIS);
-
-      //"Increment" version id
-      if(options.useVersionId)
-        THIS.__ver = options.useVersionId; //New one may be provided by caller (for replication, bootstrap)
-      else {
-        if(isUpdate && !(THIS._previous.__ver instanceof mongoose.Types.ObjectId) ) {
-          var vid = new VersionId(THIS._previous.__ver);
-          vid.increment();
-          THIS.__ver = vid.toString();
+        //"Increment" version id
+        if(options.useVersionId) {
+          THIS.__ver = options.useVersionId; //New one may be provided by caller (for replication, bootstrap)
         }
         else {
-          THIS.__ver = VersionId.newVersionIdString();
+          if(isUpdate) {
+            var vid = new VersionId(THIS._previous.__ver);
+            vid.increment();
+            THIS.__ver = vid.toString();
+          }
+          else {
+            THIS.__ver = VersionId.newVersionIdString();
+          }
         }
+
+        next();
+      },
+      function(err) {
+        err = err instanceof Error ? err : new Error(err);
+        next(err);
       }
-
-
-      return wrappedSave();
-    })
-    .then(function(modelObj) {
-      FieldTypeService.processFromDb(modelObj);
-      return afterDataTrigger(modelObj, keyFilter, options).then(function(){return modelObj;});
-    })
-    .then(
-      function(modelObj) { callOnDone(null, modelObj) },
-      function(err) { console.log("ERROR saving %s, %s", THIS._id, err); callOnDone(err, null) }
     );
 };
 
-/**
- * Model.prototype.remove(options, fn)
- */
-var proto_remove = function(options, fn) {
-  if ('function' == typeof options) {
-      fn = options;
-      options = undefined;
+
+const hook_postSave = function(modelObj, next) {
+  //console.log('POST-SAVE HOOK %j', modelObj._id);  
+  
+  if(!this.__noon_status) {    
+    console.log('POST-SAVE MISSING __noon_status: %j', modelObj._id);
+    return next();
   }
-  if (!options) {
-      options = {};
+  
+  const options = this.__noon_status.options;
+  const isUpdate = this.__noon_status.isUpdate;
+  
+  delete this.__noon_status;
+
+  var afterDataTrigger;
+  if(options.skipTriggers) {
+    afterDataTrigger = function() {return Q(true)};
   }
-  // console.log("**Intercepted remove() for "+this._bo_meta_data.class_name);
-  var wrappedRemove = this._noon_wrapped_proto.remove.bind(this, options); //this.remove_wrapped.bind(this, options);
-
-  var callOnDone;
-  if('function' == typeof fn)
-    callOnDone = fn;
-  else
-    callOnDone = dummyFn;
-
-  var THIS = this;
-
-  var keyFilter;
-  if(options.filterTriggers) {
-    keyFilter = options.filterTriggers;
+  else {
+    afterDataTrigger = datatrigger[isUpdate ? 'processAfterUpdate' : 'processAfterCreate'];
+    if(options.currentUser) {
+      this._current_user = options.currentUser;
+    }
   }
+  
+  const keyFilter = options.filterTriggers || null;
 
-  return datatrigger.processBeforeDelete(THIS, keyFilter, options)
-    .then(function() {
-      return wrappedRemove();
-    })
-    .then(function() {
-      return datatrigger.processAfterDelete({_id:THIS._id, _previous:THIS, _bo_meta_data:THIS._bo_meta_data}, keyFilter, options);
-    })
-    .then(
-      function() { callOnDone(null, THIS) },
-      function(err) { callOnDone(err, null) }
-    );
-
-};
-
-
-/**
- * query_exec wraps the exec() of a query object
- */
-var query_exec = function(op, callback) {
-  if ('function' == typeof op) {
-      callback = op;
-      op = null;
-  }
-  // console.log("**Intercepted query.exec()**");
-  if('function' != typeof callback)
-    callback = dummyFn;
-
-  var deferred = Q.defer();
-
-  //Call the wrapped exec, sans callback.
-  this.exec_wrapped(op).then(
-    function(result) {
-      //TODO what comes back may not be full-fledged business objects;
-      //  i.e. if only a subset of the fields were selected...
-      if(result instanceof Array) {
-       for(var i=0; i < result.length; i++) {
-         if(result[i]._bo_meta_data)
-           FieldTypeService.processFromDb(result[i]);
-       }
-      }
-      else if(result && result._bo_meta_data) {
-        FieldTypeService.processFromDb(result);
-      }
-
-      deferred.resolve(result);
-      callback(null, result);
+  FieldTypeService.processFromDb(modelObj);
+  
+  const deferred = Q.defer();
+  this._post_triggers_promise = deferred.promise;
+  
+  afterDataTrigger(modelObj, keyFilter, options).then(
+    function(){
+      deferred.resolve(modelObj);
+      next();
     },
     function(err) {
       deferred.reject(err);
-      callback(err, null);
+      err = err instanceof Error ? err : new Error(err);
+      next(err);
     }
   );
+  
+};
 
-  return deferred.promise;
-}
-
-
-/**
- *  Search for any $noonian_context objects within the queryObj, replace with values from actual context.
- *   Keys mapping to an object such as {$noonian_context:'dotted.spec.string'}
- *   will be mapped to context.dotted.spec.string
- *  *Mutates queryObj!*
- */
-var applyNoonianContext = QueryOpService.applyNoonianContext;
-
-
-/**
- * Model.find(conditions, fields, options, callback)
- */
-var find = function(conditions, fields, options, callback) {
-  if ('function' == typeof conditions) {
-    callback = conditions;
-      conditions = {};
-      fields = null;
-      options = null;
-  } else if ('function' == typeof fields) {
-      callback = fields;
-      fields = null;
-      options = null;
-  } else if ('function' == typeof options) {
-      callback = options;
-      options = null;
+const hook_preRemove = function(next, options) {
+  var THIS = this;
+  if (!options) {
+      options = {};
   }
+  this.__noon_status = {
+    options
+  };
+  var keyFilter = options.filterTriggers || null;
+  
+  //Do we need to ensure the object passed to DataTriggers has all its fields?
+  // (could have been removed using a model object that was the result of a query w/ limited projection)
+  datatrigger.processBeforeDelete(THIS, keyFilter, options).then(
+    function() {
+        next();
+    },
+    function(err) {
+      err = err instanceof Error ? err : new Error(err);
+      next(err);
+    }
+  );
+};
 
-  if(conditions == null)
-    conditions = {};
-
-  // console.log("**Intercepted find() for "+this._bo_meta_data.class_name);
-  // massageConditions(conditions, this._bo_meta_data.type_descriptor);
-  if(options && options.noonianContext) {
-      applyNoonianContext(conditions, options.noonianContext);
+const hook_postRemove = function(modelObj, next) {
+  var THIS = this;
+  
+  if(!this.__noon_status) {    
+    console.log('POST-REMOVE MISSING __noon_status: %j', modelObj._id);
+    return next();
   }
   
-  QueryOpService.queryToMongo(conditions, this._bo_meta_data);
-  // console.log("Model.find query conditions: %j", conditions);
-  var wrappedFind = this._noon_wrapped.find.bind(this); //this.find_wrapped.bind(this);
-
-  //Call it without passing the callback; it returns us a Query object
-  var query  = wrappedFind(conditions, fields, options);
-
-  //proxy the exec() function so we can massage incoming data
-  query.exec_wrapped = query.exec;
-  query.exec = query_exec;
-  //TODO wrap Query.stream()
-
-
-  //If we were provided a callback, exec the query
-  if('function' == typeof callback) {
-    query.exec(callback);
-  }
-
-  return query;
+  const options = this.__noon_status.options;
+  const keyFilter = options.filterTriggers || null;
+  delete this.__noon_status;
+  
+  const deferred = Q.defer();
+  this._post_triggers_promise = deferred.promise;
+  
+  var modelObjStub = { //pass a "post-delete stub" to the after DataTriggers
+    _id:THIS._id, 
+    _previous:THIS, 
+    _bo_meta_data:THIS._bo_meta_data
+  };
+  
+  datatrigger.processAfterDelete(modelObjStub, keyFilter, options).then(
+    function() {
+      deferred.resolve(THIS)
+      next();
+    },
+    function(err) {
+      deferred.reject(err);
+      err = err instanceof Error ? err : new Error(err);
+      next(err);
+    }
+  );
 };
 
 /**
- * Model.findById(id, fields, options, callback)
- *
+ * Creates a "pre-processor wrapper" for massage query criteria 
+ * to apply noonian context and non-standard query op's
+ * Wraps mongoose Query functions: count, find, findOne, (update)
+ * 
  */
- // var findById = function(id, fields, options, callback) {
-  // console.log("**Intercepted findById() for "+this._bo_meta_data.class_name);
-  // return this.findById_wrapped.apply(this, arguments);
- // };
-
-/**
- * Model.findOne(conditions, fields, options, callback)
- */
-var findOne = function(conditions, fields, options, callback) {
-  if ('function' == typeof options) {
-    callback = options;
-    options = null;
-  } else if ('function' == typeof fields) {
-    callback = fields;
-    fields = null;
-    options = null;
-  } else if ('function' == typeof conditions) {
-    callback = conditions;
-    conditions = {};
-    fields = null;
-    options = null;
-  }
-  
-  if(options && options.noonianContext) {
-      applyNoonianContext(conditions, options.noonianContext);
-  }
-  
-  // console.log("**Intercepted findOne() for "+this._bo_meta_data.class_name);
-  // massageConditions(conditions, this._bo_meta_data.type_descriptor);
-  QueryOpService.queryToMongo(conditions, this._bo_meta_data);
-  var wrappedFind = this._noon_wrapped.findOne.bind(this); //this.findOne_wrapped.bind(this);
-
-  //Call it without passing the callback; it returns us a Query object
-  var query  = wrappedFind(conditions, fields, options);
-
-  //proxy the exec() function so we can massage incoming data
-  query.exec_wrapped = query.exec;
-  query.exec = query_exec;
-
-  //If we were provided a callback, exec the query
-  if('function' == typeof callback) {
-    query.exec(callback);
-  }
-
-  return query;
+const getQueryPreprocessorWrapper = function(wrappedFn, boMetaData) {
+  return function(criteria) {
+    if(criteria.$useContext) {
+      let context = criteria.$useContext;
+      //console.log('Applying context %j %j', boMetaData.class_name, context);
+      delete criteria.$useContext;
+      
+      QueryOpService.applyNoonianContext(criteria, context);
+    }
+    
+    QueryOpService.queryToMongo(criteria, boMetaData);
+    return wrappedFn.apply(this, arguments);
+  };
 };
+
+
+
+const hook_postFind = function(result, next) {
+  //console.log('POST-FIND %j', result);
+  //console.log('  %j', this);
+  
+  if(result instanceof Array) {
+    for(var i=0; i < result.length; i++) {
+      if(result[i]._bo_meta_data) {
+        FieldTypeService.processFromDb(result[i]);
+      }
+    }
+  }
+  else if(result && result._bo_meta_data) {
+    FieldTypeService.processFromDb(result);
+  }
+  next();
+};
+
+
+
 
 /**
  * Model.remove(conditions, callback)
+ * (funky intercepting required since middleware not available for static remove)
  */
-var remove = function(conditions, options, callback) {
-    if ('function' == typeof conditions) {
+const remove = function(conditions, callback) {
+  if ('function' == typeof conditions) {
     callback = conditions;
-      conditions = {};
-      options = null;
-  } else if ('function' == typeof options) {
-      callback = options;
-      options = null;
-  }
+    conditions = {};
+  } 
   
-  if(options && options.noonianContext) {
-      applyNoonianContext(conditions, options.noonianContext);
-  }
-    
-  // console.log("**Intercepted batch remove() for "+this._bo_meta_data.class_name);
-  //This one we'll do differently than simply calling the wrapped Model.remove:
   // query according to the conditions
   // perform the delete individually on each result, accumulating the returned promises
   // return promise.all
 
-  var promise = this.find(conditions).then(
+  var promise = this.find(conditions, {_id:1}).then(
     function(results) {
       var promises = [];
       for(var i=0; i < results.length; i++) {
@@ -396,59 +313,10 @@ var remove = function(conditions, options, callback) {
 
 }
 
-/**
- * Model.count(conditions, callback)
- */
- var count = function(conditions, options, callback) {
-  if ('function' == typeof conditions) {
-    callback = conditions;
-      conditions = {};
-      options = null;
-  } else if ('function' == typeof options) {
-      callback = options;
-      options = null;
-  }
-  
-  if(options && options.noonianContext) {
-      applyNoonianContext(conditions, options.noonianContext);
-  }
-  
-  
-  // massageConditions(conditions, this._bo_meta_data.type_descriptor);
-  QueryOpService.queryToMongo(conditions, this._bo_meta_data);
-  
-  var wrappedCount = this._noon_wrapped.count.bind(this);
-  return wrappedCount(conditions, callback);//this.count_wrapped(conditions, callback);
-};
 
-/**
- * Model.prototype.model(name)
- * Model.prototype.increment()
- */
-/**
- * Model.create(doc, fn)
- * Model.remove(conditions, callback)
- * Model.update(conditions, doc, options, callback)
- * Model.distinct = function distinct (field, conditions, callback)
- * Model.aggregate = function aggregate ()
- * Model.populate = function (docs, paths, cb)
- */
-/**
- * Model.where = function where (path, val)
- * Model.$where = function $where ()
- * Model.findOneAndUpdate = function (conditions, update, options, callback)
- * Model.findByIdAndUpdate = function (id, update, options, callback)
- * Model.findOneAndRemove = function (conditions, options, callback)
- */
-/**
- * Model.discriminator(name, schema)
- * Model.ensureIndexes(cb)
- * Model.hydrate = function (obj)
- * Model.mapReduce = function mapReduce (o, callback)
- * Model.geoNear = function (near, options, callback)
- * Model.geoSearch = function (conditions, options, callback)
- */
-
+/////////////////////////////////////////////
+//  additions to the base mongoose model:
+/////////////////////////////////////////////
 /**
  * Convert a model object to a plain js object
  */
@@ -457,87 +325,56 @@ var toPlainObject = function() {
   //some problem with this._doc.toObject()
 };
 
-//$op -> fn(fieldValue, condValue)
-var condCheckers = {
-  $eq:function(f, c, type) {},
-
-}
-
 var satisfiesCondition = function(cond) {
   // console.log('Checking %s against condition %j', this._id, cond);
   return QueryOpService.satisfiesCondition(this, cond);
 }
 
-var protoWrappers = {
-  save: proto_save,
-  remove: proto_remove
-};
-
-var staticWrappers = {
-  find:find,
-  count:count,
-  findOne:findOne,
-  remove:remove
-};
 
 
 /**
  * Add metadata and intercept DB access
  */
-exports.decorateModel = function(MongooseModel, BOD) {
-
-  //Metadata
-  // MongooseModel.__proto__._metadata = {type_descriptor:BOD.definition, class_name:BOD.class_name};
-  // var metaObj = {
-  //  class_name: BOD.class_name,
-  //  type_descriptor: BOD.definition
-  // };
-
+exports.decorateModel = function(MongooseModel) {
+  
   var metaObj = MongooseModel.schema._bo_meta_data;
-  // console.log("%s metadata: %j", BOD.class_name, metaObj);
 
   MongooseModel._bo_meta_data = metaObj; //Available statically...
   MongooseModel.prototype._bo_meta_data = metaObj; // and when it gets propogated down to instantiations.
+  
   MongooseModel.prototype.toPlainObject = toPlainObject;
   MongooseModel.prototype.satisfiesCondition = satisfiesCondition;
-
-
-  //Wrap necessary prototype functions, storing originals into a "_noon_wrapped_proto" property
-  if(!MongooseModel.prototype._noon_wrapped_proto) {
-    MongooseModel.prototype._noon_wrapped_proto = {};
-    for(var fName in protoWrappers) {
-      MongooseModel.prototype._noon_wrapped_proto[fName] = MongooseModel.prototype[fName];
-      MongooseModel.prototype[fName] = protoWrappers[fName];
-    }
-  }
-
-  //Wrap static functions, storing originals in "_noon_wrapped" property
-  if(!MongooseModel._noon_wrapped) {
-    MongooseModel._noon_wrapped = {};
-
-    for(var fName in staticWrappers) {
-      MongooseModel._noon_wrapped[fName] = MongooseModel[fName];
-      MongooseModel[fName] = staticWrappers[fName];
-    }
-  }
-
-
+  
+  //Override the built-in Model.remove() to do it our way (which triggers DataTriggers)
+  MongooseModel.remove = remove;
+  //MongooseModel.update = update; //TODO intercept update() to run data triggers
+  
+  
+  //Wrap "query" functions on model
+  MongooseModel.count = getQueryPreprocessorWrapper(MongooseModel.count, metaObj);
+  MongooseModel.find = getQueryPreprocessorWrapper(MongooseModel.find, metaObj);
+  MongooseModel.findOne = getQueryPreprocessorWrapper(MongooseModel.findOne, metaObj);
+  
 };
 
 
+exports.registerHooks = function(schema) {
+  schema.pre('save', hook_preSave);
+  schema.post('save', hook_postSave);
+  
+  schema.pre('remove', hook_preRemove);
+  schema.post('remove', hook_postRemove);
+  
+  
+  //"pre-find" happens in a wrapper to allow preprocessing of query conditions
+  schema.post('find', hook_postFind);
+  schema.post('findOne', hook_postFind);
+  //no post for count; no results to postprocess
+  
+  
+  
+  //schema.pre('', hook_pre);
+  //schema.post('', hook_post);
+};
 
-// exports.decorateModel = function(, MongooseModel, BOD) {
 
-//   var MongooseSchema = MongooseModel.schema;
-//   var metaObj = MongooseSchema._bo_meta_data;
-
-
-//   MongooseModel._bo_meta_data = metaObj; //Available statically...
-//   MongooseModel.prototype._bo_meta_data = metaObj; // and when it gets propogated down to instantiations.
-
-//   //Add in hooks for pre and post processing
-
-//   MongooseSchema.pre('save', function(next) {
-
-//   });
-// };

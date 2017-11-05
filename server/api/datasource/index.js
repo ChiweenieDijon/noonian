@@ -295,7 +295,9 @@ var createMongoSchema = function(forBod) {
 
   //Wire in UUID generation
   mongoSchema.pre('save', idGenerator);
-
+  
+  //add in noonian middleware
+  interceptor.registerHooks(mongoSchema);
 
 
   return mongoSchema;
@@ -331,8 +333,8 @@ var createAndCacheModel = function(forBod) {
     mongoModel = mongoose.model(className, mongoSchema);
   }
 
-  //Intercept all the methods of interest...
-  interceptor.decorateModel(mongoModel, forBod);
+  //Additional member functions and proxies
+  interceptor.decorateModel(mongoModel);
 
   //Put it in the cache
 	modelCache[className] = mongoModel;
