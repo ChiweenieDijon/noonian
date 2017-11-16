@@ -14,7 +14,7 @@ Before proceeding, ensure the following software packages are installed on the m
 1. [Node.js](https://nodejs.org/en/download/)
 2. [MongoDB](https://www.mongodb.com/download-center?jmp=nav#community)
 3. [git](https://git-scm.com/downloads)
-4. [bower](https://git-scm.com/downloads)
+4. [bower](https://bower.io)
 
 
 ### 2. Clone the project repository
