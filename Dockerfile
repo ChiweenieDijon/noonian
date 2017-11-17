@@ -13,14 +13,11 @@ WORKDIR /usr/lib/noonian
 RUN npm install -g bower
 
 # noonian stuff
-COPY package*.json ./
-RUN npm install --verbose
+COPY . .
+RUN npm install
 RUN bower install --allow-root
 RUN cat server/conf/instance/template.js | sed s/\#instance\#/$1/g | sed s/\#instanceID\#/`uuidgen`/g | sed s/\#instanceSECRET\#/`uuidgen`/g > server/conf/instance/my_instance.js
 EXPOSE 9000
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-CMD [ "/usr/bin/supervisord"]
-
-# This Dockerfile doesn't need to have an entrypoint and a command
-# as Bitbucket Pipelines will overwrite it with a bash script.
+CMD [ "/usr/bin/supervisord", "-c /etc/supervisor/conf.d/supervisord.conf"]
