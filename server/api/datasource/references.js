@@ -53,7 +53,7 @@ const IncomingRefModel = mongoose.model('IncomingRef', IncomingRefSchema);
  *  refObj is current version of referenced object
  **/
 const augmentRef = function(modelObj, fieldName, td, refObj) {
-  if(refObj) {
+  if(this && refObj) {
     
     this._disp = refObj._disp;
 
@@ -210,10 +210,18 @@ const processInwardRefs = function(isDelete) {
       var refField = iref.referencing_field;
       var isArray = iref.referenced_from_array;
       
+      if(!db[refClass]) {
+        return console.error('[REF-REPAIR] Bad incoming reference class %s in %s.%s', refClass, myClassName, modelObj._id);
+      }
+      
       //Grab the referencing object...
       var inrefPromise = db[refClass].findById(refId).then(function(bo) {
         if(!bo) return;
         var refTd = bo._bo_meta_data.type_desc_map[refField];
+        
+        if(!bo[refField]) {
+          return console.error('[REF-REPAIR] Stale incoming reference from %s.%s', refClass, refId);
+        }
         
         if(!isArray) {
           if(isDelete) {
@@ -350,10 +358,16 @@ const handleManyToMany = function(modelObj, fieldName, isCreate, isUpdate, isDel
   }
   
   
+  
   var myClassName = modelObj._bo_meta_data.class_name;
   var myTypeDescMap = modelObj._bo_meta_data.type_desc_map;
   var myTd = myTypeDescMap[fieldName][0];
-  var backrefField
+  var backrefField;
+  
+  //console.log('%s', myClassName);
+  //console.log(' %j', added);
+  //console.log(' %j', removed);
+  //console.log('----------------------');
   
   var targetClassName = myTd.ref_class;
   var targetTypeDescMap = db[targetClassName]._bo_meta_data.type_desc_map;
@@ -392,6 +406,7 @@ const handleManyToMany = function(modelObj, fieldName, isCreate, isUpdate, isDel
         myPos = backrefIds.indexOf(modelObj._id);
       }
       if(modified) {
+        //console.log('Updating REMOVED backref for %s.%s -> %s.%s', myClassName, fieldName, targetClassName, backRefField);
         target.markModified(backRefField);
         toResolve.push(target.save());
       }
@@ -404,7 +419,7 @@ const handleManyToMany = function(modelObj, fieldName, isCreate, isUpdate, isDel
       if(myPos < 0) {
         target[backRefField] = target[backRefField] ? _.clone(target[backRefField]) : [];
         target[backRefField].push({_id:modelObj._id});
-        //console.log('Updating backref for %s.%s -> %s.%s', myClassName, fieldName, targetClassName, backRefField);
+        //console.log('Updating ADDED backref for %s.%s -> %s.%s', myClassName, fieldName, targetClassName, backRefField);
         toResolve.push(target.save());
       }
     });

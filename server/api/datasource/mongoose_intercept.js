@@ -46,7 +46,7 @@ var dummyFn = function() {};
 const hook_preSave = function(next, options) {
   //console.log('PRE-SAVE HOOK %j', this._id);
   if(this.__noon_status) {
-    console.log('DUPLICATE PRE-SAVE %j', this._id);
+    //console.log('DUPLICATE PRE-SAVE %j', this._id);
     return next();
   }
   var THIS = this;
@@ -80,13 +80,15 @@ const hook_preSave = function(next, options) {
     firstPromise = db[THIS._bo_meta_data.class_name].findOne({_id:THIS._id}).exec().then(function(result) {
       if(!result) {
         console.log('Save called on deleted object: %s.%s', THIS._bo_meta_data.class_name, THIS._id);
-        throw "$update-on-deleted";
+        return next(new Error("$update-on-deleted"));
       }
 
       //Check that the version id matches:
-      if(''+THIS.__ver !== ''+result.__ver) {
+      var newVer = new VersionId(THIS.__ver);
+      var currVer = new VersionId(result.__ver);
+      if(!currVer.relationshipTo(newVer).same) {
         console.log('Version mismatch - THIS: %s current: %s', THIS.__ver, result.__ver);
-        throw "$version-mismatch-error";
+        return next(new Error("$version-mismatch-error"));
       }
 
       THIS._previous = {__ver:result.__ver};
@@ -133,10 +135,10 @@ const hook_preSave = function(next, options) {
 
 
 const hook_postSave = function(modelObj, next) {
-  //console.log('POST-SAVE HOOK %j', modelObj._id);  
+  //console.log('POST-SAVE HOOK %j', arguments);  
   
   if(!this.__noon_status) {    
-    console.log('POST-SAVE MISSING __noon_status: %j', modelObj._id);
+    //console.log('POST-SAVE MISSING __noon_status: %j', modelObj._id);
     return next();
   }
   
