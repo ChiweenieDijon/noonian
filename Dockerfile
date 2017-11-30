@@ -19,5 +19,6 @@ RUN bower install --allow-root
 RUN cat server/conf/instance/template.js | sed s/\#instance\#/$1/g | sed s/\#instanceID\#/`uuidgen`/g | sed s/\#instanceSECRET\#/`uuidgen`/g > server/conf/instance/my_instance.js
 EXPOSE 9000
 RUN mkdir -p /var/log/supervisor
+VOLUME ["/data/db"]
 COPY supervisord.conf /etc/supervisord.conf
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
