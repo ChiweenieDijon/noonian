@@ -93,8 +93,14 @@ var setupServer = function() {
 	console.log("CONFIGURING EXPRESS");
 	require('./conf/express_conf')(app);
 
-  console.log("SETTING UP ROUTES");
+    console.log("SETTING UP ROUTES");
 	require('./routes')(app);
+    
+    
+    if(conf.enableWebSockets) {
+        console.log("SETTING WEB SOCKETS");
+        require('./websockets.js')(server);
+    }
 
 	// Start server
 	console.log("STARTING SERVER");
