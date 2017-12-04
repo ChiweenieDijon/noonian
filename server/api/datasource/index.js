@@ -132,6 +132,24 @@ var dispGenerator = function() {
 
 }
 
+var matchTextGenerator = function() {    
+    var typeDescriptor = this._bo_meta_data.type_desc_map;
+    var templateArr = typeDescriptor._fulltext_matches;
+    
+    if(templateArr) {      
+      var result = [];
+      var THIS = this;
+      _.forEach(templateArr, function(t) { 
+        try {
+          result.push(_.template(t)(THIS));
+        }
+        catch(err) {} //Might happen if error in a template...
+      });
+      return result;
+    }
+    
+    return undefined;
+}
 
 /**
  * Method on _bo_meta_data that retrieves the typeDescriptor object for the specified path.
@@ -245,6 +263,8 @@ var createMongoSchema = function(forBod) {
   
   //__disp attribute persists dynamically-generated _disp field.
   mongoSchemaDef.__disp = String;
+  
+  mongoSchemaDef.__match_text = Mixed;
 
   var mongoSchema;
   var schemaOptions = {collection:forBod.class_name};
@@ -285,6 +305,7 @@ var createMongoSchema = function(forBod) {
 
   //add a virtual _disp field
   mongoSchema.virtual('_disp').get(dispGenerator);
+  mongoSchema.virtual('_match_text').get(matchTextGenerator);
 
 
   //Add text indexing
@@ -657,6 +678,9 @@ exports.init = function(conf) {
               if(this._bo_meta_data.type_desc_map._disp) {
                 this.__disp = this._disp;
                 //console.log('SETTING __disp = %s', this.__disp);
+              }
+              if(this._bo_meta_data.type_desc_map._fulltext_matches) {
+                this.__match_text = this._match_text;
               }
           }
         );
