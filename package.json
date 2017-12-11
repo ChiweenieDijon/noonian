@@ -40,7 +40,7 @@
     "node-schedule": "^1.2.3",
     "node-uuid": "^1.4.3",
     "nodemailer": "^1.10.0",
-    "oboe": "^2.1.2",
+    "oboe": "^2.1.4",
     "passport": "^0.2.2",
     "passport-local": "^0.1.6",
     "promise-mysql": "^1.1.1",
