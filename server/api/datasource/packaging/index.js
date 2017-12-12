@@ -183,7 +183,7 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
     
     var updateType = isCreate ? 'create' : (isUpdate ? 'update' : 'delete');
     
-    console.log('updateLogger: %s for %j', updateType, this);
+    //console.log('updateLogger: %s for %j', updateType, this);
     
     var updateLogObj = new db.UpdateLog({
        timestamp: new Date(),
@@ -214,7 +214,7 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
     var targetPkg;
     
     if(serverConf.enablePackaging) {
-        console.log('processing packaging!');
+        //console.log('processing packaging!');
         //Determine the package to which this updateLog is attached.
                 
         _.forEach(pkgConfig, function(p) {
