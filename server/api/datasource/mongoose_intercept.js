@@ -244,7 +244,7 @@ const hook_postRemove = function(modelObj, next) {
  */
 const getQueryPreprocessorWrapper = function(wrappedFn, boMetaData) {
   return function(criteria) {
-    if(criteria.$useContext) {
+    if(criteria && criteria.$useContext) {
       let context = criteria.$useContext;
       //console.log('Applying context %j %j', boMetaData.class_name, context);
       delete criteria.$useContext;
