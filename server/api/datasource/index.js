@@ -117,7 +117,15 @@ var dispGenerator = function() {
     var dispTemplate = typeDescriptor._disp;
     try {
       if(dispTemplate) {
-        return _.template(dispTemplate)(this);
+        var templateString, options;
+        if(typeof dispTemplate === 'string') {
+          templateString = dispTemplate;
+        }
+        else {
+          templateString = dispTemplate.template;
+          options = dispTemplate.options || {variable:'bo'};
+        }
+        return _.template(templateString, options)(this);
       }
       else if(typeDescriptor.name && this.name) {
         return this.name;
