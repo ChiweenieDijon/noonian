@@ -51,6 +51,7 @@ var tokenAccessMap = {};
 var inactivityDuration = false;
 var publicUrl = false;
 var anonymousUser = undefined;
+var loginPath = 'login.html';
 
 var inactivityExemptions = {};
 try {
@@ -96,8 +97,7 @@ exports.getAuthInterceptor = function(app) {
 
   return function(req, res, next) {
     var suppliedToken = null;
-
-
+    
       // allow access_token to be passed through query parameter as well ?
       // if(req.query && req.query.hasOwnProperty('access_token')) {
       //   suppliedToken = req.query.access_token;
@@ -125,7 +125,10 @@ exports.getAuthInterceptor = function(app) {
         try {
           // var decoded = jwt.verify(suppliedToken, conf.secrets.session);
           // console.log('JWT: %j', decoded);
-          jwtValidator(req, res, next);
+          jwtValidator(req, res, function() {
+            res.locals.user = req.user;
+            next();
+          });
         }
         catch (err) {
           // console.log('JWT VALIDATOR EXCEPTION!!!!!');
@@ -139,18 +142,19 @@ exports.getAuthInterceptor = function(app) {
       }
       else if(
         (publicUrl && publicUrl.test(req.originalUrl)) ||
-        (req.originalUrl.indexOf(conf.urlBase+'/login.html') == 0 ) ||
+        (req.originalUrl.indexOf(conf.urlBase+'/'+loginPath) == 0 ) ||
         (req.originalUrl.indexOf(conf.urlBase+'/public') == 0 ) ||
         (req.originalUrl.indexOf(conf.urlBase+'/ws/public') == 0 ||
           req.originalUrl.indexOf(conf.urlBase+'/favicon') == 0 )
       ) {
         //(no logged-in user required)
-        req.user = anonymousUser;
+        res.locals.user = req.user = anonymousUser;
+        
         //console.log('heading to public resource: '+req.originalUrl);
         next();
       }
       else {
-        var redirectPath = conf.urlBase+'/login.html?originalUrl='+querystring.escape(req.originalUrl);
+        var redirectPath = conf.urlBase+'/'+loginPath+'?originalUrl='+querystring.escape(req.originalUrl);
 
         console.log('REDIRECTING TO LOGIN: %s', redirectPath);
         res.redirect(redirectPath);
@@ -160,6 +164,10 @@ exports.getAuthInterceptor = function(app) {
         // wsUtil.sendTemplatedHtml(res, app.get('appPath')+'/login.html', {urlBase:conf.urlBase, message:''});
       }
     };
+};
+
+exports.redirectToLogin = function(res) {
+  return res.redirect(conf.urlBase+'/'+loginPath);
 };
 
 /**
@@ -254,12 +262,18 @@ exports.init = function(app) {
       try {
         publicUrl = new RegExp(val.regex);
         if(val.userId) {
-          anonymousUser = {_id:val.userId};
+          anonymousUser = {_id:val.userId, anonymous:true};
         }
       }
       catch(err) {
         console.err('UNABLE TO LOAD publicUrl regex: %j', err);
       }
+    }
+  });
+  
+  configSvc.getParameter('sys.loginpath', false).then(function(val) {
+    if(val) {
+      loginPath = val;
     }
   });
   

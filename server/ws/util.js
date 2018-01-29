@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 var _ = require('lodash');
 var fs = require('fs');
 
+var authWs = require('./auth');
 /**
 * Utility to handle a web service error by
 * 1) logging it to console
@@ -28,6 +29,12 @@ var fs = require('fs');
 */
 var handleError =
 exports.handleError = function(res, err, status) {
+  
+  if(err === '$role_check_failure' && res.locals.user && res.locals.user.anonymous) {
+    //Want to redirect to login 
+    return authWs.redirectToLogin(res);
+  }
+  
   if(err instanceof Error) {
     console.error(err.message);
     console.error(err.stack);
