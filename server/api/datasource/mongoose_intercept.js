@@ -87,7 +87,7 @@ const hook_preSave = function(next, options) {
       var newVer = new VersionId(THIS.__ver);
       var currVer = new VersionId(result.__ver);
       if(!currVer.relationshipTo(newVer).same) {
-        console.log('Version mismatch - THIS: %s current: %s', THIS.__ver, result.__ver);
+        console.log('Version mismatch on %s.%s - THIS: %s current: %s', THIS._bo_meta_data.class_name, THIS._id, THIS.__ver, result.__ver);
         return next(new Error("$version-mismatch-error"));
       }
 

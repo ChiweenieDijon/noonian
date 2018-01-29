@@ -227,7 +227,7 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
             //Use the first one on the list that matches
             targetPkg = targetPkg || p;
         });
-        console.log('targetPkg: %j', targetPkg);
+        //console.log('targetPkg: %j', targetPkg);
         
         if(targetPkg) {
             //Set a special flag if a BO belonging to a different "external"

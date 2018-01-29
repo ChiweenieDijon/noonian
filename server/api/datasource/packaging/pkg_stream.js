@@ -79,7 +79,7 @@ exports.installPackage = function(pkgReadStream) {
   
   oboe(pkgReadStream)
   .node('metadata', function(metaObj) {
-      
+    //console.log('got metadata %j', metaObj);
     //See if we have an existing version of this package installed
     if(db.BusinessObjectPackage) {
       promiseChain = db.BusinessObjectPackage.findOne({_id:metaObj._id});
@@ -124,6 +124,7 @@ exports.installPackage = function(pkgReadStream) {
   })
 
   .node('!.business_objects.*', function(obj) {
+    //console.log('got business_object %j', obj);
     promiseChain = promiseChain.then(function() {
         return PkgService.importObject(obj._class, obj, packageRef);
     });
@@ -132,6 +133,7 @@ exports.installPackage = function(pkgReadStream) {
   })
 
   .fail(function(err) {
+    console.log('fail %j', err);
     deferred.reject(err);
   })
 
