@@ -189,7 +189,8 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
        timestamp: new Date(),
        object_class: myClass,
        object_id: this._id,
-       update_type:updateType
+       update_type:updateType,
+       object_disp:this._disp
     });
     
     if(!isCreate) {        

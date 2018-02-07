@@ -179,6 +179,8 @@ exports.buildPackage = function(bopId) {
   
   var abstractBods = {}; //tells us which BOD's in the packages are marked 'abstract' (need to output first)
 
+  var incorporatedUpdateLogIds = []; //keep track 
+  
   //Phase 1: 
   //  grab the BusinessObjectPackage we're working with, and query for all of the UpdateLogs
   //  and use to pull together mergedManifest
@@ -191,12 +193,17 @@ exports.buildPackage = function(bopId) {
     bop = resultArr[0];
     var updateLogs = resultArr[1];
     
-    mergedManifest = bop.manifest ? _.clone(bop.manifest) : {};
+    mergedManifest = bop.manifest ? _.clone(bop.manifest) : {};    
     
     
     //Merge in UpdateLog records
     var manifestUpdates = {};
     _.forEach(updateLogs, function(ul) {
+        if(ul.incorporated) {
+          return;
+        }
+        incorporatedUpdateLogIds.push(ul._id);
+        
         var forClass = manifestUpdates[ul.object_class];
         if(!forClass) {
             forClass = manifestUpdates[ul.object_class] = {};
@@ -368,8 +375,11 @@ exports.buildPackage = function(bopId) {
     //When that's all done...
     promiseChain = promiseChain.then(function() {
         pkgStream.end(']}\n'); //close off business_object array, and initial open curlybrace
-        console.log('COMPLETED PACKAGE GENERATION for %j', bop.key);
-        return bop.save();
+        console.log('COMPLETED PACKAGE GENERATION for %j', bop.key);        
+        return bop.save().then(function() {
+          var incorpVer =bop.major_version+'.'+bop.minor_version;
+          return db.UpdateLog.update({_id:{$in:incorporatedUpdateLogIds}}, {$set:{incorporated:incorpVer}}, {multi:true}).exec();
+        });
     });
     
     return promiseChain;

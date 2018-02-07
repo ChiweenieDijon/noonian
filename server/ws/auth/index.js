@@ -170,6 +170,10 @@ exports.redirectToLogin = function(res) {
   return res.redirect(conf.urlBase+'/'+loginPath);
 };
 
+const updateLastLogin = function(user) {
+  user.last_login = new Date();
+  user.save();
+}
 /**
  * init()
 **/
@@ -238,6 +242,7 @@ exports.init = function(app) {
                       }
                       else {
                           //2fa not requried for this user; login process complete
+                          updateLastLogin(user);
                           return done(null, user);
                       }
                   });
@@ -246,6 +251,7 @@ exports.init = function(app) {
           }
           else {
               //no two-factor configured; login process complete
+              updateLastLogin(user);
               return done(null, user);
           }
         }
