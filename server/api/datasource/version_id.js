@@ -25,7 +25,7 @@ var MY_INSTANCE = require('../../conf').instanceId;
 var VersionId = function(versionStr) {
   var instanceMap = this.instanceMap = {};
 
-  var chunks = versionStr.split('|');
+  var chunks = (''+versionStr).split('|');
 
   for(var i=0; i < chunks.length; i++) {
     var vidPieces = chunks[i].split(':');
