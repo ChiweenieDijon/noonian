@@ -81,7 +81,7 @@ For more information how to configure (listen port, https, DB, ...) see:
 
 GNU AFFERO GENERAL PUBLIC LICENSE, Version 3
 
-Copyright (C) 2016  Eugene Lockett  gene@noonian.org
+Copyright (C) 2016-2018  Eugene Lockett  gene@noonian.org
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
