@@ -42,6 +42,7 @@ var configSvc = require('../../api/config');
 
 
 var tfa;
+var loginPreconditions;
 
 var controller = {};
 var wsRoot = conf.urlBase+'/auth';
@@ -125,9 +126,29 @@ exports.getAuthInterceptor = function(app) {
         try {
           // var decoded = jwt.verify(suppliedToken, conf.secrets.session);
           // console.log('JWT: %j', decoded);
-          jwtValidator(req, res, function() {
-            res.locals.user = req.user;
-            next();
+          jwtValidator(req, res, function() {            
+            db.User.findOne({_id:req.user._id}).then(function(u) {
+              //console.log('VALIDATED USER %j', u);
+              res.locals.user = u;
+              if(loginPreconditions) {
+                var cond = loginPreconditions.check(u);
+                if(cond) {
+                  //Force a redirect if request is not made to an allowed precondition-resolver 
+                  var redirectPath = conf.urlBase+cond.redirect;
+                  
+                  if(req.originalUrl.indexOf(redirectPath) !== 0 && !cond.allow.test(req.originalUrl)) {  
+                    console.log('REDIRECTING TO Precondition-determined path: %s', redirectPath);
+                    return res.redirect(redirectPath);
+                  }
+                }
+              }
+              
+              next();
+            });
+            
+            //res.locals.user = req.user;
+            
+            
           });
         }
         catch (err) {
@@ -209,8 +230,9 @@ exports.init = function(app) {
           }
           if (!user.password.matches(password)) {
             return done(null, false, { error: '$invalid_credentials' });
-          }
+          }         
           
+                    
           //Password matches for valid user, now check for 2-factor if applicable...
           if(tfa) {              
               var providedCode = req.body.second_factor_code;
@@ -287,6 +309,11 @@ exports.init = function(app) {
       console.log('TWO-FACTOR AUTH CONFIGURED: %s', conf.twoFactorAuth.implementation);
       var TwoFactorAuthUtil = require('./twofactor');
       tfa = new TwoFactorAuthUtil(conf.twoFactorAuth);
+  }
+  
+  if(conf.loginPreconditions) {
+    var LoginPreconditionsUtil = require('./loginpreconditions');
+    loginPreconditions = new LoginPreconditionsUtil(conf.loginPreconditions);
   }
 
 };
