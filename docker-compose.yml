@@ -2,9 +2,15 @@ version: '3.1'
 
 services:
   noonian:
+    container_name: noonian
+    restart: always
     build: .
     ports:
       - "9000:9000"
+    links:
+      - mongo
   mongo:
+    container_name: mongo
     image: mongo
-    command: --smallfiles
+    ports:
+      - "27017:27017"    
