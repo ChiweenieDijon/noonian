@@ -79,7 +79,7 @@ For more information how to configure (listen port, https, DB, ...) see:
 ## Docker
 
 ### Prerequisite
-1. [Docker CE|https://www.docker.com/community-edition]
+1. [Docker CE](https://www.docker.com/community-edition)
 
 ### Download and run image directly from docker hub
 ```bash
