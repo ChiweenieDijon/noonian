@@ -9,6 +9,6 @@ RUN npm install -g bower
 COPY . .
 RUN npm install
 RUN bower install --allow-root -F
-RUN cat server/conf/instance/template.js | sed s/\localhost/mongo/g | sed s/\#instance\#/my_instance/g | sed s/\#instanceID\#/`uuidgen`/g | sed s/\#instanceSECRET\#/`uuidgen`/g > server/conf/instance/my_instance.js
+RUN cat server/conf/instance/template.js | sed s/127\.0\.0\.1/0\.0\.0\.0/g | sed s/localhost/mongo/g | sed s/\#instance\#/my_instance/g | sed s/\#instanceID\#/`uuidgen`/g | sed s/\#instanceSECRET\#/`uuidgen`/g > server/conf/instance/my_instance.js
 EXPOSE 9000
 CMD ["node", "server/app.js", "--instance", "my_instance"]
