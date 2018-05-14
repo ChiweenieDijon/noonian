@@ -76,6 +76,31 @@ For more information how to configure (listen port, https, DB, ...) see:
 
   http://noonian.org/#Instance%20Configuration
 
+## Docker
+
+### Prerequisite
+1. [Docker CE](https://www.docker.com/community-edition)
+
+### Download and run image directly from docker hub
+```bash
+ docker run -p 27017:27017 --name mongo -d mongo
+ docker run -p 9000:9000 --name noonian --link mongo:mongo chesterk/noonian
+```
+
+### Build and run using docker-compose from source codes
+
+```bash
+ git clone https://github.com/ChiweenieDijon/noonian.git
+ cd noonian
+ docker-compose up
+```
+
+### Password
+You should be able to see the admin password from the log above commands.
+If you missed it and you can just check noonian container log as following
+```bash
+ docker logs noonian
+```
 
 ## License
 
