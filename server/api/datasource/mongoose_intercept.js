@@ -187,19 +187,23 @@ const hook_preRemove = function(next, options) {
   this.__noon_status = {
     options
   };
+    
   var keyFilter = options.filterTriggers || null;
   
   //Do we need to ensure the object passed to DataTriggers has all its fields?
   // (could have been removed using a model object that was the result of a query w/ limited projection)
-  datatrigger.processBeforeDelete(THIS, keyFilter, options).then(
-    function() {
-        next();
-    },
-    function(err) {
-      err = err instanceof Error ? err : new Error(err);
-      next(err);
-    }
-  );
+  db[THIS._bo_meta_data.class_name].findOne({_id:THIS._id}).exec().then(function(result) {
+    THIS.__noon_status._previous = result;
+    datatrigger.processBeforeDelete(result, keyFilter, options).then(
+      function() {
+          next();
+      },
+      function(err) {
+        err = err instanceof Error ? err : new Error(err);
+        next(err);
+      }
+    );
+  });
 };
 
 const hook_postRemove = function(modelObj, next) {
@@ -212,6 +216,7 @@ const hook_postRemove = function(modelObj, next) {
   
   const options = this.__noon_status.options;
   const keyFilter = options.filterTriggers || null;
+  const previous = this.__noon_status._previous
   delete this.__noon_status;
   
   const deferred = Q.defer();
@@ -219,7 +224,7 @@ const hook_postRemove = function(modelObj, next) {
   
   var modelObjStub = { //pass a "post-delete stub" to the after DataTriggers
     _id:THIS._id, 
-    _previous:THIS, 
+    _previous:previous, 
     _bo_meta_data:THIS._bo_meta_data
   };
   
@@ -342,7 +347,10 @@ exports.decorateModel = function(MongooseModel) {
   var metaObj = MongooseModel.schema._bo_meta_data;
 
   MongooseModel._bo_meta_data = metaObj; //Available statically...
+  MongooseModel[Symbol.for('metadata')] = metaObj;
+  
   MongooseModel.prototype._bo_meta_data = metaObj; // and when it gets propogated down to instantiations.
+  MongooseModel.prototype[Symbol.for('metadata')] = metaObj;
   
   MongooseModel.prototype.toPlainObject = toPlainObject;
   MongooseModel.prototype.satisfiesCondition = satisfiesCondition;
@@ -353,6 +361,7 @@ exports.decorateModel = function(MongooseModel) {
   
   
   //Wrap "query" functions on model
+  //TODO consider ES6 Proxy 
   MongooseModel.count = getQueryPreprocessorWrapper(MongooseModel.count, metaObj);
   MongooseModel.find = getQueryPreprocessorWrapper(MongooseModel.find, metaObj);
   MongooseModel.findOne = getQueryPreprocessorWrapper(MongooseModel.findOne, metaObj);
