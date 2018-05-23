@@ -168,7 +168,10 @@ var getTypeDescriptor = function(path) {
   var dotPos = path.indexOf('.');
   if(dotPos === -1) {
     //just a field name
-    return this.type_desc_map[path];
+    if(path.indexOf('_') !== 0) {
+      return this.type_desc_map[path];
+    }
+    return null;
   }
 
   var localField = path.substring(0, dotPos);
@@ -196,6 +199,7 @@ var getTypeDescriptor = function(path) {
  **/
 var createMetaObj = function(forBod) {
   var typeDescMap = _.clone(forBod.definition);
+  
   var metaObj = {
     class_name: forBod.class_name,
     type_descriptor: typeDescMap,  //need to clean up old code that uses this badly-named
@@ -307,6 +311,7 @@ var createMongoSchema = function(forBod) {
 
   //Build metadata object and attach it to schema
   mongoSchema._bo_meta_data = createMetaObj(forBod);
+  mongoSchema[Symbol.for('metadata')] = mongoSchema._bo_meta_data; 
   //TODO: Attach mongo schematypes to the schema object's meta?
   // console.log("%s metadata: %j", forBod.class_name, mongoSchema._bo_meta_data);
 
@@ -356,6 +361,14 @@ var createAndCacheModel = function(forBod) {
     //It's a subclass of someone else;
     //  create model using "discriminator" factory of super-class's model
     var SuperModel = modelById[forBod.superclass._id];
+    
+    //Little sketchy here, digging into mongoose internals..
+    // (need to do in case we're re-initializing a BOD that has a super class)
+    if(SuperModel.discriminators && SuperModel.discriminators[className]) {
+      delete SuperModel.discriminators[className];
+    }
+    //end sketchiness
+        
     mongoModel = SuperModel.discriminator(className, mongoSchema);
   }
   else {
@@ -484,7 +497,7 @@ var clearModel = function(className) {
   delete modelCache[className];
   //little dangerous - digging into mongoose internals:
   delete mongoose.models[className];
-  delete mongoose.modelSchemas[className];
+  delete mongoose.modelSchemas[className];  
 };
 
 
@@ -600,6 +613,8 @@ var bootstrapDatabase = function() {
  * @return promise that is fulfilled upon completion.
  **/
 exports.init = function(conf) {
+  
+  mongoose.Promise = Q.Promise;
 
   // Connect to database
   mongoose.connect(conf.mongo.uri, conf.mongo.options);
