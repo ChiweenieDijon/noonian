@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016  Eugene Lockett  gene@noonian.org
+Copyright (C) 2016-2018  Eugene Lockett  gene@noonian.org
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
@@ -48,11 +48,11 @@ var globalInjections = {
 /**
  * determines parameter names for provided function
  **/
-var getParameterNames =
+const paramRegex = /\(([\s\S]*?)\)/; //Captures the string between open and close paren
+const splitRegex = /[ ,\n\r\t]+/;     //Matches whitespace and commas to split the param list into param names
+ 
+const getParameterNames =
 exports.getParameterNames = function(fn) {
-
-  var paramRegex = /\(([\s\S]*?)\)/; //Captures the string between open and close paren
-  var splitRegex = /[ ,\n\r\t]+/;     //Matches whitespace and commas to split the param list into param names
 
   var execResult = paramRegex.exec(fn);
 
@@ -117,6 +117,9 @@ var addGlobalInjectable = function(cm) {
 
 var init =
 exports.init = function() {
+  
+  const cmDependsOn = {}; //maps CodeModule id -> id's of CodeModules it depends upon
+  const cmHasDependants = {}; //maps CodeModuel id -> id's of CodeModules that depend upon it
 
   //Watch CodeModule objects
   datatrigger.registerDataTrigger('sys.internal.invoker', 'oThGB1UxRGiPK6tzu4PUXQ', 'after', true, true, true, function(isCreate, isUpdate, isDelete) {
@@ -134,21 +137,67 @@ exports.init = function() {
       if(this._previous.code !== this.code) {
         addGlobalInjectable(this);
       }
+      
+      var myDependants = cmHasDependants[this._id];
+      if(myDependants && myDependants.length) {
+        //I need to re-initialize this CodeModule's dependents
+        db.CodeModule.find({_id:{$in:myDependants}}).then(function(cmList) {
+          _.forEach(cmList, addGlobalInjectable);
+        });
+      }
     }
 
     return null;
   });
 
-
-
   return db.CodeModule.find({}).exec().then(function(codeModules) {
-    _.forEach(codeModules, function(cm) {
-      try {
-        globalInjections[cm.name] = invokeInjected(cm.code, globalInjections);
+    
+    const cmByName = _.indexBy(codeModules, 'name');
+    const cmById = _.indexBy(codeModules, '_id');
+    
+    //First, build DEPENDS-ON map
+    _.forEach(codeModules, cm => {      
+      _.forEach(getParameterNames(cm.code), p => {
+        if(cmByName[p]) {
+          cmDependsOn[cm._id] = cmDependsOn[cm._id] || [];
+          
+          var dep = cmByName[p]._id;
+          cmDependsOn[cm._id].push(dep);
+          
+          if(cmDependsOn[dep] && cmDependsOn.indexOf(cm._id) > -1) {
+            console.error('****WARNING!!! Circular dependencies in CodeModules not supported! Refactor CodeModules %s and %s', cm.name, cmByName[p].name);
+          }
+        }
+      });
+    });
+    
+    //Next, generate HAS-DEPENDEDENTS map:
+    _.forEach(cmDependsOn, (depList, dependant)=>{
+      _.forEach(depList, cmWithDependant=>{
+        cmHasDependants[cmWithDependant] = cmHasDependants[cmWithDependant] || [];
+        cmHasDependants[cmWithDependant].push(dependant);
+      });
+    });
+    
+    //Next, sort codeModules so that dependants come after the ones on which they are dependant
+    const added = {};
+    const ordered = [];
+    const addCm = function(cm) {
+      if(!added[cm._id]) {
+        added[cm._id] = true;
+        if(cmDependsOn[cm._id]) {
+          _.forEach(cmDependsOn[cm._id], depId=>{
+            addCm(cmById[depId]);
+          });
+        }
+        ordered.push(cm);
       }
-      catch(err) {
-        console.error('error invoking CodeModule constructor %s %s', cm.name, err);
-      }
+    };
+    _.forEach(codeModules, addCm);
+    
+    _.forEach(ordered, cm => {
+      console.log('Installing CodeModule: %s', cm.name);
+      addGlobalInjectable(cm);      
     });
   });
 
