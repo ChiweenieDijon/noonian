@@ -72,17 +72,17 @@ var onWebSocketConnection = function(ws, req) {
 
 module.exports = function(server) {
     
-    if(!db.WebSocket) {
+    if(!db.WebSocketServer) {
         console.error('Missing WebSocket Business Object class; upgrade system to use websockets');
         return;
     }
     
-    db.WebSocket.find({}).then(function(wsBos) {
+    db.WebSocketServer.find({}).then(function(wsBos) {
         websocketBosByPath = _.indexBy(wsBos, 'path');
     });
     
     //Watch WebSocket objects
-    datatrigger.registerDataTrigger('sys.internal.websocket', db.WebSocket._bo_meta_data.bod_id, 'after', true, true, true, function(isCreate, isUpdate, isDelete) {
+    datatrigger.registerDataTrigger('sys.internal.websocket', db.WebSocketServer._bo_meta_data.bod_id, 'after', true, true, true, function(isCreate, isUpdate, isDelete) {
         if(isDelete) {
             delete websocketBosByPath[this._previous.path];
         }
