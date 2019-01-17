@@ -129,6 +129,13 @@ exports.getAuthInterceptor = function(app) {
           jwtValidator(req, res, function() {            
             db.User.findOne({_id:req.user._id}).then(function(u) {
               //console.log('VALIDATED USER %j', u);
+              if(!u) {
+                //invalid user id in cookie/token
+                console.log(req.cookies);
+                //res.clearCookie('access_token');
+                res.cookie('access_token', req.cookies.access_token, {path:'/'+conf.urlBase+'/', maxAge:0});
+                return res.redirect(conf.urlBase+'/'+loginPath);
+              }
               res.locals.user = u;
               if(loginPreconditions) {
                 var cond = loginPreconditions.check(u);
