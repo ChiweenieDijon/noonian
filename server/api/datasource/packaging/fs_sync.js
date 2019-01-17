@@ -125,7 +125,7 @@ exports.removeObjectFromPackageDir = function(fsPath, bo) {
 		});
 	}
 	catch(err) {
-		console.error('problem deleting object %s from package %s', bo._id, pkgKey);
+		console.error('problem deleting object %s from package', bo._id);
 		console.error(err);
 	}
 };

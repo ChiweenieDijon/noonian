@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016  Eugene Lockett  gene@noonian.org
+Copyright (C) 2016-2018  Eugene Lockett  gene@noonian.org
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
@@ -23,28 +23,35 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 'use strict';
 
-var Q = require('q');
-var _ = require('lodash');
+const Q = require('q');
+const _ = require('lodash');
 
-var fs = require('fs');
+const fs = require('fs');
 
-var serverConf = require('../../../conf');
+const serverConf = require('../../../conf');
 
 
-var db = require('../index');
+const db = require('../index');
 
-var GridFsService = require('../gridfs');
-var DataTriggerService = require('../datatrigger');
+const GridFsService = require('../gridfs');
+const DataTriggerService = require('../datatrigger');
 
-var VersionId = exports.VersionId = require('../version_id');
+const VersionId = exports.VersionId = require('../version_id'); //versioning for individual business objects
 
-var fsPackageSyncer = require('./fs_sync');
-var packageStreamer = require('./pkg_stream');
+const semver = require('semver');//npm semantic version parsing
+
+const fsPackageSyncer = require('./fs_sync');
+const packageStreamer = require('./pkg_stream');
 
 exports.buildPackage = packageStreamer.buildPackage;
 exports.applyPackageStream = exports.installPackageStream = packageStreamer.installPackage;
+exports.checkPackageStream = packageStreamer.checkPackageStream;
+exports.checkPackage = packageStreamer.checkPackage;
+exports.getPackageMetadataFromStream = packageStreamer.getPackageMetadataFromStream;
 
-var diffTool = require('./diffpatch');
+const diffTool = require('./diffpatch');
+
+
 
 
 /*
@@ -62,7 +69,21 @@ var packageKeyToId; //to look-up BOP id with package key
 var packageKeyToConfig;
 
 
-var updatePackageConfig = function() {
+//utility to convert the include/exclude list of classes into the lookup table
+const bcClassListToLookupTable = function(classList) {
+  var ret = {};
+  _.forEach(classList, item => {
+    if(typeof item === 'string') {
+      ret[item] = true;
+    }
+    else if(item && item.class_name) {
+      ret[item.class_name] = item.condition || true;
+    }
+  });
+  return ret;
+};
+
+const updatePackageConfig = function() {
     
     //Sync up w/ package meta if it belongs to an fs-synced package
     var THIS = this;
@@ -89,17 +110,28 @@ var updatePackageConfig = function() {
                 packageKeyToConfig[bop.key] = cfg;
                 
                 var bConfig = bop.build_config || {};
-                var fsPath = fsConfig[bop.key]
+                var myFsConfig = fsConfig[bop.key];
                 
+                var fsPath = (typeof myFsConfig === 'string') ? myFsConfig : (myFsConfig && myFsConfig.syncDir); 
                 if(fsPath) {
                     cfg.enableFilesystemSync = true;
                     cfg.fs_path = (typeof fsPath === 'string') ? fsPath : 'server/data_pkg/'+bop.key;
                 }
-                if(bConfig.include) {
-                    cfg.include = _.mapKeys(bConfig.include);
+                if(bConfig.include) {                    
+                    if(bConfig.include instanceof Array) {
+                      cfg.include = bcClassListToLookupTable(bConfig.include);                    
+                    }
+                    else {
+                      console.error('BAD BUILD CONFIG FOR PACKAGE: %s  (include not array)', bop.key);
+                    }
                 }
                 if(bConfig.exclude) {
-                    cfg.exclude = _.mapKeys(bConfig.exclude);
+                  if(bConfig.exclude instanceof Array) {
+                    cfg.exclude = bcClassListToLookupTable(bConfig.exclude);                    
+                  }
+                  else {
+                    console.error('BAD BUILD CONFIG FOR PACKAGE: %s (exclude not array)', bop.key);
+                  }
                 }
             }
         }); //end forEach(bopList)
@@ -117,8 +149,10 @@ exports.init = function() {
     var promiseChain = Q(true);
     
     //Load in fs-persisted packages as configured in serverConf.packageFsConfig
-    _.forEach(serverConf.packageFsConfig, function(fsPath, pkgKey) {
+    _.forEach(serverConf.packageFsConfig, function(myFsConfig, pkgKey) {
         console.log('...loading %s from filesystem...', pkgKey);
+        
+        var fsPath = (typeof myFsConfig === 'string') ? myFsConfig : myFsConfig.syncDir;        
         promiseChain = promiseChain.then(fsPackageSyncer.packageFromFs.bind(null, fsPath));
     });
     
@@ -170,6 +204,20 @@ exports.init = function() {
     PackageConflict:true
 };
 
+const functionsToStrings = function(obj) {
+  let ret = {};
+  _.forEach(Object.keys(obj), f => {
+    if(typeof obj[f] === 'function') {
+      ret[f] = ''+obj[f];
+    }
+    else {
+      ret[f] = obj[f];
+    }
+  });
+  
+  return ret;
+}
+
 exports.updateLogger = function(isCreate, isUpdate, isDelete) {
     var myClass = this._bo_meta_data.class_name;
     
@@ -207,7 +255,10 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
                 var current = this;
                 var previous = this._previous;
                 //TODO DOESNT WORK FOR OBJECTS W/ FUNCTION FIELDS!  NEED TO CONVERT TO STRING FIRST!!!
-                updateLogObj.revert_patch = diffTool.diff(current.toPlainObject(), previous);
+                var currToDiff = functionsToStrings(current.toPlainObject());
+                var prevToDiff = functionsToStrings(previous);
+                delete currToDiff._previous;
+                updateLogObj.revert_patch = diffTool.diff(currToDiff, prevToDiff);
             }
         }
     }
@@ -217,18 +268,33 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
     if(serverConf.enablePackaging) {
         //console.log('processing packaging!');
         //Determine the package to which this updateLog is attached.
-                
+        var THIS = this;
         _.forEach(pkgConfig, function(p) {
             if(p.exclude && p.exclude[myClass]) {
-                return;
+              let cond = p.exclude[myClass];
+              if(typeof cond === 'boolean') {
+                return; //true boolean -> exclude unconditionally
+              }
+              if(THIS.satisfiesCondition(cond)) {
+                return;  //condition passes -> exclude from pkg
+              }
             }
-            if(p.include && !p.include[myClass]) {
-                return;
+                        
+            if(p.include) {
+              let cond = p.include[myClass];
+              if(!cond) {
+                return;  //either false or not in explicit 'include' list -> exclude from pkg
+              }
+              if(typeof cond === 'object') {
+                if(!THIS.satisfiesCondition(cond)) {
+                  return;  //condition doesn't pass -> exclude from pkg
+                }
+              }
             }
             //Use the first one on the list that matches
             targetPkg = targetPkg || p;
         });
-        //console.log('targetPkg: %j', targetPkg);
+        // console.log('targetPkg: %j', targetPkg);
         
         if(targetPkg) {
             //Set a special flag if a BO belonging to a different "external"
@@ -243,11 +309,9 @@ exports.updateLogger = function(isCreate, isUpdate, isDelete) {
             
             //Persist update to filesystem if configured to do so
             if(targetPkg.enableFilesystemSync) {
+               fsPackageSyncer.removeObjectFromPackageDir(targetPkg.fs_path, this);
                if(!isDelete) {
                    fsPackageSyncer.writeObjectToPackageDir(targetPkg.fs_path, this);
-               }
-               else {
-                   fsPackageSyncer.removeObjectFromPackageDir(targetPkg.fs_path, this);
                }
            }
         }
@@ -306,7 +370,7 @@ exports.applyPackage = function(bopId) {
     })
     .then(function(gridfsFileObj) {
       console.log('Loading Data Package from %s', gridfsFileObj.metadata.filename);
-      return packageStreamer.installPackage(gridfsFileObj.readstream).then(function(retBop) {
+      return packageStreamer.installPackage(gridfsFileObj.readstream, null, true).then(function(retBop) {
         bopObj = retBop;
       });
     })
@@ -512,21 +576,18 @@ exports.packageFileExport = function(bopId) {
 };
 
 
-exports.parseVersionString = function(verStr) {
-  var major = 0;
-  var minor = 0;
-
-  if(verStr) {
-    var dotPos = verStr.indexOf('.');
-    if(dotPos > -1) {
-      major = +(verStr.substring(0, dotPos));
-      minor = +(verStr.substring(dotPos+1));
+//Used by sys webservice pkg/runUpdate of sys <=0.69
+// return an object with a compareTo 
+const parseVersionString = exports.parseVersionString = function(verStr) {
+  var properVersion =  new semver(semver.coerce(verStr));
+  
+  properVersion.compareTo = function(otherVersion) {
+    if(typeof otherVersion === 'object' && !otherVersion.version) {
+      //Old deprecated version object
+      otherVersion = new parseVersionString((otherVersion.major||0)+'.'+(otherVersion.minor||0));
     }
-    else {
-      minor = +verStr;
-    }
+    return semver.compare(this, otherVersion);
   }
-
-  return new packageStreamer.PkgVersion(major, minor);
+  return properVersion;  
 };
 
