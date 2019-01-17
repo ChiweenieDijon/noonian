@@ -558,11 +558,7 @@ controller.remove = function(req, res) {
       queryObj = conditions;
     }
     
-    if(!id || dacCond) {
-      //id -implies-> simple query w/ no context;
-      //dacCond -implies-> extra conditions that may need context
-      queryObj.$useContext = {currentUser:currUser};
-    }
+    queryObj.$useContext = {currentUser:currUser};
 
     TargetModel.remove(queryObj, function(err, result) {
       if(err) { return wsUtil.handleError(res, err); }

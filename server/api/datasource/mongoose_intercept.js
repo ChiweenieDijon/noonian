@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016  Eugene Lockett  gene@noonian.org
+Copyright (C) 2016-2018  Eugene Lockett  gene@noonian.org
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
@@ -179,15 +179,19 @@ const hook_postSave = function(modelObj, next) {
   
 };
 
-const hook_preRemove = function(next, options) {
+const hook_preRemove = function(next) {
   var THIS = this;
-  if (!options) {
-      options = {};
-  }
+  var options = {};
+  
   this.__noon_status = {
     options
   };
-    
+  
+  var myContext = this[Symbol.for('context')];
+  if(myContext) {
+    options.context = myContext;
+  }
+  
   var keyFilter = options.filterTriggers || null;
   
   //Do we need to ensure the object passed to DataTriggers has all its fields?
@@ -294,6 +298,14 @@ const remove = function(conditions, callback) {
     conditions = {};
   } 
   
+  //pluck out the context if we have it:
+  var context = conditions && conditions.$useContext;
+  if(context) {        
+    delete conditions.$useContext;
+    QueryOpService.applyNoonianContext(conditions, context);
+  }
+  QueryOpService.queryToMongo(conditions, this._bo_meta_data);
+  
   // query according to the conditions
   // perform the delete individually on each result, accumulating the returned promises
   // return promise.all
@@ -302,6 +314,7 @@ const remove = function(conditions, callback) {
     function(results) {
       var promises = [];
       for(var i=0; i < results.length; i++) {
+        results[i][Symbol.for('context')] = context;
         promises.push(results[i].remove());
       }
       return Q.all(promises);
