@@ -34,7 +34,7 @@
     "mime": "^1.6.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.10.6",
-    "mongoose": "~4.13.0",
+    "mongoose": "~5.8.4",
     "mongoose-function": "^0.1.0",
     "mongoose-text-search": "0.0.2",
     "mongoose-validator": "^1.3.2",
