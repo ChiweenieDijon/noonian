@@ -28,7 +28,7 @@
     "json-stable-stringify": "^1.0.1",
     "jsondiffpatch": "^0.3.11",
     "jsonwebtoken": "^7.4.1",
-    "lodash": "^3.9.3",
+    "lodash": "^4.17.19",
     "log4js": "^3.0.6",
     "method-override": "~1.0.0",
     "mime": "^1.6.0",
